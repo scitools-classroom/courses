@@ -1950,7 +1950,7 @@ In&nbsp;[7]:
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">ValueError</span>                                Traceback (most recent call last)
 <span class="ansigreen">&lt;ipython-input-7-29c0bfa5fa8a&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>arr<span class="ansiyellow">[</span><span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">]</span> <span class="ansiyellow">=</span> <span class="ansiblue">&apos;a string inside an array&apos;</span><span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>arr<span class="ansiblue">[</span><span class="ansiblue">-</span><span class="ansicyan">1</span><span class="ansiblue">]</span> <span class="ansiblue">=</span> <span class="ansiblue">&apos;a string inside an array&apos;</span><span class="ansiblue"></span>
 
 <span class="ansired">ValueError</span>: invalid literal for long() with base 10: &apos;a string inside an array&apos;</pre>
 </div>
@@ -1974,30 +1974,11 @@ In&nbsp;[7]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[10]:
+In&nbsp;[]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span>
 </pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[10]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre>
-dtype(&apos;int64&apos;)
-</pre>
-
-</div>
-</div>
 
 </div>
 </div>
@@ -2012,7 +1993,7 @@ dtype(&apos;int64&apos;)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[11]:
+In&nbsp;[8]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.234</span>
@@ -2027,7 +2008,7 @@ In&nbsp;[11]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[11]:</div>
+    Out[8]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2051,7 +2032,7 @@ array([10, 20, 30,  1])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[9]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
@@ -2065,7 +2046,7 @@ In&nbsp;[12]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[12]:</div>
+    Out[9]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2083,7 +2064,7 @@ array([ 0.,  0.,  0.,  0.,  0.])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[10]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
@@ -2097,7 +2078,7 @@ In&nbsp;[13]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[13]:</div>
+    Out[10]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2120,7 +2101,7 @@ array([0, 0, 0])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[11]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;5 ones:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
@@ -2154,7 +2135,7 @@ In&nbsp;[14]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[12]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
@@ -2170,7 +2151,7 @@ In&nbsp;[7]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[7]:</div>
+    Out[12]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2221,7 +2202,7 @@ array([ 5.5,  5.5,  5.5,  5.5])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[8]:
+In&nbsp;[13]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
@@ -2235,7 +2216,7 @@ In&nbsp;[8]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[8]:</div>
+    Out[13]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2255,7 +2236,7 @@ array(0, dtype=uint8)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[14]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">float_info</span> <span class="o">=</span> <span class="s">&#39;{finfo.dtype}: max={finfo.max:&lt;18}, approx decimal precision={finfo.precision};&#39;</span>
@@ -2273,7 +2254,7 @@ In&nbsp;[17]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-float32: max=3.40282e+38       , approx decimal precision=6;
+float32: max=3.40282346639e+38 , approx decimal precision=6;
 float64: max=1.79769313486e+308, approx decimal precision=15;
 
 </pre>
@@ -2296,7 +2277,7 @@ float64: max=1.79769313486e+308, approx decimal precision=15;
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[15]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -2310,7 +2291,7 @@ In&nbsp;[9]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[9]:</div>
+    Out[15]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2334,7 +2315,7 @@ array(1.0, dtype=float32)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[16]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
@@ -2348,7 +2329,7 @@ In&nbsp;[17]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[17]:</div>
+    Out[16]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2366,7 +2347,7 @@ array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[17]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
@@ -2380,7 +2361,7 @@ In&nbsp;[18]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[18]:</div>
+    Out[17]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2404,7 +2385,7 @@ array([ 5. ,  5.1,  5.2,  5.3,  5.4,  5.5,  5.6,  5.7,  5.8,  5.9,  6. ,
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[20]:
+In&nbsp;[18]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;A linear grid between 0 and 1:&quot;</span>
@@ -2435,7 +2416,7 @@ A linear grid between 0 and 1:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[19]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;A logarithmic grid between 10**2 and 10**4:&quot;</span>
@@ -2472,7 +2453,7 @@ A logarithmic grid between 10**2 and 10**4:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[1]:
+In&nbsp;[20]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -2491,7 +2472,7 @@ In&nbsp;[1]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[20]:
+In&nbsp;[21]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -2507,7 +2488,7 @@ In&nbsp;[20]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-[ 0.22686119 -0.40774205  0.51488868 -0.30188959 -0.40245447]
+[-1.06057521 -0.32286175  1.79692533  1.08715264  0.434164  ]
 
 </pre>
 </div>
@@ -2525,7 +2506,7 @@ In&nbsp;[20]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[22]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">norm10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -2542,7 +2523,7 @@ In&nbsp;[4]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-[ 14.94509009  11.75846635  13.30289802   7.66207806   6.05132521]
+[  6.53314068  12.76348419  10.36703441  10.6126189   12.83962061]
 
 </pre>
 </div>
@@ -2565,7 +2546,7 @@ In&nbsp;[4]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[5]:
+In&nbsp;[23]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">mask</span> <span class="o">=</span> <span class="n">norm10</span> <span class="o">&gt;</span> <span class="mi">9</span>
@@ -2580,12 +2561,12 @@ In&nbsp;[5]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[5]:</div>
+    Out[23]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
 <pre>
-array([ True,  True,  True, False, False], dtype=bool)
+array([False,  True,  True,  True,  True], dtype=bool)
 </pre>
 
 </div>
@@ -2603,7 +2584,7 @@ array([ True,  True,  True, False, False], dtype=bool)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[24]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Values above 9:&#39;</span><span class="p">,</span> <span class="n">norm10</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
@@ -2619,7 +2600,7 @@ In&nbsp;[6]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-Values above 9: [ 14.94509009  11.75846635  13.30289802]
+Values above 9: [ 12.76348419  10.36703441  10.6126189   12.83962061]
 
 </pre>
 </div>
@@ -2632,7 +2613,7 @@ Values above 9: [ 14.94509009  11.75846635  13.30289802]
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[25]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Resetting all values above 9 to 0...&#39;</span>
@@ -2651,7 +2632,7 @@ In&nbsp;[7]:
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Resetting all values above 9 to 0...
-[ 0.          0.          0.          7.66207806  6.05132521]
+[ 6.53314068  0.          0.          0.          0.        ]
 
 </pre>
 </div>
@@ -2674,7 +2655,7 @@ Resetting all values above 9 to 0...
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[26]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">lst2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
@@ -2714,7 +2695,7 @@ In&nbsp;[12]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[27]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
@@ -2748,7 +2729,7 @@ In&nbsp;[13]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[28]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
@@ -2785,7 +2766,7 @@ In&nbsp;[14]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[30]:
+In&nbsp;[29]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -2799,7 +2780,7 @@ In&nbsp;[30]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[30]:</div>
+    Out[29]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2818,7 +2799,7 @@ array([[ 0.,  0.,  0.],
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[31]:
+In&nbsp;[30]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -2832,13 +2813,13 @@ In&nbsp;[31]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[31]:</div>
+    Out[30]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
 <pre>
-array([[  9.26405431,   5.83682278,   5.53613405,  11.06281098],
-       [  9.71317538,   9.60707303,  10.54202204,  11.48101572]])
+array([[  8.47853495,  11.35246572,  12.59115073,  10.66459746],
+       [ 11.47821686,  10.56239408,  11.13598196,   9.75014911]])
 </pre>
 
 </div>
@@ -2856,7 +2837,7 @@ array([[  9.26405431,   5.83682278,   5.53613405,  11.06281098],
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[32]:
+In&nbsp;[31]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -2893,7 +2874,7 @@ In&nbsp;[32]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[34]:
+In&nbsp;[32]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
@@ -2946,7 +2927,7 @@ After
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[33]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -2994,7 +2975,7 @@ Second element from dimension 0 (maintaining its dimension), all elements from d
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[36]:
+In&nbsp;[34]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;First row:  &#39;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;is equivalent to&#39;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
@@ -3030,7 +3011,7 @@ Second row:  [4 5 6 7] is equivalent to [4 5 6 7]
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[37]:
+In&nbsp;[35]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -3073,7 +3054,7 @@ Orig shape:  (4, 6, 3)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[36]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -3117,7 +3098,7 @@ In&nbsp;[15]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[38]:
+In&nbsp;[37]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Data type                :&#39;</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">dtype</span>
@@ -3159,7 +3140,7 @@ Memory used (in bytes)   : 64
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[39]:
+In&nbsp;[38]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Minimum and maximum             :&#39;</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -3195,7 +3176,7 @@ Mean and standard deviation     : 3.5 2.29128784748
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[40]:
+In&nbsp;[39]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;For the following array:</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">arr</span>
@@ -3236,7 +3217,7 @@ The sum of elements along the columns is : [ 4  6  8 10]
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[40]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
@@ -3250,7 +3231,7 @@ In&nbsp;[19]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[19]:</div>
+    Out[40]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -3273,7 +3254,7 @@ In&nbsp;[19]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[42]:
+In&nbsp;[41]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Array:</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">arr</span>
@@ -3316,7 +3297,7 @@ Transpose:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[43]:
+In&nbsp;[42]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -3352,7 +3333,7 @@ In&nbsp;[43]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[44]:
+In&nbsp;[43]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">arr1</span><span class="p">,</span> <span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">arr1</span> <span class="o">*</span> <span class="n">arr2</span>
@@ -3386,7 +3367,7 @@ In&nbsp;[44]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[45]:
+In&nbsp;[44]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="mf">1.5</span> <span class="o">*</span> <span class="n">arr1</span>
@@ -3400,7 +3381,7 @@ In&nbsp;[45]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[45]:</div>
+    Out[44]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -3427,7 +3408,7 @@ array([ 0. ,  1.5,  3. ,  4.5])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[46]:
+In&nbsp;[45]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -3463,7 +3444,7 @@ In&nbsp;[46]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[47]:
+In&nbsp;[46]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -3477,7 +3458,7 @@ In&nbsp;[47]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[47]:</div>
+    Out[46]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -3502,7 +3483,7 @@ array([[ 1.,  2.,  3.],
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[48]:
+In&nbsp;[47]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -3603,7 +3584,7 @@ In&nbsp;[48]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[49]:
+In&nbsp;[48]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -3621,7 +3602,7 @@ In&nbsp;[49]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[50]:
+In&nbsp;[49]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -3639,7 +3620,7 @@ In&nbsp;[50]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[51]:
+In&nbsp;[50]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -3657,7 +3638,7 @@ In&nbsp;[51]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[52]:
+In&nbsp;[51]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -3696,7 +3677,7 @@ In&nbsp;[52]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[53]:
+In&nbsp;[52]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
@@ -3710,7 +3691,7 @@ In&nbsp;[53]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[53]:</div>
+    Out[52]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -3729,7 +3710,7 @@ array([[0, 1, 2, 3, 4, 5]])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[54]:
+In&nbsp;[53]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
@@ -3743,7 +3724,7 @@ In&nbsp;[54]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[54]:</div>
+    Out[53]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -3768,7 +3749,7 @@ array([[0, 1, 2],
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[55]:
+In&nbsp;[54]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -3803,7 +3784,7 @@ In&nbsp;[55]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[56]:
+In&nbsp;[55]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -3822,7 +3803,7 @@ In&nbsp;[56]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[57]:
+In&nbsp;[56]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -3845,7 +3826,7 @@ In&nbsp;[57]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[22]:
+In&nbsp;[57]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -3864,7 +3845,7 @@ In&nbsp;[22]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
- [2 3 4] . [1 0 1] = 6
+[2 3 4] . [1 0 1] = 6
 
 </pre>
 </div>
@@ -3882,7 +3863,7 @@ In&nbsp;[22]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[24]:
+In&nbsp;[58]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -3916,7 +3897,7 @@ In&nbsp;[24]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[60]:
+In&nbsp;[59]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
@@ -3949,7 +3930,7 @@ In&nbsp;[60]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
@@ -4014,7 +3995,7 @@ In&nbsp;[61]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre>
@@ -4033,7 +4014,7 @@ In&nbsp;[64]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre>
@@ -4052,7 +4033,7 @@ In&nbsp;[64]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre>
@@ -4071,7 +4052,7 @@ In&nbsp;[64]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre>
@@ -4090,7 +4071,7 @@ In&nbsp;[64]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre>
@@ -4110,7 +4091,7 @@ In&nbsp;[64]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[60]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre>
