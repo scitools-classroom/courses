@@ -1693,15 +1693,17 @@ init_mathjax();
 </head>
 <body>
 
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="an-introduction-to-iris">An introduction to Iris</h2>
+</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[147]:
+In&nbsp;[4]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">iris</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </pre></div>
 
 </div>
@@ -1711,13 +1713,11 @@ In&nbsp;[147]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[2]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">__version__</span>
 <span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="k">print</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 
 </div>
@@ -1732,7 +1732,6 @@ In&nbsp;[2]:
 <pre>
 1.6.0-dev
 2.0.0.dev-624a4dd
-1.3.1rc2
 
 </pre>
 </div>
@@ -1758,7 +1757,7 @@ In&nbsp;[2]:
 <p>A fuller explanation is available in the <a href="http://scitools.org.uk/iris/docs/latest/userguide/iris_cubes.html">Iris user guide</a>.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lets take a simple example to demonstrate the cube concept.</p>
+<p>Let's take a simple example to demonstrate the cube concept.</p>
 <p>Suppose we have a <code>(3, 2, 4)</code> numpy array:</p>
 <div class="figure">
 <img src="images/multi_array.png" />
@@ -1766,24 +1765,24 @@ In&nbsp;[2]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Where dimensions 0, 1, and 2 have lengths 3, 2 and 4 respectively.</p>
-<p>The Iris cube to represent this data mat consist of:</p>
+<p>The Iris cube to represent this data may consist of:</p>
 <ul>
-<li><p>a standard name of &quot;air_temperature&quot; and a unit of &quot;kelvin&quot;</p></li>
+<li><p>a standard name of &quot;air_temperature&quot; and units of &quot;kelvin&quot;</p></li>
 <li><p>a data array of shape <code>(3, 2, 4)</code></p></li>
 <li>a coordinate, mapping to dimension 0, consisting of:
 <ul>
-<li>a standard name of &quot;height&quot; and unit of &quot;meters&quot;</li>
+<li>a standard name of &quot;height&quot; and units of &quot;meters&quot;</li>
 <li>an array of length 3 representing the 3 height points</li>
 </ul></li>
 <li>a coordinate, mapping to dimension 1, consisting of:
 <ul>
-<li>a standard name of &quot;latitude&quot; and unit of &quot;degrees&quot;</li>
+<li>a standard name of &quot;latitude&quot; and units of &quot;degrees&quot;</li>
 <li>an array of length 2 representing the 2 latitude points</li>
 <li>a coordinate system such that the latitude points could be fully located on the globe</li>
 </ul></li>
 <li>a coordinate, mapping to dimension 2, consisting of:
 <ul>
-<li>a standard name of &quot;longitude&quot; and unit of &quot;degrees&quot;</li>
+<li>a standard name of &quot;longitude&quot; and units of &quot;degrees&quot;</li>
 <li>an array of length 4 representing the 4 longitude points</li>
 <li>a coordinate system such that the longitude points could be fully located on the globe</li>
 </ul></li>
@@ -1954,7 +1953,7 @@ In&nbsp;[6]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="note-on-sample_data_path">Note on sample_data_path:</h4>
-<p>Throughout this course we will make use of the sample data that Iris provides. The function <code>iris.sample_data_path</code> returns the appropriate path to the file in the iris sample data collection. A common mistake for Iris users is to use the <code>sample_data_path</code> function to access data which is not part of Iris' sample data collection - this is bad practice and is unlikely to work in the future.</p>
+<p>Throughout this course we will make use of the sample data that Iris provides. The function <code>iris.sample_data_path</code> returns the appropriate path to the file in the iris sample data collection. A common mistake for Iris users is to use the <code>sample_data_path</code> function to access data which is not part of Iris's sample data collection - this is bad practice and is unlikely to work in the future.</p>
 <p><strong>Task:</strong> Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify that it returns a string pointing to a file on your system. Use this string directly in the call to <code>iris.load</code> and confirm the result is the same as in the previous example e.g.:</p>
 <pre><code>print iris.load(&#39;/path/to/iris/sampledata/uk_hires.pp&#39;, &#39;air_potential_temperature&#39;)</code></pre>
 </div>
@@ -2004,7 +2003,7 @@ True
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In general, it is a good idea to make use of the <code>load_cube</code>/<code>load_cubes</code> functions rather than the generic <code>load</code> function in non-exploritary code. Doing so makes your code more resilient to changes in the data source, often results in more readable/maintainable code, and in combination with well defined constraints, will improve load performance.</p>
+<p>In general, it is a good idea to make use of the <code>load_cube</code>/<code>load_cubes</code> functions rather than the generic <code>load</code> function in non-exploratory code. Doing so makes your code more resilient to changes in the data source, often results in more readable/maintainable code, and in combination with well defined constraints, will improve load performance.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The load functions all accept a list of filenames to load, and any of the filenames can be &quot;glob&quot; patterns (http://docs.python.org/2/library/glob.html).</p>
@@ -2016,7 +2015,7 @@ True
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="constraints">Constraints</h2>
-<p>Iris' constraints mechanism provides a powerful way to filter a subset of data from a larger collection. We've already seen that constraints can be used at load time to return data of interest from a file, but we can also apply constraints to a single cube, or a list of cubes, using their respective <code>extract</code> methods:</p>
+<p>Iris's constraints mechanism provides a powerful way to filter a subset of data from a larger collection. We've already seen that constraints can be used at load time to return data of interest from a file, but we can also apply constraints to a single cube, or a list of cubes, using their respective <code>extract</code> methods:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2275,7 +2274,7 @@ cell &lt; Cell(point=11, bound=None) is True
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is common to want to build a constraint for time. With Iris' <em>current</em> time implementation this is harder than we would like as you need to know the units that your time coordinate is in (e.g it could be &quot;hours since 2000-01-01&quot;, &quot;days since 1970-01-01&quot; or any other number of reference epoch's and units). In practice this means we need to get hold of the &quot;time&quot; coordinate <em>before</em> we can build the constraint.</p>
+<p>It is common to want to build a constraint for time. With Iris's <em>current</em> time implementation this is harder than we would like as you need to know the units that your time coordinate is in (e.g it could be &quot;hours since 2000-01-01&quot;, &quot;days since 1970-01-01&quot; or any other number of reference epoch's and units). In practice this means we need to get hold of the &quot;time&quot; coordinate <em>before</em> we can build the constraint.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2345,7 +2344,7 @@ air_potential_temperature / (K)     (time: 2; model_level_number: 7; grid_latitu
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>TASK?</p>
-<p>Write a function which takes a cube, and returns True or False whether the time ... Build constraints for var_name and STASH... WORK ON THIS...</p>
+<p>Write a function which takes a cube, and returns True or False whether the time ... Build constraints for var_name and STASH... WORK ON THIS... cell method</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="saving-cubes">Saving cubes</h2>
@@ -2468,7 +2467,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To access a cube's data array the <code>data</code> property exists, this is either a numpy array or in some cases a numpy masked array. It is very important to note that for most of the supported filetypes in Iris, the data isn't actually loaded for a cube until you request the cube's data via this property (either directly or indirectly). After you've accessed the data once, it is stored on the cube and thus wont be loaded again.</p>
+<p>To access a cube's data array the <strong><code>data</code></strong> property exists, this is either a numpy array or in some cases a numpy masked array. It is very important to note that for most of the supported filetypes in Iris, the data isn't actually loaded for a cube until you request the cube's data via this property (either directly or indirectly). After you've accessed the data once, it is stored on the cube and thus wont be loaded again.</p>
 <p>To find the shape of a cube's data it is possible to do <code>cube.data.shape</code> or <code>cube.data.ndim</code>, but this will trigger any unloaded data to be loaded, therefore <code>shape</code> and <code>ndim</code> are properties available directly on the cube which do not unncessecarily load data.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -2702,7 +2701,7 @@ mean: time (6 hour)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="coordinates">Coordinates</h2>
 <p>As we've seen, cubes need coordinate information to help us describe the underlying phenomenon. Typically a cube's coordinates are accessed with the <strong><code>coords</code></strong> or <strong><code>coord</code></strong> methods. The latter <em>must</em> return exactly one coordinate for the given parameter filters, where the former returns a list of matching coordinates, possibly of length 0.</p>
-<p>For example, to access the time coordinate, and print the first 4 cells:</p>
+<p>For example, to access the time coordinate, and print the first 4 times:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2745,7 +2744,7 @@ DimCoord([1860-06-01 00:00:00, 1861-06-01 00:00:00, 1862-06-01 00:00:00,
 <p>The coordinate interface is very similar to that of a cube. The attributes which exist on both cubes and coordinates are: <code>standard_name</code>, <code>long_name</code>, <code>var_name</code>, <code>units</code>, <code>attributes</code> and <code>shape</code>. Similarly, the <strong><code>name()</code></strong>, <strong><code>rename()</code></strong> and <strong><code>convert_units()</code></strong> methods also exist on a coordinate.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A coordinate does not have <code>data</code>, instead it has <code>points</code> and <code>bounds</code> (<code>bounds</code> may be <code>None</code>). We've already seen that time coordinates are currently represented as &quot;a number since an epoch&quot; in iris:</p>
+<p>A coordinate does not have <code>data</code>, instead it has <code>points</code> and <code>bounds</code> (<code>bounds</code> may be <code>None</code>). In Iris, time coordinates are currently represented as &quot;a number since an epoch&quot;:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2924,7 +2923,7 @@ None
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[6]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s">&#39;ensemble_00[34].pp&#39;</span><span class="p">)</span>
@@ -2958,7 +2957,7 @@ In&nbsp;[13]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[7]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">incomplete_cubes</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -2992,7 +2991,7 @@ In&nbsp;[14]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[8]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">incomplete_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -3055,14 +3054,14 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[16]:
+In&nbsp;[10]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">for</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">cubes</span><span class="p">:</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">cube</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="s">&#39;realization&#39;</span><span class="p">):</span>
         <span class="n">cube</span><span class="o">.</span><span class="n">add_aux_coord</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">DimCoord</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s">&#39;realization&#39;</span><span class="p">))</span>
 
-<span class="n">merged_cubes</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">merged_cubes</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">merged_cubes</span>
 </pre></div>
 
@@ -3089,7 +3088,7 @@ In&nbsp;[16]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[11]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">merged_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -3141,7 +3140,7 @@ surface_temperature / (K)           (time: 6; forecast_reference_time: 2; latitu
 <li>one of the cubes has a history attribute, but the other doesn't</li>
 <li>one of the cubes has bounds on the spatial coordinates, but the other doesn't</li>
 <li>the two cubes have different time coordinate units</li>
-<li>the two cubes have different data dtypes.</li>
+<li>the two cubes have different data dtypes</li>
 <li>the two cubes have different long names</li>
 <li>the two cubes have different shapes (the data must currently be loaded to correct this)</li>
 </ol>
@@ -3405,6 +3404,9 @@ In&nbsp;[23]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Note: the result of indexing a cube is <em>always</em> a copy.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="cube-aggregationcollapsing">Cube aggregation/collapsing</h2>
 <p>Many standard univariate aggregations exist in Iris (and it is relatively easy to create your own, if the one you want doesn't exist).</p>
 </div>
@@ -3506,7 +3508,7 @@ air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some of the aggregators accept <code>weights</code> as a keyword. The supplied weights must have the same shape as the cube (there is currently no broadcasting being done) and there is an iris utilitiy function to make this easier:</p>
+<p>Some of the aggregators accept <code>weights</code> as a keyword. The supplied weights must have the same shape as the cube (there is currently no broadcasting being done) and there is an iris utility function to make this easier:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -3744,11 +3746,12 @@ air_temperature / (K)               (latitude: 37; longitude: 49)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[207]:
+In&nbsp;[22]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">iris.plot</span> <span class="kn">as</span> <span class="nn">iplt</span>
 <span class="kn">import</span> <span class="nn">iris.quickplot</span> <span class="kn">as</span> <span class="nn">qplt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </pre></div>
 
 </div>
@@ -8423,6 +8426,492 @@ In&nbsp;[251]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="creating-extra-annotation-coordinates-for-statistical-convenience">Creating extra annotation coordinates for statistical convenience</h2>
+<p>Sometimes we want to be able categorise data before performing statistical operations on it. For example, &quot;daylight maximum&quot; and &quot;seasonal mean&quot; etc.</p>
+<p>The <code>iris.coord_categorisation</code> module provides convenience functions to add some common categorical coordinates, and provides a generalised function to allow each creation of custom categorisations.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[24]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">iris.coord_categorisation</span> <span class="kn">as</span> <span class="nn">coord_cat</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;ostia_monthly.nc&#39;</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;surface_temperature&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The cube loaded represents the monthly air_temperature from April 2006 through to October 2010. Let's add categorisation to this cube to identify the climatological season (i.e &quot;djf&quot;, &quot;mam&quot;, &quot;jja&quot; or &quot;son&quot;):</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[25]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">coord_cat</span><span class="o">.</span><span class="n">add_season</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;clim_season&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can now use the cube's <code>aggregated_by</code> method to &quot;group by and aggregate&quot; on the season, to produce the seasonal mean:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[41]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">seasonal_mean</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">aggregated_by</span><span class="p">(</span><span class="s">&#39;clim_season&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can take this further by extracting by our newly created coordinate, and producing a plot of the winter zonal mean:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[40]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">winter</span> <span class="o">=</span> <span class="n">seasonal_mean</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">clim_season</span><span class="o">=</span><span class="s">&#39;djf&#39;</span><span class="p">))</span>
+
+<span class="n">qplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">winter</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Winter zonal mean surface temperature at $\pm5^{\circ}$ latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYoAAAEbCAYAAADERMP2AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlYVGX7B/DvIIgiqKgIrqC4IMgqirvggiWJueSWvpSV
+man51pvLTysrU9TSNK3UV3PrdctUXHOD3HJDcQFTRFBQIBBB2WHm+f3xyMg2C8ycOWeG+3NdXDrb
+Ofc5M3PueXYZY4yBEEIIUcFM7AAIIYRIGyUKQgghalGiIIQQohYlCkIIIWpRoiCEEKIWJQpCCCFq
+UaIghBCiFiUKQgghaplkoujcuTNOnz4tdhgG5eTkhJMnT4odhmju3LkDLy8v1K9fH6tXrxY7HGJk
+9u/fj99++w3Pnj3T+Fxdvmv6vja99dZb+Oyzz/S2PVWMIlEsXrwYQ4YMKXNf+/btK71v165duHXr
+Fvr27avVtp2cnHDq1Cm9xSoWmUwGmUwmdhiiWbp0KQYMGIBnz55h2rRpBtmnqXx2AOkdixDxODs7
+w9LSEvb29tiyZYvy/rCwMPTv3x+jRo3Cvn37NG5H2+9aZcdQ+tqkj2M01PfeKBJFv379cP78eZTM
+NpKcnIzi4mJERUVBoVAo74uLi9M6QZSQyWSo7iwmxcXF1Xod0Z+S9+DBgwdwdXU16L51+ewYkjaf
+U6l9D6oTz5IlS9Q+PmfOHMTGxuLRo0f417/+Veaxkn3p86Kr6Rj09fkxyGeQGYGCggJmZWXFrl69
+yhhjbOfOneztt99m/fr1Y5GRkcr72rdvzxhjzNHRkZ04cUL5ekdHR/btt98yDw8P1qBBAzZmzBiW
+n5/PJkyYwMzMzFjdunWZtbU1W7ZsGWOMsUePHrERI0YwOzs71qZNG7Zq1aoy21qyZAlzd3dnderU
+YXK5vEysO3bsYNbW1sq/2rVrM39/f8YYYzExMaxfv36sYcOGzM3NjYWFhZV5rao4GWNs8eLFzNnZ
+mdnY2DBXV1e2d+/eMq91cnJiJ0+erPT8OTo6smXLljF3d3dmbW3NJk2axFJSUtgrr7zC6tevzwYO
+HMiePn2qfL6641cXh7r4KxMaGspatGjBbGxsWMeOHdmpU6cYY4zJZDIWFxenfF5ISAibP39+hffA
+w8ODWVpasv79+7NatWqxOnXqMBsbG3b37l21cT58+JANHz6c2dnZscaNG7Np06ZpdeylVfezU5X3
+wdHRkS1evJi5uroyW1tb9vbbbyvPp6Y4y39Oi4uLVZ4TVcei7n2o7Hug7bljTP3nSFU8mixYsEDt
+45s2bVL52N69e9muXbvKnH9VSn/XqnpOS65N1TnnjDF29epV5u3tzWxsbNiYMWPY2LFjlY9X5fxX
+lVEkCsYYCwgIYCtWrGCMMfbhhx+yjRs3snnz5pW575133mGMVbxoOjk5MT8/P5acnMwyMjJYp06d
+2M8//1zpc+VyOfPx8WFff/01KyoqYvfv32dt27Zlf/zxB2OMv9He3t4sKSlJ7UWQMcaePXvGOnXq
+xNatW8cKCwuZs7MzW7x4MSsqKmKnTp1iNjY27M6dO1rFuXv3bpacnMwY40mxXr16ytuVHUdpTk5O
+rEePHuyff/5hjx49Yk2bNmXe3t4sKiqK5efns/79+7Mvv/xSq+OvLI6UlBSN8Zf3999/s1atWim3
+9eDBA+UXpPyX5a233mKfffaZ8nZl74G/vz/bsGGD8jmq4iwuLmYeHh7s448/Zrm5uSw/P5+dPXtW
+q2Ov7LxW9bOj7ftQ8nx3d3eWlJTEMjIyWK9evdj8+fOZQqHQGGdl50jTe1f+86PufSi//aqeO10+
+z6poShQffvghW7t2LVu2bBnbv39/lbZdWunYqnpOS99X1XNeUFDAWrduzb7//ntWXFzMfvvtN2Zh
+YcE+++wzrT4TujCKqieAVz+VNAKdPXsWffv2RZ8+fZT3nTlzBv369VP5+hkzZsDBwQG2trYYOnQo
+oqKiKn3e5cuXkZ6ejvnz58Pc3Bxt2rTBu+++ix07dgDgxcUZM2agRYsWsLS0VLk/hUKBcePGISAg
+AO+99x4uXLiAnJwczJkzB+bm5ggICMBrr72G7du3axXnqFGj4ODgAAAYPXo02rdvj0uXLml59oDp
+06fDzs4OzZs3R58+fdCjRw94enrC0tISw4cPx7Vr17Q6fk1xaHuea9WqhYKCAkRHR6OoqAitW7dG
+27ZtVcbPShWvVb0HpZ9TWZwXL17EpUuXkJycjGXLlqFu3bqwtLREr169tDp2TbT57Gj7PpQ8f9q0
+aWjRogVsbW0xb948bN++Xas4KztHun6GSiu//aqeO33EEhcXhyVLlij/zp49W+Z2REREmecPGDAA
+kydPxn/+8x98/vnnyMzMrNax6/s4NCn5XF+4cAHFxcX46KOPUKtWLYwcORJdu3YFAFy6dEmnz64m
+5nrZigH07dsXa9aswdOnT5GWlgZnZ2fY2dkhJCQET58+RXR0tNr2iZI3EwDq1q2L5OTkSp/34MED
+PH78GLa2tsr75HJ5mW23atVKY7zz5s1DTk4OVq1aBQB4/Phxhdc5Ojri0aNHauN8/PgxAGDLli1Y
+sWIFEhISAADZ2dl48uSJxjhK2Nvbl9lu6dt16tRBdnY2AM3HX1kc6enpGuMvr127dvj++++xYMEC
+REdHY/DgwVi+fDmaNWum1fFU9h6Url9WFWdBQQEcHR1hZlbxN5I277062rxe2/ehsuNs3bo1Hj9+
+rHWc5c+Rpveuqkpvv6rnTtfPM8Abp2fPnq28nZ+fX+Z2ecOGDVP+39bWFhEREXj99dertM/y9H1O
+K1PyuX78+DFatGhR5jFHR0cwxvDw4UOdPruaGE2i6N69O7KysrB+/XrlL8D69eujefPmWLduHZo3
+bw5HR8cqb7d841Xr1q3Rpk0b3L17V+vXlLdjxw7s3LkTly9fRq1atQAAzZs3R2JiIhhjytc/ePAA
+Li4uavcjk8nw8OFDvPfeewgPD0ePHj0gk8ng7e2tUyOWqte2atVK5fE/ePAAkydPxqlTp7SKQ9N5
+GjduHMaNG4fnz5/j/fffx+zZs7FlyxZYWVkhNzdX+bzk5OQKFz1121YVZ8nxPXz4EHK5XPnelNDm
+vVcXQ1VfD2huiHz48GGZ/zdv3lzte6QqPk3vXWXnU9P7UPo1VTl2bT5H+u7Js23bNoSFhWHXrl0A
+gJycHJib63b5q845La2q57xZs2YVflg+ePAA7dq10/ozUV1GU/VUt25d+Pr6Yvny5WWyZO/evbF8
++XK11U6VKXkz7e3tERcXp7y/W7dusLGxwdKlS5GXlwe5XI5bt27hypUrWm332rVrmD59Ovbu3YvG
+jRsr7+/evTusrKywdOlSFBUVISIiAgcPHsTYsWPVxsgYQ05ODszMzNCkSRMoFAr88ssvuHXrVpWO
+V1vqjj8nJwcymUzrONRdBO/evYtTp06hoKAAlpaWqFOnjvLC7eXlhV9//RVyuRxHjx7Vut95yf7U
+xdmtWzc0a9YMc+bMQW5uLvLz83H+/HmNx14ZfX92KjueH3/8EY8ePUJGRga++eYbjB07tlr70fTe
+lT8WoGrvQ1Vi0uZzVFk8unBycsKUKVMAALm5uUhLS0P//v112mZ1zmlpVT3nPXr0gLm5OVatWoWi
+oiL8/vvvuHz5MgD9f/bKM5pEAfB2irS0NPTu3Vt5X58+fZCenl6lIlbpvsdz587FwoULYWtri+XL
+l8PMzAwHDx5EVFQU2rZtCzs7O0yePFmrgTgA75OdmZmJ3r17w8bGBjY2NggKCoKFhQUOHDiAI0eO
+wM7ODtOmTcPWrVvRoUMHjXF26tQJn3zyCXr06AEHBwfcunWrzDmojtK/Zkqfj1q1aqk8fldX1yrF
+oa6Pd0FBAebOnQs7Ozs0a9YM6enpWLx4MQBg5cqVOHDgAGxtbfG///0Pw4cPr9IxqYvTzMwMBw4c
+wL1799C6dWu0atVK+Suzqu+9Pj47qt6Hktvjx49HYGAgnJ2d0b59e8yfP79a+9H03pU/FqBq70NV
+YtLmc1RZPOXduXMHX375pfIvIiKizO1jx44pn9u7d28kJyfj+++/x7x587Bjxw5YWVmpPB5tVOec
+ajpGdee8du3a+P3337Fp0yY0btwYu3btwsiRIwFod/6HDBmC0NDQah2rjOlSf6FGfn4++vXrh4KC
+AhQWFmLYsGFYvHgxMjIyMGbMGDx48ABOTk7YtWsXGjZsiEuXLuH9998HwOvW5s2bhzFjxggRGiFG
+oU2bNtiwYYPOv3wJ0ZVgiQLgRTwrKysUFxejd+/e+PbbbxEWFoYmTZpg1qxZWLJkCZ4+fYrQ0FDk
+5eXB0tISZmZmSElJQefOnZGamlqhHpmQmoISBZEKQaueSop2hYWFkMvlsLW1RVhYGEJCQgAAISEh
+yiHzdevWVfZEycvLQ4MGDShJEEKIBAiaKBQKBby8vGBvb4+AgAC4ubkhNTVV2SXQ3t4eqampyudf
+unQJbm5ucHNzU1kvSUhNER8fT6UJIgmCJgozMzNERUUhKSkJp0+fRnh4eJnHyzfedevWDdHR0bh6
+9So++ugjZGVlCRkeIYQQLRhkHEWDBg0QFBSEyMhI2NvbIyUlBQ4ODkhOTkbTpk0rPN/FxQXOzs64
+d+8eunTpUuaxdu3a6bXbHCGE1AQl19TqEKxEkZ6erhwin5eXh+PHj8Pb2xvBwcHYvHkzAGDz5s3K
+kZEJCQllZgKNjY1F+/btK2w3Li5OOb5Ayn9ffPGF6DGYSpzGECPFSXFK/U+XH9iClSiSk5MREhIC
+hUIBhUKBiRMnYsCAAfD29sbo0aOxYcMGZfdYgM/fFBoaCgsLC1hYWGDdunWoX7++UOERQgjRkmCJ
+wt3dHVevXq1wf6NGjXDixIkK90+YMAETJkwQKhxCCCHVZFQjs42Jv7+/2CFoxRjiNIYYAYpT3yhO
+6RB0wJ0QjGVVMUIIkRJdrp1UoiCEEKIWJQpCCCFqUaIgkqZQAFOmAEOHAjk5YkdDSM1EiYJI2vnz
+QEQEIJMBK1eKHQ0hNRM1ZhNJmz+flyrGjgUCA4HwcKBTJ7GjIsT4UGM2MUkKBbB3L/DKK4CHB/DV
+V8BrrwEFBWJHRkjNQomCSNbu3UC9ekCfPvz25MmAmxvw7rvAi9leCCEGQImCSFJxMfDZZ8CiRbx9
+osT27UBSEr+fEGIY1EZBJGnPHuD774HTp8smCgBITAQ8Pfm/9eqJEx8hxobaKIjJ2biRVzWVTxIA
+0KoV0Ls3r5oihAiPShREcgoKgEaNgNRUwNq68ueEhQFLlwJnzxo2NkKMFZUoiEmJigLat1edJABg
+yBDg/n3g9m3DxUVITUWJgkjOxYuAn5/655ibAyEhvIqKECIsShREZ8+eAevX62972iQKAJg0Cdiy
+BSgs1N++CSEVUaIgOvvmG97wrK+lzLVNFO3b81HaBw/qZ7+EkMpRoiA6KSwE1q0DRo1SXarIyuJd
+WbWRng6kpQEuLto9PySEj60ghAiHEgXRSUQE/1W/bBlPFI8fV3zO/PlA27Y8oWjy119A165ArVra
+7X/IEODECaCoqEphE0KqgBIF0cnJk3wuJicnPrXG55+XfVwu5+MdDh7kCeP6dZ5Mtm6tfHtHjwKD
+Bmm/f3t7XgVF3WQJEQ4lCqKThw8BZ2f+/7lzeTVQbu7Lx//8E2jRAhg8GPjyS2DOHD41x6RJwIED
+ZbfFGHD4MC8lVEVQEHDokG7HQQhRjRIF0UlSEh8pDQANG/JqqKgofnvqVGDAAD5FOMDbEy5d4slg
+3ryKF/c7d/gcT507Vy0GShSECIsSBdFJYiLQsuXL276+wJUr/P+nTwPNmwPjx/PbVla8LWPPHr62
+RMnzShw+DLz6auXTdqjj4wNkZwMxMdU/DkKIapQoSLUpFEByMq9aKuHry7u3FhQA8fHA3btlH580
+CejZE/Dy4hf2krUl5HI+JmLYsKrHYWYGvPEGsGOHbsdDCKkcJYoaRC4H1q4FHj3Sz/b++YdXN1la
+vrzvlVeAI0d4sujYUfXsrlZWPFmcPMnndHrrLaBBg6q3T5SYNIkf2/Pn1Xs9IUQ1ShQ1yL//DSxc
+CLz5Jk8auipf7QTw266uwNdfA927q3/9m2/yLrM9ewJ2dnyiv6pWO5Xo3JknmY8+qt7rCSGqUaKo
+Ic6c4W0DJQ3NK1bovs3SDdmljR7NxzZokyji4njJYvlyXqLQxQ8/AH/8QW0VhOgbJYoaYvp0YNUq
+oHFjYPFi1eMYqqKyEgXAR2nLZJqn4WjYEIiMBH79VfdYAD7b7PDhvGRCCNEfShQ1QGwsb08YPpzf
+7toVePCAT5Whi6SkyhNF8+Z8hHWHDpq3Ubs2UKeObnGUFhxMiYIQfaNEUQPs3w8MHcp7BwF8iu6+
+fYHjx3XbrqqqJ4CXJqrb3qALf3++RkVqquH3TYipokRh4uRy4OefgX/9q+z9o0cD27bptm1VVU9i
+ql2bj9GgGWUJ0R9KFCZu716gaVOgV6+y948YAZw7Bzx5Ur3tZmbyhmhVJQoxDRtG1U+E6BMlChOW
+l8cbrj/9tOJjVla8V9KZM1Xfbno679IaHMwnA5SaV18FwsOBp0/FjoQQ00CJwkQxxnsfdejAL+iV
+8ffnk/ZV1Zw5QP/+vErLTIKfIFtb4P33gdde4+eBEKIbCX7Nia6ys3njdXo6nxZD1doO3btXnG9J
+k5QUPh5j4ULd4xTSkiX8+M+dEzsSQowfJQoTI5fzdSFsbXlpwcJC9XNbtap8oSF1Dhzg03Q0bKhb
+nEIzM+Oz165ZI3YkhBg/wRJFfn4+/Pz84OXlBVdXV8ydOxcAkJGRgUGDBqFDhw4IDAxEZmYmAOD4
+8ePw9fWFh4cHfH19ER4eLlRoJu3TT3nX0LVrNY9PaN6cJ4qqVM8cPKi6KktqQkL4QkgpKWJHQohx
+kzEmXC1ubm4urKysUFxcjN69e+Pbb79FWFgYmjRpglmzZmHJkiV4+vQpQkNDERUVBQcHBzg4OCA6
+OhqDBw9GUlJSxYBlMggYslHbvRuYPZuPdra11e41tra891KjRto9v2VL3gDepk314zSkiRN5w/sH
+H4gdCSHi0uXaKWjVk5WVFQCgsLAQcrkctra2CAsLQ0hICAAgJCQE+/btAwB4eXnBwcEBAODq6oq8
+vDwU0ULIWrtzh1e1/Pab9kkCeFmq0EZ6Om//kGJPJ1WGDq24kh4hpGoETRQKhQJeXl6wt7dHQEAA
+3NzckJqaCnt7ewCAvb09UisZQrtnzx506dIFFuoq2IkSY8DkycAXX/BFfKqiRQvtpx2/fh3w8BBn
+xHV1DR7MS0DZ2WJHQojxMhdy42ZmZoiKikJWVhYGDx5cod1BJpNBVu6qEx0djTlz5uC4mvklFixY
+oPy/v78//P399Rm20dmyBcjKql71SlVKFDduAO7uVd+HmBo04L27jh9/OdcVITVBREQEIiIi9LIt
+QRNFiQYNGiAoKAiRkZGwt7dHSkoKHBwckJycjKZNmyqfl5SUhBEjRmDr1q1oo6YSvHSiqOnu3gX+
+8x/g1CnV3WDVadKEVylpuy9X16rvQ2zDhvHZcilRkJqk/I/oL7/8strbEqzqKT09XdmjKS8vD8eP
+H4e3tzeCg4OxefNmAMDmzZvx+uuvAwAyMzMRFBSEJUuWoEePHkKFZVIKC/l61AsWVP+XvrU1kJOj
+3XPv3OGr1hmbSZOAW7d41ZxCIXY0hBgfwRJFcnIy+vfvDy8vL/j5+WHo0KEYMGCAslqpQ4cOOHXq
+FObMmQMAWL16NeLi4vDll1/C29sb3t7eSNf2p24NpFAA77zDx0JMnVr97dSrp339/d27xpkorKx4
+iev4cWD+fLGjIcT4CNo9Vgg1uXtsYSFveHZ0BGbOBK5d4yu6vehcVi0//cTbHn76Sf3zsrP55ILZ
+2dKctkMb//wDuLjw8+boKHY0hBiWZLvHEv3JzuZzM3XvzkdFnznDu33qkiQAXvWkTYni8GE+HsFY
+kwTAE93UqXyuKkKI9oz4a28a5HK+drSnJ9C+Pf+l2707MGsWUFDAnxMby2dEdXXlo4zj4oCLF/Uz
+jYa2VU+bNlVc08IY/d//ARcuAHrqDEJIjWCQXk9EtYMHeSPxL7/wi3ZhIa8iWb2az9m0dSv/Fdy7
+N5+ITyYD7Oz0t39tShQ3b/Lqmt9+099+xWJlxScM/Phj4PLl6vUUI6SmqVYbBWOswvgHQzGlNor8
+fL5k6Lx5fMW50rKzAWdnYMcOvsjQ48dA3br6j+H8ed699vx51c/56COgcWPg88/1v38xMMYXcgoM
+5MdkzNVphGhLkDaKki6s5RUVFWH8+PHV2hkpa/VqPh3GG29UfMzaGvjkEz4B39ixwiQJQLuqpxMn
+gCFDhNm/GGQyXlL7/Xf+LyFEPZWJ4vvvv8fatWvL3JednY2goCDUFeqqVYPI5TxRzJ+vekqMqVP5
+AkFffSVcHJqqnpKT+Z+3t3AxiMHZGfj+e2DRIv5eEEJUU5koTp48if/+979YuXIlACAtLQ0BAQHw
+8fHBxo0bDRagqTp8GHBwALp2Vf0ca2tg/379tklUtg91A+5+/503pJtiXX5AAB+ZvmuX2JEQIm1q
+2yiysrIwZMgQ9OnTB/v27cOUKVMwc+ZMQ8ZXgam0UQQF8XaJFxPpiiY7G7C3V50sevYEPvuMJwtT
+dPQob6O5cYPaKohp0+XaqTJR7NmzBzKZDM+fP8fHH3+M/v37Y+zYscodjhgxovoR68AUEkVCAuDr
+CyQmCtf2oC2FAjA3B4qKKpYaSpLI06dA7drixCc0xvh78c03fOU+QkyVLtdOld1jDxw4oOzZNHTo
+UMhkMhw8eFD5uFiJwhSsX88X1BE7SQD8V7SVFZCbC9jYlH3syhU+vsNUkwTA24eGDeNTfFCiIKRy
+KhPFpk2bDBhGzVFYCGzYIK0BX/Xq8aqn8oniwgU++M/U9e1Lo7UJUYdqZQ3s9GneJdbFRexIXrKx
+AZ49q3h/ZCSvljF1fn7A7dvaT7dOSE1DicLAjhzhDdlS0rAh8GJG+DJu3OBVT6aubl1e/bRli9iR
+ECJNKhPFY22XPZOI/HzeMCl1x4/zEcFSYmvLG6xLy83lje0dOogTk6FNmkSD7whRRWWieOedd+Dn
+54c5c+YgIiICxcXFhoyrShgD+vQBtm8XOxL1cnOBe/ekN3itskQRHc3Xnqgpy5b36cOnSbl/X+xI
+CJEelYniyJEjiIiIQL9+/bB37150794dw4cPx7p16/Dw4UNDxqjR8eNAVBQfnCZlN27wGWCl1ouo
+skRx5gyvu68patXi1U9794odCSHSo7aNom7dunj11VexcuVKXLlyBd999x2Kioowbdo0dOvWzVAx
+avTrr8Cnn/KEIeGCD65eBXx8xI6iosoSxbFjwODB4sQjlhEj+Eh0QkhZ1V7hrqCgAJaWlvqOR6Py
+g0by84EWLfiv9aAgPn9S794GD0sr777LexFNmSJ2JGUtWcJ7/Cxbxm8zxrvMPn6snzUvjEVhIZ9W
+JToaaNZM7GgI0S9RVrgTI0lU5ssv+cR5LVrwaSaOHBE7ItWMpUTx7BkfrV2TkgTAqwSDgqj6iZDy
+jLp7bGYm8PPPwIt5CzFqFLB5s/pJ7sRSUAD8/Tfg7i52JBXZ2pbtHvvkCdCokXjxiImqnwipSKtE
+kZubizt37ggdS5Vt2MDr0Zs357e7dOEL0qxfL25clYmOBtq1k8a0HeWVL1FkZNTcRDF4MF/57skT
+sSMhRDo0JoqwsDB4e3tj8IuWzWvXriE4OFjwwDR5+pTXrX/2Wdn7Q0Kk+YtQqtVOAE8UGRkvb2dk
+8BXtaiIrK2DgQCAsTOxICJEOjYliwYIFuHjxImxtbQEA3t7euC+Bzubr1vFJ3Nzcyt7fvz9w6xbw
+xRd8wJhUSDlRNGsGpKS8vF2Tq54AYORIaf7YIEQsGhOFhYUFGpZr1TQTeeL+3Fzghx+AypbGqFMH
+OHeO/yr28gIGDOBVUWJXJUg5UTg48PNVUMBv1+QSBcAbtP/8E3j+XOxICJEGjVd8Nzc3/Prrrygu
+LkZsbCymT5+Onj17GiI2lVav5rOaqrrwdurEE0lSEvDhh3zN57Zt+brPGzcaPmkUFPBSjlTnTTIz
+473GkpL47ZrcRgEADRrwLtaHD4sdCSHSoDFRrF69GtHR0bC0tMS4ceNQv359fP/994aITaX//pcP
+sNOkbl3ei2XnTuDRI74GxJ49wBtvCB9jaZcv89liy0/jLSWtWgElA+6fPKnZJQqAVz/t2SN2FIRI
+g8r1KACguLgYQUFBCA8Px6JFiwwVk0YKBVDVgeHW1sC4cfxXvaHXXDpzhs8lJGWtW79MFBkZ0puP
+ytCGDeNLpFLSJERDicLc3BxmZmbIrGwOahFNmMBXJquOBg0qX3tBSMaSKB484KOyr10DnJ3Fjkhc
+TZrwZCHFrtaEGJraEgUA1KtXD+7u7hg0aBDq1asHgA8FX7VqleDBqfLmm9V/bf36QFaW/mLRRC4H
+zp/nAwGlrFMn4MABvvxpbi4gcjOUJHz0ERAcDHzySc2ZRdeYZGfzf62txY2jJtCYKEaMGFFhfWxZ
+dX/O60n79tV/rbU1nx+qqMgwX/4bN3j3Uzs74felCy8v4KuveGP/22/zBu6aztsbcHTk08JIYOgQ
+KYUx3taYl8fXO6fPq7A0Joq33nrLAGEYjkzGSxXPnxumZ8+FC8bx69zFBYiNBRISgLg4saORjjFj
+gH37KFFIzfXrfEqcevV41W6/fmJHZNo0Joo2bdpUuE8mk0li0F11lVQ/GSJRREbyqUWkztwcaNOG
+9/Zp1UrsaKQjOJiXtIqL+Tki0nD3Lv9etWwJXLxIiUJoGj/6ly9fVv4/Pz8fv/32G56IPXpNR4Zs
+0I6MBN57zzD70pUR537BODryxHn+PNC3r9jRkBL37/OxUV5e0h5Ff+0a72lp7FVjGsNv0qSJ8q9l
+y5aYOXMmDh06ZIjYBNOggWEatPPzgTt3AA8P4fdFhPP667z6iUhHSaLo1g24dEnsaCqXkMCnGarm
+EhCSorHC4JTnAAAgAElEQVREERkZqWy8VigUuHLlCuRyueCBCclQPZ9u3uQN71KcMZZoLzAQmDpV
+7ChIaffv82UFnJ1576fkZOktNnXgAJ8NolYtsSPRncZE8cknnygThbm5OZycnLBr1y6NG87Pz0e/
+fv1QUFCAwsJCDBs2DIsXL0ZGRgbGjBmDBw8eKLfVsGFDZGRkYOTIkbhy5Qreeust/PDDD7ofnQqG
+qnq6csU42ieIet7evGSYnU1dMaWipEQhk/FSxeXL0upwwBhfonn2bLEj0Q+NiWLjxo1o27Ztmfvi
+4+M1brhOnToIDw+HlZUViouL0bt3b5w9exZhYWEYNGgQZs2ahSVLliA0NBShoaGoU6cOFi5ciFu3
+buHWrVvVPyItGKrqyVgasol6lpa8nvnyZSAgQOxoSFERn5KndWt+28+PtyGVJAq5nFdHubnx2gMx
+rFnD45BS8tKFxjaKUaNGaXVfZaysrAAAhYWFkMvlsLW1RVhYGEJCQgAAISEh2Pei8tfKygq9evUy
+yBKr9esbpkRx86Z0JwIkVTNgAE0SKBWJibyaqXZtfnv0aD7+p2RNldGj+RiL4GA+3Y+hXbgALFwI
+bN9uGtVOgJoSxe3btxETE4PMzEz8/vvvYIxBJpPh2bNnyM/P12rjCoUCPj4+iIuLwwcffAA3Nzek
+pqbC3t4eAGBvb4/U1NQyrzHEYL46dXhDs5AY4/28O3USdj/EMEaPBl57jS+WZew9WIxdSbVTCTc3
+3l7x5Zd8sOjly3wsUM+ePLm/9prhYmOMj+j/7ju+oqWpUJko7t69iwMHDiArKwsHDhxQ3m9jY4P1
+Wk6AY2ZmhqioKGRlZWHw4MEIDw8v87hMJhNllLelpfAlipQU/ouHJpQzDZ07889NVJR01xWpKcon
+CoAnCTc3Pp1/SAh/ryZPBrZuNWyiiIwE0tL4BKSmRGWiGDZsGIYNG4bz58/rvP5EgwYNEBQUhMjI
+SNjb2yMlJQUODg5ITk5G06ZNq7y9BQsWKP/v7+8Pf3//Kr3e0vLlIj1CodKEaZHJ+IJGhw9TohDb
+vXsVE4WdHbBiBV+C4D//4feNHs0bkzMzgXJrrwlm0yZg0iRplDojIiIQERGhl23JGFPfyzcvLw8b
+NmxATEwM8vLylCWAjRs3qt1weno6zM3N0bBhQ+Tl5WHw4MH44osv8Mcff6Bx48aYPXs2QkNDkZmZ
+idDQUOXrNm3ahMjISJW9nmQyGTSErNHq1UBMDPDjjzptRq2ffuKr2tHso6bj+HG+xO7582JHUnMV
+F/MqnV27tFtq4I03gEGDeOlCaAoFb2A/eRLo2FH4/VWVLtdOjXlv4sSJSE1NxdGjR+Hv74/ExERY
+a9FHMDk5Gf3794eXlxf8/PwwdOhQDBgwAHPmzMHx48fRoUMHnDp1CnPmzFG+xsnJCZ988gk2bdqE
+1q1b4++//67WQWliiBLF9es00M7U9O3LqzbS08WOpOb6/Xc+Ul7b9Wj+9S9gyxZhYypx9SrvPi3F
+JKErjSUKLy8vREVFwcPDAzdu3EBRURF69+6NixcvGirGMvRRoti6FfjjD2DbNj0FVYkePXjDJ037
+YFqGDeMTBY4fL3YkNQ9jfAnkuXP5aHltFBXxZX7Pnxe+cXnJEt5tV8QVGNQStERR+0UftAYNGuDm
+zZvIzMxEWlpatXYmFUKXKBQK3jWWShSmp18/4K+/xI6iZjp3jq84OHSo9q+xsODr1/zyi3BxlTh1
+CujfX/j9iEFjopg8eTIyMjKwcOFCBAcHw9XVFbNmzTJEbIIROlHcv897OxmqAY0Yjo8Pr2Ighvfj
+j7zraVXHJrz7Lk8UQnaJP3eOfy5MdRZbtSOzFQoFbGxs0KhRI/Tr10+rEdnGQOhEcf06DbQzVV5e
+fDEqudx0BlMZA8aAP//kA9mqys2Nj95etQoQ4jcuY3wusJ9/Bmxt9b99KVBbojAzM8PSpUsNFYvB
+UKIg1dWwIdC0KV/kiRjOw4c8OVeyPI5WZs/mbZP6VlTEk5dcDpRbCNSkaKx6GjRoEL799lskJiYi
+IyND+WfMKFEQXVD1k+H99RcfaV3d8blduwKPH/M/fRo5Ejh7FggLq35sxkDjpIA7duyATCbDmjVr
+ytxvzNVQQiaK4mLew0KqPR+I7ry9eaKgnk+Gc/4870lYXbVq8fEUe/cCH36on5iio/l0IQkJ/Jpi
+yjQmioSEBAOEYVhCJoozZ/igG0dHYbZPxOfjAyxbJnYUNcv588DKlbptY/p0YOJE4P339bOs7Wef
+ATNmmH6SALSoesrJycHXX3+N916s5xkbG4uDBw8KHpiQhEwUu3bxCcqI6SopUZjCymXGICcHuH1b
+9yn7e/Xig/W2b9c9puPHeRXzv/+t+7aMgcZE8fbbb6N27do4/2LegubNm2PevHmCByYkoRJFQQGw
+ezdVSZg6e3vAyopXORDhXb7MxyTVqaP7tj77DPjqK92+/3I5MHMmsHy5fmIyBhoTRVxcHGbPnq0c
+eFevXj3BgxKaUIni0CE+yyhVO5k+Hx/g2jWxozA9CxbwEtvDhy/vK2nI1oeBAwFXV95Ntrolwp07
+eTdYU1mUSBsaE4WlpSXy8vKUt+Pi4gyyuJCQhEoUW7fyuWWI6aOeT8L46y/+/Rw4kPdQYgw4cUK3
+huzyfvmFj8mYP796yeKXX3iJwpR7OZWnsUlnwYIFeOWVV5CUlITx48fj3Llz2LRpkwFCE44QieL5
+cz5rpJGfGqIlb29g3TqxozA9RUXAN9/wJOzjw6ucnj4FXn1Vf/to1Ii3MQQEAHl5QGjoy9XyNPnn
+H14Vtn+//uIxBhonBQT4lOEXL14EYwzdu3dHkyZNDBFbpfQxKaBCwbvLKRT6+1Xw2298SvE//tDP
+9oi0PXzIR/smJ4sdiWnp1g344Qd+bm/d4nOmDRnC17nXt7Q0viJeejr/3mqzj8WL+WBLDassSJIu
+106NJQrGGP7880+cPXsWMpkMRUVFGD58eLV2JhVmZrx7XGGh/rq2HT1q2JW0iLhateK/fpOT+frN
+RD9ycvhU3QBv7+vcWbh92dkBBw7wcRWjRvFFqSwsVD//2TOexI4cES4mqdLYRjF16lSsXbsWHh4e
+6Ny5M9auXYupU6caIjZB6bv66epV7efIJ8ZPJgN8fYELF8SOxLRkZ79MFIYgk/HBsXXq8MWNFIrK
+n1eyFnZQUM2cdUFj1ZOLiwtiYmJg9mJtP4VCAVdXV8EWFdJEH1VPAJ/d9e+/+a8KXRUW8jmA0tN5
+t0lSMyxdyqugVq8WOxLT0bgxcPeu4deaz8kBAgOBevWAefMqzgK7dSt/v//6y7CJTJ8EXY+iXbt2
+eFiqr9rDhw/RTugVQAygTh39lShu3wacnChJ1DSDBvFGUaI/2dn8Ym1o9eoBx47xKqg33uCLUx06
+xEsYv/4KfPwxb5cw1iShK42J4tmzZ+jUqRP69esHf39/uLq64vnz5xg6dCiCjbgjsT6rnqKieC8Y
+UrN4egIZGWX7/JPqKyrig9nE6n1frx6vfvr7b8Dfn6+P7ugIfP45cPAgn1iwptLYmP3VV1+pfExm
+xB2J9Zkorl3j6xSQmsXMDBgwgPfznzRJ7GiMX0lDttiXlUaNgA8+AKZM4RP/tWkjTilHSjQmCn9/
+fwC8ZFFcXKy8v1GjRoIFZQh16/I+1PoQFUU9nmqqwEA+xTQlCt0ZuiFbE5lM2F5XxkRj1dPatWvh
+4OAAd3d3dOnSBV26dIGvr68hYhNUvXpAbm71XqtQAHFxvCeEQsETRU3sCUGA0aP5Mpj37okdifGT
+WqIgL2lMFMuWLcOtW7fw4MEDxMfHIz4+Hvfv3zdEbIKysqp+ovjuO6BdO2DPHj4gyN5eP72niPGx
+tuZTV2/bJnYkxq/0GAoiLRoTRdu2bVG3bl1DxGJQVlb8g1kdFy8Cw4bxxd5PnOD11KTmev31mjel
+gxDE6vFENNPYRhEaGooePXqgR48eyhlkZTIZVhn5Em66lChiYoAtW/gauStXUj/6mq5nTyApifd+
+at1a7GiMF1U9SZfGRDF58mQMHDgQ7u7uMDMzA2PMqHs7lahOG0VWFu/pEh8PuLvzycTCw4GhQ4WJ
+kRgHc3M+YjcsDJg2TexojBeVKKRLY6KQy+VYvny5IWIxqKpWPSUl8YnKGjcG2rbl3WvHj6dFighX
+UhVJiaL6Cgp4b0QiPRrbKF599VWsXbsWycnJyMjIUP4Zu6pWPV28yEsRXl58OD8hpQUG8s9IZqbY
+kRivwkLtp/smhqWxRPG///0PMpkMoaGhZe6Pj48XLChDqGrVU1oar3+mNQhIZerV4/MDHTkCjBsn
+djTGiRKFdGlMFAkmujCwlRW/+GsrPZ26wBL1goN57ydKFNVDiUK6NFY95eTk4Ouvv8Z7770HAIiN
+jcXBgwcFD0xoVa16SksDRFyviRiBoUP5AjiFhWJHYpwoUUiXxkTx9ttvo3bt2jh//jwAoHnz5pg3
+b57ggQmtqlVPVKIgmjg4AC4uQESE2JEYJ0oU0qUxUcTFxWH27NnKMRT1TKT/WlV7PVGJgmhj2DAa
+fFddlCikS2OisLS0RF6p2fPi4uJgKdY8wHpU1aonKlEQbYwaBezaBURGih2J8SkooEQhVRoTxYIF
+C/DKK68gKSkJ48ePR//+/bFkyRJDxCao6vR6ohIF0aRdO2DZMmD6dD5pJNEelSikS2Ovp8DAQPj4
++ODCi8WBV65cCTsT+GldlaonxqhEQbQ3cSKwcCFw9izQp4/Y0RgPShTSpbFEMWDAADRp0gSvvfYa
+XnvtNdjZ2WGACcyCV5Wqp2fP+DQNtNQp0UatWsCsWXyKF6I9ShTSpTJR5OXl4cmTJ0hLSyszIjsh
+IQGPHj3SuOH8/Hz4+fnBy8sLrq6umDt3LgAgIyMDgwYNQocOHRAYGIjMUkNZFy9ejPbt28PFxQXH
+jh3Tw+GpVpWqp9RU3qOFEG396198pPaDB2JHYjwoUUiXykSxdu1a+Pr64s6dO8oFi7p06YLg4GBM
+02JCmzp16iA8PBxRUVG4ceMGwsPDcfbsWYSGhmLQoEG4e/cuBgwYoBzxHRMTg507dyImJgZHjx7F
+1KlToVAo9Hek5VSlRJGSQomCVE2dOsAbbwC//ip2JMaDEoV0qUwUM2fORHx8PJYtW6ZcsCg+Ph43
+btzQKlEAgNWLuprCwkLI5XLY2toiLCwMISEhAICQkBDs27cPALB//36MGzcOFhYWcHJyQrt27XDp
+0iVdj09NbNq3UVCiINUxZgzw4uNNtECJQro0tlHMmDGj2htXKBTw8vKCvb09AgIC4ObmhtTUVNjb
+2wMA7O3tkZqaCgB4/PgxWrZsqXxty5Yttariqq46dXh3PG0KLZQoSHX06gXcvcurLolmlCikS2Oi
+0GnjZmaIiopCUlISTp8+jfDw8DKPy2QytWtbCLnuhZkZn9K41BARlVJT+XKnhFSFhQUQEACcOiV2
+JMaBEoV0aeweqw8NGjRAUFAQIiMjYW9vj5SUFDg4OCA5ORlNmzYFALRo0QKJiYnK1yQlJaFFixaV
+bm/BggXK//v7+8Pf379acZVUP2kabJ6SAvToUa1dkBrOzw+4coUmCtQGJQr9ioiIQIS+5pNhGsjl
+crZlyxb25ZdfMsYYe/DgAbt48aKml7G0tDT29OlTxhhjubm5rE+fPuzEiRPs008/ZaGhoYwxxhYv
+Xsxmz57NGGMsOjqaeXp6soKCAnb//n3Wtm1bplAoKmxXi5C11ro1Y/Hxmp83aBBjhw/rbbekBjl+
+nLG+fcWOwjj07MnY2bNiR2G6dLl2aixRTJ06FWZmZjh16hQ+//xzWFtbY+rUqbhy5Yra1yUnJyMk
+JAQKhQIKhQITJ07EgAED4O3tjdGjR2PDhg1wcnLCrl27AACurq4YPXo0XF1dYW5ujh9//FHwJVe1
+7SJ7/z7g7CxoKMRE+fgAV68CcjkfX0FUoxKFdMleZBqVvL29ce3aNeW/AODp6Ynr168bJMDyZDIZ
+NISsNV9f4KefgK5dVT+nuJgnlGfP+PKnhFSVszNw8CDQqZPYkUibpyewZQv/l+ifLtdOjY3ZtWvX
+hlwuV95OS0uDmZmgbeAGo81YisRE3uOJkgSpLl9fmiRQG1SikC6NV/zp06dj+PDh+Oeff/B///d/
+6NWrl3KUtbHTpuopLg5o29Yw8RDT5OvLG7SJeoWF9INMqjS2UUyYMAFdunTByZMnAfCBcZ1MpAyt
+zaC7Bw8AJyeDhENMVNeuwO+/ix2F9NE049KlMVFcuHABrq6uytHYz549w8WLF+Hn5yd4cELTpuop
+ORlo3tww8RDT1K0bcOMG/6zRxJKqUdWTdGmsepoyZQpsbGyUt+vVq4cpU6YIGpShaFP1lJxMo7KJ
+bqyseAPtxYtiRyJtlCikS6tW6dLdVGvVqlWmcduYaVOiSEkBmjUzTDzEdPXpA5w+LXYU0kaJQro0
+Joo2bdpg1apVKCoqQmFhIVauXIm2JtK6q00bRXIyJQqiuz59gDNnxI5C2ihRSJfGRPHzzz/j3Llz
+aNGiBVq2bIkLFy5g3bp1hohNcFT1RAylVy9e9VRUJHYk0iSX8wk6aVCiNGlszLa3t8fOnTsNEYvB
+WVnxqiVVGKOZY4l+2NoCrVsDt24B3t5iRyM9RUW8NCHwZAykmjQmiry8PGzYsAExMTHIz89X3r9x
+40ZBAzMETVVPWVl8BlBNkwYSog0fH+DaNUoUlaGusdKmsepp4sSJSE1NxdGjR9GvXz8kJibC2tra
+ELEJTlPVEzVkE33y9ubzPpGK8vL4tP9EmjQminv37uHrr7+GtbU1QkJCcPjwYVw0kX5+mno9UUM2
+0ScfH0DARRuNGiUKadNqrieArylx8+ZNZGZmIi0tTfDADEFT1RM1ZBN96tULSEoCYmLEjkR6KFFI
+m8ZEMXnyZGRkZGDhwoUIDg6Gq6srZs2aZYjYBKepREFVT0SfLCyAt98GTKB5T+8oUUibykSxcuVK
+AICLiwsaNWqEfv36IT4+HmlpaTVmZDaVKIi+vfEGsG8f71FHXsrP5+vYE2lSmShKejVNnz7dYMEY
+mqaqJypREH3z9ORrnFy+LHYk0kIlCmlT2T3W1dUV7du3x6NHj+Du7l7mMZlMhhs3bggenNCoMZsY
+mkwGfP45MGMG8NdfNG6gBCUKaVOZKLZv346UlBQMHjwYYWFheltVTkqo6omI4a23gB9+APbuBUaM
+EDsaaaBEIW1qB9zZ2dnBzc0Njo6OhorHoKjqiYjBzAxYvhwYM4avdeLjI3ZE4qNEIW1qez3VqlUL
+Dx8+REFBgaHiMShLS15fXFxc8bGCAuD5c6BRI8PHRUxfQACwciXw5pv8IlnTUaKQNo1TeLRp0wa9
+e/dGcHAwrF6suiKTyfDxxx8LHpzQZDJeqsjLA0otuQEASE0F7O35rz9ChDBuHLB/P/B//wesWCF2
+NOKiRCFtGhOFs7MznJ2doVAokJ2dDcZYmfUpjF1Jg3b5REHtE8QQ1qzhPaHeeAPo2VPsaMSTn0+J
+Qso0JooFCxYYIAzxqGqnoPYJYgiNGwMffQRs21azEwWVKKRNY6IICAiocJ9MJsOpU6cECcjQVPV8
+evSIEgUxjMGDgeHDxY5CXHl5QNOmYkdBVNGYKJYtW6b8f35+Pvbs2QNzc40vMxqVjaWIigK+/hr4
+73/FiYnULO7u/EJ57x7Qrp3Y0YgjL49GZkuZxiu+r69vmdu9e/dG165dBQvI0OrV4+tOlDh0iM/H
+8+OPQFCQeHGRmkMm46WKP/6o2YmCqp6kS2OfnoyMDOVfeno6jh49imfPnhkiNoPw8wMiIoAnT4Cp
+U4H33+c9UUaNEjsyUpMMHgwcPSp2FOKhRCFtGksUPj4+yl5O5ubmcHJywoYNGwQPzFBGjOBf0jVr
+gAkTgJs3+bKVhBhSQADwwQd83eia2CWbej1Jm8ZEkZCQYIAwxNO1K08SAwbwcROEiMHeHrCzA6Kj
+eZtFTUMlCmlT+dvl0qVLSE5OVt7evHkzgoODMWPGDGRkZBgkOEOQyYDx4ylJEPH17g2cOSN2FOLI
+zaVEIWUqE8X7778PS0tLAMDp06cxZ84chISEoH79+pg8ebLBAiSkpujfHzh+XOwoxJGTA1hbix0F
+UUVlolAoFGj0YqKjnTt34v3338fIkSOxcOFCxMbGGixAQmqKwYOB8HCgsFDsSAwvJ4f3QCTSpDJR
+yOVyFBUVAQBOnDhRZuBdcWWz6BFCdGJnB7i48F54NU12NiUKKVPZmD1u3Dj069cPTZo0gZWVFfr0
+6QMAiI2NRcOGDQ0WICE1ydixwPbtQGCg2JEYFpUopE3G1KxI9NdffyElJQWBgYGo9+JdvHv3LrKz
+s+Ej0iT6MpnMJBdRIgQAHj8GOncG0tKAWrXEjsZwLC2BZ8/4v0QYulw71SYKKaJEQUxd587AL7/w
+rts1QVER7/FUVERLwwpJl2unYEN7EhMTERAQADc3N3Tu3BmrVq0CAFy/fh09evSAh4cHgoOD8fz5
+cwBAYWEh3n77bXh4eMDLywt//vmnUKERImkDBgAnTogdheGUVDtRkpAuwRKFhYUFVqxYgejoaFy4
+cAFr1qzB7du38e6772Lp0qW4ceMGhg8frpx0cP369TAzM8ONGzdw/PhxfPLJJ1RyIDXSwIHAyZNi
+R2E41D4hfYIlCgcHB3h5eQEArK2t0alTJzx69AixsbHKhvGBAwdiz549AIDbt28re1bZ2dmhYcOG
+uHLlilDhESJZ/foBFy7UnCVSs7NpDIXUGWRWmYSEBFy7dg1+fn5wc3PD/v37AQC7d+9GYmIiAMDT
+0xNhYWGQy+WIj49HZGQkkpKSDBEeIZJSvz7g4WHao7QzMoB58/gxUolC+gRfWCI7OxujRo3CypUr
+YWNjg40bN2LGjBn4+uuvERwcjNq1awMAJk2ahNu3b8PX1xeOjo7o2bMnaqno9lF61T1/f3/4+/sL
+fRiEGNSwYcC+fdLtJnvjBtC2bfVKAmlpwKBBfP2NBw/4jM2UKPQvIiICEfoalMMEVFhYyAIDA9mK
+FSsqffzOnTusW7dulT7Ws2dPdvv27Qr3CxwyIZJw9y5jDg6MFRWJHUlF9+4xVrcuY46OjCUlVe21
+ycmMuboyNn8+YzExjDk5MXb4MGOBgYKESkrR5dopWNUTYwzvvPMOXF1dMXPmTOX9aWlpAPgUIQsX
+LsQHH3wAAMjLy0POi8Wrjx8/DgsLC7i4uAgVHiGS1r494OgozTUq1q0DPvyQl3pWr9b+dWlpvEfX
+6NF8BUkXF94+cfcutVFInWBVT+fOncO2bdvg4eEBb29vAMCiRYsQGxuLNWvWAABGjhyJt956CwCQ
+mpqKV155BWZmZmjZsiW2bt0qVGiEGIUpU4CvvuKLa9nZiR3NSxcvAp9/zruzzp2r3WsyM3k12rBh
+/LUAf33XrsCff1KikDoacEeIRCkUwLRpwK+/8iVSDx0CHBzEjgpo3Zpf3Js14wns0SPeAK+KXA68
++irQsSOwalXZ8RLz5gHr1wMjRwI//SR87DWZJAfcEUJ0Y2bG127PzORdZrX99S6kwkIgNRVo1Qqo
+U4ePIr9+Xf1rPvuMJ70VKyoOqvP25lVSbm7CxUx0R4mCEImTyfgv7337gH/+ETeWhw+BFi0A8xeV
+1h4evAeUKlevAhs38okOzSup6O7eHbCyAt57T5h4iX5QoiDECDRuDIwaxRuSxRQfD7Rp8/K2ukSh
+UABTpwKLFqluY2nZko+joMkApY0SBSFGYvp04Oef+QVYLA8e8N5YJdzdVSeKn3/m1Wcv+qsQI0aJ
+ghAj4eEBNGki7ojtR4941VOJjh35wLnyFAreNvHf//JkQYwbvYWEGJExY4Ddu8Xb/+PHQPPmL283
+bQrk5vK1JEq7fRuwtQVcXQ0bHxEGJQpCjMjgwcCpU+Ltv3yikMl4m0V8fNnn/fUX0KOHYWMjwqFE
+QYgR8fQEUlKA5GRx9l8+UQB8zqfyieLiRd6jiZgGShSEGJFatfh6FYcPi7N/VYkiLq7sfTExfIwF
+MQ2UKAgxMiNGAC+WcTGo4mIgPR2wty97f+vWwIvVAgAAjPE2CpqqzXRQoiDEyAwZApw/z6ugDCkp
+iTdelx8417x52aqwF/N+omlTw8VGhEWJghAjU78+8MYbwIYNht3vvXt8VtvymjXjVVIlSkoTtAa2
+6aBEQYgR+uADYO1aPuGeoahKFOVLFDdv8oF4xHRQoiDECPn48IFvhw4ZZn85OUBsLJ/FtrySEkXJ
+xKRRUYCXl2HiIoZBiYIQIzV1Kp9dVmjh4YCNDbB8eeWJwtqat1uUDLqjRGF6aD0KQoxUfj7QoQPw
+ww98QSB9y87m604sWQKMH8/vGzOGj7gur2NHPrttx458/eu0NFqMSGpoPQpCaqA6dYAdO3h7RV6e
+/re/Zg0QEsJHXk+axFfcqyxJAC/bKbKygNq1KUmYGkoUhBixnj2Bbt2ABQv0u125nK8498cfwObN
+/OKvTkk7xZMnfEp0YloEWzObEGIY69fzFfCKi4GPPuID4HR16BC/+Hfpot3zS0oUlChME5UoCDFy
+dnbA8eN89btXXuE9lHS1fj2v0tJWSYkiI4MShSmiREGICWjRAtiyBejbl5cuyk/7XRXPnvFG7Ndf
+1/41VKIwbZQoCDERMhlvV/D15d1TBw/ma1xX1e7dPNnUr6/9a0q3UTRqVPV9EmmjREGICSlJFnv2
+AL16AYGBL+de0kZREfDVV8CcOVXbL5UoTBs1ZhNiYmQywNub/+Xn80kET58G6tat/PlxccCsWUDX
+rkCnTkCrVjzJVEXpEgXNGmt6qERBiAn75hveC+rNN4ETJ/h04Lm5Lx/PyuIN4J6ewK+/8gbst96q
++n5sbPja2PHxVKIwRTQymxATl5ICrFgBbNvGB+Z5efHlVM+dA774gk/099NPwKNHwOXLwNChfIGk
+qtwcuRUAAA6jSURBVOrQAcjMBHbuBAIC9H8cRDe6XDspURBSQzDGB9J17MjbIObPB6ZNAz79lI/y
+1pW/P+8tlZgItGyp+/aIfuly7aQ2CkJqCJmMT963aRMQFMQbrWfO1N/2mzXjCaf8UqnE+FGiIKSG
+6dMHePq0etVL6jRvDjg787YKYlroLSWkBtJ3kgB4iaKyhY2I8aM2CkKIXsTF8S6yffqIHQmpDDVm
+E0IIUYvWoyCEECIYShSEEELUokRBCCFELcESRWJiIgICAuDm5obOnTtj1apVAIDr16+jR48e8PDw
+QHBwMJ4/fw4AyM/Px7hx4+Dh4QFXV1eEhoYKFRohhJAqECxRWFhYYMWKFYiOjsaFCxewZs0a3L59
+G++++y6WLl2KGzduYPjw4Vi2bBkAYMeOHQCAGzduIDIyEmvXrsXD6syRLBERERFih6AVY4jTGGIE
+KE59ozilQ7BE4eDgAC8vLwCAtbU1OnXqhEePHiE2NhZ9XvSfGzhwIPbs2QMAaNasGXJyciCXy5GT
+k4PatWujflUmxJcYY/nwGEOcxhAjQHHqG8UpHQZpo0hISMC1a9fg5+cHNzc37N+/HwCwe/duJCYm
+AgAGDx6M+vXro1mzZnBycsKnn36Khg0bGiI8QgghagieKLKzszFq1CisXLkSNjY22LhxI3788Uf4
++voiOzsbtWvXBgBs27YNeXl5SE5ORnx8PL799lvEx8cLHR4hhBBNmIAKCwtZYGAgW7FiRaWP37lz
+h/n5+THGGPvggw/Y1q1blY9NmjSJ7dq1q8JrnJ2dGQD6oz/6oz/6q8Kfs7Nzta/lgk0KyBjDO++8
+A1dXV8wsNUVlWloa7OzsoFAosHDhQkyZMgUA4OLiglOnTmHChAnIycnBhQsX8O9//7vCdu/duydU
+yIQQQioh2BQeZ8+eRd++feHh4QGZTAYAWLRoEWJjY7FmzRoAwMiRI7Fo0SIAQEFBAd555x1cv34d
+CoUCkyZNwieffCJEaIQQQqrA6OZ6IoQQYlhGMzL76NGjcHFxQfv27bFkyRKxwynDyckJHh4e8Pb2
+Rrdu3QAAGRkZGDRoEDp06IDAwEBkZmYaPK5JkybB3t4e7u7uyvvUxbV48WK0b98eLi4uOHbsmKhx
+LliwAC1btoS3tze8vb1x5MgRUeNUNYBUaudTVZxSO5/5+fnw8/ODl5cXXF1dMXfuXADSO5+q4pTa
++Swhl8vh7e2NoUOHAtDj+ax264YBFRcXM2dnZxYfH88KCwuZp6cni4mJETssJScnJ/bkyZMy9336
+6adsyZIljDHGQkND2ezZsw0e1+nTp9nVq1dZ586dNcYVHR3NPD09WWFhIYuPj2fOzs5MLpeLFueC
+BQvYd999V+G5YsWZnJzMrl27xhhj7Pnz56xDhw4sJiZGcudTVZxSO5+MMZaTk8MYY6yoqIj5+fmx
+M2fOSO58qopTiueTMca+++47Nn78eDZ06FDGmP6+70ZRorh06RLatWsHJycnWFhYYOzYscqxGFLB
+ytXghYWFISQkBAAQEhKCffv2GTymPn36wNbWVqu49u/fj3HjxsHCwgJOTk5o164dLl26JFqcQMVz
+CogXp6oBpFI7n6riBKR1PgHAysoKAFBYWAi5XA5bW1vJnU9VcQLSO59JSUk4fPgw3n33XWVs+jqf
+RpEoHj16hFatWilvt2zZUvnhlwKZTIaBAwfC19cX69evBwCkpqbC3t4eAGBvb4/U1FQxQ1RSFdfj
+x4/RsmVL5fOkcI5/+OEHeHp64p133lEWmaUQZ+kBpFI+nyVxdu/eHYD0zqdCoYCXlxfs7e2V1WVS
+PJ+VxQlI73z++9//xrJly2BWai1afZ1Po0gUJb2mpOrcuXO4du0ajhw5gjVr1uDMmTNlHpfJZJI8
+Bk1xiRnzBx98gPj4eERFRaFZs2Zqe8AZMs7s7GyMHDlSOYC0fBxSOZ+lB7paW1tL8nyamZkhKioK
+SUlJOH36NMLDwyvEIYXzWT7OiIgIyZ3PgwcPomnTpvD29la5OJEu59MoEkWLFi2UU30AvMGudDYU
+W7NmzQAAdnZ2GD58OC5dugR7e3ukpKQAAJKTk9G0aVMxQ1RSFVf5c5yUlIQWLVqIEiMANG3aVPnB
+fvfdd5XFYjHjLCoqwsiRIzFx4kS8/vrrAKR5PkvinDBhgjJOKZ7PEg0aNEBQUBAiIyMleT7Lx3nl
+yhXJnc/z588jLCwMbdq0wbhx43Dq1ClMnDhRb+fTKBKFr68vYmNjkZCQgMLCQuzcuRPBwcFihwUA
+yM3NVU6VnpOTg2PHjsHd3R3BwcHYvHkzAGDz5s3KL6zYVMUVHByMHTt2oLCwEPHx8YiNjVX24BJD
+cnKy8v979+5V9ogSK06mYgCp1M6nqjildj7T09OV1TV5eXk4fvw4vL29JXc+VcVZcvEFpHE+Fy1a
+hMTERMTHx2PHjh3o378/tm7dqr/zKVz7u34dPnyYdejQgTk7O7NFixaJHY7S/fv3maenJ/P09GRu
+bm7K2J48ecIGDBjA2rdvzwYNGsSePn1q8NjGjh3LmjVrxiwsLFjLli3Zxo0b1cb1zTffMGdnZ9ax
+Y0d29OhR0eLcsGEDmzhxInN3d2ceHh5s2LBhLCUlRdQ4z5w5w2QyGfP09GReXl7My8uLHTlyRHLn
+s7I4Dx8+LLnzeePGDebt7c08PT2Zu7s7W7p0KWNM/fdGSnFK7XyWFhERoez1pK/zSQPuCCGEqGUU
+VU+EEELEQ4mCEEKIWpQoCCGEqEWJghBCiFqUKAghhKhFiYIQQohalCiIZFhbWwu6/aCgIDx79gxZ
+WVn46aefqvz6iIgI5fTNVfHqq6/i8ePHKh9PSEgoM8U6IVJDiYJIhtBz4hw6dAj169fH06dP8eOP
+Pwq6rxJ5eXnIyMhA8+bNDbI/hUJhkP2QmoUSBZG0qKgodO/eHZ6enhgxYoRyOgV/f3/MmTMHfn5+
+6NixI86ePQuAT6kyevRouLm5YcSIEejevTuuXr0KgC8w9eTJE8yZMwdxcXHw9vbGrFmz8Oeff5Yp
+KUybNk057cHRo0fRqVMndOnSBXv37lU+JycnB5MmTYKfnx98fHwQFhZWafwREREICAiocH9kZCQ8
+PT3h5eVVJmnJ5XJ8+umn6NatGzw9PbFu3ToAPAFMnToVnTp1QmBgIIKCgrBnzx7lcc2ZMwddunTB
+7t27cezYMfTs2RNdunTB6NGjkZOTo9ynv78/fH198corryinoVi1ahXc3Nzg6emJcePGVeNdIiZP
+wJHkhFSJtbV1hfvc3d3Z6dOnGWOMff7552zmzJmMMcb8/f3Zf/7zH8YYn95l4MCBjDHGli1bxqZM
+mcIYY+zWrVvM3NycRUZGMsZeLjCVkJBQZpGk8PBw9tprrylvT5s2jW3evJnl5eWxVq1asXv37jHG
+GBs9erRyaoS5c+eybdu2McYYe/r0KevQoYNygZvSZsyYwcLDwys9rjNnzjDG+OIyJfGsXbuWLVy4
+kDHGWH5+PvP19WXx8fFs9+7dbMiQIYwxxlJSUpitrS3bs2eP8riWLVvGGGMsLS2N9e3bl+Xm5jLG
++GI1X331FSsqKmI9evRg6enpjDHGduzYwSZNmsQYY6x58+assLCQMcZYVlZWhVgJMRc7URGiSlZW
+FrKystCnTx8AfOGVN954Q/n4iBEjAAA+Pj5ISEgAwKd8L5kMz83NDR4eHhW2y7SYtYYxhr///htt
+2rSBs7MzAGDChAnKX/jHjh3DgQMH8O233wIACgoKkJiYiI4dO5bZzrlz5/Ddd9+VuS8zMxNZWVno
+3bs3AGDixInKpTSPHTuGmzdv4rfffgMAPHv2DLGxsTh37hxGjx4NAMp1EUobM2YMAODChQuIiYlB
+z549AfDFdnr27Ik7d+4gOjoaAwcOBMBLLiXVYR4eHhg/fjxef/11yUxeSaSFEgUxGuUv8JaWlgCA
+WrVqobi4WOXzNDE3Ny9Tt5+fnw+gYptJ+e3+/vvvaN++vcrt3r9/H61atYK5ufqvWfntrl69GoMG
+DSpz3+HDh8s8r/xr6tWrp/z/oEGD8L///a/M4zdv3oSbmxvOnz9fYf+HDh3C6dOnceDAAXzzzTe4
+efMmatWqpTZmUrNQGwWRrAYNGsDW1lbZ/rB161b4+/urfU2vXr2wa9cuAEBMTAxu3rxZ4Tk2NjbK
+qeEBwNHRETExMSgsLERmZiZOnjwJmUwGFxcXJCQk4P79+wCA7du3K18zePDg/2/v/kHSCeM4jr+b
+AoUShDaHkkTSGm5xECGCgrRNCBxCiAZp6A/NtQW1RhS0aENbgls0NDQYbm0OhhBuEUE3eGCGT4Mk
+hHHxg4jo93ltd9y/h4P73PceuC8HBwe95dvb277zXFxcMD8/37fe5/Ph8/kol8sAnJ2dfTju0dFR
+L/hqtRqO4xCPxykWixhjeHh44Pr6+tPxx2IxyuUy9Xod6M6l3N3dEQ6HeXx8pFKpAN2eFdVqFWMM
+jUaD6elp9vb2sG27N6ch8k4VhfwajuN8aHm7tbXF6ekpuVwOx3EIBoPk8/lP931/+19dXSWbzRKJ
+RAiHw0QiEYaHhz9s6/f7icfjTE5Okkwm2d/fZ3FxkWg0yujoKJZlAd2K5eTkhFQqhcfjIZFI9B6i
+29vbbGxsMDU1RafTYWxsrG9C+/LyksPDw0+vN5/Ps7y8zMDAAHNzc73rX1lZ4f7+HsuyMMYwMjJC
+qVQinU5zdXXFxMQEgUAAy7L6xgXd5lmFQoFMJkOr1QJgd3eX8fFxzs/PWVtbw7ZtXl9f2dzcJBQK
+sbS0hG3bGGNYX19naGjoy3sl/xf9Zlz+lE6nQ7vdZnBwkHq9zuzsLLVa7cvPP9+t1WqRSCRcG9b/
+q2azidfr5enpiVgsxs3Nza/pnCh/myoK+VOazSYzMzO0222MMRwfH/94SEC3GvnOkABYWFjg+fmZ
+l5cXdnZ2FBLyY1RRiIiIK01mi4iIKwWFiIi4UlCIiIgrBYWIiLhSUIiIiCsFhYiIuHoDL7daBgxc
+Rr0AAAAASUVORK5CYII=
+">
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Custom categorisation can be created with an arbitrary function. For example, the already existing <code>add_year</code> categorisor takes the 'time' coordinate, and creates a 'year' coordinate. This could be achieved without using the available <code>add_year</code> by:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[42]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">year_from_time</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">coord</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">num2date</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">.</span><span class="n">year</span>
+
+<span class="n">coord_cat</span><span class="o">.</span><span class="n">add_categorised_coord</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">,</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">),</span> <span class="n">year_from_time</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+AuxCoord(array([2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2007, 2007,
+       2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2008,
+       2008, 2008, 2008, 2008, 2008, 2008, 2008, 2008, 2008, 2008, 2008,
+       2009, 2009, 2009, 2009, 2009, 2009, 2009, 2009, 2009, 2009, 2009,
+       2009, 2010, 2010, 2010, 2010, 2010, 2010, 2010, 2010, 2010]), standard_name=None, units=Unit(&apos;1&apos;), long_name=u&apos;year&apos;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="performance-tricks">Performance tricks</h2>
 <p>A few common tricks to improve the performance of your iris code.</p>
 <ul>
@@ -8655,7 +9144,16 @@ In&nbsp;[307]:
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="big-graduation-excercise-combining-some-meaning-via-rolling-window-map-based-visualisation-hovmoller-plot-and-tricky-constraint-perhaps-temporal.-get-hold-of-a-time-coordinate-and-put-it-in-the-title">Big graduation excercise, combining some meaning via rolling window, map based visualisation, hovmoller plot, and tricky constraint (perhaps temporal). Get hold of a time coordinate and put it in the title?</h2>
+<h2 id="exercise">Exercise</h2>
+<ol style="list-style-type: decimal">
+<li>Load 'A1B_north_america.nc' from the iris sample data</li>
+<li>Extract just data from the year 1980 and beyond from the loaded data</li>
+<li><p>Define a function which takes a coordinate and a single time point as arguments, and returns the decade. For example, your function should return 2010 for the following:</p>
+<p>time = iris.coords.DimCoord([10], 'time', units='days since 2018-01-01') print your_decade_function(time, time.point[0])</p></li>
+<li>Add a &quot;decade&quot; coordinate to the loaded cube using your function and the coord categorisation module</li>
+<li>Calculate the decadal means cube for this scenario</li>
+<li><p>Create a figure with 3 rows and 4 columns displaying the decadal means, with the decade displayed prominently in each axes' title</p></li>
+</ol>
 </div>
 </body>
 </html>
