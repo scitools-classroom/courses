@@ -1694,9 +1694,9 @@ init_mathjax();
 <body>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="basics-of-numpy">Basics of Numpy</h1>
+<h1 id="an-introduction-to-numpy">An introduction to numpy</h1>
 <p>While the Python language is an excellent tool for general-purpose programming, with a highly readable syntax, rich and powerful data types (strings, lists, sets, dictionaries, arbitrary length integers, etc) and a very comprehensive standard library, it was not designed specifically for mathematical and scientific computing. Neither the language nor its standard library have facilities for the efficient representation of multidimensional datasets, tools for linear algebra and general matrix manipulations (essential building blocks of virtually all technical computing), nor any data visualisation facilities.</p>
-<p>In particular, Python lists are very flexible containers that can be nested arbitrarily deep and which can hold any Python object in them, but they are poorly suited to represent efficiently common mathematical constructs like vectors and matrices. It is for this reason that numpy exists. Typically numpy is imported as np:</p>
+<p>In particular, Python lists are very flexible containers that can be nested arbitrarily deep and which can hold any Python object in them, but they are poorly suited to represent common mathematical constructs like vectors and matrices. It is for this reason that numpy exists. Typically numpy is imported as np:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2092,7 +2092,7 @@ In&nbsp;[14]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[7]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
@@ -2108,7 +2108,7 @@ In&nbsp;[15]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[15]:</div>
+    Out[7]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2154,11 +2154,10 @@ array([ 5.5,  5.5,  5.5,  5.5])
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[16]:
+In&nbsp;[8]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="k">print</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span>
-<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2168,17 +2167,8 @@ In&nbsp;[16]:
 <div class="output vbox">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-256
-
-</pre>
-</div>
-</div>
-
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[16]:</div>
+    Out[8]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -2234,10 +2224,10 @@ float64: max=1.79769313486e+308, approx decimal precision=15;
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[9]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2247,12 +2237,15 @@ In&nbsp;[18]:
 <div class="output vbox">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-1.0
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[9]:</div>
+<div class="box-flex1 output_subarea output_pyout">
 
+
+<pre>
+array(1.0, dtype=float32)
 </pre>
+
 </div>
 </div>
 
@@ -2267,10 +2260,10 @@ In&nbsp;[18]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[17]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2281,16 +2274,45 @@ In&nbsp;[19]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[19]:</div>
+    Out[17]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[18]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[18]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
 <pre>
 array([ 5. ,  5.1,  5.2,  5.3,  5.4,  5.5,  5.6,  5.7,  5.8,  5.9,  6. ,
-        6.1,  6.2,  6.3,  6.4,  6.5,  6.6,  6.7,  6.8,  6.9,  7. ,  7.1,
-        7.2,  7.3,  7.4,  7.5,  7.6,  7.7,  7.8,  7.9,  8. ,  8.1,  8.2,
-        8.3,  8.4,  8.5,  8.6,  8.7,  8.8,  8.9,  9. ,  9.1,  9.2,  9.3,
-        9.4,  9.5,  9.6,  9.7,  9.8,  9.9])
+        6.1,  6.2,  6.3,  6.4,  6.5,  6.6,  6.7,  6.8,  6.9])
 </pre>
 
 </div>
@@ -2372,10 +2394,11 @@ A logarithmic grid between 10**2 and 10**4:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[22]:
+In&nbsp;[1]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy.random</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span>
 </pre></div>
 
 </div>
@@ -2388,7 +2411,7 @@ In&nbsp;[22]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[1]:
+In&nbsp;[20]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -2402,14 +2425,11 @@ In&nbsp;[1]:
 
 
 <div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_pyerr">
+<div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-1-8c410ffe7486&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span><span class="ansigreen">print</span> np<span class="ansiyellow">.</span>random<span class="ansiyellow">.</span>randn<span class="ansiyellow">(</span><span class="ansicyan">5</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+[ 0.22686119 -0.40774205  0.51488868 -0.30188959 -0.40245447]
 
-<span class="ansired">NameError</span>: name &apos;np&apos; is not defined</pre>
+</pre>
 </div>
 </div>
 
@@ -2423,7 +2443,7 @@ In&nbsp;[1]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[24]:
+In&nbsp;[4]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">norm10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -2440,7 +2460,7 @@ In&nbsp;[24]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-[ 11.30604902   8.48835462   9.36186985  10.35609657  10.55303602]
+[ 14.94509009  11.75846635  13.30289802   7.66207806   6.05132521]
 
 </pre>
 </div>
@@ -2451,6 +2471,9 @@ In&nbsp;[24]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>For more details see http://docs.scipy.org/doc/numpy/reference/routines.random.html.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="indexing-with-other-arrays">Indexing with other arrays</h2>
 <p>Above we saw how to index arrays with single numbers and slices, just like Python lists. But arrays allow for a more sophisticated kind of indexing which is very powerful: you can index an array with another array, and in particular with an array of boolean values. This is particluarly useful to extract information from an array that matches a certain condition.</p>
 <p>Consider for example that in the array <code>norm10</code> we want to replace all values above 9 with the value 0. We can do so by first finding the <em>mask</em> that indicates where this condition is true or false:</p>
@@ -2458,7 +2481,7 @@ In&nbsp;[24]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[25]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">mask</span> <span class="o">=</span> <span class="n">norm10</span> <span class="o">&gt;</span> <span class="mi">9</span>
@@ -2473,12 +2496,12 @@ In&nbsp;[25]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[25]:</div>
+    Out[5]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
 <pre>
-array([ True, False,  True,  True,  True], dtype=bool)
+array([ True,  True,  True, False, False], dtype=bool)
 </pre>
 
 </div>
@@ -2494,10 +2517,10 @@ array([ True, False,  True,  True,  True], dtype=bool)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[26]:
+In&nbsp;[6]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Values above 9:&#39;</span><span class="p">,</span> <span class="n">norm10</span><span class="p">[</span><span class="n">norm10</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">]</span>
+<div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Values above 9:&#39;</span><span class="p">,</span> <span class="n">norm10</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -2510,7 +2533,7 @@ In&nbsp;[26]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-Values above 9: [ 11.30604902   9.36186985  10.35609657  10.55303602]
+Values above 9: [ 14.94509009  11.75846635  13.30289802]
 
 </pre>
 </div>
@@ -2523,7 +2546,7 @@ Values above 9: [ 11.30604902   9.36186985  10.35609657  10.55303602]
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[27]:
+In&nbsp;[7]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Resetting all values above 9 to 0...&#39;</span>
@@ -2542,7 +2565,7 @@ In&nbsp;[27]:
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Resetting all values above 9 to 0...
-[ 0.          8.48835462  0.          0.          0.        ]
+[ 0.          0.          0.          7.66207806  6.05132521]
 
 </pre>
 </div>
@@ -2557,12 +2580,12 @@ Resetting all values above 9 to 0...
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="arrays-with-more-than-one-dimension">Arrays with more than one dimension</h2>
-<p>Up until now all our examples have used one-dimensional arrays. But Numpy can create arrays of aribtrary dimensions, and all the methods illustrated in the previous section work with more than one dimension. For example, a list of lists can be used to initialize a two dimensional array:</p>
+<p>Up until now all our examples have used one-dimensional arrays. But Numpy can create arrays of arbitrary dimensions, and all the methods illustrated in the previous section work with more than one dimension. For example, a list of lists can be used to initialize a two dimensional array:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[28]:
+In&nbsp;[12]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">lst2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
@@ -2599,7 +2622,7 @@ In&nbsp;[28]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[29]:
+In&nbsp;[13]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">print</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
@@ -2618,6 +2641,40 @@ In&nbsp;[29]:
 <pre>
 2
 2
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Question: Why does the following example produce different results?</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[14]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">arr2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[4, 5, 6]
+[2 5]
 
 </pre>
 </div>
@@ -2732,49 +2789,6 @@ In&nbsp;[32]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="generating-2d-coordinate-arrays">Generating 2D coordinate arrays</h2>
-<p>A common task is to generate a pair of arrays which represent the coordinates of our data.</p>
-<p>When the orthogonal 1d coordinate arrays already exist, numpy's meshgrid function is very useful:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[33]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">x2d</span><span class="p">,</span> <span class="n">y2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">x2d</span>
-<span class="k">print</span> <span class="n">y2d</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-[[ 0.   4.5  9. ]
- [ 0.   4.5  9. ]
- [ 0.   4.5  9. ]]
-[[-8. -8. -8.]
- [-2. -2. -2.]
- [ 4.  4.  4.]]
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="views-not-copies">Views, not Copies</h3>
 <p>Note that reshaping (like most numpy operations), wherever possible, provides a <strong>view</strong> of <em>the same memory</em>:</p>
 </div>
@@ -2830,19 +2844,19 @@ After
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[35]:
+In&nbsp;[18]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">arr</span>
 
-<span class="k">print</span> <span class="s">&#39;Second element from dimension 1, last 2 elements from dimension 2:&#39;</span><span class="p">,</span>
+<span class="k">print</span> <span class="s">&#39;Second element from dimension 0, last 2 elements from dimension 1:&#39;</span><span class="p">,</span>
 <span class="k">print</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span>
 
-<span class="k">print</span> <span class="s">&#39;All elements bar the last from dimension 1, third element from dimension 2:&#39;</span><span class="p">,</span>
+<span class="k">print</span> <span class="s">&#39;All elements bar the last from dimension 0, third element from dimension 1:&#39;</span><span class="p">,</span>
 <span class="k">print</span> <span class="n">arr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-<span class="k">print</span> <span class="s">&#39;Second element from dimension 1 (maintaining its dimension), all elements from dimension 2:&#39;</span><span class="p">,</span>
+<span class="k">print</span> <span class="s">&#39;Second element from dimension 0 (maintaining its dimension), all elements from dimension 1:&#39;</span><span class="p">,</span>
 <span class="k">print</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 
@@ -2858,9 +2872,9 @@ In&nbsp;[35]:
 <pre>
 [[0 1 2 3]
  [4 5 6 7]]
-Second element from dimension 1, last 2 elements from dimension 2: [6 7]
-All elements bar the last from dimension 1, third element from dimension 2: [2]
-Second element from dimension 1 (maintaining its dimension), all elements from dimension 2: [[4 5 6 7]]
+Second element from dimension 0, last 2 elements from dimension 1: [6 7]
+All elements bar the last from dimension 0, third element from dimension 1: [2]
+Second element from dimension 0 (maintaining its dimension), all elements from dimension 1: [[4 5 6 7]]
 
 </pre>
 </div>
@@ -2936,6 +2950,49 @@ Orig shape:  (4, 6, 3)
 (4, 6, 2)
 (2, 6, 2)
 (2, 6, 3)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="generating-2d-coordinate-arrays">Generating 2D coordinate arrays</h2>
+<p>A common task is to generate a pair of arrays which represent the coordinates of our data.</p>
+<p>When the orthogonal 1d coordinate arrays already exist, numpy's meshgrid function is very useful:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[15]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">x2d</span><span class="p">,</span> <span class="n">y2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">x2d</span>
+<span class="k">print</span> <span class="n">y2d</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[[ 0.   4.5  9. ]
+ [ 0.   4.5  9. ]
+ [ 0.   4.5  9. ]]
+[[-8. -8. -8.]
+ [-2. -2. -2.]
+ [ 4.  4.  4.]]
 
 </pre>
 </div>
@@ -3061,16 +3118,16 @@ The sum of elements along the columns is : [ 4  6  8 10]
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see in this example, the value of the <code>axis</code> parameter is the dimension which will be <em>consumed</em> once the operation has been carried out. This is why to sum along the rows we use <code>axis=0</code>.</p>
+<p>As you can see in this example, the value of the <code>axis</code> parameter is the dimension which will be <em>consumed</em> once the operation has been carried out. This is why to sum along the columns we use <code>axis=0</code>.</p>
 <p>This can be easily illustrated with an example that has more dimensions; we create an array with 4 dimensions and shape <code>(3,4,5,6)</code> and sum along the axis number 2 (i.e. the <em>third</em> axis, since in Python all counts are 0-based). That consumes the dimension whose length was 5, leaving us with a new array that has shape <code>(3,4,6)</code>:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[41]:
+In&nbsp;[19]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
 </div>
@@ -3081,7 +3138,7 @@ In&nbsp;[41]:
 
 
 <div class="hbox output_area"><div class="prompt output_prompt">
-    Out[41]:</div>
+    Out[19]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
 
@@ -3354,7 +3411,7 @@ In&nbsp;[48]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="rules-of-broadcasting">Rules of Broadcasting</h3>
-<p>Broadcasting rules can do the following:</p>
+<p>Broadcasting follows these three rules:</p>
 <ol style="list-style-type: decimal">
 <li><p>If the two arrays differ in their number of dimensions, the shape of the array with fewer dimensions is <em>padded</em> with ones on its leading (left) side.</p></li>
 <li><p>If the shape of the two arrays does not match in any dimension, the array with shape equal to 1 in that dimension is <em>stretched</em> to match the other shape.</p></li>
@@ -3634,7 +3691,7 @@ In&nbsp;[57]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[58]:
+In&nbsp;[22]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -3653,7 +3710,7 @@ In&nbsp;[58]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-[2 3 4] . [1 0 1] = 6
+ [2 3 4] . [1 0 1] = 6
 
 </pre>
 </div>
@@ -3669,7 +3726,7 @@ In&nbsp;[58]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[59]:
+In&nbsp;[24]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -3768,11 +3825,7 @@ In&nbsp;[61]:
 <p>result in different array shapes. Why is this?</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: For the traditional dot product, the <code>np.tensordot</code> function can be used. Try this on array <code>A</code>.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise-trapezoidal-integration">Exercise: trapezoidal integration</h1>
-<p><strong>Illustrates</strong>: basic array slicing, functions as first class objects.</p>
 <p>In this exercise, you are tasked with implementing the simple trapezoid rule formula for numerical integration. If we want to compute the definite integral</p>
 <p><span class="math">\[
      \int_{a}^{b}f(x)dx
@@ -3864,7 +3917,7 @@ In&nbsp;[64]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="part-5">Part 5</h4>
+<h4 id="part-5-extension">Part 5 (extension)</h4>
 <p><code>scipy.integrage</code> provides many common integration schemes. Find a suitable function to perform the trapezoidal integration implemented above and check its result with your own:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
