@@ -1417,6 +1417,7 @@ span#login_widget{float:right;}
 .list_container>div{border-bottom:1px solid #ababab;}.list_container>div:hover .list-item{background-color:red;}
 .list_container>div:last-child{border:none;}
 .list_item:hover .list_item{background-color:#ddd;}
+.item_name{line-height:24px;}
 .list_container>div>span,.list_container>div>div{padding:8px;}
 .list_item a{text-decoration:none;}
 input.nbname_input{height:15px;}
@@ -1470,7 +1471,7 @@ div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-s
 div.output_prompt{color:darkred;}
 .CodeMirror{line-height:1.231em;height:auto;background:none;}
 .CodeMirror-scroll{overflow-y:hidden;overflow-x:auto;}
-@-moz-document {.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
+@-moz-document url-prefix(){.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
 .CodeMirror-linenumber{padding:0 8px 0 4px;}
 .CodeMirror-gutters{border-bottom-left-radius:4px;border-top-left-radius:4px;}
 .CodeMirror pre{padding:0;border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
@@ -1497,6 +1498,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-error{color:#f00;}
 .cm-s-ipython span.cm-operator{color:#AA22FF;font-weight:bold;}
 .cm-s-ipython span.cm-meta{color:#AA22FF;}
+.cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat;}
 #menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
 #menubar .navbar{margin-bottom:8px;}
 .nav-wrapper{border-bottom:1px solid #d4d4d4;}
@@ -1862,7 +1864,7 @@ ADCIuAOAQcQdAAwi7gBgEHEHAIOIOwAYRNwBwCDiDgAG/R9h/b4XlfACjQAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Matplotlib's <code>pyplot</code> module makes the process of creating graphics easier by allowing us to skip some of the tedious Artist construction. For example, we did not need to manually create the Figure artist with <code>plt.figure</code> because it was implicit that we needed a figure when we created the Axes artist.</p>
 <p>Under the hood matplotlib still had to create a Figure artist, its just we didn't need to capture it into a variable. We can access the created object with the &quot;state&quot; functions found in pyplot called <strong><code>gcf</code></strong> and <strong><code>gca</code></strong>.</p>
-<p><strong>Task:</strong></p>
+<p><strong>Exercise 1:</strong></p>
 <ul>
 <li>Go to matplotlib.org and search for what these strangely named functions do. You will find multiple results so remember we are looking for the <code>pyplot</code> versions of these functions.</li>
 </ul>
@@ -2031,7 +2033,7 @@ BwAPorgDgAdR3AHAgyjuAOBBFHcA8CCKOwB4EMUdADzo/wEBpvX0X6r2wQAAAABJRU5ErkJggg==
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice how the axes' view limits (<code>ax.viewLim</code>) have been updated to include the whole of the line. Should we want to add some spacing around the edges of our axes we could set the axes' margin using the Axes artist's <code>margins</code> method (http://matplotlib.org/api/axes_api.html?highlight=axes#matplotlib.axes.Axes.margins). Alternatively, we could manually set the limits with the Axes artist's <code>set_xlim</code> and <code>set_ylim</code> methods (http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_xlim and http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_ylim).</p>
-<p><strong>Task:</strong> Modify the previous example to produce 3 different figures which control the limits of the axes by:</p>
+<p><strong>Exercise 2:</strong> Modify the previous example to produce 3 different figures which control the limits of the axes by:</p>
 <ol style="list-style-type: decimal">
 <li>Manually setting the x and y limits to <span class="math">\([0.5, 2]\)</span> and <span class="math">\([1, 5]\)</span> respectively.</li>
 <li>Defining a margin such that there is 10% whitespace inside the axes around the drawn line (Hint: numbers to margins are normalised such that 0% is 0.0 and 100% is 1.0).</li>
@@ -2195,7 +2197,7 @@ BwAPorgDgAdR3AHAgyjuAOBBFHcA8CCKOwB4EMUdADzo/wEBpvX0X6r2wQAAAABJRU5ErkJggg==
 <p>The simplicity of this example shows how visualisations can be produced quickly and easily with matplotlib, but it is worth remembering that for full control of Figure and Axes artists we can mix the convenience of <code>pyplot</code> with the power of matplotlib's object oriented design.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task:</strong> By calling <code>plot</code> multiple times, create a single axes showing the line plots of <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span> in the interval <span class="math">\([0, 2\pi]\)</span> with 200 linearly spaced <span class="math">\(x\)</span> samples.</p>
+<p><strong>Task 3:</strong> By calling <code>plot</code> multiple times, create a single axes showing the line plots of <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span> in the interval <span class="math">\([0, 2\pi]\)</span> with 200 linearly spaced <span class="math">\(x\)</span> samples.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="multiple-axes-on-the-same-figure-aka-subplot">Multiple axes on the same figure (aka subplot)</h2>
@@ -2338,7 +2340,7 @@ CHcAMBDhDgAGItwBwECEOwAY6H8sVzi1T27XxgAAAABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task:</strong> Copy the answer from the previous task (plotting <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span>) and add the appropriate <code>plt.subplot</code> calls to create a figure with 2 rows of Axes artists, one showing <span class="math">\(y=sin(x)\)</span> and the other showing <span class="math">\(y=cos(x)\)</span>.</p>
+<p><strong>Exercise 3 continued:</strong> Copy the answer from the previous task (plotting <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span>) and add the appropriate <code>plt.subplot</code> calls to create a figure with 2 rows of Axes artists, one showing <span class="math">\(y=sin(x)\)</span> and the other showing <span class="math">\(y=cos(x)\)</span>.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="further-plot-types">Further plot types</h2>
@@ -7256,7 +7258,7 @@ czlnIFKwAAAAAElFTkSuQmCC
 matplotlib.use(&#39;agg&#39;)
 import matplotlib.pyplot as plt</code></pre>
 <p>Note: The backend must be chosen before importing pyplot for the first time, unless the <code>force</code> keyword is added.</p>
-<p>To save a figure programatically the <code>savefig</code> function can be used:</p>
+<p>To save a figure programmatically the <code>savefig</code> function can be used:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">

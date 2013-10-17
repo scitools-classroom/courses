@@ -1417,6 +1417,7 @@ span#login_widget{float:right;}
 .list_container>div{border-bottom:1px solid #ababab;}.list_container>div:hover .list-item{background-color:red;}
 .list_container>div:last-child{border:none;}
 .list_item:hover .list_item{background-color:#ddd;}
+.item_name{line-height:24px;}
 .list_container>div>span,.list_container>div>div{padding:8px;}
 .list_item a{text-decoration:none;}
 input.nbname_input{height:15px;}
@@ -1470,7 +1471,7 @@ div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-s
 div.output_prompt{color:darkred;}
 .CodeMirror{line-height:1.231em;height:auto;background:none;}
 .CodeMirror-scroll{overflow-y:hidden;overflow-x:auto;}
-@-moz-document {.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
+@-moz-document url-prefix(){.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
 .CodeMirror-linenumber{padding:0 8px 0 4px;}
 .CodeMirror-gutters{border-bottom-left-radius:4px;border-top-left-radius:4px;}
 .CodeMirror pre{padding:0;border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
@@ -1497,6 +1498,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-error{color:#f00;}
 .cm-s-ipython span.cm-operator{color:#AA22FF;font-weight:bold;}
 .cm-s-ipython span.cm-meta{color:#AA22FF;}
+.cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat;}
 #menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
 #menubar .navbar{margin-bottom:8px;}
 .nav-wrapper{border-bottom:1px solid #d4d4d4;}
@@ -1916,508 +1918,6 @@ DimCoord(array([ 1,  4,  7, 10, 13, 16, 19], dtype=int32), standard_name=&apos;m
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="loading-data-into-iris">Loading data into Iris</h2>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We've already seen the basic <code>load</code> function, but we can also control which cubes are actually loaded with <em>constraints</em>. The simplest constraint is just a string, which filters cubes based on their name:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[6]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-0: air_potential_temperature / (K)     (time: 3; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="note-on-sample_data_path">Note on sample_data_path:</h4>
-<p>Throughout this course we will make use of the sample data that Iris provides. The function <code>iris.sample_data_path</code> returns the appropriate path to the file in the iris sample data collection. A common mistake for Iris users is to use the <code>sample_data_path</code> function to access data which is not part of Iris's sample data collection - this is bad practice and is unlikely to work in the future.</p>
-<p><strong>Task:</strong> Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify that it returns a string pointing to a file on your system. Use this string directly in the call to <code>iris.load</code> and confirm the result is the same as in the previous example e.g.:</p>
-<pre><code>print iris.load(&#39;/path/to/iris/sampledata/uk_hires.pp&#39;, &#39;air_potential_temperature&#39;)</code></pre>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="the-three-load-functions-load-load_cube-and-load_cubes">The three load functions: load, load_cube and load_cubes</h3>
-<p>There are three main load functions in iris: <code>load</code>, <code>load_cube</code> and <code>load_cubes</code>.</p>
-<ol style="list-style-type: decimal">
-<li><strong>load</strong> is a general purpose loading function. Typically this is where all data analysis will start, before more loading is refined with the more controlled loading from the other two functions.</li>
-<li><strong>load_cube</strong> returns a single cube from the given source(s) and constraint. There will be exactly one cube, or an exception will be raised.</li>
-<li><strong>load_cubes</strong> returns a list of cubes from the given sources(s) and constraint(s). There will be exactly one cube per constraint, or an exception will be raised.</li>
-</ol>
-<p>Note: <code>load_cube</code> is a special case of <code>load_cubes</code> which can be seen with:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[7]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">c1</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
-<span class="n">c3</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cubes</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
-<span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span> <span class="o">==</span> <span class="n">c3</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[7]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre>
-True
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In general, it is a good idea to make use of the <code>load_cube</code>/<code>load_cubes</code> functions rather than the generic <code>load</code> function in non-exploratory code. Doing so makes your code more resilient to changes in the data source, often results in more readable/maintainable code, and in combination with well defined constraints, will improve load performance.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The load functions all accept a list of filenames to load, and any of the filenames can be &quot;glob&quot; patterns (http://docs.python.org/2/library/glob.html).</p>
-<p><strong>Task:</strong> Read in the files found at <code>iris.sample_data_path('GloSea4', 'ensemble_010.pp')</code> and <code>iris.sample_data_path('GloSea4', 'ensemble_011.pp')</code> using a single load call. Do this by:</p>
-<ol style="list-style-type: decimal">
-<li>providing a list of the two filenames.</li>
-<li>providing a suitable glob pattern.</li>
-</ol>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="constraints">Constraints</h2>
-<p>Iris's constraints mechanism provides a powerful way to filter a subset of data from a larger collection. We've already seen that constraints can be used at load time to return data of interest from a file, but we can also apply constraints to a single cube, or a list of cubes, using their respective <code>extract</code> methods:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[8]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
-<span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-0: air_potential_temperature / (K)     (time: 3; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The simplest constraint, namely a string which matches a cube's name, is conveniently converted into an actual <code>iris.Constraint</code> instance wherever needed. However, we could constuct this constraint manually and compare with the previous result:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[9]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pot_temperature_constraint</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-0: air_potential_temperature / (K)     (time: 3; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The Constraint constructor also takes arbitrary keywords to constrain coordinate values. For example, to extract model level number 10 from the air potential teperature cube:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[10]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span> <span class="n">model_level_number</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pot_temperature_constraint</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-0: air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can pass a list of possible values, and even combine two constraints with <code>&amp;</code>:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[11]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span> <span class="o">&amp;</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">model_level_number</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-0: air_potential_temperature / (K)     (time: 3; model_level_number: 2; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can define arbitrary functions which operate on each cell of a coordinate. This is a common thing to do for floating point coordinates, where exact equality is non-trivial.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[12]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">less_than_10</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return True for values which are less than 10.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="mi">10</span>
-
-<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span> <span class="n">model_level_number</span><span class="o">=</span><span class="n">less_than_10</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-0: air_potential_temperature / (K)     (time: 3; model_level_number: 3; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Because Iris cells represent both point and bound, cell comparison can sometimes be counter-intuitive:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[13]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&#39;cell &gt; {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&#39;cell &gt;= {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&#39;cell == {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&#39;cell &lt;= {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;=</span> <span class="n">value</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&#39;cell &lt; {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="n">cell</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
-<span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-cell &gt; 12 is False
-cell &gt;= 12 is True
-cell == 12 is True
-cell &lt;= 12 is True
-cell &lt; 12 is False
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you want full contol of how cell comparison is taking place, you can always compare with another cell:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[14]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">cell_1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
-<span class="n">cell_2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-
-<span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell_1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="k">print</span>
-<span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell_1</span><span class="p">,</span> <span class="n">cell_2</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-cell &gt; 11 is False
-cell &gt;= 11 is True
-cell == 11 is True
-cell &lt;= 11 is True
-cell &lt; 11 is False
-
-cell &gt; Cell(point=11, bound=None) is False
-cell &gt;= Cell(point=11, bound=None) is False
-cell == Cell(point=11, bound=None) is False
-cell &lt;= Cell(point=11, bound=None) is True
-cell &lt; Cell(point=11, bound=None) is True
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is common to want to build a constraint for time. With Iris's <em>current</em> time implementation this is harder than we would like as you need to know the units that your time coordinate is in (e.g it could be &quot;hours since 2000-01-01&quot;, &quot;days since 1970-01-01&quot; or any other number of reference epoch's and units). In practice this means we need to get hold of the &quot;time&quot; coordinate <em>before</em> we can build the constraint.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[15]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="n">air_pot_temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="n">time_coord</span> <span class="o">=</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">date_in_time_units</span> <span class="o">=</span> <span class="n">time_coord</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">date2num</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;{} == {} {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_in_time_units</span><span class="p">,</span> <span class="n">time_coord</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-2009-11-19 11:00:00 == 349619.0 hours since 1970-01-01 00:00:00
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[16]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">time_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">date_in_time_units</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">time_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-air_potential_temperature / (K)     (time: 2; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>TASK?</p>
-<p>Write a function which takes a cube, and returns True or False whether the time ... Build constraints for var_name and STASH... WORK ON THIS... cell method</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="saving-cubes">Saving cubes</h2>
-<p>The <code>iris.save</code> function provides a convenient interface to save Cube and CubeList instances.</p>
-<p>To save some cubes to a NetCDF file:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[17]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">iris</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cubes</span><span class="p">,</span> <span class="s">&#39;saved_cubes.nc&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[18]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="o">!</span>ncdump -h saved_cubes.nc | head -n 20
-<span class="o">!</span>rm saved_cubes.nc
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-netcdf saved_cubes {
-dimensions:
-	time = UNLIMITED ; // (3 currently)
-	model_level_number = 7 ;
-	grid_latitude = 204 ;
-	grid_longitude = 187 ;
-	bnds = 2 ;
-variables:
-	float air_potential_temperature(time, model_level_number, grid_latitude, grid_longitude) ;
-		air_potential_temperature:standard_name = &quot;air_potential_temperature&quot; ;
-		air_potential_temperature:units = &quot;K&quot; ;
-		air_potential_temperature:ukmo__um_stash_source = &quot;m01s00i004&quot; ;
-		air_potential_temperature:grid_mapping = &quot;rotated_latitude_longitude&quot; ;
-		air_potential_temperature:coordinates = &quot;forecast_period forecast_reference_time level_height sigma surface_altitude&quot; ;
-	int rotated_latitude_longitude ;
-		rotated_latitude_longitude:grid_mapping_name = &quot;rotated_latitude_longitude&quot; ;
-		rotated_latitude_longitude:longitude_of_prime_meridian = 0. ;
-		rotated_latitude_longitude:semi_major_axis = 6371229. ;
-		rotated_latitude_longitude:semi_minor_axis = 6371229. ;
-		rotated_latitude_longitude:grid_north_pole_latitude = 37.5 ;
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Extra keywords can be passed to specific fileformat savers.</p>
-<p><strong>Task:</strong> Go to the iris reference documentation for <code>iris.save</code>. Which fileformats can currently be saved to? Which keywords are accepted to <code>iris.save</code> when saving a PP file?</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="cube-attributes">Cube attributes</h2>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -2462,23 +1962,13 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stderr">
-<pre>
-writing [iris.fileformats._pyke_rules.compiled_krb]/fc_rules_cf_fc.py
-writing [iris.fileformats._pyke_rules.compiled_krb]/compiled_pyke_files.py
-
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To access a cube's data array the <strong><code>data</code></strong> property exists, this is either a numpy array or in some cases a numpy masked array. It is very important to note that for most of the supported filetypes in Iris, the data isn't actually loaded for a cube until you request the cube's data via this property (either directly or indirectly). After you've accessed the data once, it is stored on the cube and thus wont be loaded again.</p>
-<p>To find the shape of a cube's data it is possible to do <code>cube.data.shape</code> or <code>cube.data.ndim</code>, but this will trigger any unloaded data to be loaded, therefore <code>shape</code> and <code>ndim</code> are properties available directly on the cube which do not unncessecarily load data.</p>
+<p>To find the shape of a cube's data it is possible to do <code>cube.data.shape</code> or <code>cube.data.ndim</code>, but this will trigger any unloaded data to be loaded, therefore <code>shape</code> and <code>ndim</code> are properties available directly on the cube which do not unnecessarily load data.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2905,24 +2395,518 @@ None
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>TODO: Circular.</p>
+<h2 id="exercise-1">Exercise 1:</h2>
+<p>1. Using the file in <code>iris.sample_data_path('atlantic_profiles.nc')</code> load the data and print the cube list. Store these cubes in a variable called cubes.</p>
+<p>2. Print a sorted list of unique names for the cubes.</p>
+<p>3. Extract the &quot;sea_water_potential_temperature&quot; cube. Print the minimum, maximum, mean and standard deviation of the cube's data.</p>
+<p>4. Print the attributes of the cube.</p>
+<p>5. Print the names of all coordinates on the cube. (Hint: Remember the cube.coords method)</p>
+<p>6. Get hold of the &quot;latitude&quot; coordinate on the cube. Identify whether the cube has bounds. Print the minimum and maximum latitude points in this cube.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="exercise">Exercise:</h2>
-<h3 id="part-1">Part 1</h3>
-<p>Using the file in &lt;&gt; load the data and print the cube list. Store these cubes in a variable called cubes.</p>
-<h3 id="part-2">Part 2</h3>
-<p>Print a sorted list of unique names for the cubes. (Hint: remember python's <code>set</code> and <code>', '.join(...)</code> functionality)</p>
-<h3 id="part-3">Part 3</h3>
-<p>Extract the &quot;air pressure at sea level&quot; cube. Print the minumum, maximum, mean and standard deviation of the cube's data.</p>
-<h3 id="part-4">Part 4</h3>
-<p>Print the attributes of the cube.</p>
-<h3 id="part-5">Part 5</h3>
-<p>Print the names of all coordinates on the cube. (Hint: Remember the cube.coords method)</p>
-<h3 id="part-6">Part 6</h3>
-<p>Get hold of the &quot;grid_latitude&quot; coordinate on the cube. Identify whether the cube has bounds. Print the minimum and maximum grid_latitude points in this cube.</p>
-<h3 id="part-7-extension">Part 7 (Extension)</h3>
-<p>Use matplotlib's pcolormesh to display the cube's raw data. Don't worry about geolocation (e.g. coastlines), but do add a colorbar.</p>
+<h2 id="loading-data-into-iris">Loading data into Iris</h2>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We've already seen the basic <code>load</code> function, but we can also control which cubes are actually loaded with <em>constraints</em>. The simplest constraint is just a string, which filters cubes based on their name:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0: air_potential_temperature / (K)     (time: 3; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="note-on-sample_data_path">Note on sample_data_path:</h4>
+<p>Throughout this course we will make use of the sample data that Iris provides. The function <code>iris.sample_data_path</code> returns the appropriate path to the file in the iris sample data collection. A common mistake for Iris users is to use the <code>sample_data_path</code> function to access data which is not part of Iris's sample data collection - this is bad practice and is unlikely to work in the future.</p>
+<p><strong>Exercise 2:</strong> Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify that it returns a string pointing to a file on your system. Use this string directly in the call to <code>iris.load</code> and confirm the result is the same as in the previous example e.g.:</p>
+<pre><code>print iris.load(&#39;/path/to/iris/sampledata/uk_hires.pp&#39;, &#39;air_potential_temperature&#39;)</code></pre>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="the-three-load-functions-load-load_cube-and-load_cubes">The three load functions: load, load_cube and load_cubes</h3>
+<p>There are three main load functions in iris: <code>load</code>, <code>load_cube</code> and <code>load_cubes</code>.</p>
+<ol style="list-style-type: decimal">
+<li><strong>load</strong> is a general purpose loading function. Typically this is where all data analysis will start, before more loading is refined with the more controlled loading from the other two functions.</li>
+<li><strong>load_cube</strong> returns a single cube from the given source(s) and constraint. There will be exactly one cube, or an exception will be raised.</li>
+<li><strong>load_cubes</strong> returns a list of cubes from the given sources(s) and constraint(s). There will be exactly one cube per constraint, or an exception will be raised.</li>
+</ol>
+<p>Note: <code>load_cube</code> is a special case of <code>load_cubes</code> which can be seen with:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">c1</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
+<span class="n">c3</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cubes</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
+<span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span> <span class="o">==</span> <span class="n">c3</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[7]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In general, it is a good idea to make use of the <code>load_cube</code>/<code>load_cubes</code> functions rather than the generic <code>load</code> function in non-exploratory code. Doing so makes your code more resilient to changes in the data source, often results in more readable/maintainable code, and in combination with well defined constraints, will improve load performance.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The load functions all accept a list of filenames to load, and any of the filenames can be &quot;glob&quot; patterns (http://docs.python.org/2/library/glob.html).</p>
+<p><strong>Exercise 2 continued:</strong> Read in the files found at <code>iris.sample_data_path('GloSea4', 'ensemble_010.pp')</code> and <code>iris.sample_data_path('GloSea4', 'ensemble_011.pp')</code> using a single load call. Do this by:</p>
+<ol style="list-style-type: decimal">
+<li>providing a list of the two filenames.</li>
+<li>providing a suitable glob pattern.</li>
+</ol>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="constraints">Constraints</h2>
+<p>Iris's constraints mechanism provides a powerful way to filter a subset of data from a larger collection. We've already seen that constraints can be used at load time to return data of interest from a file, but we can also apply constraints to a single cube, or a list of cubes, using their respective <code>extract</code> methods:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0: air_potential_temperature / (K)     (time: 3; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The simplest constraint, namely a string which matches a cube's name, is conveniently converted into an actual <code>iris.Constraint</code> instance wherever needed. However, we could construct this constraint manually and compare with the previous result:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pot_temperature_constraint</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0: air_potential_temperature / (K)     (time: 3; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Constraint constructor also takes arbitrary keywords to constrain coordinate values. For example, to extract model level number 10 from the air potential teperature cube:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span> <span class="n">model_level_number</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pot_temperature_constraint</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0: air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can pass a list of possible values, and even combine two constraints with <code>&amp;</code>:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span> <span class="o">&amp;</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">model_level_number</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0: air_potential_temperature / (K)     (time: 3; model_level_number: 2; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can define arbitrary functions which operate on each cell of a coordinate. This is a common thing to do for floating point coordinates, where exact equality is non-trivial.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[12]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">less_than_10</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return True for values which are less than 10.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="mi">10</span>
+
+<span class="k">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span> <span class="n">model_level_number</span><span class="o">=</span><span class="n">less_than_10</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0: air_potential_temperature / (K)     (time: 3; model_level_number: 3; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because Iris cells represent both point and bound, cell comparison can sometimes be counter-intuitive:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[13]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;cell &gt; {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&#39;cell &gt;= {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&#39;cell == {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&#39;cell &lt;= {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;=</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&#39;cell &lt; {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="n">cell</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+cell &gt; 12 is False
+cell &gt;= 12 is True
+cell == 12 is True
+cell &lt;= 12 is True
+cell &lt; 12 is False
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want full control of how cell comparison is taking place, you can always compare with another cell:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[14]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">cell_1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="n">cell_2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+
+<span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell_1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="k">print</span>
+<span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell_1</span><span class="p">,</span> <span class="n">cell_2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+cell &gt; 11 is False
+cell &gt;= 11 is True
+cell == 11 is True
+cell &lt;= 11 is True
+cell &lt; 11 is False
+
+cell &gt; Cell(point=11, bound=None) is False
+cell &gt;= Cell(point=11, bound=None) is False
+cell == Cell(point=11, bound=None) is False
+cell &lt;= Cell(point=11, bound=None) is True
+cell &lt; Cell(point=11, bound=None) is True
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is common to want to build a constraint for time. With Iris's <em>current</em> time implementation this is harder than we would like as you need to know the units that your time coordinate is in (e.g it could be &quot;hours since 2000-01-01&quot;, &quot;days since 1970-01-01&quot; or any other number of reference epoch's and units). In practice this means we need to get hold of the &quot;time&quot; coordinate <em>before</em> we can build the constraint.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[15]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">air_pot_temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">time_coord</span> <span class="o">=</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">date_in_time_units</span> <span class="o">=</span> <span class="n">time_coord</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">date2num</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;{} == {} {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_in_time_units</span><span class="p">,</span> <span class="n">time_coord</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+2009-11-19 11:00:00 == 349619.0 hours since 1970-01-01 00:00:00
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[16]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">time_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">date_in_time_units</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">time_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+air_potential_temperature / (K)     (time: 2; model_level_number: 7; grid_latitude: 204; grid_longitude: 187)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Exercise 3:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Write a function, which when given a cube, returns True or False depending on whether a cell method exists.</li>
+<li>Use this function as a value for the <code>iris.Constraint</code> <strong>cube_func</strong> keyword, and load the file in <code>iris.sample_data_path('A1B_north_america.nc')</code> such that only cubes with cell methods are loaded (note: in this case, that is all that exists in the file).</li>
+</ol>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="saving-cubes">Saving cubes</h2>
+<p>The <code>iris.save</code> function provides a convenient interface to save Cube and CubeList instances.</p>
+<p>To save some cubes to a NetCDF file:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[17]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">iris</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cubes</span><span class="p">,</span> <span class="s">&#39;saved_cubes.nc&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[18]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">!</span>ncdump -h saved_cubes.nc | head -n 20
+<span class="o">!</span>rm saved_cubes.nc
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+netcdf saved_cubes {
+dimensions:
+	time = UNLIMITED ; // (3 currently)
+	model_level_number = 7 ;
+	grid_latitude = 204 ;
+	grid_longitude = 187 ;
+	bnds = 2 ;
+variables:
+	float air_potential_temperature(time, model_level_number, grid_latitude, grid_longitude) ;
+		air_potential_temperature:standard_name = &quot;air_potential_temperature&quot; ;
+		air_potential_temperature:units = &quot;K&quot; ;
+		air_potential_temperature:ukmo__um_stash_source = &quot;m01s00i004&quot; ;
+		air_potential_temperature:grid_mapping = &quot;rotated_latitude_longitude&quot; ;
+		air_potential_temperature:coordinates = &quot;forecast_period forecast_reference_time level_height sigma surface_altitude&quot; ;
+	int rotated_latitude_longitude ;
+		rotated_latitude_longitude:grid_mapping_name = &quot;rotated_latitude_longitude&quot; ;
+		rotated_latitude_longitude:longitude_of_prime_meridian = 0. ;
+		rotated_latitude_longitude:semi_major_axis = 6371229. ;
+		rotated_latitude_longitude:semi_minor_axis = 6371229. ;
+		rotated_latitude_longitude:grid_north_pole_latitude = 37.5 ;
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Extra keywords can be passed to specific fileformat savers.</p>
+<p><strong>Task:</strong> Go to the iris reference documentation for <code>iris.save</code>. Which fileformats can currently be saved to? Which keywords are accepted to <code>iris.save</code> when saving a PP file?</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="merging">Merging</h2>
@@ -3143,7 +3127,7 @@ surface_temperature / (K)           (time: 6; forecast_reference_time: 2; latitu
 <li>cubes with differing <strong>var_name</strong> attributes</li>
 <li>cubes with different &quot;data manager&quot; states (loaded vs not-loaded, different slices but same data shape, different data types)</li>
 </ul>
-<h2 id="exercise">Exercise</h2>
+<h3 id="exercise-4">Exercise 4</h3>
 <p>The following exercise is designed to give you experience of identifying why two cubes are not merging. Work is underway to make this identification process more automatic, but the resolution of the identified differences will still be a necessary process.</p>
 <p>There are 6 problems, each of which are not merging into a single cube as desired. In no particular order the problems are:</p>
 <ol style="list-style-type: decimal">
@@ -3154,17 +3138,17 @@ surface_temperature / (K)           (time: 6; forecast_reference_time: 2; latitu
 <li>the two cubes have different long names</li>
 <li>the two cubes have different shapes (the data must currently be loaded to correct this)</li>
 </ol>
-<p>The files can be found in the repository along with this course in <code>exercises/iris/merge/</code>. There are two files to be loaded for each exercise: <code>merge_exercise.{problem_number}.f1.nc</code> and <code>merge_exercise.{problem_number}.f2.nc</code>.</p>
+<p>The files can be found in the repository along with this course in <code>resources/</code>. There are two files to be loaded for each exercise: <code>merge_exercise.{problem_number}.f1.nc</code> and <code>merge_exercise.{problem_number}.f2.nc</code>.</p>
 <p>Identify, and correct, the reason that the two cubes are not merging for all 6 sets of files.</p>
 <p>The first problem is solved below:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[37]:
+In&nbsp;[77]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;merge_exercise.1.*.nc&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;resources/merge_exercise.1.*.nc&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cubes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">&#39;Unsucessful merge.</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">cubes</span>
 
@@ -3180,53 +3164,15 @@ In&nbsp;[37]:
 
 
 <div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_pyerr">
+<div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">IOError</span>                                   Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-37-1f58f798b4cd&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>cubes <span class="ansiblue">=</span> iris<span class="ansiblue">.</span>load<span class="ansiblue">(</span><span class="ansiblue">&apos;merge_exercise.1.*.nc&apos;</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">      2</span> <span class="ansigreen">if</span> len<span class="ansiblue">(</span>cubes<span class="ansiblue">)</span> <span class="ansiblue">&gt;</span> <span class="ansicyan">1</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">      3</span>     <span class="ansigreen">print</span> <span class="ansiblue">&apos;Unsucessful merge.\n&apos;</span><span class="ansiblue">,</span> cubes<span class="ansiblue"></span>
-<span class="ansigreen">      4</span> <span class="ansiblue"></span>
-<span class="ansigreen">      5</span> <span class="ansigreen">print</span> cubes<span class="ansiblue">[</span><span class="ansicyan">0</span><span class="ansiblue">]</span><span class="ansiblue">.</span>attributes<span class="ansiblue"></span>
+Unsucessful merge.
+0: air_potential_temperature / (K)     (grid_latitude: 100; grid_longitude: 100)
+1: air_potential_temperature / (K)     (grid_latitude: 100; grid_longitude: 100)
+{&apos;source&apos;: &apos;Iris test case&apos;, &apos;Conventions&apos;: &apos;CF-1.5&apos;, &apos;History&apos;: &apos;unknown&apos;}
+{&apos;source&apos;: &apos;Iris test case&apos;, &apos;Conventions&apos;: &apos;CF-1.5&apos;}
 
-<span class="ansigreen">/Users/pelson/dev/iris/lib/iris/__init__.py</span> in <span class="ansicyan">load</span><span class="ansiblue">(uris, constraints, callback)</span>
-<span class="ansigreen">    196</span> <span class="ansiblue"></span>
-<span class="ansigreen">    197</span>     &quot;&quot;&quot;
-<span class="ansigreen">--&gt; 198</span><span class="ansired">     </span><span class="ansigreen">return</span> _load_collection<span class="ansiblue">(</span>uris<span class="ansiblue">,</span> constraints<span class="ansiblue">,</span> callback<span class="ansiblue">)</span><span class="ansiblue">.</span>merged<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue">.</span>cubes<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    199</span> <span class="ansiblue"></span>
-<span class="ansigreen">    200</span> <span class="ansiblue"></span>
-
-<span class="ansigreen">/Users/pelson/dev/iris/lib/iris/__init__.py</span> in <span class="ansicyan">_load_collection</span><span class="ansiblue">(uris, constraints, callback)</span>
-<span class="ansigreen">    166</span>     <span class="ansigreen">try</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    167</span>         cubes <span class="ansiblue">=</span> _generate_cubes<span class="ansiblue">(</span>uris<span class="ansiblue">,</span> callback<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 168</span><span class="ansired">         </span>result <span class="ansiblue">=</span> iris<span class="ansiblue">.</span>cube<span class="ansiblue">.</span>_CubeFilterCollection<span class="ansiblue">.</span>from_cubes<span class="ansiblue">(</span>cubes<span class="ansiblue">,</span> constraints<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    169</span>     <span class="ansigreen">except</span> EOFError <span class="ansigreen">as</span> e<span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    170</span>         raise iris.exceptions.TranslationError(
-
-<span class="ansigreen">/Users/pelson/dev/iris/lib/iris/cube.py</span> in <span class="ansicyan">from_cubes</span><span class="ansiblue">(cubes, constraints)</span>
-<span class="ansigreen">    132</span>         pairs <span class="ansiblue">=</span> <span class="ansiblue">[</span>_CubeFilter<span class="ansiblue">(</span>constraint<span class="ansiblue">)</span> <span class="ansigreen">for</span> constraint <span class="ansigreen">in</span> constraints<span class="ansiblue">]</span><span class="ansiblue"></span>
-<span class="ansigreen">    133</span>         collection <span class="ansiblue">=</span> _CubeFilterCollection<span class="ansiblue">(</span>pairs<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 134</span><span class="ansired">         </span><span class="ansigreen">for</span> cube <span class="ansigreen">in</span> cubes<span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    135</span>             collection<span class="ansiblue">.</span>add_cube<span class="ansiblue">(</span>cube<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    136</span>         <span class="ansigreen">return</span> collection<span class="ansiblue"></span>
-
-<span class="ansigreen">/Users/pelson/dev/iris/lib/iris/__init__.py</span> in <span class="ansicyan">_generate_cubes</span><span class="ansiblue">(uris, callback)</span>
-<span class="ansigreen">    153</span>         <span class="ansigreen">if</span> scheme <span class="ansiblue">==</span> <span class="ansiblue">&apos;file&apos;</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    154</span>             part_names <span class="ansiblue">=</span> <span class="ansiblue">[</span>x<span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">]</span> <span class="ansigreen">for</span> x <span class="ansigreen">in</span> groups<span class="ansiblue">]</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 155</span><span class="ansired">             </span><span class="ansigreen">for</span> cube <span class="ansigreen">in</span> iris<span class="ansiblue">.</span>io<span class="ansiblue">.</span>load_files<span class="ansiblue">(</span>part_names<span class="ansiblue">,</span> callback<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    156</span>                 <span class="ansigreen">yield</span> cube<span class="ansiblue"></span>
-<span class="ansigreen">    157</span>         <span class="ansigreen">elif</span> scheme <span class="ansigreen">in</span> <span class="ansiblue">[</span><span class="ansiblue">&apos;http&apos;</span><span class="ansiblue">,</span> <span class="ansiblue">&apos;https&apos;</span><span class="ansiblue">]</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-
-<span class="ansigreen">/Users/pelson/dev/iris/lib/iris/io/__init__.py</span> in <span class="ansicyan">load_files</span><span class="ansiblue">(filenames, callback)</span>
-<span class="ansigreen">    164</span>     <span class="ansigreen">if</span> <span class="ansigreen">not</span> all<span class="ansiblue">(</span>glob_expanded<span class="ansiblue">.</span>viewvalues<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    165</span>         raise IOError(&quot;One or more of the files specified did not exist %s.&quot; %
-<span class="ansigreen">--&gt; 166</span><span class="ansired">         [&quot;%s expanded to %s&quot; % (pattern, expanded if expanded else &quot;empty&quot;) for pattern, expanded in glob_expanded.iteritems()])
-</span><span class="ansigreen">    167</span> <span class="ansiblue"></span>
-<span class="ansigreen">    168</span>     <span class="ansired"># Create default dict mapping iris format handler to its associated filenames</span><span class="ansiblue"></span><span class="ansiblue"></span>
-
-<span class="ansired">IOError</span>: One or more of the files specified did not exist [&apos;merge_exercise.1.*.nc expanded to empty&apos;].</pre>
+</pre>
 </div>
 </div>
 
@@ -3271,7 +3217,7 @@ In&nbsp;[]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To resolve this we can define a function which gets called during the load process which takes a cube, a PP field and a filename, and makes the necessary adjustments to include a &quot;realization&quot; coordinate. We pass this function to load, and the result is a sucessfully merged cube:</p>
+<p>To resolve this we can define a function which gets called during the load process which takes a cube, a PP field and a filename, and makes the necessary adjustments to include a &quot;realization&quot; coordinate. We pass this function to load, and the result is a successfully merged cube:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -3480,12 +3426,12 @@ air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some of the aggregators accept <code>weights</code> as a keyword. The supplied weights must have the same shape as the cube (there is currently no broadcasting being done) and there is an iris utility function to make this easier:</p>
+<p>Some of the aggregators accept <code>weights</code> as a keyword. The supplied weights must have the same shape as the cube (there is currently no broadcasting being done) and there is an iris utility function to make this easier (available after v1.5 only):</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[43]:
+In&nbsp;[75]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -3504,13 +3450,20 @@ In&nbsp;[43]:
 <div class="box-flex1 output_subarea output_pyerr">
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-43-7a72d9df4ee8&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> weights <span class="ansiblue">=</span> np<span class="ansiblue">.</span>array<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">,</span> <span class="ansicyan">1.1</span><span class="ansiblue">,</span> <span class="ansicyan">1</span><span class="ansiblue">,</span> <span class="ansicyan">1.4</span><span class="ansiblue">,</span> <span class="ansicyan">0.7</span><span class="ansiblue">,</span> <span class="ansicyan">1</span><span class="ansiblue">,</span> <span class="ansicyan">1</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansired"> </span>weights <span class="ansiblue">=</span> iris<span class="ansiblue">.</span>util<span class="ansiblue">.</span>broadcast_to_shape<span class="ansiblue">(</span>weights<span class="ansiblue">,</span> cube<span class="ansiblue">.</span>shape<span class="ansiblue">,</span> <span class="ansiblue">(</span><span class="ansicyan">1</span><span class="ansiblue">,</span><span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansired">ValueError</span>                                Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-75-46dc83933b94&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      1</span> weights <span class="ansiblue">=</span> np<span class="ansiblue">.</span>array<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">,</span> <span class="ansicyan">1.1</span><span class="ansiblue">,</span> <span class="ansicyan">1</span><span class="ansiblue">,</span> <span class="ansicyan">1.4</span><span class="ansiblue">,</span> <span class="ansicyan">0.7</span><span class="ansiblue">,</span> <span class="ansicyan">1</span><span class="ansiblue">,</span> <span class="ansicyan">1</span><span class="ansiblue">]</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansired"> </span>weights <span class="ansiblue">=</span> iris<span class="ansiblue">.</span>util<span class="ansiblue">.</span>broadcast_weights<span class="ansiblue">(</span>weights<span class="ansiblue">,</span> cube<span class="ansiblue">.</span>data<span class="ansiblue">,</span> <span class="ansiblue">(</span><span class="ansicyan">1</span><span class="ansiblue">,</span><span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue"></span>
 <span class="ansigreen">      3</span> <span class="ansigreen">print</span> cube<span class="ansiblue">.</span>collapsed<span class="ansiblue">(</span><span class="ansiblue">&apos;model_level_number&apos;</span><span class="ansiblue">,</span> iris<span class="ansiblue">.</span>analysis<span class="ansiblue">.</span>MEAN<span class="ansiblue">,</span> weights<span class="ansiblue">=</span>weights<span class="ansiblue">)</span><span class="ansiblue">.</span>summary<span class="ansiblue">(</span>True<span class="ansiblue">)</span><span class="ansiblue"></span>
 
-<span class="ansired">AttributeError</span>: &apos;module&apos; object has no attribute &apos;broadcast_to_shape&apos;</pre>
+<span class="ansigreen">/Users/pelson/dev/iris/lib/iris/util.pyc</span> in <span class="ansicyan">broadcast_weights</span><span class="ansiblue">(weights, array, dims)</span>
+<span class="ansigreen">     67</span>             weights_shape<span class="ansiblue">[</span>dim<span class="ansiblue">]</span> <span class="ansiblue">=</span> array<span class="ansiblue">.</span>shape<span class="ansiblue">[</span>dim<span class="ansiblue">]</span><span class="ansiblue"></span>
+<span class="ansigreen">     68</span>     <span class="ansired"># Broadcast the arrays together.</span><span class="ansiblue"></span><span class="ansiblue"></span>
+<span class="ansigreen">---&gt; 69</span><span class="ansired">     </span><span class="ansigreen">return</span> np<span class="ansiblue">.</span>broadcast_arrays<span class="ansiblue">(</span>weights<span class="ansiblue">.</span>reshape<span class="ansiblue">(</span>weights_shape<span class="ansiblue">)</span><span class="ansiblue">,</span> array<span class="ansiblue">)</span><span class="ansiblue">[</span><span class="ansicyan">0</span><span class="ansiblue">]</span><span class="ansiblue"></span>
+<span class="ansigreen">     70</span> <span class="ansiblue"></span>
+<span class="ansigreen">     71</span> <span class="ansiblue"></span>
+
+<span class="ansired">ValueError</span>: total size of new array must be unchanged</pre>
 </div>
 </div>
 
@@ -3591,7 +3544,7 @@ air_potential_temperature / (K)     (time: 3; model_level_number: 7)
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task:</strong> What other aggregators are available? Calculate the potential temperature variance with time for the area averaged cube (hint: We want to reduce the vertical dimension, and end up with a cube of length 3). Print the data values of the resulting cube.</p>
+<p><strong>Exercise 5:</strong> What other aggregators are available? Calculate the potential temperature variance with time for the area averaged cube (hint: We want to reduce the vertical dimension, and end up with a cube of length 3). Print the data values of the resulting cube.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="iteration">Iteration</h2>
@@ -8190,7 +8143,7 @@ AABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task:</strong> Use the above cube with, appropriate slicing, to produce the following:</p>
+<p><strong>Exercise 6:</strong> Use the above cube with, appropriate slicing, to produce the following:</p>
 <ol style="list-style-type: decimal">
 <li>a <strong>contour</strong> plot of <em>longitude</em> vs <em>time</em></li>
 <li>a <strong>contourf</strong> map on a LambertConformal projection (with coastlines)</li>
@@ -8885,12 +8838,12 @@ AuxCoord(array([2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2007, 2007
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Make use of deferred loading of data.</strong> Sometimes it makes sense to load data before doing operations, othertimes it makes sense to do data reduction before loading:</p>
+<p><strong>Make use of deferred loading of data.</strong> Sometimes it makes sense to load data before doing operations, other times it makes sense to do data reduction before loading:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[68]:
+In&nbsp;[66]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">zonal_sum</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
@@ -8914,7 +8867,7 @@ In&nbsp;[68]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[69]:
+In&nbsp;[67]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="o">%%</span><span class="k">timeit</span>
@@ -8933,7 +8886,7 @@ In&nbsp;[69]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-1 loops, best of 3: 8.13 s per loop
+1 loops, best of 3: 8.26 s per loop
 
 </pre>
 </div>
@@ -8949,7 +8902,7 @@ In&nbsp;[69]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[70]:
+In&nbsp;[68]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="o">%%</span><span class="k">timeit</span>
@@ -8969,7 +8922,7 @@ In&nbsp;[70]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-1 loops, best of 3: 830 ms per loop
+1 loops, best of 3: 822 ms per loop
 
 </pre>
 </div>
@@ -8985,7 +8938,7 @@ In&nbsp;[70]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[71]:
+In&nbsp;[69]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
@@ -8999,7 +8952,7 @@ In&nbsp;[71]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[72]:
+In&nbsp;[70]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="o">%%</span><span class="k">timeit</span>
@@ -9017,7 +8970,7 @@ In&nbsp;[72]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-1 loops, best of 3: 356 ms per loop
+1 loops, best of 3: 357 ms per loop
 
 </pre>
 </div>
@@ -9030,7 +8983,7 @@ In&nbsp;[72]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[73]:
+In&nbsp;[71]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="o">%%</span><span class="k">timeit</span>
@@ -9049,7 +9002,7 @@ In&nbsp;[73]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-10 loops, best of 3: 125 ms per loop
+1 loops, best of 3: 125 ms per loop
 
 </pre>
 </div>
@@ -9065,7 +9018,7 @@ In&nbsp;[73]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[74]:
+In&nbsp;[72]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="o">%%</span><span class="k">timeit</span>
@@ -9084,7 +9037,7 @@ In&nbsp;[74]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-10 loops, best of 3: 114 ms per loop
+10 loops, best of 3: 117 ms per loop
 
 </pre>
 </div>
@@ -9109,7 +9062,7 @@ In&nbsp;[74]:
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="exercise">Exercise</h2>
+<h2 id="exercise-7">Exercise 7</h2>
 <ol style="list-style-type: decimal">
 <li>Load 'A1B_north_america.nc' from the iris sample data</li>
 <li>Extract just data from the year 1980 and beyond from the loaded data</li>
