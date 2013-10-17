@@ -1417,6 +1417,7 @@ span#login_widget{float:right;}
 .list_container>div{border-bottom:1px solid #ababab;}.list_container>div:hover .list-item{background-color:red;}
 .list_container>div:last-child{border:none;}
 .list_item:hover .list_item{background-color:#ddd;}
+.item_name{line-height:24px;}
 .list_container>div>span,.list_container>div>div{padding:8px;}
 .list_item a{text-decoration:none;}
 input.nbname_input{height:15px;}
@@ -1470,7 +1471,7 @@ div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-s
 div.output_prompt{color:darkred;}
 .CodeMirror{line-height:1.231em;height:auto;background:none;}
 .CodeMirror-scroll{overflow-y:hidden;overflow-x:auto;}
-@-moz-document {.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
+@-moz-document url-prefix(){.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
 .CodeMirror-linenumber{padding:0 8px 0 4px;}
 .CodeMirror-gutters{border-bottom-left-radius:4px;border-top-left-radius:4px;}
 .CodeMirror pre{padding:0;border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
@@ -1497,6 +1498,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-error{color:#f00;}
 .cm-s-ipython span.cm-operator{color:#AA22FF;font-weight:bold;}
 .cm-s-ipython span.cm-meta{color:#AA22FF;}
+.cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat;}
 #menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
 #menubar .navbar{margin-bottom:8px;}
 .nav-wrapper{border-bottom:1px solid #d4d4d4;}
@@ -1911,7 +1913,7 @@ In&nbsp;[7]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Caveat, it can be done, but really <em>don't do it</em>, lists are generally better at non-homogeonous collections:</p>
+<p>Caveat, it can be done, but really <em>don't do it</em>, lists are generally better at non-homogeneous collections:</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="array-attributes">Array Attributes</h3>
@@ -2456,7 +2458,7 @@ In&nbsp;[22]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="indexing-with-other-arrays">Indexing with other arrays</h2>
-<p>Above we saw how to index arrays with single numbers and slices, just like Python lists. But arrays allow for a more sophisticated kind of indexing which is very powerful: you can index an array with another array, and in particular with an array of boolean values. This is particluarly useful to extract information from an array that matches a certain condition.</p>
+<p>Above we saw how to index arrays with single numbers and slices, just like Python lists. But arrays allow for a more sophisticated kind of indexing which is very powerful: you can index an array with another array, and in particular with an array of boolean values. This is particularly useful to extract information from an array that matches a certain condition.</p>
 <p>Consider for example that in the array <code>norm10</code> we want to replace all values above 9 with the value 0. We can do so by first finding the <em>mask</em> that indicates where this condition is true or false:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -3511,7 +3513,7 @@ In&nbsp;[51]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="short-exercise">Short Exercise:</h3>
+<h3 id="exercise-1">Exercise 1:</h3>
 <p>Use <code>np.arange</code> and <code>reshape</code> to create the array</p>
 <pre><code>A = [[1 2 3 4]
      [5 6 7 8]]</code></pre>
@@ -3526,7 +3528,7 @@ In&nbsp;[51]:
 <h2 id="reshape-and-newaxis">Reshape and newaxis</h2>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Rather than explicitly specifying the length of a dimension with the reshape method, there is a shortand meaning for &quot;-1&quot;:</p>
+<p>Rather than explicitly specifying the length of a dimension with the reshape method, there is a short-hand meaning for &quot;-1&quot;:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -3811,7 +3813,7 @@ In&nbsp;[60]:
 <p><span class="math">\[
      \int_{a}^{b}f(x)dx
 \]</span></p>
-<p>we can partition the integration interval <span class="math">\([a,b]\)</span> into smaller subintervals, and approximate the area under the curve for each subinterval by the area of the trapezoid created by linearly interpolating between the two function values at each end of the subinterval:</p>
+<p>we can partition the integration interval <span class="math">\([a,b]\)</span> into smaller subintervals. We then approximate the area under the curve for each subinterval by calculating the area of the trapezoid created by linearly interpolating between the two function values at each end of the subinterval:</p>
 <div class="figure">
 <img src="images/trapezoidal_rule.png" alt="Illustration of the trapezoidal rule" /><p class="caption">Illustration of the trapezoidal rule</p>
 </div>
@@ -3829,7 +3831,7 @@ In&nbsp;[60]:
     return area / 2</code></pre>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="exercises">Exercises</h3>
+<h3 id="exercise-2">Exercise 2</h3>
 <h4 id="part-1">Part 1</h4>
 <p>Create two arrays <span class="math">\(x\)</span> and <span class="math">\(y\)</span>, where <span class="math">\(x\)</span> is a linearly spaced array in the interval <span class="math">\([0, 3]\)</span> of length 10, and <span class="math">\(y\)</span> represents the function <span class="math">\(f(x) = x^2\)</span> sampled at <span class="math">\(x\)</span>.</p>
 </div>
@@ -3899,7 +3901,7 @@ In&nbsp;[60]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="part-5-extension">Part 5 (extension)</h4>
-<p><code>scipy.integrage</code> provides many common integration schemes. Find a suitable function to perform the trapezoidal integration implemented above and check its result with your own:</p>
+<p><code>scipy.integrate</code> provides many common integration schemes. Find a suitable function to perform the trapezoidal integration implemented above and check its result with your own:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
