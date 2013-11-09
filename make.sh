@@ -4,7 +4,7 @@ cp -rf ../course_content/images images
 
 for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
 do
-    ipython nbconvert --to slides ../course_content/${name}.ipynb
+    #ipython nbconvert --to slides ../course_content/${name}.ipynb
     ipython nbconvert --to html ../course_content/${name}.ipynb
 done
 

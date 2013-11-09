@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>[]</title>
+<title></title>
 <style type="text/css">
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
@@ -1699,10 +1699,13 @@ init_mathjax();
 <h2 id="cartopy-in-a-nutshell">Cartopy in a nutshell</h2>
 <p>Cartopy is a Python package which allows the easy creation of maps, using matplotlib, for the analysis and visualisation of geospatial data.</p>
 </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to create a map with cartopy and matplotlib, we typically need to import pylab and cartopy's crs (coordinate reference system) submodule. As an emerging standard, these are imported as:</p>
+</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[2]:
+In&nbsp;[1]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -1719,7 +1722,7 @@ In&nbsp;[2]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[3]:
+In&nbsp;[2]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
@@ -2247,12 +2250,12 @@ AAAASUVORK5CYII=
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To draw data, we use the the standard matplotlib plotting routines with an additional <strong>transform</strong> keyword argument. The value of the <strong>transform</strong> argument should be a cartopy coordinate reference system of the data being plotted:</p>
+<p>To draw data, we use the the standard matplotlib plotting routines with an additional <strong>transform</strong> keyword argument. The value of the <strong>transform</strong> argument should be a cartopy coordinate reference system <em>of the data being plotted</em>:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[3]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
@@ -2797,12 +2800,12 @@ YII=
 <p>Notice that unless we specific a map extent (we did so via the <strong><code>set_global</code></strong> method in this case) the map will zoom into the range of the plotted data.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can add graticule lines and tick labels to the map using the gridlines method:</p>
+<p>We can add graticule lines and tick labels to the map using the gridlines method (this currently is limited to just a few coordinate reference systems):</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[4]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mercator</span><span class="p">())</span>
@@ -3497,7 +3500,7 @@ FAgEggQiIQoEAkECkRAFAoEggUiIAoFAkEAkRIFAIEjwH8EKz3EpZ2O/AAAAAElFTkSuQmCC
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="kn">as</span> <span class="nn">mticker</span>
@@ -3506,8 +3509,10 @@ In&nbsp;[15]:
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
 <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
 <span class="n">gl</span><span class="o">.</span><span class="n">xlocator</span> <span class="o">=</span> <span class="n">mticker</span><span class="o">.</span><span class="n">FixedLocator</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">180</span><span class="p">])</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -4153,7 +4158,7 @@ DJUnCNEAAAAASUVORK5CYII=
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Cartopy cannot currently label all types of projection, though more work is intended on this functionality in the near future.</p>
+<p>Cartopy cannot currently label all types of projection, though more work is intended on this functionality in the future.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Exercise 1:</strong></p>
@@ -4167,9 +4172,52 @@ y = np.linspace(-24, 25, 35)
 x2d, y2d = np.meshgrid(x, y)
 
 data = np.cos(np.deg2rad(y2d) * 4) + np.sin(np.deg2rad(x2d) * 4)</code></pre>
-<p>1. Define a cartopy coordinate reference system which represents a rotated pole with a pole longitude of 37.5 and a pole latitude of 177.5.</p>
+<p>1. Define a cartopy coordinate reference system which represents a rotated pole with a pole latitude of 37.5 and a pole longitude of 177.5.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>2. Produce a map, with coastlines, using the coordinate reference system created in #1.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>3. Produce a map, with coastlines, in a Plate Carree projection with a pcolormesh of the data generated by the code snippet provided at the beginning of the example - remember the data is in the rotated coordinate system defined in #1.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>[]</title>
+<title></title>
 <style type="text/css">
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
@@ -1697,7 +1697,7 @@ init_mathjax();
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="an-introduction-to-matplotlib">An introduction to matplotlib</h1>
-<p>Matplotlib is a Python package used widely throughout the scientific Python community to produce high quality 2D publication graphics. It transparently supports a wide range of output formats including PNG (and other raster formats), PostScript/EPS, PDF and SVG and has interfaces for all of the major graphics user interfaces.</p>
+<p>Matplotlib is a Python package used widely throughout the scientific Python community to produce high quality 2D publication graphics. It transparently supports a wide range of output formats including PNG (and other raster formats), PostScript/EPS, PDF and SVG and has interfaces for all of the major desktop GUI (graphical user interface) toolkits.</p>
 <p>Matplotlib comes with a convenience sub-package called <code>pyplot</code> which, for consistency with the wider maptlotlib community, should always be imported as <code>plt</code>:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -1740,7 +1740,7 @@ In&nbsp;[2]:
 
 
 <pre>
-&lt;matplotlib.figure.Figure at 0x10e748f10&gt;
+&lt;matplotlib.figure.Figure at 0x1047fa810&gt;
 </pre>
 
 </div>
@@ -2040,6 +2040,19 @@ BwAPorgDgAdR3AHAgyjuAOBBFHcA8CCKOwB4EMUdADzo/wEBpvX0X6r2wQAAAABJRU5ErkJggg==
 <li>Setting a 10% margin on the axes with the lower y limit set to 0. (Note: order is important here)</li>
 </ol>
 </div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In truth, the previous example can be simplified to be even shorter. First, we are not using the returned artists, so we could avoid the assignment and just call the appropriate functions. Second, in exactly the same way that we didn't <em>need</em> to manually create a Figure artist when using the <code>pyplot.axes</code> method, we can remove the <code>plt.axes</code> if we use the <code>plot</code> function from <code>pyplot</code>. Our simple line example then becomes:</p>
 </div>
@@ -2199,6 +2212,19 @@ BwAPorgDgAdR3AHAgyjuAOBBFHcA8CCKOwB4EMUdADzo/wEBpvX0X6r2wQAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Task 3:</strong> By calling <code>plot</code> multiple times, create a single axes showing the line plots of <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span> in the interval <span class="math">\([0, 2\pi]\)</span> with 200 linearly spaced <span class="math">\(x\)</span> samples.</p>
 </div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="multiple-axes-on-the-same-figure-aka-subplot">Multiple axes on the same figure (aka subplot)</h2>
 <p>Matplotlib makes it relatively easy to add more than one Axes artist to a figure. The <code>add_subplot</code> method on a Figure artist, which is wrapped by the <code>subplot</code> function in <code>pyplot</code>, adds an Axes artist in the grid position specified. To compute the position, we must tell matplotlib the number of rows and columns to separate the figure into, and which number the axes to be created is (1 based). For example, to create axes at the top right and bottom left of a <span class="math">\(3 x 2\)</span> notional grid of Axes artists the grid specifications would be <code>2, 3, 3</code> and <code>2, 3, 4</code> respectively:</p>
@@ -2342,9 +2368,22 @@ CHcAMBDhDgAGItwBwECEOwAY6H8sVzi1T27XxgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Exercise 3 continued:</strong> Copy the answer from the previous task (plotting <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span>) and add the appropriate <code>plt.subplot</code> calls to create a figure with 2 rows of Axes artists, one showing <span class="math">\(y=sin(x)\)</span> and the other showing <span class="math">\(y=cos(x)\)</span>.</p>
 </div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="further-plot-types">Further plot types</h2>
-<p>Matplotlib comes with a huge variety of different plot types.</p>
+<p>Matplotlib comes with a huge variety of different plot types, here is a quick demonstration of the more common ones.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -6963,7 +7002,7 @@ CCCzJwiCCAFk9gRBECGAzJ4gCCIEkNkTBEGEgP8BokMODsFtmmwAAAAASUVORK5CYII=
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Matplotlib comes with powerful annotation capabilities which are described in detail at http://matplotlib.org/users/annotations_intro.html.</p>
-<p>A simple example:</p>
+<p>The annotation's power can mean that the syntax is a little harder to read, for example one of the simplest examples using annotate:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -7258,7 +7297,8 @@ czlnIFKwAAAAAElFTkSuQmCC
 matplotlib.use(&#39;agg&#39;)
 import matplotlib.pyplot as plt</code></pre>
 <p>Note: The backend must be chosen before importing pyplot for the first time, unless the <code>force</code> keyword is added.</p>
-<p>To save a figure programmatically the <code>savefig</code> function can be used:</p>
+<p>None interactive backends such as the &quot;agg&quot; backend will do nothing when <strong><code>plt.show()</code></strong> is called - this is because there is nowhere for a figure to be displayed.</p>
+<p>To save a figure programmatically the <code>savefig</code> function can be used from any backend:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -7394,7 +7434,7 @@ OAAAAABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For graphical backends, showing and subsequently closing the window of a figure results in the figure being cleared from the matplotlib system. This is not the case for <code>plt.savefig</code>, which typically should be called before <code>plt.show</code>. You can manually close figures with the <code>plt.close</code> function.</p>
+<p>For graphical backends, showing and subsequently closing the window of a figure results in the figure being cleared from the matplotlib system. This is not the case for <code>plt.savefig</code>, which typically should be called before <code>plt.show</code>. It is also possible to manually close figures with the <code>plt.close</code> function after calling something such as <code>plt.savefig</code> to remove the current figure.</p>
 </div>
 </body>
 </html>
