@@ -20,10 +20,11 @@ class Notebook(object):
                 cell[self.CODE_CELL] = []
                 cell[self.OUTPUTS] = []
 
-    def clear_output(cells):
-        for cell in cells:
-            if cell['cell_type'] == 'code':
-                cell[u'outputs'] = []
+    def clear_output(self):
+        for cell in self:
+            if cell[self.CELL_TYPE] == 'code':
+                del cell['prompt_number']
+                cell[self.OUTPUTS] = []
 
     def save(self, fh):
         json.dump(self.data, fh)
