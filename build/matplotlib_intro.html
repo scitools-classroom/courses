@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title></title>
+
+<meta charset="utf-8" />
+<title>matplotlib_intro</title>
+
 <style type="text/css">
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
@@ -1442,24 +1444,7 @@ input.engine_num_input{height:20px;margin-bottom:2px;padding-top:0;padding-botto
 .ansibgcyan{background-color:cyan;}
 .ansibggray{background-color:gray;}
 div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;padding:5px 5px 5px 0px;margin:2px 0px 2px 7px;outline:none;}div.cell.selected{border-radius:4px;border:thin #ababab solid;}
-div.prompt{width:11ex;padding:0.4em;margin:0px;font-family:monospace;text-align:right;line-height:1.231em;}
-.celltoolbar{border:thin solid #CFCFCF;border-bottom:none;background:#EEE;border-top-right-radius:3px;border-top-left-radius:3px;width:100%;-webkit-box-pack:end;height:22px;}
-.no_input_radius{border-top-right-radius:0px;border-top-left-radius:0px;}
-.text_cell .ctb_prompt{display:none;}
-.code_cell .ctb_prompt{display:block;}
-.ctb_hideshow{display:none;vertical-align:bottom;padding-right:2px;}
-.celltoolbar>div{padding-top:0px;}
-.ctb_area{margin:0;padding:0;width:100%;}
-.ctb_show.ctb_hideshow,.ctb_show .ctb_hideshow{display:block;}
-.ctb_show .input_area,.ctb_show .ctb_hideshow+div.text_cell_input{border-top-right-radius:0px;border-top-left-radius:0px;}
-.ctb_show>.celltoolbar{border-bottom-right-radius:0px;border-bottom-left-radius:0px;}
-.button_container{margin-top:0;margin-bottom:0;}
-.ui-button{min-width:30px;}
-.celltoolbar .button_container select{margin:10px;margin-top:1px;margin-bottom:0px;padding:0;font-size:87%;width:auto;display:inline-block;height:18px;line-height:18px;vertical-align:top;}
-.celltoolbar label{display:inline-block;height:15px;line-height:15px;vertical-align:top;}
-.celltoolbar label span{font-size:85%;}
-.celltoolbar input[type=checkbox]{margin:0px;margin-left:4px;margin-right:4px;}
-.celltoolbar .ui-button{border:none;vertical-align:top;height:20px;}
+div.prompt{min-width:11ex;padding:0.4em;margin:0px;font-family:monospace;text-align:right;line-height:1.231em;}
 div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
 div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
 div.input_prompt{color:navy;border-top:1px solid transparent;}
@@ -1475,9 +1460,6 @@ div.output_prompt{color:darkred;}
 .CodeMirror-linenumber{padding:0 8px 0 4px;}
 .CodeMirror-gutters{border-bottom-left-radius:4px;border-top-left-radius:4px;}
 .CodeMirror pre{padding:0;border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
-.completions{position:absolute;z-index:10;overflow:hidden;border:1px solid #ababab;border-radius:4px;-webkit-box-shadow:0px 6px 10px -1px #adadad;-moz-box-shadow:0px 6px 10px -1px #adadad;box-shadow:0px 6px 10px -1px #adadad;}
-.completions select{background:white;outline:none;border:none;padding:0px;margin:0px;overflow:auto;font-family:monospace;font-size:110%;color:#000000;}
-.completions select option.context{color:#0064cd;}
 pre code{display:block;padding:0.5em;}
 .highlight-base,pre code,pre .subst,pre .tag .title,pre .lisp .title,pre .clojure .built_in,pre .nginx .title{color:black;}
 .highlight-string,pre .string,pre .constant,pre .parent,pre .tag .value,pre .rules .value,pre .rules .value .number,pre .preprocessor,pre .ruby .symbol,pre .ruby .symbol .string,pre .aggregate,pre .template_tag,pre .django .variable,pre .smalltalk .class,pre .addition,pre .flow,pre .stream,pre .bash .variable,pre .apache .tag,pre .apache .cbracket,pre .tex .command,pre .tex .special,pre .erlang_repl .function_or_atom,pre .markdown .header{color:#BA2121;}
@@ -1499,25 +1481,10 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-operator{color:#AA22FF;font-weight:bold;}
 .cm-s-ipython span.cm-meta{color:#AA22FF;}
 .cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat;}
-#menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
-#menubar .navbar{margin-bottom:8px;}
-.nav-wrapper{border-bottom:1px solid #d4d4d4;}
-#menubar li.dropdown{line-height:12px;}
-body{background-color:#ffffff;}
-body.notebook_app{overflow:hidden;}
-span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%;}
-div#notebook_panel{margin:0px 0px 0px 0px;padding:0px;-webkit-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);-moz-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);}
-div#notebook{overflow-y:scroll;overflow-x:auto;width:100%;padding:5px 5px 15px 5px;margin:0px;border-top:1px solid #ababab;}
-div.ui-widget-content{border:1px solid #ababab;outline:none;}
-pre.dialog{background-color:#f7f7f7;border:1px solid #ddd;border-radius:4px;padding:0.4em;padding-left:2em;}
-p.dialog{padding:0.2em;}
-pre,code,kbd,samp{white-space:pre-wrap;}
-#fonttest{font-family:monospace;}
-p{margin-bottom:0;}
-.end_space{height:200px;}
-#notification_area{z-index:10;}
-.notification_widget{color:#777777;padding:1px 12px;margin:2px 4px;z-index:10;border:1px solid #ccc;border-radius:4px;background:rgba(240, 240, 240, 0.5);}
-div.output_area{padding:0px;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
+div.output_area{padding:0px;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}div.output_area .MathJax_Display{text-align:left !important;}
+div.output_area .rendered_html table{margin-left:0;margin-right:0;}
+div.output_area .rendered_html img{margin-left:0;margin-right:0;}
+.output{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
 div.output_area pre{font-family:monospace;margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;color:black;background-color:transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;line-height:inherit;}
 div.output_subarea{padding:0.44em 0.4em 0.4em 1px;margin-left:6px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
 div.output_text{text-align:left;color:#000000;font-family:monospace;line-height:1.231em;}
@@ -1529,12 +1496,6 @@ div.raw_input{padding-top:0px;padding-bottom:0px;height:1em;line-height:1em;font
 span.input_prompt{font-family:inherit;}
 input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;margin:-2px 0px 0px 1px;padding-left:1px;padding-top:2px;height:1em;}
 p.p-space{margin-bottom:10px;}
-div#pager_splitter{height:8px;}
-#pager-container{position:relative;padding:15px 0px;}
-div#pager{overflow:auto;display:none;}div#pager pre{font-size:13px;line-height:1.231em;color:#000000;background-color:#f7f7f7;padding:0.4em;}
-.shortcut_key{display:inline-block;width:15ex;text-align:right;font-family:monospace;}
-.shortcut_descr{display:inline-block;}
-div.quickhelp{float:left;width:50%;}
 .rendered_html{color:black;}.rendered_html em{font-style:italic;}
 .rendered_html strong{font-weight:bold;}
 .rendered_html u{text-decoration:underline;}
@@ -1558,19 +1519,67 @@ div.quickhelp{float:left;width:50%;}
 .rendered_html pre{margin:1em 2em;}
 .rendered_html pre,.rendered_html code{border:0;background-color:#ffffff;color:#000000;font-size:100%;padding:0px;}
 .rendered_html blockquote{margin:1em 2em;}
-.rendered_html table,.rendered_html tr,.rendered_html th,.rendered_html td{border:1px solid black;border-collapse:collapse;margin:1em 2em;}
+.rendered_html table{margin-left:auto;margin-right:auto;border:1px solid black;border-collapse:collapse;}
+.rendered_html tr,.rendered_html th,.rendered_html td{border:1px solid black;border-collapse:collapse;margin:1em 2em;}
 .rendered_html td,.rendered_html th{text-align:left;vertical-align:middle;padding:4px;}
 .rendered_html th{font-weight:bold;}
 .rendered_html p{text-align:justify;}
-.rendered_html p+p{margin-top:1em;}
-span#save_widget{padding:0px 5px;margin-top:12px;}
-span#checkpoint_status,span#autosave_status{font-size:small;}
-@media (max-width:767px){span#save_widget{font-size:small;} span#checkpoint_status,span#autosave_status{font-size:x-small;}}@media (max-width:767px){span#checkpoint_status,span#autosave_status{display:none;}}@media (min-width:768px) and (max-width:979px){span#checkpoint_status{display:none;} span#autosave_status{font-size:x-small;}}div.text_cell{padding:5px 5px 5px 5px;}
+.rendered_html img{display:block;margin-left:auto;margin-right:auto;}
+.rendered_html *+p{margin-top:1em;}
+.rendered_html *+table{margin-top:1em;}
+.rendered_html *+img{margin-top:1em;}
+div.text_cell{padding:5px 5px 5px 5px;}
 div.text_cell_input{color:#000000;border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
 div.text_cell_render{outline:none;resize:none;width:inherit;border-style:none;padding:5px;color:#000000;}
 a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
 h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
-.toolbar{padding:0px 10px;margin-top:-5px;}.toolbar select,.toolbar label{width:auto;height:26px;vertical-align:middle;margin-right:2px;margin-bottom:0px;display:inline;font-size:92%;margin-left:0.3em;margin-right:0.3em;padding:0px;padding-top:3px;}
+body{background-color:#ffffff;}
+body.notebook_app{overflow:hidden;}
+span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%;}
+div#notebook_panel{margin:0px 0px 0px 0px;padding:0px;-webkit-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);-moz-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);}
+div#notebook{overflow-y:scroll;overflow-x:auto;width:100%;padding:5px 5px 15px 5px;margin:0px;border-top:1px solid #ababab;}
+div.ui-widget-content{border:1px solid #ababab;outline:none;}
+pre.dialog{background-color:#f7f7f7;border:1px solid #ddd;border-radius:4px;padding:0.4em;padding-left:2em;}
+p.dialog{padding:0.2em;}
+pre,code,kbd,samp{white-space:pre-wrap;}
+#fonttest{font-family:monospace;}
+p{margin-bottom:0;}
+.end_space{height:200px;}
+.celltoolbar{border:thin solid #CFCFCF;border-bottom:none;background:#EEE;border-top-right-radius:3px;border-top-left-radius:3px;width:100%;-webkit-box-pack:end;height:22px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;}
+.no_input_radius{border-top-right-radius:0px;border-top-left-radius:0px;}
+.text_cell .ctb_prompt{display:none;}
+.code_cell .ctb_prompt{display:block;}
+.ctb_hideshow{display:none;vertical-align:bottom;padding-right:2px;}
+.celltoolbar>div{padding-top:0px;}
+.ctb_area{margin:0;padding:0;width:100%;}
+.ctb_show.ctb_hideshow,.ctb_show .ctb_hideshow{display:block;}
+.ctb_show .input_area,.ctb_show .ctb_hideshow+div.text_cell_input{border-top-right-radius:0px;border-top-left-radius:0px;}
+.ctb_show>.celltoolbar{border-bottom-right-radius:0px;border-bottom-left-radius:0px;}
+.button_container{margin-top:0;margin-bottom:0;}
+.ui-button{min-width:30px;}
+.celltoolbar .button_container select{margin:10px;margin-top:1px;margin-bottom:0px;padding:0;font-size:87%;width:auto;display:inline-block;height:18px;line-height:18px;vertical-align:top;}
+.celltoolbar label{display:inline-block;height:15px;line-height:15px;vertical-align:top;}
+.celltoolbar label span{font-size:85%;}
+.celltoolbar input[type=checkbox]{margin:0px;margin-left:4px;margin-right:4px;}
+.celltoolbar .ui-button{border:none;vertical-align:top;height:20px;}
+.completions{position:absolute;z-index:10;overflow:hidden;border:1px solid #ababab;border-radius:4px;-webkit-box-shadow:0px 6px 10px -1px #adadad;-moz-box-shadow:0px 6px 10px -1px #adadad;box-shadow:0px 6px 10px -1px #adadad;}
+.completions select{background:white;outline:none;border:none;padding:0px;margin:0px;overflow:auto;font-family:monospace;font-size:110%;color:#000000;}
+.completions select option.context{color:#0064cd;}
+#menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
+#menubar .navbar{margin-bottom:8px;}
+.nav-wrapper{border-bottom:1px solid #d4d4d4;}
+#menubar li.dropdown{line-height:12px;}
+#notification_area{z-index:10;}
+.notification_widget{color:#777777;padding:1px 12px;margin:2px 4px;z-index:10;border:1px solid #ccc;border-radius:4px;background:rgba(240, 240, 240, 0.5);}
+div#pager_splitter{height:8px;}
+#pager-container{position:relative;padding:15px 0px;}
+div#pager{overflow:auto;display:none;}div#pager pre{font-size:13px;line-height:1.231em;color:#000000;background-color:#f7f7f7;padding:0.4em;}
+.shortcut_key{display:inline-block;width:15ex;text-align:right;font-family:monospace;}
+.shortcut_descr{display:inline-block;}
+div.quickhelp{float:left;width:50%;}
+span#save_widget{padding:0px 5px;margin-top:12px;}
+span#checkpoint_status,span#autosave_status{font-size:small;}
+@media (max-width:767px){span#save_widget{font-size:small;} span#checkpoint_status,span#autosave_status{font-size:x-small;}}@media (max-width:767px){span#checkpoint_status,span#autosave_status{display:none;}}@media (min-width:768px) and (max-width:979px){span#checkpoint_status{display:none;} span#autosave_status{font-size:x-small;}}.toolbar{padding:0px 10px;margin-top:-5px;}.toolbar select,.toolbar label{width:auto;height:26px;vertical-align:middle;margin-right:2px;margin-bottom:0px;display:inline;font-size:92%;margin-left:0.3em;margin-right:0.3em;padding:0px;padding-top:3px;}
 .toolbar .btn{padding:2px 8px;}
 .toolbar .btn-group{margin-top:0px;}
 .toolbar-inner{border:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
@@ -1662,10 +1671,10 @@ body {
 }
 
 pre {
-    padding: 0.2em;
-    border: none;
-    margin: 0px;
-    font-size: 13px;
+  padding: 0.2em;
+  border: none;
+  margin: 0px;
+  font-size: 13px;
 }
 </style>
 
@@ -1700,8 +1709,8 @@ init_mathjax();
 <p>Matplotlib is a Python package used widely throughout the scientific Python community to produce high quality 2D publication graphics. It transparently supports a wide range of output formats including PNG (and other raster formats), PostScript/EPS, PDF and SVG and has interfaces for all of the major desktop GUI (graphical user interface) toolkits.</p>
 <p>Matplotlib comes with a convenience sub-package called <code>pyplot</code> which, for consistency with the wider maptlotlib community, should always be imported as <code>plt</code>:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[1]:
 </div>
@@ -1718,8 +1727,8 @@ In&nbsp;[1]:
 <p>At the heart of <strong>every</strong> plot is the figure object. The &quot;Figure&quot; object is the top level concept which can be drawn to one of the many output formats, or simply just to screen. Any object which can be drawn in this way is known as an &quot;Artist&quot; in matplotlib.</p>
 <p>Lets create our first artist using pyplot, and then show it:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[2]:
 </div>
@@ -1731,11 +1740,11 @@ In&nbsp;[2]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -1755,8 +1764,8 @@ In&nbsp;[2]:
 <p>By far the most useful artist in matplotlib is the &quot;Axes&quot; artist. The Axes artist represents the &quot;data space&quot; of a typical plot, a rectangular axes (the most common, but not always the case, e.g. polar plots) will have 2 (confusingly named) Axis artists with tick labels and tick marks.</p>
 <p>There is no limit on the number of Axes artists which can exist on a Figure artist. Let's go ahead and create a figure with a single Axes artist, and show it using pyplot:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[3]:
 </div>
@@ -1768,11 +1777,11 @@ In&nbsp;[3]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -1880,8 +1889,8 @@ ADCIuAOAQcQdAAwi7gBgEHEHAIOIOwAYRNwBwCDiDgAG/R9h/b4XlfACjQAAAABJRU5ErkJggg==
 </ul>
 <p>Plot can be used to draw one or more lines in axes data space:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[4]:
 </div>
@@ -1894,11 +1903,11 @@ In&nbsp;[4]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -2035,13 +2044,13 @@ BwAPorgDgAdR3AHAgyjuAOBBFHcA8CCKOwB4EMUdADzo/wEBpvX0X6r2wQAAAABJRU5ErkJggg==
 <p>Notice how the axes' view limits (<code>ax.viewLim</code>) have been updated to include the whole of the line. Should we want to add some spacing around the edges of our axes we could set the axes' margin using the Axes artist's <code>margins</code> method (http://matplotlib.org/api/axes_api.html?highlight=axes#matplotlib.axes.Axes.margins). Alternatively, we could manually set the limits with the Axes artist's <code>set_xlim</code> and <code>set_ylim</code> methods (http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_xlim and http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_ylim).</p>
 <p><strong>Exercise 2:</strong> Modify the previous example to produce 3 different figures which control the limits of the axes by:</p>
 <ol style="list-style-type: decimal">
-<li>Manually setting the x and y limits to <span class="math">\([0.5, 2]\)</span> and <span class="math">\([1, 5]\)</span> respectively.</li>
+<li>Manually setting the x and y limits to \([0.5, 2]\) and \([1, 5]\) respectively.</li>
 <li>Defining a margin such that there is 10% whitespace inside the axes around the drawn line (Hint: numbers to margins are normalised such that 0% is 0.0 and 100% is 1.0).</li>
 <li>Setting a 10% margin on the axes with the lower y limit set to 0. (Note: order is important here)</li>
 </ol>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[4]:
 </div>
@@ -2056,8 +2065,8 @@ In&nbsp;[4]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In truth, the previous example can be simplified to be even shorter. First, we are not using the returned artists, so we could avoid the assignment and just call the appropriate functions. Second, in exactly the same way that we didn't <em>need</em> to manually create a Figure artist when using the <code>pyplot.axes</code> method, we can remove the <code>plt.axes</code> if we use the <code>plot</code> function from <code>pyplot</code>. Our simple line example then becomes:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[5]:
 </div>
@@ -2069,11 +2078,11 @@ In&nbsp;[5]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -2210,10 +2219,10 @@ BwAPorgDgAdR3AHAgyjuAOBBFHcA8CCKOwB4EMUdADzo/wEBpvX0X6r2wQAAAABJRU5ErkJggg==
 <p>The simplicity of this example shows how visualisations can be produced quickly and easily with matplotlib, but it is worth remembering that for full control of Figure and Axes artists we can mix the convenience of <code>pyplot</code> with the power of matplotlib's object oriented design.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task 3:</strong> By calling <code>plot</code> multiple times, create a single axes showing the line plots of <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span> in the interval <span class="math">\([0, 2\pi]\)</span> with 200 linearly spaced <span class="math">\(x\)</span> samples.</p>
+<p><strong>Task 3:</strong> By calling <code>plot</code> multiple times, create a single axes showing the line plots of \(y=sin(x)\) and \(y=cos(x)\) in the interval \([0, 2\pi]\) with 200 linearly spaced \(x\) samples.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[5]:
 </div>
@@ -2227,10 +2236,10 @@ In&nbsp;[5]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="multiple-axes-on-the-same-figure-aka-subplot">Multiple axes on the same figure (aka subplot)</h2>
-<p>Matplotlib makes it relatively easy to add more than one Axes artist to a figure. The <code>add_subplot</code> method on a Figure artist, which is wrapped by the <code>subplot</code> function in <code>pyplot</code>, adds an Axes artist in the grid position specified. To compute the position, we must tell matplotlib the number of rows and columns to separate the figure into, and which number the axes to be created is (1 based). For example, to create axes at the top right and bottom left of a <span class="math">\(3 x 2\)</span> notional grid of Axes artists the grid specifications would be <code>2, 3, 3</code> and <code>2, 3, 4</code> respectively:</p>
+<p>Matplotlib makes it relatively easy to add more than one Axes artist to a figure. The <code>add_subplot</code> method on a Figure artist, which is wrapped by the <code>subplot</code> function in <code>pyplot</code>, adds an Axes artist in the grid position specified. To compute the position, we must tell matplotlib the number of rows and columns to separate the figure into, and which number the axes to be created is (1 based). For example, to create axes at the top right and bottom left of a \(3 x 2\) notional grid of Axes artists the grid specifications would be <code>2, 3, 3</code> and <code>2, 3, 4</code> respectively:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[6]:
 </div>
@@ -2243,11 +2252,11 @@ In&nbsp;[6]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -2366,10 +2375,10 @@ CHcAMBDhDgAGItwBwECEOwAY6H8sVzi1T27XxgAAAABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Exercise 3 continued:</strong> Copy the answer from the previous task (plotting <span class="math">\(y=sin(x)\)</span> and <span class="math">\(y=cos(x)\)</span>) and add the appropriate <code>plt.subplot</code> calls to create a figure with 2 rows of Axes artists, one showing <span class="math">\(y=sin(x)\)</span> and the other showing <span class="math">\(y=cos(x)\)</span>.</p>
+<p><strong>Exercise 3 continued:</strong> Copy the answer from the previous task (plotting \(y=sin(x)\) and \(y=cos(x)\)) and add the appropriate <code>plt.subplot</code> calls to create a figure with 2 rows of Axes artists, one showing \(y=sin(x)\) and the other showing \(y=cos(x)\).</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[6]:
 </div>
@@ -2385,8 +2394,8 @@ In&nbsp;[6]:
 <h2 id="further-plot-types">Further plot types</h2>
 <p>Matplotlib comes with a huge variety of different plot types, here is a quick demonstration of the more common ones.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[7]:
 </div>
@@ -2398,8 +2407,8 @@ In&nbsp;[7]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[8]:
 </div>
@@ -2414,8 +2423,8 @@ In&nbsp;[8]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[9]:
 </div>
@@ -2427,11 +2436,11 @@ In&nbsp;[9]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -2602,8 +2611,8 @@ uqIoSiSooCuKokSCCrqiKEokqKAriqJEwv8D6bptZEeuQiAAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[10]:
 </div>
@@ -2615,11 +2624,11 @@ In&nbsp;[10]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -2786,8 +2795,8 @@ Y0faznGd5SKEEAEh8F+5CCHErYICuhBCBAQFdCGECAgK6EIIERAU0IUQIiAooAshREBQQBdCiIDw
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[11]:
 </div>
@@ -2799,11 +2808,11 @@ In&nbsp;[11]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -2983,8 +2992,8 @@ PyreCJ9nAAAAAElFTkSuQmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[12]:
 </div>
@@ -2996,11 +3005,11 @@ In&nbsp;[12]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -5686,8 +5695,8 @@ nMJlw8JsRJQAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[13]:
 </div>
@@ -5699,11 +5708,11 @@ In&nbsp;[13]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -5823,8 +5832,8 @@ njhxwtXjyeIsALDILPy6RADAdAh9ALAIoQ8AFiH0AcAihD4AWITQBwCLEPoAYBFCHwAs8n/9LLPd
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[14]:
 </div>
@@ -5836,11 +5845,11 @@ In&nbsp;[14]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -6123,8 +6132,8 @@ HA3x/3s8YPy8YHfOAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>suptitle</code> pyplot function allows us to set the title of a figure, and the <code>set_title</code> method on an Axes artist allows us to set the title of individual axes. Additionally Axes artists have methods named <code>set_xlabel</code> and <code>set_ylabel</code> to label the respective x and y Axis artists (that's Axis, not Axes). Finally, we can add text, located by data coordinates, with the <code>text</code> method on an Axes artist:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[15]:
 </div>
@@ -6149,11 +6158,11 @@ In&nbsp;[15]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -6451,8 +6460,8 @@ RU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The creation of a legend is as simple as adding a &quot;label&quot; to lines of interest, this can be done directly in the call to <code>plt.plot</code>, and then followed up by a call to <code>plt.legend</code>:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[16]:
 </div>
@@ -6468,11 +6477,11 @@ In&nbsp;[16]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -6794,8 +6803,8 @@ RIYSOyGEiAwldkIIERlK7IQQIjKU2AkhRGQosRNCiMj8H3muf8O9AQZ3AAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Colorbars are created with the <code>plt.colorbar</code> function:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[17]:
 </div>
@@ -6813,11 +6822,11 @@ In&nbsp;[17]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -7004,8 +7013,8 @@ CCCzJwiCCAFk9gRBECGAzJ4gCCIEkNkTBEGEgP8BokMODsFtmmwAAAAASUVORK5CYII=
 <p>Matplotlib comes with powerful annotation capabilities which are described in detail at http://matplotlib.org/users/annotations_intro.html.</p>
 <p>The annotation's power can mean that the syntax is a little harder to read, for example one of the simplest examples using annotate:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[18]:
 </div>
@@ -7023,11 +7032,11 @@ In&nbsp;[18]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 
@@ -7300,8 +7309,8 @@ import matplotlib.pyplot as plt</code></pre>
 <p>None interactive backends such as the &quot;agg&quot; backend will do nothing when <strong><code>plt.show()</code></strong> is called - this is because there is nowhere for a figure to be displayed.</p>
 <p>To save a figure programmatically the <code>savefig</code> function can be used from any backend:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[19]:
 </div>
@@ -7313,11 +7322,11 @@ In&nbsp;[19]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_display_data">
 
 

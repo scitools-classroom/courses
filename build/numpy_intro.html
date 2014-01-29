@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title></title>
+
+<meta charset="utf-8" />
+<title>numpy_intro</title>
+
 <style type="text/css">
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
@@ -1442,24 +1444,7 @@ input.engine_num_input{height:20px;margin-bottom:2px;padding-top:0;padding-botto
 .ansibgcyan{background-color:cyan;}
 .ansibggray{background-color:gray;}
 div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;padding:5px 5px 5px 0px;margin:2px 0px 2px 7px;outline:none;}div.cell.selected{border-radius:4px;border:thin #ababab solid;}
-div.prompt{width:11ex;padding:0.4em;margin:0px;font-family:monospace;text-align:right;line-height:1.231em;}
-.celltoolbar{border:thin solid #CFCFCF;border-bottom:none;background:#EEE;border-top-right-radius:3px;border-top-left-radius:3px;width:100%;-webkit-box-pack:end;height:22px;}
-.no_input_radius{border-top-right-radius:0px;border-top-left-radius:0px;}
-.text_cell .ctb_prompt{display:none;}
-.code_cell .ctb_prompt{display:block;}
-.ctb_hideshow{display:none;vertical-align:bottom;padding-right:2px;}
-.celltoolbar>div{padding-top:0px;}
-.ctb_area{margin:0;padding:0;width:100%;}
-.ctb_show.ctb_hideshow,.ctb_show .ctb_hideshow{display:block;}
-.ctb_show .input_area,.ctb_show .ctb_hideshow+div.text_cell_input{border-top-right-radius:0px;border-top-left-radius:0px;}
-.ctb_show>.celltoolbar{border-bottom-right-radius:0px;border-bottom-left-radius:0px;}
-.button_container{margin-top:0;margin-bottom:0;}
-.ui-button{min-width:30px;}
-.celltoolbar .button_container select{margin:10px;margin-top:1px;margin-bottom:0px;padding:0;font-size:87%;width:auto;display:inline-block;height:18px;line-height:18px;vertical-align:top;}
-.celltoolbar label{display:inline-block;height:15px;line-height:15px;vertical-align:top;}
-.celltoolbar label span{font-size:85%;}
-.celltoolbar input[type=checkbox]{margin:0px;margin-left:4px;margin-right:4px;}
-.celltoolbar .ui-button{border:none;vertical-align:top;height:20px;}
+div.prompt{min-width:11ex;padding:0.4em;margin:0px;font-family:monospace;text-align:right;line-height:1.231em;}
 div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
 div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
 div.input_prompt{color:navy;border-top:1px solid transparent;}
@@ -1475,9 +1460,6 @@ div.output_prompt{color:darkred;}
 .CodeMirror-linenumber{padding:0 8px 0 4px;}
 .CodeMirror-gutters{border-bottom-left-radius:4px;border-top-left-radius:4px;}
 .CodeMirror pre{padding:0;border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
-.completions{position:absolute;z-index:10;overflow:hidden;border:1px solid #ababab;border-radius:4px;-webkit-box-shadow:0px 6px 10px -1px #adadad;-moz-box-shadow:0px 6px 10px -1px #adadad;box-shadow:0px 6px 10px -1px #adadad;}
-.completions select{background:white;outline:none;border:none;padding:0px;margin:0px;overflow:auto;font-family:monospace;font-size:110%;color:#000000;}
-.completions select option.context{color:#0064cd;}
 pre code{display:block;padding:0.5em;}
 .highlight-base,pre code,pre .subst,pre .tag .title,pre .lisp .title,pre .clojure .built_in,pre .nginx .title{color:black;}
 .highlight-string,pre .string,pre .constant,pre .parent,pre .tag .value,pre .rules .value,pre .rules .value .number,pre .preprocessor,pre .ruby .symbol,pre .ruby .symbol .string,pre .aggregate,pre .template_tag,pre .django .variable,pre .smalltalk .class,pre .addition,pre .flow,pre .stream,pre .bash .variable,pre .apache .tag,pre .apache .cbracket,pre .tex .command,pre .tex .special,pre .erlang_repl .function_or_atom,pre .markdown .header{color:#BA2121;}
@@ -1499,25 +1481,10 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-operator{color:#AA22FF;font-weight:bold;}
 .cm-s-ipython span.cm-meta{color:#AA22FF;}
 .cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat;}
-#menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
-#menubar .navbar{margin-bottom:8px;}
-.nav-wrapper{border-bottom:1px solid #d4d4d4;}
-#menubar li.dropdown{line-height:12px;}
-body{background-color:#ffffff;}
-body.notebook_app{overflow:hidden;}
-span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%;}
-div#notebook_panel{margin:0px 0px 0px 0px;padding:0px;-webkit-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);-moz-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);}
-div#notebook{overflow-y:scroll;overflow-x:auto;width:100%;padding:5px 5px 15px 5px;margin:0px;border-top:1px solid #ababab;}
-div.ui-widget-content{border:1px solid #ababab;outline:none;}
-pre.dialog{background-color:#f7f7f7;border:1px solid #ddd;border-radius:4px;padding:0.4em;padding-left:2em;}
-p.dialog{padding:0.2em;}
-pre,code,kbd,samp{white-space:pre-wrap;}
-#fonttest{font-family:monospace;}
-p{margin-bottom:0;}
-.end_space{height:200px;}
-#notification_area{z-index:10;}
-.notification_widget{color:#777777;padding:1px 12px;margin:2px 4px;z-index:10;border:1px solid #ccc;border-radius:4px;background:rgba(240, 240, 240, 0.5);}
-div.output_area{padding:0px;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
+div.output_area{padding:0px;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}div.output_area .MathJax_Display{text-align:left !important;}
+div.output_area .rendered_html table{margin-left:0;margin-right:0;}
+div.output_area .rendered_html img{margin-left:0;margin-right:0;}
+.output{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
 div.output_area pre{font-family:monospace;margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;color:black;background-color:transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;line-height:inherit;}
 div.output_subarea{padding:0.44em 0.4em 0.4em 1px;margin-left:6px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
 div.output_text{text-align:left;color:#000000;font-family:monospace;line-height:1.231em;}
@@ -1529,12 +1496,6 @@ div.raw_input{padding-top:0px;padding-bottom:0px;height:1em;line-height:1em;font
 span.input_prompt{font-family:inherit;}
 input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;margin:-2px 0px 0px 1px;padding-left:1px;padding-top:2px;height:1em;}
 p.p-space{margin-bottom:10px;}
-div#pager_splitter{height:8px;}
-#pager-container{position:relative;padding:15px 0px;}
-div#pager{overflow:auto;display:none;}div#pager pre{font-size:13px;line-height:1.231em;color:#000000;background-color:#f7f7f7;padding:0.4em;}
-.shortcut_key{display:inline-block;width:15ex;text-align:right;font-family:monospace;}
-.shortcut_descr{display:inline-block;}
-div.quickhelp{float:left;width:50%;}
 .rendered_html{color:black;}.rendered_html em{font-style:italic;}
 .rendered_html strong{font-weight:bold;}
 .rendered_html u{text-decoration:underline;}
@@ -1558,19 +1519,67 @@ div.quickhelp{float:left;width:50%;}
 .rendered_html pre{margin:1em 2em;}
 .rendered_html pre,.rendered_html code{border:0;background-color:#ffffff;color:#000000;font-size:100%;padding:0px;}
 .rendered_html blockquote{margin:1em 2em;}
-.rendered_html table,.rendered_html tr,.rendered_html th,.rendered_html td{border:1px solid black;border-collapse:collapse;margin:1em 2em;}
+.rendered_html table{margin-left:auto;margin-right:auto;border:1px solid black;border-collapse:collapse;}
+.rendered_html tr,.rendered_html th,.rendered_html td{border:1px solid black;border-collapse:collapse;margin:1em 2em;}
 .rendered_html td,.rendered_html th{text-align:left;vertical-align:middle;padding:4px;}
 .rendered_html th{font-weight:bold;}
 .rendered_html p{text-align:justify;}
-.rendered_html p+p{margin-top:1em;}
-span#save_widget{padding:0px 5px;margin-top:12px;}
-span#checkpoint_status,span#autosave_status{font-size:small;}
-@media (max-width:767px){span#save_widget{font-size:small;} span#checkpoint_status,span#autosave_status{font-size:x-small;}}@media (max-width:767px){span#checkpoint_status,span#autosave_status{display:none;}}@media (min-width:768px) and (max-width:979px){span#checkpoint_status{display:none;} span#autosave_status{font-size:x-small;}}div.text_cell{padding:5px 5px 5px 5px;}
+.rendered_html img{display:block;margin-left:auto;margin-right:auto;}
+.rendered_html *+p{margin-top:1em;}
+.rendered_html *+table{margin-top:1em;}
+.rendered_html *+img{margin-top:1em;}
+div.text_cell{padding:5px 5px 5px 5px;}
 div.text_cell_input{color:#000000;border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
 div.text_cell_render{outline:none;resize:none;width:inherit;border-style:none;padding:5px;color:#000000;}
 a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
 h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
-.toolbar{padding:0px 10px;margin-top:-5px;}.toolbar select,.toolbar label{width:auto;height:26px;vertical-align:middle;margin-right:2px;margin-bottom:0px;display:inline;font-size:92%;margin-left:0.3em;margin-right:0.3em;padding:0px;padding-top:3px;}
+body{background-color:#ffffff;}
+body.notebook_app{overflow:hidden;}
+span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%;}
+div#notebook_panel{margin:0px 0px 0px 0px;padding:0px;-webkit-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);-moz-box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);box-shadow:0 -1px 10px rgba(0, 0, 0, 0.1);}
+div#notebook{overflow-y:scroll;overflow-x:auto;width:100%;padding:5px 5px 15px 5px;margin:0px;border-top:1px solid #ababab;}
+div.ui-widget-content{border:1px solid #ababab;outline:none;}
+pre.dialog{background-color:#f7f7f7;border:1px solid #ddd;border-radius:4px;padding:0.4em;padding-left:2em;}
+p.dialog{padding:0.2em;}
+pre,code,kbd,samp{white-space:pre-wrap;}
+#fonttest{font-family:monospace;}
+p{margin-bottom:0;}
+.end_space{height:200px;}
+.celltoolbar{border:thin solid #CFCFCF;border-bottom:none;background:#EEE;border-top-right-radius:3px;border-top-left-radius:3px;width:100%;-webkit-box-pack:end;height:22px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;}
+.no_input_radius{border-top-right-radius:0px;border-top-left-radius:0px;}
+.text_cell .ctb_prompt{display:none;}
+.code_cell .ctb_prompt{display:block;}
+.ctb_hideshow{display:none;vertical-align:bottom;padding-right:2px;}
+.celltoolbar>div{padding-top:0px;}
+.ctb_area{margin:0;padding:0;width:100%;}
+.ctb_show.ctb_hideshow,.ctb_show .ctb_hideshow{display:block;}
+.ctb_show .input_area,.ctb_show .ctb_hideshow+div.text_cell_input{border-top-right-radius:0px;border-top-left-radius:0px;}
+.ctb_show>.celltoolbar{border-bottom-right-radius:0px;border-bottom-left-radius:0px;}
+.button_container{margin-top:0;margin-bottom:0;}
+.ui-button{min-width:30px;}
+.celltoolbar .button_container select{margin:10px;margin-top:1px;margin-bottom:0px;padding:0;font-size:87%;width:auto;display:inline-block;height:18px;line-height:18px;vertical-align:top;}
+.celltoolbar label{display:inline-block;height:15px;line-height:15px;vertical-align:top;}
+.celltoolbar label span{font-size:85%;}
+.celltoolbar input[type=checkbox]{margin:0px;margin-left:4px;margin-right:4px;}
+.celltoolbar .ui-button{border:none;vertical-align:top;height:20px;}
+.completions{position:absolute;z-index:10;overflow:hidden;border:1px solid #ababab;border-radius:4px;-webkit-box-shadow:0px 6px 10px -1px #adadad;-moz-box-shadow:0px 6px 10px -1px #adadad;box-shadow:0px 6px 10px -1px #adadad;}
+.completions select{background:white;outline:none;border:none;padding:0px;margin:0px;overflow:auto;font-family:monospace;font-size:110%;color:#000000;}
+.completions select option.context{color:#0064cd;}
+#menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0px 0px 4px 4px;}
+#menubar .navbar{margin-bottom:8px;}
+.nav-wrapper{border-bottom:1px solid #d4d4d4;}
+#menubar li.dropdown{line-height:12px;}
+#notification_area{z-index:10;}
+.notification_widget{color:#777777;padding:1px 12px;margin:2px 4px;z-index:10;border:1px solid #ccc;border-radius:4px;background:rgba(240, 240, 240, 0.5);}
+div#pager_splitter{height:8px;}
+#pager-container{position:relative;padding:15px 0px;}
+div#pager{overflow:auto;display:none;}div#pager pre{font-size:13px;line-height:1.231em;color:#000000;background-color:#f7f7f7;padding:0.4em;}
+.shortcut_key{display:inline-block;width:15ex;text-align:right;font-family:monospace;}
+.shortcut_descr{display:inline-block;}
+div.quickhelp{float:left;width:50%;}
+span#save_widget{padding:0px 5px;margin-top:12px;}
+span#checkpoint_status,span#autosave_status{font-size:small;}
+@media (max-width:767px){span#save_widget{font-size:small;} span#checkpoint_status,span#autosave_status{font-size:x-small;}}@media (max-width:767px){span#checkpoint_status,span#autosave_status{display:none;}}@media (min-width:768px) and (max-width:979px){span#checkpoint_status{display:none;} span#autosave_status{font-size:x-small;}}.toolbar{padding:0px 10px;margin-top:-5px;}.toolbar select,.toolbar label{width:auto;height:26px;vertical-align:middle;margin-right:2px;margin-bottom:0px;display:inline;font-size:92%;margin-left:0.3em;margin-right:0.3em;padding:0px;padding-top:3px;}
 .toolbar .btn{padding:2px 8px;}
 .toolbar .btn-group{margin-top:0px;}
 .toolbar-inner{border:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
@@ -1662,10 +1671,10 @@ body {
 }
 
 pre {
-    padding: 0.2em;
-    border: none;
-    margin: 0px;
-    font-size: 13px;
+  padding: 0.2em;
+  border: none;
+  margin: 0px;
+  font-size: 13px;
 }
 </style>
 
@@ -1700,8 +1709,8 @@ init_mathjax();
 <p>While the Python language is an excellent tool for general-purpose programming, with a highly readable syntax, rich and powerful data types (strings, lists, sets, dictionaries, arbitrary length integers, etc) and a very comprehensive standard library, it was not designed specifically for mathematical and scientific computing. Neither the language nor its standard library have facilities for the efficient representation of multidimensional datasets, tools for linear algebra and general matrix manipulations (essential building blocks of virtually all technical computing), nor any data visualisation facilities.</p>
 <p>In particular, Python lists are very flexible containers that can be nested arbitrarily deep and which can hold any Python object in them, but they are poorly suited to represent common mathematical constructs like vectors and matrices. It is for this reason that numpy exists. Typically numpy is imported as np:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[1]:
 </div>
@@ -1716,8 +1725,8 @@ In&nbsp;[1]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Numpy, at its core, provides a powerful array object. Let's start by exploring how the numpy array differs from Python lists. We start by creating a simple list and an array with the identical contents:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[2]:
 </div>
@@ -1731,11 +1740,11 @@ In&nbsp;[2]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [10, 20, 30, 40]
@@ -1753,8 +1762,8 @@ In&nbsp;[2]:
 <h3 id="element-indexing">Element indexing</h3>
 <p>Elements of a one-dimensional array are accessed with the same syntax as a list:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[3]:
 </div>
@@ -1765,11 +1774,11 @@ In&nbsp;[3]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 10 10
@@ -1782,8 +1791,8 @@ In&nbsp;[3]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[4]:
 </div>
@@ -1794,11 +1803,11 @@ In&nbsp;[4]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 40 40
@@ -1811,8 +1820,8 @@ In&nbsp;[4]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[5]:
 </div>
@@ -1823,11 +1832,11 @@ In&nbsp;[5]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [30, 40] [30 40]
@@ -1844,8 +1853,8 @@ In&nbsp;[5]:
 <h3 id="differences-between-arrays-and-lists">Differences between arrays and lists</h3>
 <p>The first difference to note between lists and arrays is that arrays are <em>homogeneous</em>; i.e. all elements of an array must be of the same type. In contrast, lists can contain elements of arbitrary type. For example, we can change the last element in our list above to be a string:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[6]:
 </div>
@@ -1857,11 +1866,11 @@ In&nbsp;[6]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[6]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -1880,8 +1889,8 @@ In&nbsp;[6]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>but the same can not be done with an array, as we get an error message:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[7]:
 </div>
@@ -1892,11 +1901,11 @@ In&nbsp;[7]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_pyerr">
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
@@ -1919,8 +1928,8 @@ In&nbsp;[7]:
 <h3 id="array-attributes">Array Attributes</h3>
 <p>The information about the type of an array is contained in its <em>dtype</em> attribute:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[]:
 </div>
@@ -1936,8 +1945,8 @@ In&nbsp;[]:
 <p>Once an array has been created, its dtype is fixed (in this case to an 8 byte/64 bit signed integer) and it can only store elements of the same type.</p>
 <p>For this example where the dtype is integer, if we try storing a floating point number in the array it will be automatically converted into an integer:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[8]:
 </div>
@@ -1949,11 +1958,11 @@ In&nbsp;[8]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[8]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -1973,8 +1982,8 @@ array([10, 20, 30,  1])
 <h3 id="creating-arrays">Creating Arrays</h3>
 <p>Above we created an array from an existing list; now let us now see other ways in which we can create arrays, which we'll illustrate next. A common need is to have an array initialized with a constant value, and very often this value is 0 or 1 (suitable as starting value for additive and multiplicative loops respectively); <code>zeros</code> creates arrays of all zeros, with any desired dtype:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[9]:
 </div>
@@ -1985,11 +1994,11 @@ In&nbsp;[9]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[9]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2005,8 +2014,8 @@ array([ 0.,  0.,  0.,  0.,  0.])
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[10]:
 </div>
@@ -2017,11 +2026,11 @@ In&nbsp;[10]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[10]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2040,8 +2049,8 @@ array([0, 0, 0])
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>and similarly for <code>ones</code>:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[11]:
 </div>
@@ -2052,11 +2061,11 @@ In&nbsp;[11]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 5 ones: [1 1 1 1 1]
@@ -2072,8 +2081,8 @@ In&nbsp;[11]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If we want an array initialized with an arbitrary value, we can create an empty array and then use the fill method to put the value we want into the array:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[12]:
 </div>
@@ -2086,11 +2095,11 @@ In&nbsp;[12]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[12]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2134,8 +2143,8 @@ array([ 5.5,  5.5,  5.5,  5.5])
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Question: What are the limits of the common numpy integer types?</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[13]:
 </div>
@@ -2146,11 +2155,11 @@ In&nbsp;[13]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[13]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2166,8 +2175,8 @@ array(0, dtype=uint8)
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[14]:
 </div>
@@ -2180,11 +2189,11 @@ In&nbsp;[14]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 float32: max=3.40282346639e+38 , approx decimal precision=6;
@@ -2204,8 +2213,8 @@ float64: max=1.79769313486e+308, approx decimal precision=15;
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can convert an array from one type to another with the <code>astype</code> method</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[15]:
 </div>
@@ -2216,11 +2225,11 @@ In&nbsp;[15]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[15]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2240,8 +2249,8 @@ array(1.0, dtype=float32)
 <h3 id="filling-arrays-with-sequences">Filling arrays with sequences</h3>
 <p>Numpy also offers the <code>arange</code> function, which works like the builtin <code>range</code> but returns an array instead of a list:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[16]:
 </div>
@@ -2252,11 +2261,11 @@ In&nbsp;[16]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[16]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2272,8 +2281,8 @@ array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[17]:
 </div>
@@ -2284,11 +2293,11 @@ In&nbsp;[17]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[17]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2308,8 +2317,8 @@ array([ 5. ,  5.1,  5.2,  5.3,  5.4,  5.5,  5.6,  5.7,  5.8,  5.9,  6. ,
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>linspace</code> and <code>logspace</code> functions to create linearly and logarithmically-spaced grids respectively, with a fixed number of points and including both ends of the specified interval:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[18]:
 </div>
@@ -2321,11 +2330,11 @@ In&nbsp;[18]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 A linear grid between 0 and 1:
@@ -2339,8 +2348,8 @@ A linear grid between 0 and 1:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[19]:
 </div>
@@ -2352,11 +2361,11 @@ In&nbsp;[19]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 A logarithmic grid between 10**2 and 10**4:
@@ -2374,8 +2383,8 @@ A logarithmic grid between 10**2 and 10**4:
 <h3 id="creating-random-arrays">Creating random arrays</h3>
 <p>Finally, it is often useful to create arrays with random numbers that follow a specific distribution. The <code>np.random</code> module contains a number of functions that can be used to this effect. First, we must import it:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[20]:
 </div>
@@ -2391,8 +2400,8 @@ In&nbsp;[20]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To produce an array of 5 random samples taken from a standard normal distribution (0 mean and variance 1):</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[21]:
 </div>
@@ -2403,11 +2412,11 @@ In&nbsp;[21]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [-0.35448385 -0.35551684 -0.97031409  0.25398002  0.98189777]
@@ -2423,8 +2432,8 @@ In&nbsp;[21]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For an array of 5 samples from the normal distribution with a mean of 10 and a variance of 3:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[22]:
 </div>
@@ -2436,11 +2445,11 @@ In&nbsp;[22]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [ 15.20536605   2.27133056  10.75779164   8.5853764   13.12234528]
@@ -2461,8 +2470,8 @@ In&nbsp;[22]:
 <p>Above we saw how to index arrays with single numbers and slices, just like Python lists. But arrays allow for a more sophisticated kind of indexing which is very powerful: you can index an array with another array, and in particular with an array of boolean values. This is particularly useful to extract information from an array that matches a certain condition.</p>
 <p>Consider for example that in the array <code>norm10</code> we want to replace all values above 9 with the value 0. We can do so by first finding the <em>mask</em> that indicates where this condition is true or false:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[23]:
 </div>
@@ -2474,11 +2483,11 @@ In&nbsp;[23]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[23]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2497,8 +2506,8 @@ array([ True, False,  True, False,  True], dtype=bool)
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have this mask, we can use it to either read those values or to reset them to 0:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[24]:
 </div>
@@ -2509,11 +2518,11 @@ In&nbsp;[24]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Values above 9: [ 15.20536605  10.75779164  13.12234528]
@@ -2526,8 +2535,8 @@ Values above 9: [ 15.20536605  10.75779164  13.12234528]
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[25]:
 </div>
@@ -2540,11 +2549,11 @@ In&nbsp;[25]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Resetting all values above 9 to 0...
@@ -2565,8 +2574,8 @@ Resetting all values above 9 to 0...
 <h2 id="arrays-with-more-than-one-dimension">Arrays with more than one dimension</h2>
 <p>Up until now all our examples have used one-dimensional arrays. But Numpy can create arrays of arbitrary dimensions, and all the methods illustrated in the previous section work with more than one dimension. For example, a list of lists can be used to initialize a two dimensional array:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[26]:
 </div>
@@ -2580,11 +2589,11 @@ In&nbsp;[26]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[1 2 3]
@@ -2602,8 +2611,8 @@ In&nbsp;[26]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With two-dimensional arrays we start seeing the power of numpy: while a nested list can be indexed using repeatedly the <code>[ ]</code> operator, multidimensional arrays support a much more natural indexing syntax with a single <code>[ ]</code> and a set of indices separated by commas:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[27]:
 </div>
@@ -2615,11 +2624,11 @@ In&nbsp;[27]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 2
@@ -2636,8 +2645,8 @@ In&nbsp;[27]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Question: Why does the following example produce different results?</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[28]:
 </div>
@@ -2649,11 +2658,11 @@ In&nbsp;[28]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [4, 5, 6]
@@ -2671,8 +2680,8 @@ In&nbsp;[28]:
 <h3 id="multidimensional-array-creation">Multidimensional array creation</h3>
 <p>The array creation functions listed previously can be used with more than one dimension, for example:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[29]:
 </div>
@@ -2683,11 +2692,11 @@ In&nbsp;[29]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[29]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2704,8 +2713,8 @@ array([[ 0.,  0.,  0.],
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[30]:
 </div>
@@ -2716,11 +2725,11 @@ In&nbsp;[30]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[30]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -2740,8 +2749,8 @@ array([[  7.63584451,   3.17418298,   9.65135096,  11.54129932],
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In fact, the shape of an array can be changed at any time, as long as the total number of elements is unchanged. For example, if we want a 2x4 array with numbers increasing from 0, the easiest way to create it is:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[31]:
 </div>
@@ -2753,11 +2762,11 @@ In&nbsp;[31]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[0 1 2 3]
@@ -2775,8 +2784,8 @@ In&nbsp;[31]:
 <h3 id="views-not-copies">Views, not Copies</h3>
 <p>Note that reshaping (like most numpy operations), wherever possible, provides a <strong>view</strong> of <em>the same memory</em>:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[32]:
 </div>
@@ -2792,8 +2801,8 @@ In&nbsp;[32]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What this means is that if one array is modified, the other will also be updated:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[33]:
 </div>
@@ -2812,11 +2821,11 @@ In&nbsp;[33]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Before
@@ -2842,8 +2851,8 @@ After
 <h3 id="slices">Slices</h3>
 <p>With multidimensional arrays, you can also use slices, and you can mix and match slices and single indices in the different dimensions:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[34]:
 </div>
@@ -2864,11 +2873,11 @@ In&nbsp;[34]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[0 1 2 3]
@@ -2888,8 +2897,8 @@ Second element from dimension 0 (maintaining its dimension), all elements from d
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you only provide one index, then the slice will be expanded to <code>&quot;:&quot;</code> for all of the remaining dimensions (aka Ellipsis):</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[35]:
 </div>
@@ -2901,11 +2910,11 @@ In&nbsp;[35]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 First row:   [0 1 2 3] is equivalent to [0 1 2 3]
@@ -2922,8 +2931,8 @@ Second row:  [4 5 6 7] is equivalent to [4 5 6 7]
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ellipsis can be specified explicitly with <code>&quot;...&quot;</code>, it will automatically expand to &quot;:&quot; for each of the unspecified dimensions in the array, and can even be used at the beginning of the slice:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[36]:
 </div>
@@ -2939,11 +2948,11 @@ In&nbsp;[36]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Orig shape:  (4, 6, 3)
@@ -2965,8 +2974,8 @@ Orig shape:  (4, 6, 3)
 <p>A common task is to generate a pair of arrays which represent the coordinates of our data.</p>
 <p>When the orthogonal 1d coordinate arrays already exist, numpy's meshgrid function is very useful:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[37]:
 </div>
@@ -2981,11 +2990,11 @@ In&nbsp;[37]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[ 0.   4.5  9. ]
@@ -3007,8 +3016,8 @@ In&nbsp;[37]:
 <h2 id="array-properties-and-methods">Array Properties and Methods</h2>
 <p>Now that we have seen how to create arrays with more than one dimension, it's a good idea to look at some of the most useful properties and methods that arrays have. The following provide basic information about the size, shape and data in the array:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[38]:
 </div>
@@ -3023,11 +3032,11 @@ In&nbsp;[38]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Data type                : int64
@@ -3047,8 +3056,8 @@ Memory used (in bytes)   : 64
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Arrays also have many useful statistical/mathematical methods:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[39]:
 </div>
@@ -3061,11 +3070,11 @@ In&nbsp;[39]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Minimum and maximum             : 0 7
@@ -3083,8 +3092,8 @@ Mean and standard deviation     : 3.5 2.29128784748
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These methods operate on an element-by-element basis on the array, however for multidimensional arrays it is also possible to do the computation along a single dimension by passing the <code>axis</code> parameter:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[40]:
 </div>
@@ -3097,11 +3106,11 @@ In&nbsp;[40]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 For the following array:
@@ -3122,8 +3131,8 @@ The sum of elements along the columns is : [ 4  6  8 10]
 <p>As you can see in this example, the value of the <code>axis</code> parameter is the dimension which will be <em>consumed</em> once the operation has been carried out. This is why to sum along the columns we use <code>axis=0</code>.</p>
 <p>This can be easily illustrated with an example that has more dimensions; we create an array with 4 dimensions and shape <code>(3,4,5,6)</code> and sum along the axis number 2 (i.e. the <em>third</em> axis, since in Python all counts are 0-based). That consumes the dimension whose length was 5, leaving us with a new array that has shape <code>(3,4,6)</code>:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[41]:
 </div>
@@ -3134,11 +3143,11 @@ In&nbsp;[41]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[41]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -3157,8 +3166,8 @@ In&nbsp;[41]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another widely used property of arrays is the <code>.T</code> attribute, which allows you to access the transpose of the array:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[42]:
 </div>
@@ -3170,11 +3179,11 @@ In&nbsp;[42]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 Array:
@@ -3198,8 +3207,8 @@ Transpose:
 <h2 id="operating-with-arrays">Operating with arrays</h2>
 <p>Arrays support all regular arithmetic operators, and the numpy library also contains a complete collection of basic mathematical functions that operate on arrays. It is important to remember that in general, all operations with arrays are applied <em>element-wise</em>, i.e., are applied to all the elements of the array at the same time. Consider for example:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[43]:
 </div>
@@ -3212,11 +3221,11 @@ In&nbsp;[43]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [0 1 2 3] + [10 11 12 13] = [10 12 14 16]
@@ -3232,8 +3241,8 @@ In&nbsp;[43]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Importantly, even the multiplication operator is by default applied element-wise, it is <em>not</em> the matrix multiplication from linear algebra:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[44]:
 </div>
@@ -3244,11 +3253,11 @@ In&nbsp;[44]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [0 1 2 3] * [10 11 12 13] = [ 0 11 24 39]
@@ -3264,8 +3273,8 @@ In&nbsp;[44]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We may also multiply an array by a scalar:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[45]:
 </div>
@@ -3276,11 +3285,11 @@ In&nbsp;[45]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[45]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -3303,8 +3312,8 @@ array([ 0. ,  1.5,  3. ,  4.5])
 <h3 id="broadcasting">Broadcasting</h3>
 <p>While the fact that numpy operates on an element-wise basis means that in principle arrays must always match one another's shape, however numpy will helpfully &quot;<em>broadcast</em>&quot; dimensions when possible. Here is an example of broadcasting a scalar to a 1D array:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[46]:
 </div>
@@ -3316,11 +3325,11 @@ In&nbsp;[46]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [0 1 2]
@@ -3337,8 +3346,8 @@ In&nbsp;[46]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also broadcast a 1D array to a 2D array, in this case adding a vector to all rows of a matrix:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[47]:
 </div>
@@ -3349,11 +3358,11 @@ In&nbsp;[47]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[47]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -3374,8 +3383,8 @@ array([[ 1.,  2.,  3.],
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also broadcast in two directions at a time:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[48]:
 </div>
@@ -3388,11 +3397,11 @@ In&nbsp;[48]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[0]
@@ -3455,7 +3464,7 @@ In&nbsp;[48]:
 <li>the second array's axis 0 is 'stretched' to form an array of shape (3, 3) (rule 2)</li>
 <li>the first array's axis 1 is 'stretched' to form an array of shape (3, 3) (rule 2)</li>
 </ul>
-<p>Then the operation proceeds as if on two 3 <span class="math">\(\times\)</span> 3 arrays</p>
+<p>Then the operation proceeds as if on two 3 \(\times\) 3 arrays</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The general rule is: when operating on two arrays, NumPy compares their shapes element-wise. It starts with the trailing dimensions, and works its way forward, creating dimensions of length 1 as needed. Two dimensions are considered compatible when</p>
@@ -3469,8 +3478,8 @@ In&nbsp;[48]:
 <h3 id="questions">Questions:</h3>
 <p>What will the result of adding <code>arr1</code> with <code>arr2</code> be in the following cases?</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[49]:
 </div>
@@ -3485,8 +3494,8 @@ In&nbsp;[49]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[50]:
 </div>
@@ -3501,8 +3510,8 @@ In&nbsp;[50]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[51]:
 </div>
@@ -3517,8 +3526,8 @@ In&nbsp;[51]:
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[52]:
 </div>
@@ -3539,8 +3548,8 @@ In&nbsp;[52]:
 <pre><code>A = [[1 2 3 4]
      [5 6 7 8]]</code></pre>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[]:
 </div>
@@ -3556,8 +3565,8 @@ In&nbsp;[]:
 <p>Use <code>np.array</code> to create the array</p>
 <pre><code>B = [1 2]</code></pre>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[]:
 </div>
@@ -3575,8 +3584,8 @@ In&nbsp;[]:
          [7  8  9 10]</code></pre>
 <p>Hint: what shape does <code>B</code> have to be changed to?</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[]:
 </div>
@@ -3593,8 +3602,8 @@ In&nbsp;[]:
 <p>Reshaping arrays is a common task in order to make the best of numpy's powerful broadcasting.</p>
 <p>A useful tip with the <strong><code>reshape</code></strong> method is that it is possible to provide a <code>-1</code> length for at most one of the dimensions. This indicates that numpy should automatically calculate the length of this dimension:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[53]:
 </div>
@@ -3605,11 +3614,11 @@ In&nbsp;[53]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[53]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -3625,8 +3634,8 @@ array([[0, 1, 2, 3, 4, 5]])
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[54]:
 </div>
@@ -3637,11 +3646,11 @@ In&nbsp;[54]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
+<div class="output_area"><div class="prompt output_prompt">
     Out[54]:</div>
 <div class="box-flex1 output_subarea output_pyout">
 
@@ -3661,8 +3670,8 @@ array([[0, 1, 2],
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another way to increase the dimensionality of an array is to use the <code>newaxis</code> keyword:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[55]:
 </div>
@@ -3674,11 +3683,11 @@ In&nbsp;[55]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 (1, 6, 1)
@@ -3694,10 +3703,10 @@ In&nbsp;[55]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="element-wise-functions">Element-wise Functions</h3>
 <p>Numpy ships with a full complement of mathematical functions that work on entire arrays, including logarithms, exponentials, trigonometric and hyperbolic trigonometric functions, etc.</p>
-<p>For example, sampling the sine function at 100 points between <span class="math">\(0\)</span> and <span class="math">\(2\pi\)</span> is as simple as:</p>
+<p>For example, sampling the sine function at 100 points between \(0\) and \(2\pi\) is as simple as:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[56]:
 </div>
@@ -3711,10 +3720,10 @@ In&nbsp;[56]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Or to sample the exponential function between <span class="math">\(-5\)</span> and <span class="math">\(5\)</span> at intervals of <span class="math">\(0.5\)</span>:</p>
+<p>Or to sample the exponential function between \(-5\) and \(5\) at intervals of \(0.5\):</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[57]:
 </div>
@@ -3734,8 +3743,8 @@ In&nbsp;[57]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Numpy ships with a basic linear algebra library, and all arrays have a <code>dot</code> method whose behavior is that of the scalar dot product when its arguments are vectors (one-dimensional arrays) and the traditional matrix multiplication when one or both of its arguments are two-dimensional arrays:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[58]:
 </div>
@@ -3749,11 +3758,11 @@ In&nbsp;[58]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [2 3 4] . [1 0 1] = 6
@@ -3767,10 +3776,10 @@ In&nbsp;[58]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For matrix-matrix multiplication, the regular <span class="math">\(matrix \times matrix\)</span> rules must be satisfied. For example <span class="math">\(A \times A^T\)</span>:</p>
+<p>For matrix-matrix multiplication, the regular \(matrix \times matrix\) rules must be satisfied. For example \(A \times A^T\):</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[59]:
 </div>
@@ -3783,11 +3792,11 @@ In&nbsp;[59]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[0 1 2]
@@ -3805,10 +3814,10 @@ In&nbsp;[59]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>results in a (2, 2) array, yet <span class="math">\(A^T \times A\)</span> results in a (3, 3). Why is this?:</p>
+<p>results in a (2, 2) array, yet \(A^T \times A\) results in a (3, 3). Why is this?:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[60]:
 </div>
@@ -3819,11 +3828,11 @@ In&nbsp;[60]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[ 9 12 15]
@@ -3839,10 +3848,10 @@ In&nbsp;[60]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy makes no distinction between row and column vectors and simply verifies that the dimensions match the required rules of matrix multiplication. Below is an example of matrix-vector multiplication, and in this case we have a <span class="math">\(2 \times 3\)</span> matrix multiplied by a 3-vector, which produces a 2-vector:</p>
+<p>Numpy makes no distinction between row and column vectors and simply verifies that the dimensions match the required rules of matrix multiplication. Below is an example of matrix-vector multiplication, and in this case we have a \(2 \times 3\) matrix multiplied by a 3-vector, which produces a 2-vector:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
@@ -3853,11 +3862,11 @@ In&nbsp;[61]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
 [[0 1 2]
@@ -3872,24 +3881,24 @@ In&nbsp;[61]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: To help with the interpretation of this last result, notice that <span class="math">\(0 \times 2 + 1 \times 3 + 2 \times 4 = 11\)</span> and <span class="math">\(3 \times 2 + 4 \times 3 + 5 \times 4 = 38\)</span></p>
+<p>Note: To help with the interpretation of this last result, notice that \(0 \times 2 + 1 \times 3 + 2 \times 4 = 11\) and \(3 \times 2 + 4 \times 3 + 5 \times 4 = 38\)</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise-trapezoidal-integration">Exercise: trapezoidal integration</h1>
 <p>In this exercise, you are tasked with implementing the simple trapezoid rule formula for numerical integration. If we want to compute the definite integral</p>
-<p><span class="math">\[
+<p>\[
      \int_{a}^{b}f(x)dx
-\]</span></p>
-<p>we can partition the integration interval <span class="math">\([a,b]\)</span> into smaller subintervals. We then approximate the area under the curve for each subinterval by calculating the area of the trapezoid created by linearly interpolating between the two function values at each end of the subinterval:</p>
+\]</p>
+<p>we can partition the integration interval \([a,b]\) into smaller subintervals. We then approximate the area under the curve for each subinterval by calculating the area of the trapezoid created by linearly interpolating between the two function values at each end of the subinterval:</p>
 <div class="figure">
 <img src="images/trapezoidal_rule.png" alt="Illustration of the trapezoidal rule" /><p class="caption">Illustration of the trapezoidal rule</p>
 </div>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For a pre-computed <span class="math">\(y\)</span> array (where <span class="math">\(y = f(x)\)</span> at discrete samples) the trapezoidal rule equation is:</p>
-<p><span class="math">\[
+<p>For a pre-computed \(y\) array (where \(y = f(x)\) at discrete samples) the trapezoidal rule equation is:</p>
+<p>\[
    \int_{a}^{b}f(x)dx\approx\frac{1}{2}\sum_{i=1}^{n}\left(x_{i}-x_{i-1}\right)\left(y_{i}+y_{i-1}\right).
-\]</span></p>
+\]</p>
 <p>In pure python, this can be written as:</p>
 <pre><code>def trapz_slow(x, y):
     area = 0.
@@ -3900,10 +3909,10 @@ In&nbsp;[61]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="exercise-2">Exercise 2</h3>
 <h4 id="part-1">Part 1</h4>
-<p>Create two arrays <span class="math">\(x\)</span> and <span class="math">\(y\)</span>, where <span class="math">\(x\)</span> is a linearly spaced array in the interval <span class="math">\([0, 3]\)</span> of length 10, and <span class="math">\(y\)</span> represents the function <span class="math">\(f(x) = x^2\)</span> sampled at <span class="math">\(x\)</span>.</p>
+<p>Create two arrays \(x\) and \(y\), where \(x\) is a linearly spaced array in the interval \([0, 3]\) of length 10, and \(y\) represents the function \(f(x) = x^2\) sampled at \(x\).</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
@@ -3917,11 +3926,11 @@ In&nbsp;[61]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="part-2">Part 2</h4>
-<p>Use indexing (not a for loop) to find the 9 values representing <span class="math">\(y_{i}+y_{i-1}\)</span> for <span class="math">\(i\)</span> between 1 and 10.</p>
+<p>Use indexing (not a for loop) to find the 9 values representing \(y_{i}+y_{i-1}\) for \(i\) between 1 and 10.</p>
 <p>Hint: What indexing would be needed to get all but the last element of the 1d array <strong><code>y</code></strong>. Similarly what indexing would be needed to get all but the first element of a 1d array.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
@@ -3937,8 +3946,8 @@ In&nbsp;[61]:
 <h4 id="part-3">Part 3</h4>
 <p>Write a function <code>trapz(x, y)</code>, that applies the trapezoid formula to pre-computed values, where <code>x</code> and <code>y</code> are 1-d arrays. The function should not use a for loop.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
@@ -3952,10 +3961,10 @@ In&nbsp;[61]:
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="part-4">Part 4</h4>
-<p>Verify that your function is correct by using the arrays created in #1 as input to <code>trapz</code>. Your answer should be a close approximation of <span class="math">\(\int_0^3 x^2\)</span> which is <span class="math">\(9\)</span>.</p>
+<p>Verify that your function is correct by using the arrays created in #1 as input to <code>trapz</code>. Your answer should be a close approximation of \(\int_0^3 x^2\) which is \(9\).</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
@@ -3971,8 +3980,8 @@ In&nbsp;[61]:
 <h4 id="part-5-extension">Part 5 (extension)</h4>
 <p><code>scipy.integrate</code> provides many common integration schemes. Find a suitable function to perform the trapezoidal integration implemented above and check its result with your own:</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
@@ -3987,10 +3996,10 @@ In&nbsp;[61]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="part-6-extension">Part 6 (extension)</h4>
 <p>Write a function <code>trapzf(f, a, b, npts=100)</code> that accepts a function <code>f</code>, the endpoints <code>a</code> and <code>b</code> and the number of samples to take <code>npts</code>. Sample the function uniformly at these points and return the value of the integral.</p>
-<p>Use the trapzf function to identify the minimum number of sampling points needed to approximate the integral <span class="math">\(\int_0^3 x^2\)</span> with an absolute error of <span class="math">\(&lt;=0.0001\)</span>. (A loop is necessary here)</p>
+<p>Use the trapzf function to identify the minimum number of sampling points needed to approximate the integral \(\int_0^3 x^2\) with an absolute error of \(&lt;=0.0001\). (A loop is necessary here)</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell">
+<div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[61]:
 </div>
