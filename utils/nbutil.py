@@ -23,11 +23,11 @@ class Notebook(object):
     def clear_output(self):
         for cell in self:
             if cell[self.CELL_TYPE] == 'code':
-                del cell['prompt_number']
+                cell.pop('prompt_number', None)
                 cell[self.OUTPUTS] = []
 
     def save(self, fh):
-        json.dump(self.data, fh)
+        json.dump(self.data, fh, indent=4)
 
 
 if __name__ == '__main__':
