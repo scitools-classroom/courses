@@ -16,7 +16,7 @@ class Notebook(object):
 
     def clear_code(self, keyword='# Solution:'):
         for cell in self:
-            if cell[self.CELL_TYPE] == 'code' and cell[self.INPUT][0].startswith(keyword):
+            if cell[self.CELL_TYPE] == 'code' and cell[self.INPUT] and cell[self.INPUT][0].startswith(keyword):
                 cell[self.CODE_CELL] = []
                 cell[self.OUTPUTS] = []
 
