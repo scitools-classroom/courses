@@ -15,7 +15,7 @@ http://nbviewer.ipython.org/github/SciTools/courses/blob/master/course_content/n
 http://nbviewer.ipython.org/github/SciTools/courses/blob/master/course_content/matplotlib_intro.ipynb?create=1
 
 ### Cartopy in a nutshell (for Iris)
-0.5 hours - depends on "An introdcution to matplotlib"
+0.5 hours - depends on "An introduction to matplotlib"
 http://nbviewer.ipython.org/github/SciTools/courses/blob/master/course_content/cartopy_intro.ipynb?create=1
 
 ### An introduction to Iris
