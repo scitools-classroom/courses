@@ -1276,25 +1276,27 @@ a .icon-rotate-90:before,a .icon-rotate-180:before,a .icon-rotate-270:before,a .
 .icon-vk:before{content:"\f189"}
 .icon-weibo:before{content:"\f18a"}
 .icon-renren:before{content:"\f18b"}
+code{color:#000}
+pre{font-size:inherit;line-height:inherit}
 .border-box-sizing{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 .corner-all{border-radius:4px}
 .hbox{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
 .hbox>*{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none}
-.vbox{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}
+.vbox{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}
 .vbox>*{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none}
-.reverse{-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;flex-direction:row-reverse}
-.box-flex0{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none;width:auto}
-.box-flex1{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-.box-flex{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-.box-flex2{-webkit-box-flex:2;-moz-box-flex:2;box-flex:2;flex:2}
+.hbox.reverse,.vbox.reverse,.reverse{-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;flex-direction:row-reverse}
+.hbox.box-flex0,.vbox.box-flex0,.box-flex0{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none;width:auto}
+.hbox.box-flex1,.vbox.box-flex1,.box-flex1{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
+.hbox.box-flex,.vbox.box-flex,.box-flex{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
+.hbox.box-flex2,.vbox.box-flex2,.box-flex2{-webkit-box-flex:2;-moz-box-flex:2;box-flex:2;flex:2}
 .box-group1{-webkit-box-flex-group:1;-moz-box-flex-group:1;box-flex-group:1}
 .box-group2{-webkit-box-flex-group:2;-moz-box-flex-group:2;box-flex-group:2}
-.start{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start}
-.end{-webkit-box-pack:end;-moz-box-pack:end;box-pack:end;justify-content:flex-end}
-.center{-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;justify-content:center}
-.align-start{-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start}
-.align-end{-webkit-box-align:end;-moz-box-align:end;box-align:end;align-items:flex-end}
-.align-center{-webkit-box-align:center;-moz-box-align:center;box-align:center;align-items:center}
+.hbox.start,.vbox.start,.start{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start}
+.hbox.end,.vbox.end,.end{-webkit-box-pack:end;-moz-box-pack:end;box-pack:end;justify-content:flex-end}
+.hbox.center,.vbox.center,.center{-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;justify-content:center}
+.hbox.align-start,.vbox.align-start,.align-start{-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start}
+.hbox.align-end,.vbox.align-end,.align-end{-webkit-box-align:end;-moz-box-align:end;box-align:end;align-items:flex-end}
+.hbox.align-center,.vbox.align-center,.align-center{-webkit-box-align:center;-moz-box-align:center;box-align:center;align-items:center}
 div.error{margin:2em;text-align:center}
 div.error>h1{font-size:500%;line-height:normal}
 div.error>p{font-size:200%;line-height:normal}
@@ -1312,8 +1314,8 @@ span#login_widget{float:right}
 .nav-header{text-transform:none}
 .navbar-nobg{background-color:transparent;background-image:none}
 #header>span{margin-top:10px}
-.modal-body{max-height:500px}
-.center-nav{display:inline-block;margin-bottom:-4px}
+.modal_stretch{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;height:80%}.modal_stretch .modal-body{max-height:none;flex:1}
+@media (min-width:768px){.modal{width:700px;margin-left:-350px}}.center-nav{display:inline-block;margin-bottom:-4px}
 .alternate_upload{background-color:none;display:inline}
 .alternate_upload.form{padding:0;margin:0}
 .alternate_upload input.fileinput{background-color:#f00;position:relative;opacity:0;z-index:2;width:295px;margin-left:163px;cursor:pointer;height:26px}
@@ -1339,6 +1341,8 @@ input.nbname_input,input.engine_num_input{padding-top:3px;padding-bottom:3px;hei
 input.engine_num_input{width:60px}
 .highlight_text{color:#00f}
 #project_name>.breadcrumb{padding:0;margin-bottom:0;background-color:transparent;font-weight:bold}
+.folder_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f114"}
+.notebook_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f02d"}
 .ansibold{font-weight:bold}
 .ansiblack{color:#000}
 .ansired{color:#8b0000}
@@ -1356,20 +1360,20 @@ input.engine_num_input{width:60px}
 .ansibgpurple{background-color:#f0f}
 .ansibgcyan{background-color:#0ff}
 .ansibggray{background-color:#808080}
-div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
+div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
 div.cell.edit_mode{border-radius:4px;border:thin #008000 solid}
 div.cell{width:100%;padding:5px 5px 5px 0;margin:0;outline:none}
 div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}
-div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7}
+@media (max-width:480px){div.prompt{text-align:left}}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
+div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
 div.prompt:empty{padding-top:0;padding-bottom:0}
 div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
-div.input_prompt{color:#000080;border-top:1px solid transparent}
+@media (max-width:480px){div.input{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:#000080;border-top:1px solid transparent}
 div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}
-div.input_area>div.highlight>pre{margin:0;border:0;padding:0;background-color:transparent;font-size:14px;line-height:1.21429em}
+div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}
 .CodeMirror{line-height:1.21429em;height:auto;background:none;}
 .CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}
-@-moz-document url-prefix(){.CodeMirror-scroll{overflow-x:hidden}}.CodeMirror-lines{padding:.4em}
+.CodeMirror-lines{padding:.4em}
 .CodeMirror-linenumber{padding:0 8px 0 4px}
 .CodeMirror-gutters{border-bottom-left-radius:4px;border-top-left-radius:4px}
 .CodeMirror pre{padding:0;border:0;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
@@ -1394,26 +1398,27 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-operator{color:#a2f;font-weight:bold}
 .cm-s-ipython span.cm-meta{color:#a2f}
 .cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat}
-div.output_wrapper{position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}
+div.output_wrapper{position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}
 div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,0.8);-moz-box-shadow:inset 0 2px 8px rgba(0,0,0,0.8);box-shadow:inset 0 2px 8px rgba(0,0,0,0.8);display:block}
-div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}
+div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}
 div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:4px}
 div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;-moz-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,0.5)}
 div.output_prompt{color:#8b0000}
 div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left !important}
 div.output_area .rendered_html table{margin-left:0;margin-right:0}
 div.output_area .rendered_html img{margin-left:0;margin-right:0}
-.output{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}
-div.output_area pre{font-family:monospace;margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;color:#000;background-color:transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;line-height:inherit}
+.output{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}
+@media (max-width:480px){div.output_area{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;color:#000;background-color:transparent;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
 div.output_subarea{padding:.4em .4em 0 .4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-div.output_text{text-align:left;color:#000;font-family:monospace;line-height:1.21429em}
+div.output_text{text-align:left;color:#000;line-height:1.21429em}
 div.output_stderr{background:#fdd;}
 div.output_latex{text-align:left}
 div.output_javascript:empty{padding:0}
 .js-error{color:#8b0000}
-div.raw_input{padding-top:0;padding-bottom:0;height:1em;line-height:1em;font-family:monospace}
-span.input_prompt{font-family:inherit}
-input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;margin:-2px 0 0 1px;padding-left:1px;padding-top:2px;height:1em}
+div.raw_input_container{font-family:monospace;padding-top:5px}
+span.raw_input_prompt{}
+input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}
+input.raw_input:focus{box-shadow:none}
 p.p-space{margin-bottom:10px}
 .rendered_html{color:#000;}.rendered_html em{font-style:italic}
 .rendered_html strong{font-weight:bold}
@@ -1456,18 +1461,18 @@ p.p-space{margin-bottom:10px}
 .rendered_html img{display:block;margin-left:auto;margin-right:auto}
 .rendered_html *+img{margin-top:1em}
 div.text_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
-div.text_cell_render{outline:none;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;color:#000}
+@media (max-width:480px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:none;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;color:#000}
 a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}
 h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}
 div.cell.text_cell.rendered{padding:0}
-.widget-area{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}.widget-area .widget-subarea{padding:.44em .4em .4em 1px;margin-left:6px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:2;-moz-box-flex:2;box-flex:2;flex:2;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start}
+.widget-area{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}.widget-area .widget-subarea{padding:.44em .4em .4em 1px;margin-left:6px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:2;-moz-box-flex:2;box-flex:2;flex:2;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start}
 .widget-hlabel{min-width:10ex;padding-right:8px;padding-top:3px;text-align:right;vertical-align:text-top}
 .widget-vlabel{padding-bottom:5px;text-align:center;vertical-align:text-bottom}
 .widget-hreadout{padding-left:8px;padding-top:3px;text-align:left;vertical-align:text-top}
 .widget-vreadout{padding-top:5px;text-align:center;vertical-align:text-top}
 .slide-track{border:1px solid #ccc;background:#fff;border-radius:4px;}
 .widget-hslider{padding-left:8px;padding-right:5px;overflow:visible;width:348px;height:5px;max-height:5px;margin-top:11px;margin-bottom:10px;border:1px solid #ccc;background:#fff;border-radius:4px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}.widget-hslider .ui-slider{border:0 !important;background:none !important;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}.widget-hslider .ui-slider .ui-slider-handle{width:14px !important;height:28px !important;margin-top:-8px !important}
-.widget-vslider{padding-bottom:8px;overflow:visible;width:5px;max-width:5px;height:250px;margin-left:12px;border:1px solid #ccc;background:#fff;border-radius:4px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}.widget-vslider .ui-slider{border:0 !important;background:none !important;margin-left:-4px;margin-top:5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}.widget-vslider .ui-slider .ui-slider-handle{width:28px !important;height:14px !important;margin-left:-9px}
+.widget-vslider{padding-bottom:8px;overflow:visible;width:5px;max-width:5px;height:250px;margin-left:12px;border:1px solid #ccc;background:#fff;border-radius:4px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}.widget-vslider .ui-slider{border:0 !important;background:none !important;margin-left:-4px;margin-top:5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}.widget-vslider .ui-slider .ui-slider-handle{width:28px !important;height:14px !important;margin-left:-9px}
 .widget-text{width:350px;margin:0 !important}
 .widget-listbox{width:364px;margin-bottom:0}
 .widget-numeric-text{width:150px;margin:0 !important}
@@ -1476,16 +1481,16 @@ div.cell.text_cell.rendered{padding:0}
 .widget-box{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start}
 .widget-hbox{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
 .widget-hbox-single{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch;height:30px}
-.widget-vbox{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch}
-.widget-vbox-single{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch;width:30px}
+.widget-vbox{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}
+.widget-vbox-single{margin:5px;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;justify-content:flex-start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;width:30px}
 .widget-modal{overflow:hidden;position:absolute !important;top:0;left:0;margin-left:0 !important}
 .widget-modal-body{max-height:none !important}
 .widget-container{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-webkit-box-align:start;-moz-box-align:start;box-align:start;align-items:flex-start}
-.widget-radio-box{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;display:flex;flex-direction:column;align-items:stretch;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;padding-top:4px}
+.widget-radio-box{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;padding-top:4px}
 .docked-widget-modal{overflow:hidden;position:relative !important;top:0 !important;left:0 !important;margin-left:0 !important}
 body{background-color:#fff}
 body.notebook_app{overflow:hidden}
-span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%}
+@media (max-width:767px){body.notebook_app{padding-left:0;padding-right:0}}span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%}
 div#notebook_panel{margin:0 0 0 0;padding:0;-webkit-box-shadow:0 -1px 10px rgba(0,0,0,0.1);-moz-box-shadow:0 -1px 10px rgba(0,0,0,0.1);box-shadow:0 -1px 10px rgba(0,0,0,0.1)}
 div#notebook{font-size:14px;line-height:20px;overflow-y:scroll;overflow-x:auto;width:100%;padding:1em 0 1em 0;margin:0;border-top:1px solid #ababab;outline:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 div.ui-widget-content{border:1px solid #ababab;outline:none}
@@ -1506,7 +1511,7 @@ p{margin-bottom:0}
 .celltoolbar input[type=checkbox]{margin:0;margin-left:4px;margin-right:4px}
 .celltoolbar .ui-button{border:none;vertical-align:top;height:20px;min-width:30px}
 .completions{position:absolute;z-index:10;overflow:hidden;border:1px solid #ababab;border-radius:4px;-webkit-box-shadow:0 6px 10px -1px #adadad;-moz-box-shadow:0 6px 10px -1px #adadad;box-shadow:0 6px 10px -1px #adadad}
-.completions select{background:#fff;outline:none;border:none;padding:0;margin:0;overflow:auto;font-family:monospace;font-size:110%;color:#000}
+.completions select{background:#fff;outline:none;border:none;padding:0;margin:0;overflow:auto;font-family:monospace;font-size:110%;color:#000;width:auto}
 .completions select option.context{color:#0064cd}
 #menubar .navbar-inner{min-height:28px;border-top:1px;border-radius:0 0 4px 4px}
 #menubar .navbar{margin-bottom:8px}
@@ -1517,12 +1522,17 @@ ul#help_menu li a{overflow:hidden;padding-right:2.2em}ul#help_menu li a i{margin
 #notification_area{z-index:10}
 .indicator_area{color:#777;padding:4px 3px;margin:0;width:11px;z-index:10;text-align:center}
 #kernel_indicator{margin-right:-16px}
+.edit_mode_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f040"}
+.command_mode_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:' '}
+.kernel_idle_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f10c"}
+.kernel_busy_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f111"}
 .notification_widget{color:#777;padding:1px 12px;margin:2px 4px;z-index:10;border:1px solid #ccc;border-radius:4px;background:rgba(240,240,240,0.5)}.notification_widget.span{padding-right:2px}
 div#pager_splitter{height:8px}
 #pager-container{position:relative;padding:15px 0}
-div#pager{font-size:14px;line-height:20px;overflow:auto;display:none}div#pager pre{font-size:13px;line-height:1.21429em;color:#000;background-color:#f7f7f7;padding:.4em}
-.shortcut_key{display:inline-block;width:15ex;text-align:right;font-family:monospace}
-.shortcut_descr{display:inline-block}
+div#pager{font-size:14px;line-height:20px;overflow:auto;display:none}div#pager pre{line-height:1.21429em;color:#000;background-color:#f7f7f7;padding:.4em}
+.quickhelp{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
+.shortcut_key{display:inline-block;width:20ex;text-align:right;font-family:monospace}
+.shortcut_descr{display:inline-block;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
 span#save_widget{padding:0 5px;margin-top:12px}
 span#checkpoint_status,span#autosave_status{font-size:small}
 @media (max-width:767px){span#save_widget{font-size:small} span#checkpoint_status,span#autosave_status{font-size:x-small}}@media (max-width:767px){span#checkpoint_status,span#autosave_status{display:none}}@media (min-width:768px) and (max-width:979px){span#checkpoint_status{display:none} span#autosave_status{font-size:x-small}}.toolbar{padding:0 10px;margin-top:-5px}.toolbar select,.toolbar label{width:auto;height:26px;vertical-align:middle;margin-right:2px;margin-bottom:0;display:inline;font-size:92%;margin-left:.3em;margin-right:.3em;padding:0;padding-top:3px}
@@ -1638,7 +1648,9 @@ div#notebook {
 <link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
-<!-- MathJax configuration -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -1658,21 +1670,6 @@ div#notebook {
     </script>
     <!-- End of mathjax configuration -->
 
-    <script>
-    //  We wait for the onload function to load MathJax after the page is completely loaded.
-    //  MathJax is loaded 1 unit of time after the page is ready.
-    //  This hack prevent problems when you load multiple js files.
-
-    window.onload = function () {
-      setTimeout(function () {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
-        document.getElementsByTagName("head")[0].appendChild(script);
-      },1)
-    }
-    </script>
-
 </head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
@@ -1683,9 +1680,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="an-introduction-to-numpy">An introduction to numpy</h1>
-<p>While the Python language is an excellent tool for general-purpose programming, with a highly readable syntax, rich and powerful data types (strings, lists, sets, dictionaries, arbitrary length integers, etc) and a very comprehensive standard library, it was not designed specifically for mathematical and scientific computing. Neither the language nor its standard library have facilities for the efficient representation of multidimensional datasets, tools for linear algebra and general matrix manipulations (essential building blocks of virtually all technical computing), nor any data visualisation facilities.</p>
-<p>In particular, Python lists are very flexible containers that can be nested arbitrarily deep and which can hold any Python object in them, but they are poorly suited to represent common mathematical constructs like vectors and matrices. It is for this reason that numpy exists. Typically numpy is imported as np:</p>
+<h1 id="an-introduction-to-numpy">An introduction to NumPy</h1>
+<p>The Python language is an excellent tool for general-purpose programming, with a highly readable syntax, rich and powerful data types (strings, lists, sets, dictionaries, arbitrary length integers, etc) and a very comprehensive standard library. It was not, however, designed specifically for mathematical and scientific computing. Neither the language nor its standard library have facilities for the efficient representation of multidimensional datasets, tools for linear algebra and general matrix manipulations (essential building blocks of virtually all technical computing), nor any data visualisation facilities.</p>
+<p>For example, Python lists are very flexible containers that can be nested arbitrarily deep and can hold any Python object in them, but they are poorly suited to represent common mathematical constructs like vectors and matrices. It is for this reason that NumPy exists. Typically NumPy is imported as <code>np</code>:</p>
 </div>
 </div>
 </div>
@@ -1709,7 +1706,7 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy, at its core, provides a powerful array object. Let's start by exploring how the numpy array differs from Python lists. We start by creating a simple list and an array with the identical contents:</p>
+<p>NumPy, at its core, provides a powerful array object. Let's start by exploring how the NumPy array differs from a Python list. We start by creating a simple Python list and a NumPy array with identical contents:</p>
 </div>
 </div>
 </div>
@@ -1929,7 +1926,7 @@ In&nbsp;[7]:
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">ValueError</span>                                Traceback (most recent call last)
 <span class="ansigreen">&lt;ipython-input-7-29c0bfa5fa8a&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>arr<span class="ansiblue">[</span><span class="ansiblue">-</span><span class="ansicyan">1</span><span class="ansiblue">]</span> <span class="ansiblue">=</span> <span class="ansiblue">&apos;a string inside an array&apos;</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>arr<span class="ansiyellow">[</span><span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">]</span> <span class="ansiyellow">=</span> <span class="ansiblue">&apos;a string inside an array&apos;</span><span class="ansiyellow"></span>
 
 <span class="ansired">ValueError</span>: invalid literal for long() with base 10: &apos;a string inside an array&apos;</pre>
 </div>
@@ -1944,7 +1941,7 @@ In&nbsp;[7]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Caveat, it can be done, but really <em>don't do it</em>, lists are generally better at non-homogeneous collections.</p>
+<p>Caveat, it can be done, but really <em>don't do it</em>; lists are generally better at non-homogeneous collections.</p>
 </div>
 </div>
 </div>
@@ -1954,14 +1951,14 @@ In&nbsp;[7]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="array-attributes">Array Attributes</h3>
-<p>The information about the type of an array is contained in its <em>dtype</em> attribute:</p>
+<p>The information about the type of an array is contained in its <code>dtype</code> attribute:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1972,21 +1969,40 @@ In&nbsp;[]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[8]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+dtype(&apos;int64&apos;)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once an array has been created, its dtype is fixed (in this case to an 8 byte/64 bit signed integer) and it can only store elements of the same type.</p>
-<p>For this example where the dtype is integer, if we try storing a floating point number in the array it will be automatically converted into an integer:</p>
+<p>Once an array has been created, its <code>dtype</code> is fixed (in this case to an 8 byte/64 bit signed integer) and it can only store elements of the same type.</p>
+<p>For this example where the <code>dtype</code> is integer, if we try storing a floating point number in the array it will be automatically converted into an integer:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[8]:
+In&nbsp;[9]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2003,7 +2019,7 @@ In&nbsp;[8]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[8]:</div>
+    Out[9]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2024,14 +2040,14 @@ array([10, 20, 30,  1])
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="creating-arrays">Creating Arrays</h3>
-<p>Above we created an array from an existing list; now let us now see other ways in which we can create arrays, which we'll illustrate next. A common need is to have an array initialized with a constant value, and very often this value is 0 or 1 (suitable as starting value for additive and multiplicative loops respectively); <code>zeros</code> creates arrays of all zeros, with any desired dtype:</p>
+<p>Above we created an array from an existing list. Now let's look into other ways in which we can create arrays, which we'll illustrate next. A common need is to have an array initialized with a constant value. Very often this value is 0 or 1 (suitable as starting value for additive and multiplicative loops respectively); <code>zeros</code> creates arrays of all zeros, with any desired dtype:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[10]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2047,7 +2063,7 @@ In&nbsp;[9]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[9]:</div>
+    Out[10]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2065,7 +2081,7 @@ array([ 0.,  0.,  0.,  0.,  0.])
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[10]:
+In&nbsp;[11]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2081,7 +2097,7 @@ In&nbsp;[10]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[10]:</div>
+    Out[11]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2108,7 +2124,7 @@ array([0, 0, 0])
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[11]:
+In&nbsp;[12]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2148,7 +2164,7 @@ In&nbsp;[11]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[13]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2166,7 +2182,7 @@ In&nbsp;[12]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[12]:</div>
+    Out[13]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2201,7 +2217,7 @@ array([ 5.5,  5.5,  5.5,  5.5])
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="data-types">Data types</h2>
-<p>Numpy comes with a most of the common data types (and some uncommon ones too).</p>
+<p>NumPy comes with most of the common data types (and some uncommon ones too).</p>
 <p>The most used (and portable) dtypes are:</p>
 <ul>
 <li>bool</li>
@@ -2223,14 +2239,14 @@ array([ 5.5,  5.5,  5.5,  5.5])
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Question: What are the limits of the common numpy integer types?</p>
+<p>Question: What are the limits of the common NumPy integer types?</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[14]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2246,7 +2262,7 @@ In&nbsp;[13]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[13]:</div>
+    Out[14]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2264,7 +2280,7 @@ array(0, dtype=uint8)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[15]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2316,7 +2332,7 @@ float64: max=1.79769313486e+308, approx decimal precision=15;
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[16]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2332,7 +2348,7 @@ In&nbsp;[15]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[15]:</div>
+    Out[16]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2353,14 +2369,14 @@ array(1.0, dtype=float32)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="filling-arrays-with-sequences">Filling arrays with sequences</h3>
-<p>Numpy also offers the <code>arange</code> function, which works like the builtin <code>range</code> but returns an array instead of a list:</p>
+<p>NumPy also offers the <code>arange</code> function, which works like the builtin <code>range</code> but returns an array instead of a list:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[16]:
+In&nbsp;[17]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2376,7 +2392,7 @@ In&nbsp;[16]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[16]:</div>
+    Out[17]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2394,7 +2410,7 @@ array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[18]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2410,7 +2426,7 @@ In&nbsp;[17]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[17]:</div>
+    Out[18]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2431,14 +2447,14 @@ array([ 5. ,  5.1,  5.2,  5.3,  5.4,  5.5,  5.6,  5.7,  5.8,  5.9,  6. ,
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>linspace</code> and <code>logspace</code> functions to create linearly and logarithmically-spaced grids respectively, with a fixed number of points and including both ends of the specified interval:</p>
+<p>The <code>linspace</code> and <code>logspace</code> functions to create linearly and logarithmically-spaced grids respectively, with a fixed number of points that include both ends of the specified interval:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[19]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2471,7 +2487,7 @@ A linear grid between 0 and 1:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[20]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2514,7 +2530,7 @@ A logarithmic grid between 10**2 and 10**4:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[20]:
+In&nbsp;[21]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2539,7 +2555,7 @@ In&nbsp;[20]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[22]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2557,7 +2573,7 @@ In&nbsp;[21]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-[-0.35448385 -0.35551684 -0.97031409  0.25398002  0.98189777]
+[ 0.55206256 -1.87467532 -0.60317911 -0.50195095 -0.70764961]
 
 </pre>
 </div>
@@ -2579,7 +2595,7 @@ In&nbsp;[21]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[22]:
+In&nbsp;[23]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2598,7 +2614,7 @@ In&nbsp;[22]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-[ 15.20536605   2.27133056  10.75779164   8.5853764   13.12234528]
+[  9.96241735  11.19345887   5.52211376  11.13822636  11.77986771]
 
 </pre>
 </div>
@@ -2623,7 +2639,7 @@ In&nbsp;[22]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="indexing-with-other-arrays">Indexing with other arrays</h2>
-<p>Above we saw how to index arrays with single numbers and slices, just like Python lists. But arrays allow for a more sophisticated kind of indexing which is very powerful: you can index an array with another array, and in particular with an array of boolean values. This is particularly useful to extract information from an array that matches a certain condition.</p>
+<p>Above we saw how to index NumPy arrays with single numbers and slices, just like Python lists. Arrays also allow for a more sophisticated kind of indexing that is very powerful: you can index an array with another array, and in particular with an array of boolean values. This is particularly useful to extract information from an array that matches a certain condition.</p>
 <p>Consider for example that in the array <code>norm10</code> we want to replace all values above 9 with the value 0. We can do so by first finding the <em>mask</em> that indicates where this condition is true or false:</p>
 </div>
 </div>
@@ -2631,7 +2647,7 @@ In&nbsp;[22]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[23]:
+In&nbsp;[24]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2648,12 +2664,12 @@ In&nbsp;[23]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[23]:</div>
+    Out[24]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-array([ True, False,  True, False,  True], dtype=bool)
+array([ True,  True, False,  True,  True], dtype=bool)
 </pre>
 </div>
 
@@ -2675,7 +2691,7 @@ array([ True, False,  True, False,  True], dtype=bool)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[24]:
+In&nbsp;[25]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2693,7 +2709,7 @@ In&nbsp;[24]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Values above 9: [ 15.20536605  10.75779164  13.12234528]
+Values above 9: [  9.96241735  11.19345887  11.13822636  11.77986771]
 
 </pre>
 </div>
@@ -2706,7 +2722,7 @@ Values above 9: [ 15.20536605  10.75779164  13.12234528]
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[25]:
+In&nbsp;[26]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2727,7 +2743,7 @@ In&nbsp;[25]:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Resetting all values above 9 to 0...
-[ 0.          2.27133056  0.          8.5853764   0.        ]
+[ 0.          0.          5.52211376  0.          0.        ]
 
 </pre>
 </div>
@@ -2742,7 +2758,7 @@ Resetting all values above 9 to 0...
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Whilst beyond the scope of this course, it is also worth knowing that a specific masked array object exists in numpy. Further details are available at http://docs.scipy.org/doc/numpy/reference/maskedarray.generic.html</p>
+<p>Whilst beyond the scope of this course, it is also worth knowing that a specific masked array object exists in NumPy. Further details are available at http://docs.scipy.org/doc/numpy/reference/maskedarray.generic.html</p>
 </div>
 </div>
 </div>
@@ -2752,14 +2768,15 @@ Resetting all values above 9 to 0...
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="arrays-with-more-than-one-dimension">Arrays with more than one dimension</h2>
-<p>Up until now all our examples have used one-dimensional arrays. But Numpy can create arrays of arbitrary dimensions, and all the methods illustrated in the previous section work with more than one dimension. For example, a list of lists can be used to initialize a two dimensional array:</p>
+<p>Up until now all our examples have used one-dimensional arrays. NumPy can also create arrays of arbitrary dimensions, and all the methods illustrated in the previous section work on arrays with more than one dimension.</p>
+<p>A list of lists can be used to initialize a two dimensional array:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[26]:
+In&nbsp;[27]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2797,14 +2814,14 @@ In&nbsp;[26]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With two-dimensional arrays we start seeing the power of numpy: while a nested list can be indexed using repeatedly the <code>[ ]</code> operator, multidimensional arrays support a much more natural indexing syntax with a single <code>[ ]</code> and a set of indices separated by commas:</p>
+<p>With two-dimensional arrays we start seeing the power of NumPy: while nested lists can be indexed by repeatedly using the <code>[ ]</code> operator, multidimensional arrays support a much more natural indexing syntax using a single <code>[ ]</code> and a set of indices separated by commas:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[27]:
+In&nbsp;[28]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2846,7 +2863,7 @@ In&nbsp;[27]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[28]:
+In&nbsp;[29]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2882,14 +2899,14 @@ In&nbsp;[28]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="multidimensional-array-creation">Multidimensional array creation</h3>
-<p>The array creation functions listed previously can be used with more than one dimension, for example:</p>
+<p>The array creation functions listed previously can also be used to create arrays with more than one dimension. For example:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[29]:
+In&nbsp;[30]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2905,7 +2922,7 @@ In&nbsp;[29]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[29]:</div>
+    Out[30]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -2924,11 +2941,11 @@ array([[ 0.,  0.,  0.],
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[30]:
+In&nbsp;[31]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -2940,13 +2957,13 @@ In&nbsp;[30]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[30]:</div>
+    Out[31]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-array([[  7.63584451,   3.17418298,   9.65135096,  11.54129932],
-       [ 19.61079308,   8.74068721,   7.33914468,   6.05047918]])
+array([[  9.62991854,   5.91150288,   4.87681868,   5.31150873],
+       [  3.93823953,  10.5975548 ,  11.2739624 ,   9.27214526]])
 </pre>
 </div>
 
@@ -2968,7 +2985,7 @@ array([[  7.63584451,   3.17418298,   9.65135096,  11.54129932],
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[31]:
+In&nbsp;[32]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3004,14 +3021,15 @@ In&nbsp;[31]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="views-not-copies">Views, not Copies</h3>
-<p>Note that reshaping (like most numpy operations), wherever possible, provides a <strong>view</strong> of <em>the same memory</em>:</p>
+<p>Note that reshaping (like most NumPy operations), wherever possible, provides a <strong>view</strong> of <em>the same memory</em>:</p>
+<p>Reshaping, like most NumPy operations, provides a <strong>view</strong> of <em>the same memory</em> wherever possible:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[32]:
+In&nbsp;[33]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3036,7 +3054,7 @@ In&nbsp;[32]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[33]:
+In&nbsp;[34]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3082,7 +3100,7 @@ After
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This lack of copying allows for very efficient vectorized operations, but this power should be used carefully - if used badly it can lead to some hard to track down bugs.</p>
+<p>This lack of copying allows for very efficient vectorized operations, but this power should be used carefully - if used badly it can lead to some bugs that are hard to track down.</p>
 <p>If in doubt, you can always copy the data to a different block of memory with the <strong><code>copy()</code></strong> method.</p>
 </div>
 </div>
@@ -3093,14 +3111,14 @@ After
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="slices">Slices</h3>
-<p>With multidimensional arrays, you can also use slices, and you can mix and match slices and single indices in the different dimensions:</p>
+<p>With multidimensional arrays you can also index using slices, and you can mix and match slices and single indices in the different dimensions:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[34]:
+In&nbsp;[35]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3147,14 +3165,14 @@ Second element from dimension 0 (maintaining its dimension), all elements from d
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you only provide one index, then the slice will be expanded to <code>&quot;:&quot;</code> for all of the remaining dimensions (aka Ellipsis):</p>
+<p>If you only provide one index to slice a multidimensional array, then the slice will be expanded to <code>&quot;:&quot;</code> for all of the remaining dimensions:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[35]:
+In&nbsp;[36]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3189,14 +3207,15 @@ Second row:  [4 5 6 7] is equivalent to [4 5 6 7]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ellipsis can be specified explicitly with <code>&quot;...&quot;</code>, it will automatically expand to &quot;:&quot; for each of the unspecified dimensions in the array, and can even be used at the beginning of the slice:</p>
+<p>This is also known as &quot;ellipsis&quot;.</p>
+<p>Ellipsis can be specified explicitly with <code>&quot;...&quot;</code>. It will automatically expand to <code>&quot;:&quot;</code> for each of the unspecified dimensions in the array, and can even be used at the beginning of the slice:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[36]:
+In&nbsp;[37]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3239,15 +3258,15 @@ Orig shape:  (4, 6, 3)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="generating-2d-coordinate-arrays">Generating 2D coordinate arrays</h2>
-<p>A common task is to generate a pair of arrays which represent the coordinates of our data.</p>
-<p>When the orthogonal 1d coordinate arrays already exist, numpy's meshgrid function is very useful:</p>
+<p>A common task is to generate a pair of arrays that represent the coordinates of our data.</p>
+<p>When orthogonal 1d coordinate arrays already exist, NumPy's <code>meshgrid</code> function is very useful:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[37]:
+In&nbsp;[38]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3297,7 +3316,7 @@ In&nbsp;[37]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[38]:
+In&nbsp;[39]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3345,7 +3364,7 @@ Memory used (in bytes)   : 64
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[39]:
+In&nbsp;[40]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3382,14 +3401,14 @@ Mean and standard deviation     : 3.5 2.29128784748
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These methods operate on an element-by-element basis on the array, however for multidimensional arrays it is also possible to do the computation along a single dimension by passing the <code>axis</code> parameter:</p>
+<p>These methods operate on an element-by-element basis on the array, however for multidimensional arrays it is also possible to carry out the computation along a single dimension by passing the <code>axis</code> parameter:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[40]:
+In&nbsp;[41]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3428,7 +3447,7 @@ The sum of elements along the columns is : [ 4  6  8 10]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see in this example, the value of the <code>axis</code> parameter is the dimension which will be <em>consumed</em> once the operation has been carried out. This is why to sum along the columns we use <code>axis=0</code>.</p>
+<p>As you can see in this example, the value of the <code>axis</code> parameter is the dimension that will be <em>consumed</em> once the operation has been carried out. This is why to sum along the columns we use <code>axis=0</code>.</p>
 <p>This can be easily illustrated with an example that has more dimensions; we create an array with 4 dimensions and shape <code>(3,4,5,6)</code> and sum along the axis number 2 (i.e. the <em>third</em> axis, since in Python all counts are 0-based). That consumes the dimension whose length was 5, leaving us with a new array that has shape <code>(3,4,6)</code>:</p>
 </div>
 </div>
@@ -3436,7 +3455,7 @@ The sum of elements along the columns is : [ 4  6  8 10]
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[41]:
+In&nbsp;[42]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3452,7 +3471,7 @@ In&nbsp;[41]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[41]:</div>
+    Out[42]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -3479,7 +3498,7 @@ In&nbsp;[41]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[42]:
+In&nbsp;[43]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3521,14 +3540,14 @@ Transpose:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="operating-with-arrays">Operating with arrays</h2>
-<p>Arrays support all regular arithmetic operators, and the numpy library also contains a complete collection of basic mathematical functions that operate on arrays. It is important to remember that in general, all operations with arrays are applied <em>element-wise</em>, i.e., are applied to all the elements of the array at the same time. Consider for example:</p>
+<p>Arrays support all regular arithmetic operators, and the NumPy library also contains a complete collection of basic mathematical functions that operate on arrays. It is important to remember that in general, all operations with arrays are applied <em>element-wise</em>, i.e., are applied to all the elements of the array at the same time. For example:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[43]:
+In&nbsp;[44]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3563,14 +3582,14 @@ In&nbsp;[43]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Importantly, even the multiplication operator is by default applied element-wise, it is <em>not</em> the matrix multiplication from linear algebra:</p>
+<p>Importantly, even the multiplication operator is by default applied element-wise. However it is <em>not</em> the matrix multiplication from linear algebra:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[44]:
+In&nbsp;[45]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3610,7 +3629,7 @@ In&nbsp;[44]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[45]:
+In&nbsp;[46]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3626,7 +3645,7 @@ In&nbsp;[45]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[45]:</div>
+    Out[46]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -3656,14 +3675,14 @@ array([ 0. ,  1.5,  3. ,  4.5])
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="broadcasting">Broadcasting</h3>
-<p>While the fact that numpy operates on an element-wise basis means that in principle arrays must always match one another's shape, however numpy will helpfully &quot;<em>broadcast</em>&quot; dimensions when possible. Here is an example of broadcasting a scalar to a 1D array:</p>
+<p>The fact that NumPy operates on an element-wise basis means that in principle arrays must always match one another's shape. However, NumPy will also helpfully &quot;<em>broadcast</em>&quot; dimensions when possible. Here is an example of broadcasting a scalar to a 1D array:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[46]:
+In&nbsp;[47]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3705,7 +3724,7 @@ In&nbsp;[46]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[47]:
+In&nbsp;[48]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3721,7 +3740,7 @@ In&nbsp;[47]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[47]:</div>
+    Out[48]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -3750,7 +3769,7 @@ array([[ 1.,  2.,  3.],
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[48]:
+In&nbsp;[49]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3807,10 +3826,10 @@ In&nbsp;[48]:
 <p>Broadcasting follows these three rules:</p>
 <ol style="list-style-type: decimal">
 <li><p>If the two arrays differ in their number of dimensions, the shape of the array with fewer dimensions is <em>padded</em> with ones on its leading (left) side.</p></li>
-<li><p>If the shape of the two arrays does not match in any dimension, the array with shape equal to 1 in that dimension is <em>stretched</em> to match the other shape.</p></li>
-<li><p>If in any dimension the sizes disagree and neither is equal to 1, an error is raised.</p></li>
+<li><p>If the shape of the two arrays does not match in any dimension, either array with shape equal to 1 in a given dimension is <em>stretched</em> to match the other shape.</p></li>
+<li><p>If in any dimension the sizes disagree and neither has shape equal to 1, an error is raised.</p></li>
 </ol>
-<p>Note that all of this happens without ever actually creating the stretched arrays in memory! This broadcasting behavior is in practice enormously powerful, especially because when numpy broadcasts to create new dimensions or to 'stretch' existing ones, it doesn't actually replicate the data. In the example above the operation is carried <em>as if</em> the 1.5 was a 1-d array with 1.5 in all of its entries, but no actual array was ever created. This can save lots of memory in cases when the arrays in question are large and can have significant performance implications.</p>
+<p>Note that all of this happens without ever actually creating the expanded arrays in memory! This broadcasting behavior is in practice enormously powerful, especially given that when NumPy broadcasts to create new dimensions or to 'stretch' existing ones, it doesn't actually duplicate the data. In the example above the operation is carried out <em>as if</em> the scalar 1.5 was a 1D array with 1.5 in all of its entries, but no actual array is ever created. This can save lots of memory in cases when the arrays in question are large. As such this can have significant performance implications.</p>
 </div>
 </div>
 </div>
@@ -3822,7 +3841,7 @@ In&nbsp;[48]:
 <h3 id="broadcasting-examples">Broadcasting Examples:</h3>
 <p>So when we do</p>
 <pre><code>np.arange(3) + 5</code></pre>
-<p>The scalar 5 is</p>
+<p>The scalar 5 is:</p>
 <ul>
 <li>first 'promoted' to a 1-dimensional array of length 1 (rule 1)</li>
 <li>then, this array is 'stretched' to length 3 to match the first array. (rule 2)</li>
@@ -3838,7 +3857,7 @@ In&nbsp;[48]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When we do</p>
 <pre><code>np.ones((3, 3)) + np.arange(3)</code></pre>
-<p>The second array is</p>
+<p>The second array is:</p>
 <ul>
 <li>first 'promoted' to a 2-dimensional array of shape (1, 3) (rule 1)</li>
 <li>then axis 0 is 'stretched' to length 3 to match the first array (rule 2)</li>
@@ -3858,7 +3877,7 @@ In&nbsp;[48]:
 <li>the second array's axis 0 is 'stretched' to form an array of shape (3, 3) (rule 2)</li>
 <li>the first array's axis 1 is 'stretched' to form an array of shape (3, 3) (rule 2)</li>
 </ul>
-<p>Then the operation proceeds as if on two 3 \(\times\) 3 arrays</p>
+<p>Then the operation proceeds as if on two 3 \(\times\) 3 arrays.</p>
 </div>
 </div>
 </div>
@@ -3870,9 +3889,9 @@ In&nbsp;[48]:
 <p>The general rule is: when operating on two arrays, NumPy compares their shapes element-wise. It starts with the trailing dimensions, and works its way forward, creating dimensions of length 1 as needed. Two dimensions are considered compatible when</p>
 <ul>
 <li>they are equal to begin with, or</li>
-<li>one of them is 1; in this case numpy will do the 'stretching' to make them equal.</li>
+<li>one of them is 1; in this case NumPy will do the 'stretching' to make them equal.</li>
 </ul>
-<p>If these conditions are not met, a <code>ValueError: frames are not aligned</code> exception is thrown, indicating that the arrays have incompatible shapes.</p>
+<p>If these conditions are not met, a <code>ValueError: operands could not be broadcast together</code> exception is thrown, indicating that the arrays have incompatible shapes.</p>
 </div>
 </div>
 </div>
@@ -3889,7 +3908,7 @@ In&nbsp;[48]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[49]:
+In&nbsp;[50]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3907,7 +3926,7 @@ In&nbsp;[49]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[50]:
+In&nbsp;[51]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3925,7 +3944,7 @@ In&nbsp;[50]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[51]:
+In&nbsp;[52]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3943,7 +3962,7 @@ In&nbsp;[51]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[52]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3973,7 +3992,7 @@ In&nbsp;[52]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3998,7 +4017,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4025,7 +4044,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4043,15 +4062,15 @@ In&nbsp;[]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="reshape-and-newaxis">Reshape and newaxis</h2>
-<p>Reshaping arrays is a common task in order to make the best of numpy's powerful broadcasting.</p>
-<p>A useful tip with the <strong><code>reshape</code></strong> method is that it is possible to provide a <code>-1</code> length for at most one of the dimensions. This indicates that numpy should automatically calculate the length of this dimension:</p>
+<p>Reshaping arrays is a common task in order to make the best of NumPy's powerful broadcasting.</p>
+<p>A useful tip with the <strong><code>reshape</code></strong> method is that it is possible to provide a <code>-1</code> length for at most one of the dimensions. This indicates that NumPy should automatically calculate the length of this dimension:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[53]:
+In&nbsp;[54]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4067,7 +4086,7 @@ In&nbsp;[53]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[53]:</div>
+    Out[54]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -4085,7 +4104,7 @@ array([[0, 1, 2, 3, 4, 5]])
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[54]:
+In&nbsp;[55]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4101,7 +4120,7 @@ In&nbsp;[54]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[54]:</div>
+    Out[55]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -4129,7 +4148,7 @@ array([[0, 1, 2],
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[55]:
+In&nbsp;[56]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4164,7 +4183,7 @@ In&nbsp;[55]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="element-wise-functions">Element-wise Functions</h3>
-<p>Numpy ships with a full complement of mathematical functions that work on entire arrays, including logarithms, exponentials, trigonometric and hyperbolic trigonometric functions, etc.</p>
+<p>NumPy ships with a full complement of mathematical functions that work on entire arrays, including logarithms, exponentials, trigonometric and hyperbolic trigonometric functions, etc.</p>
 <p>For example, sampling the sine function at 100 points between \(0\) and \(2\pi\) is as simple as:</p>
 </div>
 </div>
@@ -4172,7 +4191,7 @@ In&nbsp;[55]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[56]:
+In&nbsp;[57]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4197,7 +4216,7 @@ In&nbsp;[56]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[57]:
+In&nbsp;[58]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4215,7 +4234,7 @@ In&nbsp;[57]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-algebra-in-numpy">Linear algebra in numpy<a class="anchor-link" href="#Linear-algebra-in-numpy">&#182;</a></h2>
+<h2 id="Linear-algebra-in-NumPy">Linear algebra in NumPy<a class="anchor-link" href="#Linear-algebra-in-NumPy">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -4225,14 +4244,14 @@ In&nbsp;[57]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy ships with a basic linear algebra library, and all arrays have a <code>dot</code> method whose behavior is that of the scalar dot product when its arguments are vectors (one-dimensional arrays) and the traditional matrix multiplication when one or both of its arguments are two-dimensional arrays:</p>
+<p>NumPy ships with a basic linear algebra library, and all arrays have a <code>dot</code> method whose behavior is that of the scalar dot product when its arguments are vectors (one-dimensional arrays) and the traditional matrix multiplication when one or both of its arguments are two-dimensional arrays:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[58]:
+In&nbsp;[59]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4275,7 +4294,7 @@ In&nbsp;[58]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[59]:
+In&nbsp;[60]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4321,7 +4340,7 @@ In&nbsp;[59]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[60]:
+In&nbsp;[61]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4356,14 +4375,14 @@ In&nbsp;[60]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy makes no distinction between row and column vectors and simply verifies that the dimensions match the required rules of matrix multiplication. Below is an example of matrix-vector multiplication, and in this case we have a \(2 \times 3\) matrix multiplied by a 3-vector, which produces a 2-vector:</p>
+<p>NumPy makes no distinction between row and column vectors and simply verifies that the dimensions match the required rules of matrix multiplication. Below is an example of matrix-vector multiplication, and in this case we have a \(2 \times 3\) matrix multiplied by a 3-vector, which produces a 2-vector:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4450,7 +4469,7 @@ In&nbsp;[61]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4476,7 +4495,7 @@ In&nbsp;[61]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4501,7 +4520,7 @@ In&nbsp;[61]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4526,7 +4545,7 @@ In&nbsp;[61]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4544,14 +4563,14 @@ In&nbsp;[61]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="part-5-extension">Part 5 (extension)</h4>
-<p><code>numpy</code> and <code>scipy.integrate</code> provide many common integration schemes. Find the documentation for numpy's own version of the trapezoidal integration scheme and check its result with your own:</p>
+<p><code>numpy</code> and <code>scipy.integrate</code> provide many common integration schemes. Find the documentation for NumPy's own version of the trapezoidal integration scheme and check its result with your own:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4570,14 +4589,14 @@ In&nbsp;[61]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="part-6-extension">Part 6 (extension)</h4>
 <p>Write a function <code>trapzf(f, a, b, npts=100)</code> that accepts a function <code>f</code>, the endpoints <code>a</code> and <code>b</code> and the number of samples to take <code>npts</code>. Sample the function uniformly at these points and return the value of the integral.</p>
-<p>Use the trapzf function to identify the minimum number of sampling points needed to approximate the integral \(\int_0^3 x^2\) with an absolute error of \(&lt;=0.0001\). (A loop is necessary here)</p>
+<p>Use the trapzf function to identify the minimum number of sampling points needed to approximate the integral \(\int_0^3 x^2\) with an absolute error of \(&lt;=0.0001\). (A loop is necessary here.)</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
