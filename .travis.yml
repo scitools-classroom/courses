@@ -7,6 +7,10 @@ sudo: false
 env:
     global:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
+       # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
+       - secure: "WlJRXfV2C+6qm1sE/BCRm0+l2qPWEBWRJWYRz7JFyTSAMosRwcZRSUKNUtd13rdoxie1itW68ZY83L5KH9jytzpcMCqBUY3goggN7EX06a051VkUI+pqSdntxC1Kfu45EH8x1gLwf7s6IZ9R6bZRN3+sXUpkPj99eIMcmEj+WcM="
+       # Generated as above for dkillick/courses.
+       - secure: "i8YqfHjAEf/Jfu0mCAkkStRhyHocKG3TpNYJPoL3npot6q6IPJ0I+EsZ8MCU4fXbSDE2xH9WiqIVng3qRWVjiWovKyKGc7wt+Nzq7j3RpJO5S4k7Mjy9WIlkKht9XFB6k61sETotzVkfAtQWEQfj4vhPApaLnSdq66CQed7IMKAx5hV2lHZJQNR/VNfCDlwfKH8p3yKkv1lMctdb4KGIVRXfW3K7hRv6u3lrP3TRytwwrYtdT/qR/fL/e+gPCQ2pvxPBOr2z7d2Buow6we1FMmw9mjoWsMd4b4asBgJxojDmQchroriBkrR2qIBpggXIjQj/z58TNnm+Gf3WcRdOVOXK9IuiZIFwzLyl2n2BuoGNpm5X5EXmdEh/0JadLrjZZrLzEkLvkWc/zDBH0ZzfhgTMzfR3QnUdcRbiEd94J3Ln8vg3OJyuQJ13jx55GnjSZVNa/afFp4FyhiPsCtxFPRbzYPRoTd7H9u2FWNEo7DrclB1rNvwGVydR46SnwuKyp2SL7GTVyWlZ3hdHNDp5oiNpGsLX4w2I35GIA5v7HUKJD/SQvBeCEb5DE4djAa0SEbKtZ2uNEsvwF80GNDV98IldiLnBBNf9/+cYdXj/EUDEX+WEZLMwutcXoxldggC4kmt9MHpwQr5egD1BSaBsruG4xoF1QiNKcU3AhL5oUjI="
 
     matrix:
         - PYTHON=3.4
@@ -21,8 +25,9 @@ install:
     # Now do the things we need to do to install it.
     - conda install ipython nbconvert python=${PYTHON} --yes --quiet
     - rm -rf build
+    - git clone https://dkillick:${GH_TOKEN}@github.com/dkillick/courses.git --branch build build
 
 script:
-    - find .
     - ./make.sh
-    - find build
+    - cd build
+    - git status
