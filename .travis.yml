@@ -9,8 +9,6 @@ env:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
        # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
        - secure: "IGrdEKM5CH5OCus7pCCrzSWV9WOEuY9QKvWFbNBkBLa3MNszvZop3oioB3QVvygHvMV2HvcOBEx4KaQvUt6UanNb8j+C1zrPGWBuDeuWVDC3pCfqCsXRGXJU1TJp0alRByxaSoenvSjEBJi/GpF9zsAosS/wJIX1rBCbLsjKrhU="
-       # Generated as above for dkillick/courses.
-       - secure: "ipHPBXaGMc3rjXzpL2b5lFtBwb2WCT5SfVnPwnopm25jauXqLiFxRv/uBK9YKHE71hKKKPNe3koQKt1Gg10bEnYCnqzlgcH7Zeif3iUpYvO3++EVWxh+6GoUYlTzdOZ9tf+tl+iXvU9xVQwTc6zgrA/CtxoYASM3attCjBT8SCXJymVRiDsFLnftSyqRzNxumG0av2/mAcgjflva1jo2s/ObKU/Cv3qT2bfYJpdu3cfEJlNGImK8aZtGwEWOlH4iJNqo9bbVBKiLjpVJVri8P69Ud8MxnHsIffY5NIIuywlpal/HtlFVhn3wfWPL2COXWQ4eY9SNXfzy5BmTcWm9EvlPR0oPY9akzghkGqQk64k8+b/cPjOnbG5TRgjfL4JofAKABxV11fZZ9e11H1wA59fg9zkuVDsG/BvWYFK7CU31qRqZVgL43C3rudq8EcNK3PhO2bZayZncV/FLyB20Bc1obvEmS6+GwEoWH4aWJ9pAsOmMBEBFn39YIZ1jvU8hFFjz2+HiIBYag3KRog45QqlkuWYL3EdpV+IZ8+B0jjV1cdBfI57+jO+zkyLoNzT9d6mOBXsceHswzOTwV05lO3GIrGHJsvxoAzPnlCtnQi0hMj3LsKf9VttAtZt7lAk5EIx16VYLDjFBRQtH3h4AljaxGHKxd4Kvh8B4G/ViQD4=" 
 
     matrix:
         - PYTHON=3.4
