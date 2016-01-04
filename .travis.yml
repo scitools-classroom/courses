@@ -8,9 +8,9 @@ env:
     global:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
        # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
-       - secure: "WlJRXfV2C+6qm1sE/BCRm0+l2qPWEBWRJWYRz7JFyTSAMosRwcZRSUKNUtd13rdoxie1itW68ZY83L5KH9jytzpcMCqBUY3goggN7EX06a051VkUI+pqSdntxC1Kfu45EH8x1gLwf7s6IZ9R6bZRN3+sXUpkPj99eIMcmEj+WcM="
+       - secure: "IGrdEKM5CH5OCus7pCCrzSWV9WOEuY9QKvWFbNBkBLa3MNszvZop3oioB3QVvygHvMV2HvcOBEx4KaQvUt6UanNb8j+C1zrPGWBuDeuWVDC3pCfqCsXRGXJU1TJp0alRByxaSoenvSjEBJi/GpF9zsAosS/wJIX1rBCbLsjKrhU="
        # Generated as above for dkillick/courses.
-       - secure: "i8YqfHjAEf/Jfu0mCAkkStRhyHocKG3TpNYJPoL3npot6q6IPJ0I+EsZ8MCU4fXbSDE2xH9WiqIVng3qRWVjiWovKyKGc7wt+Nzq7j3RpJO5S4k7Mjy9WIlkKht9XFB6k61sETotzVkfAtQWEQfj4vhPApaLnSdq66CQed7IMKAx5hV2lHZJQNR/VNfCDlwfKH8p3yKkv1lMctdb4KGIVRXfW3K7hRv6u3lrP3TRytwwrYtdT/qR/fL/e+gPCQ2pvxPBOr2z7d2Buow6we1FMmw9mjoWsMd4b4asBgJxojDmQchroriBkrR2qIBpggXIjQj/z58TNnm+Gf3WcRdOVOXK9IuiZIFwzLyl2n2BuoGNpm5X5EXmdEh/0JadLrjZZrLzEkLvkWc/zDBH0ZzfhgTMzfR3QnUdcRbiEd94J3Ln8vg3OJyuQJ13jx55GnjSZVNa/afFp4FyhiPsCtxFPRbzYPRoTd7H9u2FWNEo7DrclB1rNvwGVydR46SnwuKyp2SL7GTVyWlZ3hdHNDp5oiNpGsLX4w2I35GIA5v7HUKJD/SQvBeCEb5DE4djAa0SEbKtZ2uNEsvwF80GNDV98IldiLnBBNf9/+cYdXj/EUDEX+WEZLMwutcXoxldggC4kmt9MHpwQr5egD1BSaBsruG4xoF1QiNKcU3AhL5oUjI="
+       - secure: "ipHPBXaGMc3rjXzpL2b5lFtBwb2WCT5SfVnPwnopm25jauXqLiFxRv/uBK9YKHE71hKKKPNe3koQKt1Gg10bEnYCnqzlgcH7Zeif3iUpYvO3++EVWxh+6GoUYlTzdOZ9tf+tl+iXvU9xVQwTc6zgrA/CtxoYASM3attCjBT8SCXJymVRiDsFLnftSyqRzNxumG0av2/mAcgjflva1jo2s/ObKU/Cv3qT2bfYJpdu3cfEJlNGImK8aZtGwEWOlH4iJNqo9bbVBKiLjpVJVri8P69Ud8MxnHsIffY5NIIuywlpal/HtlFVhn3wfWPL2COXWQ4eY9SNXfzy5BmTcWm9EvlPR0oPY9akzghkGqQk64k8+b/cPjOnbG5TRgjfL4JofAKABxV11fZZ9e11H1wA59fg9zkuVDsG/BvWYFK7CU31qRqZVgL43C3rudq8EcNK3PhO2bZayZncV/FLyB20Bc1obvEmS6+GwEoWH4aWJ9pAsOmMBEBFn39YIZ1jvU8hFFjz2+HiIBYag3KRog45QqlkuWYL3EdpV+IZ8+B0jjV1cdBfI57+jO+zkyLoNzT9d6mOBXsceHswzOTwV05lO3GIrGHJsvxoAzPnlCtnQi0hMj3LsKf9VttAtZt7lAk5EIx16VYLDjFBRQtH3h4AljaxGHKxd4Kvh8B4G/ViQD4=" 
 
     matrix:
         - PYTHON=3.4
@@ -31,3 +31,7 @@ script:
     - ./make.sh
     - cd build
     - git status
+    - git add images
+    # This will only fail if there's nothing to commit, so we can safely skip over this failure.
+    - git commit -am "Build of ${TRAVIS_COMMIT}" || true
+    - git push origin build > /dev/null
