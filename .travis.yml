@@ -1,0 +1,28 @@
+# The language in this case has no bearing - we are going to be making use of conda for a
+# python distribution for the scientific python stack.
+language: python
+
+sudo: false
+
+env:
+    global:
+       - CONDA_INSTALL_LOCN="${HOME}/conda"
+
+    matrix:
+        - PYTHON=3.4
+
+install:
+    - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/miniconda.sh
+    - bash ${HOME}/miniconda.sh -b -p ${CONDA_INSTALL_LOCN} && export PATH=${CONDA_INSTALL_LOCN}/bin:$PATH
+
+    - git config --global user.name "Travis user"
+    - git config --global user.email travis-tests@example.com
+
+    # Now do the things we need to do to install it.
+    - conda install ipython nbconvert python=${PYTHON} --yes --quiet
+    - rm -rf build
+
+script:
+    - find .
+    - ./make.sh
+    - find build
