@@ -6,6 +6,7 @@ set -e
 mkdir -p build
 cd build
 cp -rf ../course_content/images images
+cp -rf ../course_content/resources resources
 
 for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
 do

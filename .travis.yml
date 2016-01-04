@@ -31,7 +31,7 @@ script:
     - ./make.sh
     - cd build
     - git status
-    - git add images
+    - git add -A
     # This will only fail if there's nothing to commit, so we can safely skip over this failure.
     - git commit -am "Build of ${TRAVIS_COMMIT}" || true
     - git push origin build > /dev/null
