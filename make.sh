@@ -29,7 +29,7 @@ done
 cd ../solutions
 for name in "numpy_exercise_1.ipynb" "numpy_exercise_2.ipynb" "matplotlib_exercise_2.ipynb" "matplotlib_exercise_3.ipynb" "cartopy_exercise_1.ipynb" "iris_exercise_1.ipynb" "iris_exercise_2.ipynb" "iris_exercise_3.ipynb" "iris_exercise_4.ipynb" "iris_exercise_5.ipynb" "iris_exercise_6.ipynb" "iris_exercise_7.ipynb"
 do
-    python ../../utils/nbutil.py ../../course_content/solutions/${name} ${name} --clear-code --clear-output
+    python ../../utils/nbutil.py ../../course_content/solutions/${name} ${name}
 done
 
 
