@@ -16,9 +16,8 @@ cd html
 for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
 do
     #ipython nbconvert --to slides ../../course_content/${name}.ipynb
-    # Build static (html) copies of the course content and deal with an issue where `../files` is being prepended to some img tag src attributes.
+    # Build static (html) copies of the course content.
     jupyter nbconvert --to html ../../course_content/notebooks/${name}.ipynb
-    sed -i 's/<img src=\"..\/files/<img src=\"../' ${name}.html
     # Make IPython notebooks of the course content with cell output cleared.
     python ../../utils/nbutil.py ../../course_content/notebooks/${name}.ipynb ../notebooks/${name}.ipynb --clear-output
 done
