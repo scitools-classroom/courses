@@ -3,6 +3,10 @@
 # Fail on first exception.
 set -e
 
+# Clean out the build folder then replace the files we need to keep.
+rm -rf build/*
+cp .gitignore LICENSE README.md build
+
 # Set up the folders we will need.
 mkdir -p build/html
 mkdir -p build/notebooks
