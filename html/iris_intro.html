@@ -52,8 +52,10 @@
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -183,7 +185,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">iris</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">iris</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
@@ -197,7 +199,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">__version__</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">__version__</span>
 <span class="nb">print</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 
@@ -336,7 +338,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
 <span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">cubes</span>
 </pre></div>
@@ -377,7 +379,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">air_pot_temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">air_pot_temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span> <span class="n">air_pot_temp</span>
 </pre></div>
 
@@ -433,7 +435,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;model_level_number&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;model_level_number&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -469,7 +471,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
 <span class="nb">print</span> <span class="n">cube</span>
 </pre></div>
 
@@ -524,7 +526,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">shape</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">shape</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">ndim</span>
 <span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -565,7 +567,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">standard_name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">standard_name</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">long_name</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">var_name</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
@@ -598,7 +600,7 @@ air_temperature
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">cube</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&quot;A name that isn&#39;t a valid CF standard name&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cube</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;A name that isn&#39;t a valid CF standard name&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -611,7 +613,7 @@ air_temperature
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">standard_name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">standard_name</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">long_name</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">var_name</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
@@ -654,9 +656,9 @@ A name that isn&apos;t a valid CF standard name
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">units</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">units</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">cube</span><span class="o">.</span><span class="n">convert_units</span><span class="p">(</span><span class="s">&#39;Celsius&#39;</span><span class="p">)</span>
+<span class="n">cube</span><span class="o">.</span><span class="n">convert_units</span><span class="p">(</span><span class="s1">&#39;Celsius&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">units</span>
 <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
@@ -698,8 +700,8 @@ Celsius
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">attributes</span>
-<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s">&#39;STASH&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">attributes</span>
+<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;STASH&#39;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -737,7 +739,7 @@ m01s03i236
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">cell_method</span> <span class="ow">in</span> <span class="n">cube</span><span class="o">.</span><span class="n">cell_methods</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">cell_method</span> <span class="ow">in</span> <span class="n">cube</span><span class="o">.</span><span class="n">cell_methods</span><span class="p">:</span>
     <span class="nb">print</span> <span class="n">cell_method</span>
 </pre></div>
 
@@ -786,7 +788,7 @@ m01s03i236
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">time</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">time</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
@@ -848,7 +850,7 @@ m01s03i236
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="nb">repr</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="nb">repr</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">time</span><span class="o">.</span><span class="n">points</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 <span class="nb">print</span> <span class="n">time</span><span class="o">.</span><span class="n">bounds</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
@@ -892,7 +894,7 @@ m01s03i236
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="nb">print</span> <span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">num2date</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">points</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
 <span class="nb">print</span> <span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">date2num</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -934,7 +936,7 @@ m01s03i236
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">lat</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;latitude&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lat</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">lat</span><span class="o">.</span><span class="n">coord_system</span>
 </pre></div>
 
@@ -982,9 +984,9 @@ m01s03i236
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">lat</span><span class="o">.</span><span class="n">points</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">lat</span><span class="o">.</span><span class="n">points</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 <span class="nb">print</span> <span class="n">lat</span><span class="o">.</span><span class="n">bounds</span>
-<span class="k">if</span> <span class="n">lat</span><span class="o">.</span><span class="n">bounds</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">lat</span><span class="o">.</span><span class="n">bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">lat</span><span class="o">.</span><span class="n">guess_bounds</span><span class="p">()</span>
 <span class="nb">print</span> <span class="n">lat</span><span class="o">.</span><span class="n">bounds</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
@@ -1028,7 +1030,7 @@ None
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1051,7 +1053,7 @@ None
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1074,7 +1076,7 @@ None
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1097,7 +1099,7 @@ None
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1120,7 +1122,7 @@ None
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1143,7 +1145,7 @@ None
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1175,8 +1177,8 @@ None
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1233,9 +1235,9 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">c1</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
-<span class="n">c3</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cubes</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_altitude&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;surface_altitude&#39;</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;surface_altitude&#39;</span><span class="p">)</span>
+<span class="n">c3</span><span class="p">,</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cubes</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;surface_altitude&#39;</span><span class="p">)</span>
 <span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span> <span class="o">==</span> <span class="n">c3</span>
 </pre></div>
 
@@ -1288,7 +1290,7 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1311,7 +1313,7 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1334,9 +1336,9 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
 <span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1373,7 +1375,7 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pot_temperature_constraint</span><span class="p">)</span>
 </pre></div>
 
@@ -1411,7 +1413,7 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pot_temperature_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">,</span>
                                              <span class="n">model_level_number</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pot_temperature_constraint</span><span class="p">)</span>
 </pre></div>
@@ -1450,7 +1452,7 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span> <span class="o">&amp;</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;air_potential_temperature&#39;</span> <span class="o">&amp;</span> 
                     <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">model_level_number</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
 </pre></div>
 
@@ -1488,11 +1490,11 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">less_than_10</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">less_than_10</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return True for values that are less than 10.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="mi">10</span>
 
-<span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span>
+<span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">,</span>
                                     <span class="n">model_level_number</span><span class="o">=</span><span class="n">less_than_10</span><span class="p">))</span>
 </pre></div>
 
@@ -1530,12 +1532,12 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="s">&#39;cell &gt; {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s">&#39;cell &gt;= {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s">&#39;cell == {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s">&#39;cell &lt;= {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;=</span> <span class="n">value</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s">&#39;cell &lt; {0!r} is {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="s1">&#39;cell &gt; </span><span class="si">{0!r}</span><span class="s1"> is </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;cell &gt;= </span><span class="si">{0!r}</span><span class="s1"> is </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;cell == </span><span class="si">{0!r}</span><span class="s1"> is </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;cell &lt;= </span><span class="si">{0!r}</span><span class="s1"> is </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;=</span> <span class="n">value</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;cell &lt; </span><span class="si">{0!r}</span><span class="s1"> is </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cell</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span>
 
 <span class="n">cell</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
 <span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
@@ -1579,8 +1581,8 @@ cell &lt; 12 is False
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">cell_1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
-<span class="n">cell_2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="k">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cell_1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="n">cell_2</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="n">cell_comparison</span><span class="p">(</span><span class="n">cell_1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="nb">print</span>
@@ -1632,7 +1634,7 @@ cell &lt; Cell(point=11, bound=None) is True
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">iris</span><span class="o">.</span><span class="n">FUTURE</span><span class="o">.</span><span class="n">cell_datetime_objects</span> <span class="o">=</span> <span class="k">True</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">FUTURE</span><span class="o">.</span><span class="n">cell_datetime_objects</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
 </div>
@@ -1655,9 +1657,9 @@ cell &lt; Cell(point=11, bound=None) is True
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">time_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span>
     <span class="n">time</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">time_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">time_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1694,8 +1696,8 @@ cell &lt; Cell(point=11, bound=None) is True
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">time_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">hour</span> <span class="o">==</span> <span class="mi">11</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">time_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_constraint</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">hour</span> <span class="o">==</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">time_constraint</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1732,10 +1734,10 @@ cell &lt; Cell(point=11, bound=None) is True
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">iris.time</span> <span class="k">import</span> <span class="n">PartialDateTime</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">iris.time</span> <span class="k">import</span> <span class="n">PartialDateTime</span>
 <span class="n">eleventh_hour</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">PartialDateTime</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">11</span><span class="p">))</span>
-<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">eleventh_hour</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">eleventh_hour</span><span class="p">)</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">eleventh_hour</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">air_pot_temp</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">eleventh_hour</span><span class="p">)</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1780,7 +1782,7 @@ DimCoord([2009-11-19 11:00:00], standard_name=&apos;time&apos;, calendar=&apos;g
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1803,7 +1805,7 @@ DimCoord([2009-11-19 11:00:00], standard_name=&apos;time&apos;, calendar=&apos;g
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -1827,9 +1829,9 @@ DimCoord([2009-11-19 11:00:00], standard_name=&apos;time&apos;, calendar=&apos;g
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
 <span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="n">iris</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cubes</span><span class="p">,</span> <span class="s">&#39;saved_cubes.nc&#39;</span><span class="p">)</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cubes</span><span class="p">,</span> <span class="s1">&#39;saved_cubes.nc&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1842,7 +1844,7 @@ DimCoord([2009-11-19 11:00:00], standard_name=&apos;time&apos;, calendar=&apos;g
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">!</span>ncdump -h saved_cubes.nc <span class="p">|</span> head -n <span class="m">20</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ncdump -h saved_cubes.nc <span class="p">|</span> head -n <span class="m">20</span>
 <span class="o">!</span>rm saved_cubes.nc
 </pre></div>
 
@@ -1910,9 +1912,9 @@ variables:
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
-<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1939,8 +1941,8 @@ variables:
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">subcube</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">subcube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subcube</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">subcube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1992,7 +1994,7 @@ shared metadata into a single multidimensional cube. In Iris, this is known as m
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s">&#39;ensemble_008.pp&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s1">&#39;ensemble_008.pp&#39;</span><span class="p">)</span>
 <span class="n">raw_cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_raw</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 
 <span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_cubes</span><span class="p">)</span>
@@ -2032,7 +2034,7 @@ shared metadata into a single multidimensional cube. In Iris, this is known as m
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">raw_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">raw_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span>
 <span class="nb">print</span> <span class="n">raw_cubes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
@@ -2102,7 +2104,7 @@ The <code>merge</code> method <em>always</em> returns another CubeList:</p>
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">merged_cube</span><span class="p">,</span> <span class="o">=</span> <span class="n">raw_cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_cube</span><span class="p">,</span> <span class="o">=</span> <span class="n">raw_cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
 <span class="nb">print</span> <span class="n">merged_cube</span>
 </pre></div>
 
@@ -2155,8 +2157,8 @@ The <code>merge</code> method <em>always</em> returns another CubeList:</p>
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">merged_cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">merged_cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;forecast_period&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">merged_cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">merged_cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;forecast_period&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2206,8 +2208,8 @@ DimCoord(array([  612.,  1344.,  2076.,  2808.,  3540.,  4284.]), bounds=array([
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s">&#39;ensemble_00[34].pp&#39;</span><span class="p">)</span>
-<span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_raw</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_temperature&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s1">&#39;ensemble_00[34].pp&#39;</span><span class="p">)</span>
+<span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_raw</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;surface_temperature&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">cubes</span><span class="p">)</span>
 </pre></div>
 
@@ -2245,7 +2247,7 @@ DimCoord(array([  612.,  1344.,  2076.,  2808.,  3540.,  4284.]), bounds=array([
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">incomplete_cubes</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomplete_cubes</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">incomplete_cubes</span>
 </pre></div>
 
@@ -2284,8 +2286,8 @@ DimCoord(array([  612.,  1344.,  2076.,  2808.,  3540.,  4284.]), bounds=array([
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">incomplete_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s">&#39;--&#39;</span> <span class="o">*</span> <span class="mi">50</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">incomplete_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span> <span class="s1">&#39;--&#39;</span> <span class="o">*</span> <span class="mi">50</span>
 <span class="nb">print</span> <span class="n">incomplete_cubes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
@@ -2354,10 +2356,10 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">cubes</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">cube</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="s">&#39;realization&#39;</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">cubes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cube</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="s1">&#39;realization&#39;</span><span class="p">):</span>
         <span class="n">cube</span><span class="o">.</span><span class="n">add_aux_coord</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">DimCoord</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-                                                <span class="s">&#39;realization&#39;</span><span class="p">))</span>
+                                                <span class="s1">&#39;realization&#39;</span><span class="p">))</span>
 
 <span class="n">merged_cubes</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
 <span class="nb">print</span> <span class="n">merged_cubes</span>
@@ -2433,16 +2435,16 @@ iris.exceptions.MergeError: failed to merge into a single cube.
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">raw_cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_raw</span><span class="p">(</span><span class="s">&#39;../resources/merge_exercise.1.*.nc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_raw</span><span class="p">(</span><span class="s1">&#39;../resources/merge_exercise.1.*.nc&#39;</span><span class="p">)</span>
 
-<span class="c"># Print the attributes, clearly one is different.</span>
+<span class="c1"># Print the attributes, clearly one is different.</span>
 <span class="k">for</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">raw_cubes</span><span class="p">:</span>
     <span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">attributes</span>
 
-<span class="c"># Remove the history attribute from the first cube.</span>
-<span class="k">del</span> <span class="n">raw_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s">&#39;History&#39;</span><span class="p">]</span>
+<span class="c1"># Remove the history attribute from the first cube.</span>
+<span class="k">del</span> <span class="n">raw_cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;History&#39;</span><span class="p">]</span>
 
-<span class="c"># Check that this has meant that a merge now results in a single cube.</span>
+<span class="c1"># Check that this has meant that a merge now results in a single cube.</span>
 <span class="nb">print</span> <span class="n">raw_cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
 </pre></div>
 
@@ -2488,7 +2490,7 @@ Traceback (most recent call last):
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -2517,7 +2519,7 @@ Traceback (most recent call last):
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -2557,7 +2559,7 @@ Traceback (most recent call last):
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;A1B_north_america.nc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;A1B_north_america.nc&#39;</span><span class="p">)</span>
 <span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 
 <span class="n">cube_1</span> <span class="o">=</span> <span class="n">cube</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
@@ -2601,7 +2603,7 @@ Traceback (most recent call last):
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -2639,7 +2641,7 @@ Traceback (most recent call last):
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">concatenate</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cubes</span><span class="o">.</span><span class="n">concatenate</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -2693,9 +2695,9 @@ For example, some early GloSea4 model runs recorded the "ensemble member number"
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s">&#39;ensemble_00[34].pp&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;surface_temperature&#39;</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="n">cube</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">-----&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;GloSea4&#39;</span><span class="p">,</span> <span class="s1">&#39;ensemble_00[34].pp&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">cube</span> <span class="ow">in</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;surface_temperature&#39;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="n">cube</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">-----&#39;</span>
 </pre></div>
 
 </div>
@@ -2770,12 +2772,12 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">def</span> <span class="nf">realization_callback</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
     <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">cube</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="s">&#39;realization&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;ensemble_&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cube</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="s1">&#39;realization&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ensemble_&#39;</span><span class="p">):</span>
         <span class="n">cube</span><span class="o">.</span><span class="n">add_aux_coord</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">DimCoord</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">basename</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]),</span>
-                                                <span class="s">&#39;realization&#39;</span><span class="p">))</span>
+                                                <span class="s1">&#39;realization&#39;</span><span class="p">))</span>
 
 <span class="nb">print</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">realization_callback</span><span class="p">)</span>
 </pre></div>
@@ -2828,9 +2830,9 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
-<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2867,7 +2869,7 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s">&#39;model_level_number&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s1">&#39;model_level_number&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2924,10 +2926,10 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">weights</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">broadcast_to_shape</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">cube</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
-<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s">&#39;model_level_number&#39;</span><span class="p">,</span>
-                     <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s1">&#39;model_level_number&#39;</span><span class="p">,</span>
+                     <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2964,10 +2966,10 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">iris.analysis.cartography</span>
-<span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;grid_latitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bounds</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
-    <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;grid_latitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">guess_bounds</span><span class="p">()</span>
-    <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;grid_longitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">guess_bounds</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">iris.analysis.cartography</span>
+<span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;grid_latitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;grid_latitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">guess_bounds</span><span class="p">()</span>
+    <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;grid_longitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">guess_bounds</span><span class="p">()</span>
 
 <span class="n">grid_areas</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">cartography</span><span class="o">.</span><span class="n">area_weights</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
 </pre></div>
@@ -2992,7 +2994,7 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">area_avg</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">([</span><span class="s">&#39;grid_longitude&#39;</span><span class="p">,</span> <span class="s">&#39;grid_latitude&#39;</span><span class="p">],</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">area_avg</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">([</span><span class="s1">&#39;grid_longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;grid_latitude&#39;</span><span class="p">],</span>
                           <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">grid_areas</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">area_avg</span>
 </pre></div>
@@ -3051,7 +3053,7 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -3074,11 +3076,11 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
 <span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span>
-                      <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s">&#39;air_potential_temperature&#39;</span><span class="p">,</span>
+                      <span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">,</span>
                                       <span class="n">model_level_number</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3116,8 +3118,8 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 <div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">subcube</span> <span class="ow">in</span> <span class="n">cube</span><span class="o">.</span><span class="n">slices</span><span class="p">([</span><span class="s">&#39;grid_latitude&#39;</span><span class="p">,</span> <span class="s">&#39;grid_longitude&#39;</span><span class="p">]):</span>
-    <span class="nb">print</span> <span class="n">subcube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">subcube</span> <span class="ow">in</span> <span class="n">cube</span><span class="o">.</span><span class="n">slices</span><span class="p">([</span><span class="s1">&#39;grid_latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;grid_longitude&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span> <span class="n">subcube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3156,16 +3158,16 @@ air_potential_temperature / (K)     (grid_latitude: 204; grid_longitude: 187)
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">iris.iterate</span> <span class="k">import</span> <span class="n">izip</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">iris.iterate</span> <span class="k">import</span> <span class="n">izip</span>
 
-<span class="n">iris</span><span class="o">.</span><span class="n">FUTURE</span><span class="o">.</span><span class="n">cell_datetime_objects</span> <span class="o">=</span> <span class="k">True</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">FUTURE</span><span class="o">.</span><span class="n">cell_datetime_objects</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="n">e1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;E1_north_america.nc&#39;</span><span class="p">))</span>
-<span class="n">a1b</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;E1_north_america.nc&#39;</span><span class="p">))</span>
+<span class="n">a1b</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
 
-<span class="k">for</span> <span class="n">e1_slice</span><span class="p">,</span> <span class="n">a1b_slice</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span> <span class="n">a1b</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;latitude&#39;</span><span class="p">,</span> <span class="s">&#39;longitude&#39;</span><span class="p">]):</span>
-    <span class="nb">print</span> <span class="n">e1_slice</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">),</span> <span class="n">e1_slice</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">point</span>
-    <span class="nb">print</span> <span class="n">a1b_slice</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">),</span> <span class="n">a1b_slice</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">point</span>
+<span class="k">for</span> <span class="n">e1_slice</span><span class="p">,</span> <span class="n">a1b_slice</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span> <span class="n">a1b</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span> <span class="n">e1_slice</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="n">e1_slice</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">point</span>
+    <span class="nb">print</span> <span class="n">a1b_slice</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="n">a1b_slice</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">point</span>
     <span class="k">break</span>
 </pre></div>
 
@@ -3216,10 +3218,10 @@ air_temperature / (K)               (latitude: 37; longitude: 49) 1860-06-01 00:
 <div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
-<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">subcube</span> <span class="ow">in</span> <span class="n">cube</span><span class="o">.</span><span class="n">slices_over</span><span class="p">(</span><span class="s">&#39;model_level_number&#39;</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="n">subcube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;air_potential_temperature&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">subcube</span> <span class="ow">in</span> <span class="n">cube</span><span class="o">.</span><span class="n">slices_over</span><span class="p">(</span><span class="s1">&#39;model_level_number&#39;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="n">subcube</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">shorten</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3268,7 +3270,7 @@ air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude
 <div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">iris.plot</span> <span class="k">as</span> <span class="nn">iplt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">iris.plot</span> <span class="k">as</span> <span class="nn">iplt</span>
 <span class="kn">import</span> <span class="nn">iris.quickplot</span> <span class="k">as</span> <span class="nn">qplt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -3283,8 +3285,8 @@ air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude
 <div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
-<span class="n">ts</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">([</span><span class="s">&#39;latitude&#39;</span><span class="p">,</span> <span class="s">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">([</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">ts</span>
 </pre></div>
 
@@ -3329,7 +3331,7 @@ air_potential_temperature / (K)     (time: 3; grid_latitude: 204; grid_longitude
 <div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">iplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -3611,7 +3613,7 @@ MAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDqA78fziISZjS06XHAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">iplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -3984,7 +3986,7 @@ URRFURRFURRFURRFURRFURRFURRFURRFURRFURRFiR3+P2V7RbzjZ6k5AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">qplt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">cube</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">qplt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">cube</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -4844,10 +4846,10 @@ z/j/zfG3d1qcjckAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">zonal_variance</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s">&#39;longitude&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">VARIANCE</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zonal_variance</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">VARIANCE</span><span class="p">)</span>
 <span class="n">qplt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">zonal_variance</span><span class="p">,</span>
-              <span class="n">coords</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;forecast_period&#39;</span><span class="p">,</span> <span class="s">&#39;latitude&#39;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Zonal variance in air temperature&#39;</span><span class="p">)</span>
+              <span class="n">coords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;forecast_period&#39;</span><span class="p">,</span> <span class="s1">&#39;latitude&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zonal variance in air temperature&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -6005,7 +6007,7 @@ f5O6fcgaaLEpAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
@@ -7405,7 +7407,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -7428,7 +7430,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -7451,7 +7453,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -7474,7 +7476,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -7497,7 +7499,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -7520,10 +7522,10 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">a1b</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
-<span class="n">e1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;E1_north_america.nc&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1b</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;A1B_north_america.nc&#39;</span><span class="p">))</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;E1_north_america.nc&#39;</span><span class="p">))</span>
 
-<span class="nb">print</span> <span class="n">e1</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">e1</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">a1b</span>
 </pre></div>
 
@@ -7568,7 +7570,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">scenario_difference</span> <span class="o">=</span> <span class="n">a1b</span> <span class="o">-</span> <span class="n">e1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scenario_difference</span> <span class="o">=</span> <span class="n">a1b</span> <span class="o">-</span> <span class="n">e1</span>
 <span class="nb">print</span> <span class="n">scenario_difference</span>
 </pre></div>
 
@@ -7625,7 +7627,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">e1</span> <span class="o">*</span> <span class="n">e1</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;latitude&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">*</span> <span class="n">e1</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7664,7 +7666,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="n">e1</span> <span class="o">-</span> <span class="n">e1</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="n">e1</span> <span class="o">-</span> <span class="n">e1</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7710,10 +7712,10 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">e1_hot</span> <span class="o">=</span> <span class="n">e1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1_hot</span> <span class="o">=</span> <span class="n">e1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">e1_hot</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_less_equal</span><span class="p">(</span><span class="n">e1_hot</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="mi">280</span><span class="p">)</span>
-<span class="n">e1_hot</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&#39;air temperatures greater than 280K&#39;</span><span class="p">)</span>
+<span class="n">e1_hot</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;air temperatures greater than 280K&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7737,10 +7739,10 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">iris.coord_categorisation</span> <span class="k">as</span> <span class="nn">coord_cat</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">iris.coord_categorisation</span> <span class="k">as</span> <span class="nn">coord_cat</span>
 
-<span class="n">filename</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;ostia_monthly.nc&#39;</span><span class="p">)</span>
-<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;surface_temperature&#39;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;ostia_monthly.nc&#39;</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_cube</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;surface_temperature&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7763,7 +7765,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">coord_cat</span><span class="o">.</span><span class="n">add_season</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;clim_season&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">coord_cat</span><span class="o">.</span><span class="n">add_season</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;clim_season&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7786,7 +7788,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">seasonal_mean</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">aggregated_by</span><span class="p">(</span><span class="s">&#39;clim_season&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seasonal_mean</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">aggregated_by</span><span class="p">(</span><span class="s1">&#39;clim_season&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -7809,10 +7811,10 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 <div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">winter</span> <span class="o">=</span> <span class="n">seasonal_mean</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">clim_season</span><span class="o">=</span><span class="s">&#39;djf&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">winter</span> <span class="o">=</span> <span class="n">seasonal_mean</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">clim_season</span><span class="o">=</span><span class="s1">&#39;djf&#39;</span><span class="p">))</span>
 
-<span class="n">qplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">winter</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Winter zonal mean surface temperature at $\pm5^{\circ}$ latitude&#39;</span><span class="p">)</span>
+<span class="n">qplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">winter</span><span class="o">.</span><span class="n">collapsed</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">MEAN</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Winter zonal mean surface temperature at $\pm5^{\circ}$ latitude&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -8129,13 +8131,13 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">year_from_time</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">year_from_time</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">coord</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">num2date</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">.</span><span class="n">year</span>
 
-<span class="n">coord_cat</span><span class="o">.</span><span class="n">add_categorised_coord</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">,</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">),</span>
+<span class="n">coord_cat</span><span class="o">.</span><span class="n">add_categorised_coord</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">),</span>
                                 <span class="n">year_from_time</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -8190,7 +8192,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">zonal_sum</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">zonal_sum</span><span class="p">(</span><span class="n">cube</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A really silly function to calculate the sum of the grid_longitude</span>
 <span class="sd">    dimension.</span>
@@ -8200,7 +8202,7 @@ RK5CYII=
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s">&#39;grid_longitude&#39;</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s1">&#39;grid_longitude&#39;</span><span class="p">)):</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">cube</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
     <span class="k">return</span> <span class="n">total</span>
 </pre></div>
@@ -8215,7 +8217,7 @@ RK5CYII=
 <div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 fname = iris.sample_data_path(&#39;uk_hires.pp&#39;)
 pt = iris.load_cube(fname, &#39;air_potential_temperature&#39;)
 result = zonal_sum(pt)
@@ -8255,7 +8257,7 @@ result = zonal_sum(pt)
 <div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 fname = iris.sample_data_path(&#39;uk_hires.pp&#39;)
 pt = iris.load_cube(fname, &#39;air_potential_temperature&#39;)
 pt.data
@@ -8296,7 +8298,7 @@ result = zonal_sum(pt)
 <div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample_data_path</span><span class="p">(</span><span class="s1">&#39;uk_hires.pp&#39;</span><span class="p">)</span>
 <span class="n">model_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
 </pre></div>
 
@@ -8310,7 +8312,7 @@ result = zonal_sum(pt)
 <div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 for model_level in model_levels:
     pt = iris.load_cube(fname,
                         iris.Constraint(&#39;air_potential_temperature&#39;,
@@ -8341,7 +8343,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 cubes = iris.load(fname)
 for model_level in model_levels:
     pt = cubes.extract(iris.Constraint(&#39;air_potential_temperature&#39;,
@@ -8383,7 +8385,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 cube = iris.load(fname,
                  iris.Constraint(&#39;air_potential_temperature&#39;,
                                  model_level_number=model_levels))
@@ -8427,7 +8429,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -8450,7 +8452,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -8477,7 +8479,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -8500,7 +8502,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -8523,7 +8525,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -8546,7 +8548,7 @@ for model_level in model_levels:
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
