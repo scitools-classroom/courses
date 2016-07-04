@@ -28,8 +28,8 @@ install:
 script:
     - ./make.sh
     - cd build
+    - git add -A --ignore-removal .
     - git status
-    - git add -A
     # This will only fail if there's nothing to commit, so we can safely skip over this failure.
     - git commit -am "Build of ${TRAVIS_COMMIT}" || true
     - if [ ! -z "$GH_TOKEN" ]; then
