@@ -12595,7 +12595,7 @@ None
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-1:">Exercise 1:<a class="anchor-link" href="#Exercise-1:">&#182;</a></h2><p>1. Using the file in <code>iris.sample_data_path('atlantic_profiles.nc')</code> load the data and print the cube list. Store these cubes in a variable called cubes.</p>
+<h3 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h3><p>1. Using the file in <code>iris.sample_data_path('atlantic_profiles.nc')</code> load the data and print the cube list. Store these cubes in a variable called cubes.</p>
 
 </div>
 </div>
@@ -12781,8 +12781,16 @@ None
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Note-on-sample_data_path:">Note on sample_data_path:<a class="anchor-link" href="#Note-on-sample_data_path:">&#182;</a></h4><p>Throughout this course we will make use of the sample data that Iris provides. The function <code>iris.sample_data_path</code> returns the appropriate path to the file in the Iris sample data collection. A common mistake for Iris users is to use the <code>sample_data_path</code> function to access data that is not part of Iris's sample data collection - this is bad practice and is unlikely to work in the future.</p>
-<p><strong>Exercise 2:</strong>
-Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify that it returns a string pointing to a file on your system. Use this string directly in the call to <code>iris.load</code> and confirm the result is the same as in the previous example e.g.:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify that it returns a string pointing to a file on your system. Use this string directly in the call to <code>iris.load</code> and confirm the result is the same as in the previous example e.g.:</p>
 
 <pre><code>print iris.load('/path/to/iris/sampledata/uk_hires.pp', 'air_potential_temperature')</code></pre>
 
@@ -12866,7 +12874,16 @@ Print the result of <code>iris.sample_data_path('uk_hires.pp')</code> to verify 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The load functions all accept a list of filenames to load, and any of the filenames can be "glob" patterns (<a href="http://docs.python.org/2/library/glob.html">http://docs.python.org/2/library/glob.html</a>).</p>
-<p><strong>Exercise 2 continued:</strong> Read in the files found at <strong><code>iris.sample_data_path('GloSea4', 'ensemble_010.pp')</code></strong> and
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2-(continued)">Exercise 2 (continued)<a class="anchor-link" href="#Exercise-2-(continued)">&#182;</a></h3><p>Read in the files found at <strong><code>iris.sample_data_path('GloSea4', 'ensemble_010.pp')</code></strong> and
 <strong><code>iris.sample_data_path('GloSea4', 'ensemble_011.pp')</code></strong> using a single load call. Do this by:</p>
 <p>1. providing a list of the two filenames.</p>
 
@@ -13353,14 +13370,13 @@ DimCoord([2009-11-19 11:00:00], standard_name=&#39;time&#39;, calendar=&#39;greg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Exercise 3:</strong></p>
-<p>1. The following function tells us whether or not a cube has cell methods:</p>
+<h3 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h3><p>The following function tells us whether or not a cube has cell methods:</p>
 
 <pre><code>def has_cell_methods(cube):
     return len(cube.cell_methods) &gt; 0
 
 </code></pre>
-<p>With the cubes loaded from <code>[iris.sample_data_path('A1B_north_america.nc'), iris.sample_data_path('uk_hires.pp')]</code> use the CubeList's <strong><code>extract</code></strong> method to filter only the cubes that have cell methods. (Hint: Look at the <code>iris.Constraint</code> documentation for the <strong>cube_func</strong> keyword). You should find that the 3 cubes are whittled down to just 1.</p>
+<p>1. With the cubes loaded from <code>[iris.sample_data_path('A1B_north_america.nc'), iris.sample_data_path('uk_hires.pp')]</code> use the CubeList's <strong><code>extract</code></strong> method to filter only the cubes that have cell methods. (Hint: Look at the <code>iris.Constraint</code> documentation for the <strong>cube_func</strong> keyword). You should find that the 3 cubes are whittled down to just 1.</p>
 
 </div>
 </div>
@@ -14006,7 +14022,7 @@ The output from <code>merge_cube</code> is included to help with identification,
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>1.</strong> Identify and resolve the issue preventing <code>resources/merge_exercise.1.*.nc</code> from merging.</p>
+<p>1. Identify and resolve the issue preventing <code>resources/merge_exercise.1.*.nc</code> from merging.</p>
 
 <pre><code>&gt;&gt;&gt; raw_cubes = iris.load_raw('../resources/merge_exercise.1.*.nc')
 &gt;&gt;&gt; raw_cubes.merge_cube()
@@ -14062,7 +14078,7 @@ iris.exceptions.MergeError: failed to merge into a single cube.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>2.</strong> Identify and resolve the issue preventing <code>resources/merge_exercise.2.*.nc</code> from merging.</p>
+<p>2. Identify and resolve the issue preventing <code>resources/merge_exercise.2.*.nc</code> from merging.</p>
 
 <pre><code>&gt;&gt;&gt; raw_cubes = iris.load_raw('../resources/merge_exercise.2.*.nc')
 &gt;&gt;&gt; raw_cubes.merge_cube()
@@ -14091,7 +14107,7 @@ Traceback (most recent call last):
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>3.</strong> (extension) Identify and resolve the issue preventing <code>resources/merge_exercise.4.*.nc</code> from merging.</p>
+<p>3. (extension) Identify and resolve the issue preventing <code>resources/merge_exercise.4.*.nc</code> from merging.</p>
 
 <pre><code>&gt;&gt;&gt; raw_cubes = iris.load_raw('../resources/merge_exercise.4.*.nc')
 &gt;&gt;&gt; raw_cubes.merge_cube()
@@ -14120,7 +14136,7 @@ Traceback (most recent call last):
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>4.</strong> (extension) Identify and resolve the issue preventing <code>resources/merge_exercise.5.*.nc</code> from merging (hint: Cubes can be indexed like NumPy arrays).</p>
+<p>4. (extension) Identify and resolve the issue preventing <code>resources/merge_exercise.5.*.nc</code> from merging (hint: Cubes can be indexed like NumPy arrays).</p>
 
 <pre><code>&gt;&gt;&gt; raw_cubes = iris.load_raw('../resources/merge_exercise.5.*.nc')
 &gt;&gt;&gt; raw_cubes.merge_cube()
@@ -14631,7 +14647,7 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h3><p><strong>1.</strong> What other aggregators are available?</p>
+<h3 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h3><p>1. What other aggregators are available?</p>
 
 </div>
 </div>
@@ -14654,7 +14670,7 @@ surface_temperature / (K)           (time: 6; latitude: 145; longitude: 192)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>2.</strong> Calculate the potential temperature variance with time for cube <code>area_avg</code> from above. Hint: We want to reduce the area averaged cube's vertical dimension, and end up with a cube of length 3. Print the data values of the resulting cube.</p>
+<p>2. Calculate the potential temperature variance with time for cube <code>area_avg</code> from above. Hint: We want to reduce the area averaged cube's vertical dimension, and end up with a cube of length 3. Print the data values of the resulting cube.</p>
 
 </div>
 </div>
@@ -18975,7 +18991,7 @@ RK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Exercise 6:</strong> Use the above cube with appropriate slicing, to produce the following:</p>
+<h3 id="Exercise-6">Exercise 6<a class="anchor-link" href="#Exercise-6">&#182;</a></h3><p>Use the above cube with appropriate slicing, to produce the following:</p>
 <p>1. a <strong>contour</strong> plot of <em>time</em> vs <em>longitude</em></p>
 
 </div>
@@ -19996,9 +20012,9 @@ for model_level in model_levels:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-7">Exercise 7<a class="anchor-link" href="#Exercise-7">&#182;</a></h2><ol>
-<li>Load 'A1B_north_america.nc' from the Iris sample data.</li>
-</ol>
+<h3 id="Exercise-7">Exercise 7<a class="anchor-link" href="#Exercise-7">&#182;</a></h3><p>Produce a set of plots that provide a comparison of decadal-mean air temperatures over North America:</p>
+<p><strong>Part 1</strong></p>
+<p>Load 'A1B_north_america.nc' from the Iris sample data.</p>
 
 </div>
 </div>
@@ -20021,7 +20037,8 @@ for model_level in model_levels:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>2. Extract just data from the year 1980 and beyond from the loaded data.</p>
+<p><strong>Part 2</strong></p>
+<p>Extract just data from the year 1980 and beyond from the loaded data.</p>
 
 </div>
 </div>
@@ -20044,7 +20061,8 @@ for model_level in model_levels:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3. Define a function that takes a coordinate and a single time point as arguments, and returns the decade. For example, your function should return 2010 for the following:</p>
+<p><strong>Part 3</strong></p>
+<p>Define a function that takes a coordinate and a single time point as arguments, and returns the decade. For example, your function should return 2010 for the following:</p>
 
 <pre><code>   time = iris.coords.DimCoord([10], 'time',
                                units='days since 2018-01-01')
@@ -20071,7 +20089,8 @@ for model_level in model_levels:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>4. Add a "decade" coordinate to the loaded cube using your function and the coord categorisation module.</p>
+<p><strong>Part 4</strong></p>
+<p>Add a "decade" coordinate to the loaded cube using your function and the coord categorisation module.</p>
 
 </div>
 </div>
@@ -20094,7 +20113,8 @@ for model_level in model_levels:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>5. Calculate the decadal means cube for this scenario.</p>
+<p><strong>Part 5</strong></p>
+<p>Calculate the decadal means cube for this scenario.</p>
 
 </div>
 </div>
@@ -20117,7 +20137,8 @@ for model_level in model_levels:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>6. Create a figure with 3 rows and 4 columns displaying the decadal means, with the decade displayed prominently in each axes' title.</p>
+<p><strong>Part 6</strong></p>
+<p>Create a figure with 3 rows and 4 columns displaying the decadal means, with the decade displayed prominently in each axes' title.</p>
 
 </div>
 </div>
