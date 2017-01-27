@@ -13228,7 +13228,7 @@ cell &lt; Cell(point=11, bound=None) is True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is common to want to build a constraint for time. With Iris &lt; v1.6 it was harder to build time constraints than we would have liked, because of the way that time coordinates had been implemented.</p>
+<h3 id="Time-Constraints">Time Constraints<a class="anchor-link" href="#Time-Constraints">&#182;</a></h3><p>It is common to want to build a constraint for time. With Iris &lt; v1.6 it was harder to build time constraints than we would have liked, because of the way that time coordinates had been implemented.</p>
 <p>However, since v1.6 this has been made simpler through the ability to compare against cells containing datetimes. The functionality can be enabled globally within the session (and will be enabled by default in future release of Iris) with:</p>
 
 </div>
@@ -13252,7 +13252,7 @@ cell &lt; Cell(point=11, bound=None) is True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With this set, it is now possible to do the same constraint by simply:</p>
+<p>We can now make time constraints as follows:</p>
 
 </div>
 </div>
@@ -13291,7 +13291,7 @@ cell &lt; Cell(point=11, bound=None) is True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are currently still some limitations however. For example, it is not yet possible to do cell based datetime comparisons when the datetime is from anything other than a Gregorian calendar (e.g. such as the 360-day calendar often used in climate models). When this is the case however, we can always access individual components of the datetime and do comparisons on those:</p>
+<p>There are currently still some limitations. For example, it is not yet possible to do cell based datetime comparisons when the datetime is from anything other than a Gregorian calendar (e.g. such as the 360-day calendar often used in climate models). When this is the case however, we can always access individual components of the datetime and do comparisons on those:</p>
 
 </div>
 </div>
@@ -18991,7 +18991,7 @@ RK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise-6">Exercise 6<a class="anchor-link" href="#Exercise-6">&#182;</a></h3><p>Use the above cube with appropriate slicing, to produce the following:</p>
+<h3 id="Exercise-6">Exercise 6<a class="anchor-link" href="#Exercise-6">&#182;</a></h3><p>Use the above cube, with appropriate indexing, to produce the following:</p>
 <p>1. a <strong>contour</strong> plot of <em>time</em> vs <em>longitude</em></p>
 
 </div>
@@ -19202,7 +19202,7 @@ air_temperature / (K)               (time: 240; latitude: 37; longitude: 49)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Notice that the resultant cube's name is now unknown and that the coordinates “time” and “forecast_period” have been removed; this is because these coordinates differed between the two input cubes.</p>
+<p>Notice that the resultant cube's name is now <code>unknown</code> and that resultant cube's <code>attributes</code> and <code>cell methods</code> have disappeared; this is because these all differed between the two input cubes.</p>
 
 </div>
 </div>
