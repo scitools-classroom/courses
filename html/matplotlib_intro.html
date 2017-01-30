@@ -11775,8 +11775,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-matplotlib-figure">The matplotlib figure<a class="anchor-link" href="#The-matplotlib-figure">&#182;</a></h2><p>At the heart of <strong>every</strong> matplotlib plot is the "Figure" object. The "Figure" object is the top level concept that can be drawn to one of the many output formats, or simply just to screen. Any object that can be drawn in this way is known as an "Artist" in matplotlib.</p>
-<p>Let's create our first artist using pyplot, and then show it:</p>
+<h2 id="The-matplotlib-Figure">The matplotlib Figure<a class="anchor-link" href="#The-matplotlib-Figure">&#182;</a></h2><p>At the heart of every matplotlib plot is the "Figure". The Figure is the top level concept that can be drawn to one of the many output formats, or simply just to screen.</p>
+<p>Let's create our first Figure using pyplot, and then show it:</p>
 
 </div>
 </div>
@@ -11802,7 +11802,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x43c2550&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x2c7a710&gt;</pre>
 </div>
 
 </div>
@@ -11816,9 +11816,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>On its own, drawing the figure artist is uninteresting and will result in an empty piece of paper (that's why we didn't see anything above).</p>
-<p>By far the most useful artist in matplotlib is the "Axes" artist. The Axes artist represents the "data space" of a typical plot. A rectangular axes (the most common axes, but not the only axes, e.g. polar plots) will have two (confusingly named) Axis Artists with tick labels and tick marks.</p>
-<p>There is no limit on the number of Axes artists that can exist on a Figure artist. Let's go ahead and create a figure with a single Axes Artist, and show it using pyplot:</p>
+<p>On its own, drawing the Figure is uninteresting and will result in an empty piece of paper (that's why we didn't see anything above).<br>
+Other visible elements are added to a Figure to make a plot.  All visible items in Matplotlib are instances of the <a href="http://matplotlib.org/api/artist_api.html#artist-class">Artist</a> class :  The Figure and Axes are both types of Artist.</p>
+<p>To start with we can draw an <a href="http://matplotlib.org/api/axes_api.html">Axes</a> artist in the Figure, to represent our data space. The most basic Axes is rectangular and has tick labels and tick marks.  Multiple Axes artists can be placed on a Figure.</p>
+<p>Let's go ahead and create a Figure with a single Axes, and show it using pyplot:</p>
 
 </div>
 </div>
@@ -11916,8 +11917,8 @@ rkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Matplotlib's <code>pyplot</code> module makes the process of creating graphics easier by allowing us to skip some of the tedious Artist construction. For example, we did not need to manually create the Figure artist with <code>plt.figure</code> because it was implicit that we needed a figure when we created the Axes artist.</p>
-<p>Under the hood matplotlib still had to create a Figure artist; we just didn't need to capture it into a variable. We can access the created object with the "state" functions found in pyplot called <strong><code>gcf</code></strong> and <strong><code>gca</code></strong>.</p>
+<p>Matplotlib's <code>pyplot</code> module makes the process of creating graphics easier by allowing us to skip some of the tedious object construction. For example, we did not need to manually create the Figure with <code>plt.figure</code> because it was implicit that we needed a Figure when we created the Axes.</p>
+<p>Under the hood matplotlib still had to create a Figure; we just didn't need to capture it into a variable. We can access the created object with the "state" functions found in pyplot called <strong><code>gcf</code></strong> and <strong><code>gca</code></strong>.</p>
 
 </div>
 </div>
@@ -11938,8 +11939,8 @@ rkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Working-with-the-axes">Working with the axes<a class="anchor-link" href="#Working-with-the-axes">&#182;</a></h2><p>As has already been mentioned, most of your time building a graphic in matplotlib will be spent on the Axes artist. Whilst the matplotlib documentation for the Axes artist is very detailed, it is also rather difficult to navigate (though this is an area of ongoing improvement).
-As a result, it is often easier to find new plot types by looking at the pyplot module's documentation.</p>
+<h2 id="Working-with-the-Axes">Working with the Axes<a class="anchor-link" href="#Working-with-the-Axes">&#182;</a></h2><p>As has already been mentioned, most of your time building a graphic in matplotlib will be spent on the Axes. Whilst the matplotlib documentation for the Axes is very detailed, it is also rather difficult to navigate (though this is an area of ongoing improvement).</p>
+<p>As a result, it is often easier to find new plot types by looking at the pyplot module's documentation.</p>
 <p>The first and most common Axes method is <code>plot</code>. Go ahead and look at the <code>plot</code> documentation from the following sources:</p>
 <ul>
 <li><a href="http://matplotlib.org/api/pyplot_summary.html">http://matplotlib.org/api/pyplot_summary.html</a></li>
@@ -12089,8 +12090,8 @@ AABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Notice how the axes view limits (<code>ax.viewLim</code>) have been updated to include the whole of the line.
-Should we want to add some spacing around the edges of our axes we could set the axes margin using the Axes artist's <a href="http://matplotlib.org/api/axes_api.html?highlight=axes#matplotlib.axes.Axes.margins"><code>margins</code></a> method. Alternatively, we could manually set the limits with the Axes artist's <a href="http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_xlim"><code>set_xlim</code></a> and <a href="http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_ylim"><code>set_ylim</code></a> methods.</p>
+<p>Notice how the Axes view limits (<code>ax.viewLim</code>) have been updated to include the whole of the line.
+Should we want to add some spacing around the edges of our Axes we can set a margin using the <a href="http://matplotlib.org/api/axes_api.html?highlight=axes#matplotlib.axes.Axes.margins"><code>margins</code></a> method. Alternatively, we can manually set the limits with the <a href="http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_xlim"><code>set_xlim</code></a> and <a href="http://matplotlib.org/api/axes_api.html?#matplotlib.axes.Axes.set_ylim"><code>set_ylim</code></a> methods.</p>
 
 </div>
 </div>
@@ -12100,7 +12101,7 @@ Should we want to add some spacing around the edges of our axes we could set the
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>Modify the previous example to produce three different figures that control the limits of the axes.</p>
+<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>Modify the previous example to produce three different Figures that control the limits of the Axes.</p>
 
 </div>
 </div>
@@ -12156,7 +12157,7 @@ Should we want to add some spacing around the edges of our axes we could set the
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3. Set a 10% margin on the axes with the lower y limit set to 0. (Note: order is important here)</p>
+<p>3. Set a 10% margin on the Axes with the lower y limit set to 0. (Note: order is important here)</p>
 
 </div>
 </div>
@@ -12180,7 +12181,7 @@ Should we want to add some spacing around the edges of our axes we could set the
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>In truth, the previous example can be simplified to be even shorter. First, we are not using the returned artists, so we could avoid the assignment and just call the appropriate functions. Second, in exactly the same way that we didn't <em>need</em> to manually create a Figure artist when using the <code>pyplot.axes</code> method, we can remove the <code>plt.axes</code> if we use the <code>plot</code> function from <code>pyplot</code>. Our simple line example then becomes:</p>
+<p>If we want to create a plot in its simplest form, without any modifications to the Figure or Axes, we can leave out the creation of artist variables. Our simple line example then becomes:</p>
 
 </div>
 </div>
@@ -12322,7 +12323,7 @@ AABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The simplicity of this example shows how visualisations can be produced quickly and easily with matplotlib, but it is worth remembering that for full control of Figure and Axes artists we can mix the convenience of <code>pyplot</code> with the power of matplotlib's object oriented design.</p>
+<p>The simplicity of this example shows how visualisations can be produced quickly and easily with matplotlib, but it is worth remembering that for full control of the Figure and Axes artists we can mix the convenience of <code>pyplot</code> with the power of matplotlib's object oriented design.</p>
 
 </div>
 </div>
@@ -12332,7 +12333,7 @@ AABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h3><p>By calling <code>plot</code> multiple times, create a single axes showing the line plots of $y=sin(x)$ and $y=cos(x)$ in the interval $[0, 2\pi]$ with 200 linearly spaced $x$ samples.</p>
+<h3 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h3><p>By calling <code>plot</code> multiple times, create a single Axes showing the line plots of $y=sin(x)$ and $y=cos(x)$ in the interval $[0, 2\pi]$ with 200 linearly spaced $x$ samples.</p>
 
 </div>
 </div>
@@ -12356,7 +12357,7 @@ AABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Multiple-axes-on-the-same-figure-(aka-subplot)">Multiple axes on the same figure (aka subplot)<a class="anchor-link" href="#Multiple-axes-on-the-same-figure-(aka-subplot)">&#182;</a></h2><p>Matplotlib makes it relatively easy to add more than one Axes artist to a figure. The <code>add_subplot</code> method on a Figure artist, which is wrapped by the <code>subplot</code> function in <code>pyplot</code>, adds an Axes artist in the grid position specified. To compute the position, we must tell matplotlib the number of rows and columns to separate the figure into, and which number the axes to be created is (1 based). For example, to create axes at the top right and bottom left of a $3 x 2$ notional grid of Axes artists the grid specifications would be <code>2, 3, 3</code> and <code>2, 3, 4</code> respectively:</p>
+<h2 id="Multiple-Axes-on-the-same-Figure-(aka-subplot)">Multiple Axes on the same Figure (aka subplot)<a class="anchor-link" href="#Multiple-Axes-on-the-same-Figure-(aka-subplot)">&#182;</a></h2><p>Matplotlib makes it relatively easy to add more than one Axes to a Figure. The <code>add_subplot</code> method on a Figure, which is wrapped by the <code>subplot</code> function in <code>pyplot</code>, adds a set of Axes in the grid position specified. To compute the position, we must tell matplotlib the number of rows and columns to separate the Figure into, and which number the Axes to be created is (1 based). For example, to create Axes at the top right and bottom left of a $3 x 2$ grid, the grid specifications would be <code>2, 3, 3</code> and <code>2, 3, 4</code> respectively:</p>
 
 </div>
 </div>
@@ -12477,7 +12478,7 @@ QmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p><strong>Exercise 3 continued:</strong> Copy the answer from the previous task (plotting $y=sin(x)$ and $y=cos(x)$) and add the appropriate <code>plt.subplot</code> calls to create a figure with two rows of Axes artists, one showing $y=sin(x)$ and the other showing $y=cos(x)$.</p>
+<p><strong>Exercise 3 continued:</strong> Copy the answer from the previous task (plotting $y=sin(x)$ and $y=cos(x)$) and add the appropriate <code>plt.subplot</code> calls to create a Figure with two rows of Axes, one showing $y=sin(x)$ and the other showing $y=cos(x)$.</p>
 
 </div>
 </div>
@@ -16119,7 +16120,7 @@ EAQhOPx/m+JE65IWrjkAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Titles,-Legends,-colorbars-and-annotations">Titles, Legends, colorbars and annotations<a class="anchor-link" href="#Titles,-Legends,-colorbars-and-annotations">&#182;</a></h2>
+<h2 id="Titles,-legends,-colorbars-and-annotations">Titles, legends, colorbars and annotations<a class="anchor-link" href="#Titles,-legends,-colorbars-and-annotations">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -16138,7 +16139,7 @@ EAQhOPx/m+JE65IWrjkAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>suptitle</code> pyplot function allows us to set the title of a figure, and the <code>set_title</code> method on an Axes artist allows us to set the title of an individual axes. Additionally Axes artists have methods named <code>set_xlabel</code> and <code>set_ylabel</code> to label the respective x and y Axis artists (that's Axis, not Axes). Finally, we can add text, located by data coordinates, with the <code>text</code> method on an Axes artist:</p>
+<p>The <code>suptitle</code> pyplot function allows us to set the title of a Figure, and the <code>set_title</code> method on an Axes allows us to set the title of an individual Axes. Additionally, an Axes has methods named <code>set_xlabel</code> and <code>set_ylabel</code> to label the respective x and y axes. Finally, we can add text, located by data coordinates, with the Axes <code>text</code> method:</p>
 
 </div>
 </div>
@@ -17198,7 +17199,7 @@ IYQQQgghhBBCCCGEEMJ9/j/sCcXR7LlIAQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Savefig-&amp;-backends">Savefig &amp; backends<a class="anchor-link" href="#Savefig-&amp;-backends">&#182;</a></h2><p>Matplotlib allows you to specify a "backend" to drive rendering the figure. The backend includes the graphical user interface (GUI) library to use, and the most used backend (as it is normally the default one) is the "TkAgg" backend. When <code>plt.show()</code> is called, this backend pops up a figure in a new TkInter window, which is rendered by the anti-grain graphics library (also known as "agg"). Generally, the most common reason to want to change backends is for automated figure production on a headless server. In this situation, the "agg" backend can be used:</p>
+<h2 id="Savefig-&amp;-backends">Savefig &amp; backends<a class="anchor-link" href="#Savefig-&amp;-backends">&#182;</a></h2><p>Matplotlib allows you to specify a "backend" to drive rendering the Figure. The backend includes the graphical user interface (GUI) library to use, and the most used backend (as it is normally the default one) is the "TkAgg" backend. When <code>plt.show()</code> is called, this backend pops up a Figure in a new TkInter window, which is rendered by the anti-grain graphics library (also known as "agg"). Generally, the most common reason to want to change backends is for automated Figure production on a headless server. In this situation, the "agg" backend can be used:</p>
 
 <pre><code>import matplotlib
 matplotlib.use('agg')
@@ -17206,8 +17207,8 @@ import matplotlib.pyplot as plt
 
 </code></pre>
 <p>Note: The backend must be chosen before importing pyplot for the first time, unless the <code>force</code> keyword is added.</p>
-<p>Non-interactive backends such as the "agg" backend will do nothing when <strong><code>plt.show()</code></strong> is called - this is because there is nowhere (no graphical display) specified for a figure to be displayed.</p>
-<p>To save a figure programmatically the <code>savefig</code> function can be used from <em>any</em> backend:</p>
+<p>Non-interactive backends such as the "agg" backend will do nothing when <strong><code>plt.show()</code></strong> is called - this is because there is nowhere (no graphical display) specified for a Figure to be displayed.</p>
+<p>To save a Figure programmatically the <code>savefig</code> function can be used from <em>any</em> backend:</p>
 
 </div>
 </div>
@@ -17327,8 +17328,8 @@ VMoAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For graphical backends, showing and subsequently closing the window of a figure results in the figure being cleared from the matplotlib system. This is not the case for <code>plt.savefig</code>, which typically should be called before <code>plt.show</code>.</p>
-<p>It is also possible to manually close figures without showing them by using the <code>plt.close</code> function. This could be called to remove the current figure after saving it with <code>plt.savefig</code> on the occasion where not clearing the figure might interfere with subsequent plots to be created.</p>
+<p>For graphical backends, showing and subsequently closing the window of a Figure results in the Figure being cleared from the matplotlib system. This is not the case for <code>plt.savefig</code>, which typically should be called before <code>plt.show</code>.</p>
+<p>It is also possible to manually close Figures without showing them by using the <code>plt.close</code> function. This could be called to remove the current Figure after saving it with <code>plt.savefig</code> on the occasion where not clearing the Figure might interfere with subsequent plots to be created.</p>
 
 </div>
 </div>
