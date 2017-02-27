@@ -23,13 +23,13 @@ do
     jupyter nbconvert --to html ../course_content/notebooks/${name}.ipynb
     mv ../course_content/notebooks/*.html ./html/
     # Make IPython notebooks of the course content with cell output cleared.
-    python ../utils/nbutil.py ../course_content/notebooks/${name}.ipynb ./notebooks/${name}.ipynb --clear-output
+    # python ../utils/nbutil.py ../course_content/notebooks/${name}.ipynb ./notebooks/${name}.ipynb --clear-output
 done
 
-for name in "numpy_exercise_1.ipynb" "numpy_exercise_2.ipynb" "matplotlib_exercise_2.ipynb" "matplotlib_exercise_3.ipynb" "cartopy_exercise_1.ipynb" "iris_exercise_1.ipynb" "iris_exercise_2.ipynb" "iris_exercise_3.ipynb" "iris_exercise_4.ipynb" "iris_exercise_5.ipynb" "iris_exercise_6.ipynb" "iris_exercise_7.ipynb"
-do
-    python ../utils/nbutil.py ../course_content/solutions/${name} ./solutions/${name}
-done
+# for name in "numpy_exercise_1.ipynb" "numpy_exercise_2.ipynb" "matplotlib_exercise_2.ipynb" "matplotlib_exercise_3.ipynb" "cartopy_exercise_1.ipynb" "iris_exercise_1.ipynb" "iris_exercise_2.ipynb" "iris_exercise_3.ipynb" "iris_exercise_4.ipynb" "iris_exercise_5.ipynb" "iris_exercise_6.ipynb" "iris_exercise_7.ipynb"
+# do
+#     python ../utils/nbutil.py ../course_content/solutions/${name} ./solutions/${name}
+# done
 
 
 #.reveal aside.notes {
