@@ -11783,7 +11783,6 @@ div#notebook {
 <li><a href="#arithmetic_and_broadcasting">Application: Arithmetic and Broadcasting</a></li>
 <li><a href="#statistics">Application: Statistics</a></li>
 <li><a href="#efficiency">Application: Efficiency</a></li>
-<li><a href="#conclusions">Conclusions</a></li>
 <li><a href="#further_reading">Further Reading</a></li>
 </ul>
 
@@ -11838,6 +11837,16 @@ This should provide you with a useful resource to refer back to.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h3><p>Here is a link to the NumPy documenetation for v1.11:
 <a href="https://docs.scipy.org/doc/numpy-1.11.0/reference/">https://docs.scipy.org/doc/numpy-1.11.0/reference/</a></p>
+<p>There are many online forums with tips and suggestions for solving problems with NumPy, such as <a href="http://stackoverflow.com/">http://stackoverflow.com/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Create-an-Array">Create an Array<a class="anchor-link" href="#Create-an-Array">&#182;</a></h3><p>There are many ways to create a numpy array, such as:</p>
 
 </div>
@@ -11942,8 +11951,17 @@ Where could you look for clues?</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Fast-Calculations">Fast Calculations<a class="anchor-link" href="#Fast-Calculations">&#182;</a></h3><p>NumPy provides routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</p>
-<p>It is a lot faster than Python alone for numerical computing tasks.</p>
+<h3 id="Extensive-Features">Extensive Features<a class="anchor-link" href="#Extensive-Features">&#182;</a></h3><p>NumPy provides routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fast-Calculations">Fast Calculations<a class="anchor-link" href="#Fast-Calculations">&#182;</a></h3><p>It is a lot faster than Python alone for numerical computing tasks.</p>
 <p>Element-by-element operations are the “default mode” when an ndarray is involved, but the element-by-element operation is speedily executed by pre-compiled C code.</p>
 
 </div>
@@ -11968,7 +11986,7 @@ Where could you look for clues?</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Calculation-with-Broadcasting">Calculation with Broadcasting<a class="anchor-link" href="#Calculation-with-Broadcasting">&#182;</a></h3><p>There are times when you need to perform calculations between NumPy arrays of different sizes.  For many cases, NumPy provides the means to achieve this effectively using 'broadcasting', where the shape of the input arrays differs, but the shape of the target array may be inferred, and is thus computed directly.</p>
+<h3 id="Interfacing-to-other-Libraries">Interfacing to other Libraries<a class="anchor-link" href="#Interfacing-to-other-Libraries">&#182;</a></h3><p>Many scientific Python libraries use NumPy as their core array representation. From plotting libraries such as Matplotlib, to parallel processing libraries such as Dask, to data interoperability libraries such as Iris, NumPy arrays are at the core of how these libraries operate and communicate.</p>
 
 </div>
 </div>
@@ -12089,7 +12107,7 @@ Where could you look for clues?</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">&#182;</a></h3><p>You can index NumPy arrays in the same way as any other Python iterables, by using square brackets <code>[]</code>. This means we can index to retrieve a single element, multiple consecutive elements, or a more complex sequence:</p>
+<h3 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">&#182;</a></h3><p>You can index NumPy arrays in the same way as other Python objects, by using square brackets <code>[]</code>. This means we can index to retrieve a single element, multiple consecutive elements, or a more complex sequence:</p>
 
 </div>
 </div>
@@ -12100,10 +12118,10 @@ Where could you look for clues?</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="k">print</span> <span class="s2">&quot;arr --&quot;</span><span class="p">,</span> <span class="n">arr</span>
-<span class="k">print</span> <span class="s2">&quot;arr[2] --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="k">print</span> <span class="s2">&quot;arr[2:5] --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="k">print</span> <span class="s2">&quot;arr[::2] --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;arr --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;arr[2] --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;arr[2:5] --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;arr[::2] --&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12129,14 +12147,20 @@ Where could you look for clues?</p>
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">lst_2d</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="n">arr_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lst_2d</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s2">&quot;2D list:&quot;</span>
-<span class="k">print</span> <span class="n">lst_2d</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s2">&quot;2D array:&quot;</span>
-<span class="k">print</span> <span class="n">arr_2d</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s2">&quot;Single array element:&quot;</span>
-<span class="k">print</span> <span class="n">arr_2d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;2D list:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lst_2d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;2D array:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr_2d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Single array element:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr_2d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Single row:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr_2d</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;First two columns:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr_2d</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12180,10 +12204,10 @@ Where could you look for clues?</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>How would you index <code>arr_2d</code> to retrieve:</p>
 <ul>
-<li>the third value (<code>3</code>),</li>
-<li>the second row (<code>[4, 5, 6]</code>), </li>
-<li>the first column (<code>[1, 4]</code>), and</li>
-<li>the first column, retaining the outside dimension (<code>[[1, 4]]</code>)?</li>
+<li>the third value: resulting in <code>3</code></li>
+<li>the second row: resulting in <code>[4, 5, 6]</code> </li>
+<li>the first column: resulting in <code>[1, 4]</code></li>
+<li>the first column, retaining the outside dimension: resulting in <code>[[1, 4]]</code></li>
 </ul>
 
 </div>
@@ -12226,8 +12250,8 @@ Where could you look for clues?</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">lst_2d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">arr_2d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">lst_2d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr_2d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12345,7 +12369,7 @@ Where could you look for clues?</p>
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="n">arr1</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">arr1</span> <span class="o">+</span> <span class="n">arr2</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{} + {} = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">arr1</span> <span class="o">+</span> <span class="n">arr2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12420,9 +12444,9 @@ Where could you look for clues?</p>
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">const</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="k">print</span> <span class="s2">&quot;Original array:&quot;</span><span class="p">,</span> <span class="n">arr</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s2">&quot;Array + const:&quot;</span><span class="p">,</span> <span class="n">arr</span> <span class="o">+</span> <span class="n">const</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Original array: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Array + const: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr</span> <span class="o">+</span> <span class="n">const</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12447,9 +12471,9 @@ Where could you look for clues?</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">daily_records</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s1">&#39;raw data:&#39;</span>
-<span class="k">print</span> <span class="n">daily_records</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;raw data:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">daily_records</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12476,9 +12500,9 @@ Where could you look for clues?</p>
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
 <span class="n">corrected_records</span> <span class="o">=</span> <span class="n">daily_records</span> <span class="o">-</span> <span class="n">offset</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s1">&#39;corrected values:&#39;</span>
-<span class="k">print</span> <span class="n">corrected_records</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;corrected values:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">corrected_records</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12551,7 +12575,7 @@ It does this by matching dimensions in one array to the other where possible, an
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>What will be the result of adding <code>arr1</code> to <code>arr2</code> in the following cases?</p>
+<h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h4><p>What will be the result of adding <code>arr1</code> to <code>arr2</code> in the following cases, the shape of the resulting array?</p>
 
 </div>
 </div>
@@ -12625,43 +12649,6 @@ It does this by matching dimensions in one array to the other where possible, an
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Have you encountered any situations that could be solved using NumPy broadcasting?</p>
-<p>See if you can solve them in the code cells below.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Reshaping-arrays-to-aid-broadcasting">Reshaping arrays to aid broadcasting<a class="anchor-link" href="#Reshaping-arrays-to-aid-broadcasting">&#182;</a></h4><p>NumPy allows you to change the shape of an array, so long as the total number of elements in the array does not change.</p>
 <p>For example, we could reshape a flat array with 12 elements to a 2D array with shape <code>(2, 6)</code>, or <code>(3, 2, 2)</code>, or even <code>(3, 4, 1)</code>.</p>
 <p>We could not, however, reshape it to have shape <code>(2, 5)</code>, because the total number of elements would not be kept constant.</p>
@@ -12674,30 +12661,32 @@ It does this by matching dimensions in one array to the other where possible, an
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now suppose you want to apply a correction for each day.
-For example, you might try :</p>
-<div class="highlight"><pre><span></span><span class="n">days_adjust</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">])</span>
+<p>Now suppose you want to apply a correction for each day.</p>
+<p>For example, you might try :</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">days_adjust</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">])</span>
 <span class="n">adjusted</span> <span class="o">=</span> <span class="n">daily_records</span> <span class="o">-</span> <span class="n">days_adjust</span>
 </pre></div>
-<p>but that results in :</p>
-
-<pre><code>---------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
-&lt;ipython-input-8-158daf2f21f2&gt; in &lt;module&gt;()
-      1 days_adjust = np.array([1.5, 3.7])
-----&gt; 2 adjusted = daily_records - days_adjust
-      3 print adjusted
-
-ValueError: operands could not be broadcast together with shapes (2,3) (2,)</code></pre>
 
 </div>
 </div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>but that results in a <code>ValueError</code></p>
 <p>Clearly, this doesn't work !</p>
 
 </div>
@@ -12717,6 +12706,28 @@ Hint: imagine how the 'days_adjust' values <em>should</em> look, when expanded t
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12883,9 +12894,8 @@ That is,</p>
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">a</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="n">mean</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13041,7 +13051,7 @@ N.B. <code>ptp</code> means a peak-to-peak range, i.e. "max(data) - min(data)".<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Masked-Arrays">Masked Arrays<a class="anchor-link" href="#Masked-Arrays">&#182;</a></h3><p>Real-world measurements processes often result in certain datapoint values being uncertain or simply "missing".  This is usually indicated by additional data quality information, stored alongside the data values.</p>
+<h4 id="Masked-Arrays">Masked Arrays<a class="anchor-link" href="#Masked-Arrays">&#182;</a></h4><p>Real-world measurements processes often result in certain datapoint values being uncertain or simply "missing".  This is usually indicated by additional data quality information, stored alongside the data values.</p>
 <p>In these cases we often need to make calculations that count only the <strong><em>valid</em></strong> datapoints.  Numpy provides a special "masked array" type for this type of calculation.</p>
 <p>For example, we might know that in our previous <code>daily_records</code> data, the value for station-2 on day-1 is invalid.
 To represent this missing datapoint, we can make a masked version of the data :</p>
@@ -13057,8 +13067,8 @@ To represent this missing datapoint, we can make a masked version of the data :<
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">daily_records</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
 <span class="n">masked_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">daily_records</span><span class="p">)</span>
 <span class="n">masked_data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked</span>
-<span class="k">print</span> <span class="s1">&#39;masked data:&#39;</span>
-<span class="k">print</span> <span class="n">masked_data</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;masked data:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">masked_data</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13081,8 +13091,8 @@ To represent this missing datapoint, we can make a masked version of the data :<
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">&#39;unmasked average = &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">daily_records</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;masked average = &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">masked_data</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;unmasked average = &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">daily_records</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;masked average = &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">masked_data</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13132,7 +13142,7 @@ There is special support for converting between this type of representation and 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Statistics-:-Summary-of-key-points">Statistics : Summary of key points<a class="anchor-link" href="#Statistics-:-Summary-of-key-points">&#182;</a></h4><ul>
+<h4 id="Statistics-and-Masked-Arrays:-Summary-of-key-points">Statistics and Masked Arrays: Summary of key points<a class="anchor-link" href="#Statistics-and-Masked-Arrays:-Summary-of-key-points">&#182;</a></h4><ul>
 <li>most statistical functions are available in two different forms, as in <code>array.mean()</code> and also <code>np.mean(array)</code>,
 the choice being mostly a question of style.</li>
 <li>statistical operations operate over, and remove (or "collapse") the array dimensions that they are applied to.</li>
@@ -13257,19 +13267,6 @@ for i in range(100):
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">timeit</span> -n 10 -r 5
 overPointEightWhere = rands[rands &gt; 0.8].size
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -13512,14 +13509,14 @@ points and return the value of the integral.</p>
 <span class="n">arr_view</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># Print the &quot;view&quot; array from reshape.</span>
-<span class="k">print</span> <span class="s1">&#39;Before</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Before</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span><span class="p">)</span>
 
 <span class="c1"># Update the first element of the original array.</span>
 <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
 
 <span class="c1"># Print the &quot;view&quot; array from reshape again,</span>
 <span class="c1"># noticing the first value has changed.</span>
-<span class="k">print</span> <span class="s1">&#39;After</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;After</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13551,14 +13548,14 @@ points and return the value of the integral.</p>
 <span class="n">arr_view</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># Print the &quot;view&quot; array from reshape.</span>
-<span class="k">print</span> <span class="s1">&#39;Before</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Before</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span><span class="p">)</span>
 
 <span class="c1"># Update the first element of the original array.</span>
 <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
 
 <span class="c1"># Print the &quot;view&quot; array from reshape again,</span>
 <span class="c1"># noticing the first value has changed.</span>
-<span class="k">print</span> <span class="s1">&#39;After</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;After</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arr_view</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13596,28 +13593,18 @@ points and return the value of the integral.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-Reading-">Further Reading <a class="anchor" id="further_reading" /><a class="anchor-link" href="#Further-Reading-">&#182;</a></h2><p>A quick list of some topics and facilities provided by NumPy that you probably ought to know about, but we did not have time for in this workshop.</p>
+<h2 id="Further-Reading-">Further Reading <a class="anchor" id="further_reading" /><a class="anchor-link" href="#Further-Reading-">&#182;</a></h2><p>Here are a selection of topics we chose not to include in this workshop, or only touched upon briefly.  You may come across some of them or find these links and terms useful in the future.</p>
 <h3 id="Concepts:">Concepts:<a class="anchor-link" href="#Concepts:">&#182;</a></h3><ul>
-<li>module functions and <a href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#array-methods">array methods</a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/user/basics.rec.html">structured arrays</a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.flatten.html#numpy.ndarray.flatten"><code>array.flatten</code></a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/maskedarray.generic.html">masked arrays</a> and missing data:<ul>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray.mask"><code>masked_array.mask</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray.data"><code>masked_array.data</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray.fill_value"><code>masked_array.fill_value</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ma.MaskedArray.filled.html#numpy.ma.MaskedArray.filled"><code>masked_array.filled()</code></a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/user/misc.html">NaN</a>s and NaN functions (<a href="https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.nanmean.html">nanmean</a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.nanmax.html#numpy.nanmax">nanmax</a> etc.)</li>
+<li><a href="https://docs.scipy.org/doc/numpy/reference/maskedarray.generic.html">masked arrays</a> and missing data:</li>
+<li><a href="https://docs.scipy.org/doc/numpy/user/misc.html">NaN</a>s and NaN functions</li>
 <li>boolean arrays and <a href="https://docs.scipy.org/doc/numpy/user/basics.indexing.html#boolean-or-mask-index-arrays">boolean array indexing</a></li>
-</ul>
-</li>
 <li>matrix multiplication (for example using <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html">dot</a>)</li>
 <li>C and Fortran storage order -- see "C order" and "Fortran order" in <a href="https://docs.scipy.org/doc/numpy/glossary.html">the glossary</a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.strides.html">strides</a></li>
 <li><a href="https://docs.scipy.org/doc/numpy/reference/routines.io.html">file I/O</a></li>
+<li><a href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html">Universal Functions (ufunc)</a></li>
+<li><a href="https://docs.scipy.org/doc/numpy/user/basics.indexing.html#index-arrays">indexing with arrays of indices</a></li>
 </ul>
-<h3 id="Terminology:">Terminology:<a class="anchor-link" href="#Terminology:">&#182;</a></h3><ul>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html">ufunc</a></li>
-<li><a href="https://docs.scipy.org/doc/numpy/user/basics.indexing.html#index-arrays">"fancy" indexing</a> (indexing with arrays of indices)</li>
-<li>ellipsis</li>
-</ul>
-<h3 id="Concrete-functions:">Concrete functions:<a class="anchor-link" href="#Concrete-functions:">&#182;</a></h3><ul>
+<h3 id="Functions:">Functions:<a class="anchor-link" href="#Functions:">&#182;</a></h3><ul>
 <li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.empty.html">empty</a></li>
 <li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html">meshgrid</a></li>
 <li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.stack.html">stack</a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.concatenate.html#numpy.concatenate">concatenate</a> and <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html#numpy.split">split</a></li>
