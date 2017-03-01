@@ -1,0 +1,37 @@
+# The language in this case has no bearing - we are going to be making use of conda for a
+# python distribution for the scientific python stack.
+language: python
+
+sudo: false
+
+env:
+    global:
+       - CONDA_INSTALL_LOCN="${HOME}/conda"
+       # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
+       - secure: "IGrdEKM5CH5OCus7pCCrzSWV9WOEuY9QKvWFbNBkBLa3MNszvZop3oioB3QVvygHvMV2HvcOBEx4KaQvUt6UanNb8j+C1zrPGWBuDeuWVDC3pCfqCsXRGXJU1TJp0alRByxaSoenvSjEBJi/GpF9zsAosS/wJIX1rBCbLsjKrhU="
+
+    matrix:
+        - PYTHON=3.4
+
+install:
+    - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/miniconda.sh
+    - bash ${HOME}/miniconda.sh -b -p ${CONDA_INSTALL_LOCN} && export PATH=${CONDA_INSTALL_LOCN}/bin:$PATH
+
+    - git config --global user.name "Travis user"
+    - git config --global user.email travis-tests@example.com
+
+    # Now do the things we need to do to install it.
+    - conda install notebook nbconvert python=${PYTHON} --yes --quiet
+    - rm -rf build
+    - git clone https://dkillick:${GH_TOKEN}@github.com/SciTools/courses.git --branch build build
+
+script:
+    - ./make.sh
+    - cd build
+    - git add -A --ignore-removal .
+    - git status
+    # This will only fail if there's nothing to commit, so we can safely skip over this failure.
+    - git commit -am "Build of ${TRAVIS_COMMIT}" || true
+    - if [ ! -z "$GH_TOKEN" ]; then
+        git push origin build > /dev/null;
+      fi
