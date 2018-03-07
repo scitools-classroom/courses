@@ -7,7 +7,7 @@ particularly in the fields of oceanography and meteorology.
 There are currently 5 courses:
 
 ### An introduction to numpy
-* [view the course noteboook](http://nbviewer.ipython.org/github/SciTools/courses/blob/master/course_content/notebooks/numpy_intro.ipynb?create=1)
+* [view the course notebook](http://nbviewer.ipython.org/github/SciTools/courses/blob/master/course_content/notebooks/numpy_intro.ipynb?create=1)
 * **3.5 hours** &mdash; depends on a basic Python background
 
 ### An introduction to matplotlib
