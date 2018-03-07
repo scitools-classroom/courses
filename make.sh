@@ -4,7 +4,7 @@
 set -e
 
 # Clean out the build folder then replace the files we need to keep.
-rm -rf build/*
+[ -d "./build" ] && rm -rf build/* || mkdir build
 cp .gitignore LICENSE README.md build
 
 # Set up the folders we will need.
@@ -16,7 +16,7 @@ cd build
 cp -rf ../course_content/images images
 cp -rf ../course_content/resources resources
 
-for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
+for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro" "dask_intro"
 do
     #ipython nbconvert --to slides ../../course_content/${name}.ipynb
     # Build static (html) copies of the course content.
