@@ -23,7 +23,7 @@ install:
     # Now do the things we need to do to install it.
     - conda install notebook nbconvert python=${PYTHON} --yes --quiet
     - rm -rf build
-    - git clone https://dkillick:${GH_TOKEN}@github.com/SciTools/courses.git --branch build build
+    - git clone https://${GH_TOKEN}@github.com/dkillick/courses.git --branch build build
 
 script:
     - ./make.sh
@@ -32,6 +32,4 @@ script:
     - git status
     # This will only fail if there's nothing to commit, so we can safely skip over this failure.
     - git commit -am "Build of ${TRAVIS_COMMIT}" || true
-    - if [ ! -z "$GH_TOKEN" ]; then
-        git push origin build > /dev/null;
-      fi
+    - [ -n "${GH_TOKEN}" ] && git push origin build
