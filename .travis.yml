@@ -33,5 +33,5 @@ script:
     # This will only fail if there's nothing to commit, so we can safely skip over this failure.
     - git commit -am "Build of ${TRAVIS_COMMIT}" || true
     - if [ -n "${GH_TOKEN}" ]; then
-        git push origin build
+        git push origin build;
       fi
