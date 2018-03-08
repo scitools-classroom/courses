@@ -34,4 +34,6 @@ script:
     - git commit -am "Build of ${TRAVIS_COMMIT}" || true
     - if [ -n "${GH_TOKEN}" ]; then
         git push origin build;
+      else
+        echo "Not uploading, GH_TOKEN unavailable";
       fi
