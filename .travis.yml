@@ -8,7 +8,7 @@ env:
     global:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
        # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
-       - secure: PMGmrK2IS03NbJU6QQ/9wpH79Yx5VPkEr9dM6/WUs3Bl+D2mXzr/TdIwHG5WGckRTJR2c8rgwkU34BDjeWePhhzhflNiUEnXctzCOz9zJqlfHE43WE1szVE++oo/GsU6UBxIj8mDIAc91bmkc4yaelZP21Hqp5GNCEFFw+dtU90=
+       - secure: "xxiOAmjaD9+vlhkmfrb/bh/ocLYGjZ2y/1EnZfUVRq/N13CIhvkfSEA3FYY/E6Bft++xRMASQhYv7H2o7XjCxwv4icm4vRUlVgXrjOfPC7qK672v6OybBQrZVBCZBniHvTDAO12UZqVs4CRWFC9hLAWepT/sDwj32qemtFjlIJU="
 
     matrix:
         - PYTHON=3.6
@@ -23,7 +23,7 @@ install:
     # Now do the things we need to do to install it.
     - conda install notebook nbconvert python=${PYTHON} --yes --quiet
     - rm -rf build
-    - git clone https://${GH_TOKEN}@github.com/bjlittle/courses.git --branch build build
+    - git clone https://bjlittle:${GH_TOKEN}@github.com/bjlittle/courses.git --branch build build
 
 script:
     - ./make.sh
@@ -33,5 +33,7 @@ script:
     # This will only fail if there's nothing to commit, so we can safely skip over this failure.
     - git commit -am "Build of ${TRAVIS_COMMIT}" || true
     - if [ -n "${GH_TOKEN}" ]; then
-        git push origin build;
+        git push origin build >/dev/null;
+      else
+        echo "Not uploading built resources, GH_TOKEN unavailable";
       fi
