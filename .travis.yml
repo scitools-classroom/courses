@@ -8,8 +8,7 @@ env:
     global:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
        # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
-       - secure: "xxiOAmjaD9+vlhkmfrb/bh/ocLYGjZ2y/1EnZfUVRq/N13CIhvkfSEA3FYY/E6Bft++xRMASQhYv7H2o7XjCxwv4icm4vRUlVgXrjOfPC7qK672v6OybBQrZVBCZBniHvTDAO12UZqVs4CRWFC9hLAWepT/sDwj32qemtFjlIJU="
-
+       - secure: "0T33kES0Znx8HfQzcxwnK7KD/zlAq6nVC6vDxgBx5LTcE7bpJsD6acoRBvr/KsTyzmYyUNZ2gjPWrhemcLYBQWKiAMnb3NAg+JlTi2gFb3ejmyQCAcQtaNZP3jAWBFwlJqWfBTYo1dUOr7uKzzDa3D7XBW9oDUEebrMqAcPV8g8="
     matrix:
         - PYTHON=3.6
 
