@@ -7,8 +7,8 @@ sudo: false
 env:
     global:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
-       # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
-       - secure: "IGrdEKM5CH5OCus7pCCrzSWV9WOEuY9QKvWFbNBkBLa3MNszvZop3oioB3QVvygHvMV2HvcOBEx4KaQvUt6UanNb8j+C1zrPGWBuDeuWVDC3pCfqCsXRGXJU1TJp0alRByxaSoenvSjEBJi/GpF9zsAosS/wJIX1rBCbLsjKrhU="
+       # Doctr deploy key for SciTools/courses
+       - secure: "QoIc+m9R8SRA0ARoa1Upl/loZNbex4QXQw7wHHYEVd3kZn90rshvqMcjM926d7sUrRpTMaeIKphMSDvHr34Fp9GXjEVHqtAjfNOZo146xWVd6Fcp9eYv3eHLCX/MrJytWPQkutzqCCCzXUUVpSMgWLNgZt2jhYuBTI/p7NmMmH0="
 
 install:
     - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/miniconda.sh
@@ -18,17 +18,10 @@ install:
     - git config --global user.email travis-tests@example.com
 
     # Now do the things we need to do to install it.
-    - conda install notebook nbconvert python --yes --quiet
-    - rm -rf build
-    - git clone https://dkillick:${GH_TOKEN}@github.com/SciTools/courses.git --branch build build
+    - conda install notebook nbconvert python pip --yes --quiet
+    - pip install doctr
 
 script:
+    - set -e
     - ./make.sh
-    - cd build
-    - git add -A --ignore-removal .
-    - git status
-    # This will only fail if there's nothing to commit, so we can safely skip over this failure.
-    - git commit -am "Build of ${TRAVIS_COMMIT}" || true
-    - if [ ! -z "$GH_TOKEN" ]; then
-        git push origin build > /dev/null;
-      fi
+    - doctr deploy ./ --deploy-branch-name build --built-docs build --key-path .github/github_deploy_key_scitools_courses.enc --branch-whitelist fix_deploy;
