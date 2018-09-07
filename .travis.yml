@@ -10,9 +10,6 @@ env:
        # Generated with `$ travis encrypt GH_TOKEN=<auth_token>` for SciTools/courses.
        - secure: "IGrdEKM5CH5OCus7pCCrzSWV9WOEuY9QKvWFbNBkBLa3MNszvZop3oioB3QVvygHvMV2HvcOBEx4KaQvUt6UanNb8j+C1zrPGWBuDeuWVDC3pCfqCsXRGXJU1TJp0alRByxaSoenvSjEBJi/GpF9zsAosS/wJIX1rBCbLsjKrhU="
 
-    matrix:
-        - PYTHON=3.4
-
 install:
     - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/miniconda.sh
     - bash ${HOME}/miniconda.sh -b -p ${CONDA_INSTALL_LOCN} && export PATH=${CONDA_INSTALL_LOCN}/bin:$PATH
@@ -21,7 +18,7 @@ install:
     - git config --global user.email travis-tests@example.com
 
     # Now do the things we need to do to install it.
-    - conda install notebook nbconvert python=${PYTHON} --yes --quiet
+    - conda install notebook nbconvert python --yes --quiet
     - rm -rf build
     - git clone https://dkillick:${GH_TOKEN}@github.com/SciTools/courses.git --branch build build
 
