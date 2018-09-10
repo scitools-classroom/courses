@@ -4,6 +4,7 @@
 set -e
 
 # Clean out the build folder then replace the files we need to keep.
+mkdir -p build
 rm -rf build/*
 cp .gitignore LICENSE README.md build
 
@@ -13,20 +14,15 @@ mkdir -p build/notebooks
 mkdir -p build/solutions
 
 cd build
-cp -rf ../course_content/images images
-cp -rf ../course_content/resources resources
+cp -Rf ../course_content/images images
+cp -Rf ../course_content/resources resources
 
 for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
 do
     #ipython nbconvert --to slides ../../course_content/${name}.ipynb
+    #jupyter nbconvert --to notebook ../course_content/notebooks/${name}.ipynb --execute --allow-errors
+    
     # Build static (html) copies of the course content.
-    jupyter nbconvert --to html ../course_content/notebooks/${name}.ipynb
-    mv ../course_content/notebooks/*.html ./html/
+    jupyter nbconvert --to html ../course_content/notebooks/${name}.ipynb --output-dir ./html/
 done
-
-#.reveal aside.notes {
-#   visibility: inline;
-#}
-
-
 
