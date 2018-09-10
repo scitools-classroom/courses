@@ -18,7 +18,7 @@ install:
     - git config --global user.email travis-tests@example.com
 
     # Now do the things we need to do to install it.
-    - conda install notebook nbconvert python pip --yes --quiet
+    - conda install notebook nbconvert python pip cartopy nc-time-axis iris -c conda-forge --yes --quiet
     - pip install doctr
 
 script:

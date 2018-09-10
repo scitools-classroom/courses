@@ -20,9 +20,17 @@ cp -Rf ../course_content/resources resources
 for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
 do
     #ipython nbconvert --to slides ../../course_content/${name}.ipynb
-    #jupyter nbconvert --to notebook ../course_content/notebooks/${name}.ipynb --execute --allow-errors
+    jupyter nbconvert --to notebook \
+        ../course_content/notebooks/${name}.ipynb \
+        --ExecutePreprocessor.kernel_name=python3 \
+        --ExecutePreprocessor.timeout=180 \
+        --execute --allow-errors \
+        --output-dir ./notebooks/ \
+        --output ${name}.ipynb
     
     # Build static (html) copies of the course content.
-    jupyter nbconvert --to html ../course_content/notebooks/${name}.ipynb --output-dir ./html/
+    jupyter nbconvert --to html \
+        ./notebooks/${name}.ipynb \
+        --output-dir ./html/
 done
 
