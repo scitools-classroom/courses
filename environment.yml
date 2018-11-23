@@ -8,3 +8,4 @@ dependencies:
   - cartopy
   - iris
   - iris-sample-data
+  - nc-time-axis
