@@ -1,0 +1,9 @@
+name: courses
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - matplotlib
+  - cartopy
+  - iris
