@@ -1,0 +1,4 @@
+numpy==1.15.4
+matplotlib==3.0.2
+cartopy==0.17.0
+iris==2.2.0
