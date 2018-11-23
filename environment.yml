@@ -7,3 +7,4 @@ dependencies:
   - matplotlib
   - cartopy
   - iris
+  - iris-sample-data
