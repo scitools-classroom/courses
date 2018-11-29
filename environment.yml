@@ -1,4 +1,4 @@
-name: courses
+name: scitools-courses
 channels:
   - conda-forge
 dependencies:
