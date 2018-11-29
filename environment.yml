@@ -1,0 +1,11 @@
+name: scitools-courses
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - matplotlib
+  - cartopy
+  - iris
+  - iris-sample-data
+  - nc-time-axis
