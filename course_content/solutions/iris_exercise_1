@@ -1,0 +1,18 @@
+# Solutions for Iris Exercise 1
+
+# Question 1
+fname = iris.sample_data_path('atlantic_profiles.nc')
+cubes = iris.load(fname)
+print(cubes)
+
+# Question 2
+for cube in cubes:
+    print(cube.standard_name)
+    
+# Question 3
+swpt_cube = cubes[0]
+
+# Question 4
+print(swpt_cube.coord('latitude').has_bounds())
+print(swpt_cube.coord('latitude').points.min())
+print(swpt_cube.coord('latitude').points.max())
