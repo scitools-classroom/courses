@@ -1,0 +1,5 @@
+
+# Iris course sample answer 1.3a 
+# Show fill-value of masked cube data
+
+print(cube.data.fill_value)

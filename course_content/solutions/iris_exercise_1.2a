@@ -1,0 +1,8 @@
+
+# Iris course sample answer 1.2a 
+# Show dimensions and units of some cubes
+
+e_total_content = cubes[0]
+e_density = cubes[1]
+print("Total electron content, dimensions = ", e_total_content.shape)
+print("Electron density,units = ", e_density.units)
