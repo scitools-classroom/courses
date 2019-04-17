@@ -10,27 +10,40 @@ cp .gitignore LICENSE README.md build
 
 # Set up the folders we will need.
 mkdir -p build/html
-mkdir -p build/notebooks
-mkdir -p build/solutions
 
 cd build
-cp -Rf ../course_content/images images
-cp -Rf ../course_content/resources resources
+cp -Rf ../course_content/extra_courses/images extra_courses/images
+cp -Rf ../course_content/iris_course/images iris_course/images
+cp -Rf ../course_content/iris_course/resources iris_course/resources
 
-for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
-do
-    #ipython nbconvert --to slides ../../course_content/${name}.ipynb
+
+process_notebooks () {
+    notebook_file=$1
+    dirname=$2
+
+    echo "Executing $notebook_file"
+
     jupyter nbconvert --to notebook \
-        ../course_content/notebooks/${name}.ipynb \
+        $dirname/$notebook_file \
         --ExecutePreprocessor.kernel_name=python3 \
         --ExecutePreprocessor.timeout=180 \
         --execute --allow-errors \
-        --output-dir ./notebooks/ \
-        --output ${name}.ipynb
-    
-    # Build static (html) copies of the course content.
-    jupyter nbconvert --to html \
-        ./notebooks/${name}.ipynb \
-        --output-dir ./html/
-done
+        --output-dir $dirname \
+        --output $notebook_file
+}
 
+
+dirr= 
+for dirname in extra_courses cartopy_course iris_course
+    for notebook_file in $(ls ../course_content/$dirname/*.ipynb)
+        do
+            process_notebooks $dirname $notebook_file
+        done
+
+    for notebook_file in $(ls $dirname/solutions/*.ipynb)
+        do
+            process_notebooks $dirname/solutions $notebook_file
+        done
+      
+
+ls */*/*
