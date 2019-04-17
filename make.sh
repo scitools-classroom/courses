@@ -33,7 +33,6 @@ process_notebooks () {
 }
 
 
-dirr= 
 for dirname in extra_courses cartopy_course iris_course
     for notebook_file in $(ls ../course_content/$dirname/*.ipynb)
         do
@@ -46,4 +45,4 @@ for dirname in extra_courses cartopy_course iris_course
         done
       
 
-ls */*/*
+ls -l */*
