@@ -1,0 +1,7 @@
+
+# Iris course sample answer 1.5d
+# examine aspects of the 'latitude' coordinate
+
+print(swpt_cube.coord('latitude').has_bounds())
+print(swpt_cube.coord('latitude').points.min())
+print(swpt_cube.coord('latitude').points.max())

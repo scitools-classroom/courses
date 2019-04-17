@@ -1,0 +1,6 @@
+
+# Iris course sample answer 1.5c
+# extract just the 'sea_water_potential_temperature' cube
+
+swpt_cube = cubes[0]
+print(swpt_cube)

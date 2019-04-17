@@ -1,0 +1,11 @@
+
+# Iris course sample answer 1.3c
+# Add a custom cube attribute entry
+
+print('Cube attribute names, BEFORE = {}'.format(sorted(cube.attributes.keys())))
+
+new_attr = {'comment':'Original data had units of degrees celsius'}
+cube.attributes.update(new_attr)
+
+print('Cube attribute names, AFTER = {}'.format(sorted(cube.attributes.keys())))
+print("cube.attributes['comment'] = {!r}".format(cube.attributes.get('comment')))
