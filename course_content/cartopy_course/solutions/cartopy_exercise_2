@@ -1,0 +1,24 @@
+
+# Cartopy course, exercise 2
+
+# Use 'set_global' to work out what it was actually doing earlier.
+
+# Code as previously ...
+proj = ccrs.EquidistantConic()
+x0, y0 = -50, -30
+x1, y1 = 10, 55
+
+ax = plt.axes(projection=proj)
+ax.coastlines()
+plt.plot([x0, x1], [y0, y1], linewidth=4)
+
+# But now added 'set_global()'
+ax.set_global()
+
+plt.show()
+
+#
+# NOTE:
+# Result is a tiny blue dot, close to lat=0, lon=0.
+# Because on this map, the native "X" and "Y" coordinates are in **metres** from the origin.
+#
