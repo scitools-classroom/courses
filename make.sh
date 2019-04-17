@@ -8,10 +8,16 @@ mkdir -p build
 rm -rf build/*
 cp .gitignore LICENSE README.md build
 
-# Set up the folders we will need.
-mkdir -p build/html
 
 cd build
+
+# Set up the folders we will need.
+mkdir -p html
+for dirname in extra_courses cartopy_course iris_course
+    do
+        mkdir -p extra
+    done
+
 cp -Rf ../course_content/extra_courses/images extra_courses/images
 cp -Rf ../course_content/iris_course/images iris_course/images
 cp -Rf ../course_content/iris_course/resources iris_course/resources
