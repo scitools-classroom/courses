@@ -1,41 +1,16 @@
 
 # Cartopy course, exercise 3
+# Use set_extent to control plot
 
-# Use set_extent to control plot : what coordinate system does this use ?
-
-# Repeat the 'correct' plot with a latlon-straight line, but control the map region.
-proj = ccrs.EquidistantConic()
-x0, y0 = -50, -30
-x1, y1 = 10, 55
-
-# Extend corners slightly
+# Plot as before.
 ax = plt.axes(projection=proj)
 ax.coastlines()
-
 plt.plot([x0, x1], [y0, y1], linewidth=4, transform=ccrs.PlateCarree())
 
-# Use "set_extent", with slight margins added to the region corners.
-x0a = x0 - 0.1 * (x1 - x0)
-x1a = x1 + 0.1 * (x1 - x0)
-y0a = y0 - 0.1 * (y1 - y0)
-y1a = y1 + 0.1 * (y1 - y0)
-ax.set_extent([x0a, x1a, y0a, y1a])
-
+# Use "set_extent", with added margins.
+ax.set_extent([-60, 20, -40, 65])  # NOTE order: [x0, x1, y0, y1]
 plt.show()
 
 #
-# **Also**
-# draw something roughly similar, but in map-coordinates instead of lats+lons.
-#
-ax = plt.axes(projection=proj)
-ax.coastlines()
-plt.plot([-5e6, 5e6], [5e6, -5e6], linewidth=4, transform=proj)
-ax.set_extent([-7e6, 7e6, -7e6, 7e6], crs=proj)
-plt.show()
-
-#
-# NOTES:
-# 1. The values in the "set_extent" call *are* lats + lons, by default ...
-# 2. ... but a 'crs' key can be added to fix it.
-# 3. the line drawn "in map coordinates", with 'crs=proj', is *straight*.
-#
+# NOTE: The values in a "set_extent" call *are* lats + lons, by default.
+# A 'crs' key can be added to specify something else.
