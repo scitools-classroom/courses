@@ -1,0 +1,8 @@
+
+# Iris course sample answer 4.1b
+# make a colour blockplot of "cube[0]"
+
+qplt.pcolormesh(cube[0])
+plt.show()
+
+print("NOTE: the 'qplt.pcolormesh' method also adds a colorbar, as a key to data values.")
