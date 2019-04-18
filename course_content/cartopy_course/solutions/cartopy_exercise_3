@@ -1,0 +1,16 @@
+
+# Cartopy course, exercise 3
+# Use set_extent to control plot
+
+# Plot as before.
+ax = plt.axes(projection=proj)
+ax.coastlines()
+plt.plot([x0, x1], [y0, y1], linewidth=4, transform=ccrs.PlateCarree())
+
+# Use "set_extent", with added margins.
+ax.set_extent([-60, 20, -40, 65])  # NOTE order: [x0, x1, y0, y1]
+plt.show()
+
+#
+# NOTE: The values in a "set_extent" call *are* lats + lons, by default.
+# A 'crs' key can be added to specify something else.

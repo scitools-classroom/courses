@@ -1,0 +1,17 @@
+
+# Cartopy course, exercise 2
+
+# Plot as previously ...
+ax = plt.axes(projection=proj)
+ax.coastlines()
+plt.plot([x0, x1], [y0, y1], linewidth=4)
+
+# But now add 'set_global()'
+ax.set_global()
+plt.show()
+
+#
+# NOTE:
+# Result is a tiny blue dot, close to lat=0, lon=0.
+# Because on this map, the native "X" and "Y" coordinates are in **metres** from the origin.
+#
