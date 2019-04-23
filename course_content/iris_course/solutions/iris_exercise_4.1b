@@ -1,8 +1,11 @@
 
 # Iris course sample answer 4.1b
-# make a colour blockplot of "cube[0]"
+# make a colour blockplot of "airtemps"
 
-qplt.pcolormesh(cube[0])
-plt.show()
+try:
+    qplt.pcolormesh(airtemps)
+    plt.show()
+except Exception as err:
+    print('Error occurred:\n  "{}"'.format(err))
 
-print("NOTE: the 'qplt.pcolormesh' method also adds a colorbar, as a key to data values.")
+print("NOTE: the 'qplt.pcolormesh' method requires a 2d cube.")

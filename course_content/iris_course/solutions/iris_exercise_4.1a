@@ -3,10 +3,10 @@
 # compare iris.plot and iris.quickplot
 
 plt.subplot(1, 2, 1)
-iplt.plot(ts)
+iplt.plot(timeseries)
 
 plt.subplot(1, 2, 2)
-qplt.plot(ts)
+qplt.plot(timeseries)
 
 plt.subplots_adjust(wspace=0.7)
 plt.show()
