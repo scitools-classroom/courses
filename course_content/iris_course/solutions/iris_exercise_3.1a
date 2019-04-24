@@ -1,1 +1,5 @@
+
+# Iris course sample answer 3.1a
+# Index of first two elements from the first dimensions.
+
 subcube[:2]

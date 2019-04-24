@@ -1,3 +1,7 @@
+
+# Iris course sample answer 3.2b
+# Extract latitude within given range.
+
 def within_30(cell):
     """Return True for values that in the range [-30, 30]."""
     return -30 < cell <30
