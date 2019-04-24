@@ -1,0 +1,2 @@
+fname = iris.sample_data_path('atlantic_profiles.nc')
+cube = iris.load_cube(fname, 'sea_water_potential_temperature')
