@@ -1,0 +1,16 @@
+
+# Iris course sample answer 3.3a
+# Iterate over slices along the model_level_number dimension.
+
+fname = iris.sample_data_path('uk_hires.pp')
+cube = iris.load_cube(fname, 'air_potential_temperature')
+
+print('Result using the `slices` method')
+for subcube in cube.slices(['time', 'grid_latitude', 'grid_longitude']):
+    print(subcube.summary(shorten=True))
+    
+print('')
+
+print('Result using the `slices_over` method')
+for subcube in cube.slices_over('model_level_number'):
+    print(subcube.summary(shorten=True))

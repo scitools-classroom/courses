@@ -1,0 +1,6 @@
+
+# Iris course sample answer 3.3a
+# Load in a file, using a constraint.
+
+fname = iris.sample_data_path('atlantic_profiles.nc')
+cube = iris.load_cube(fname, 'sea_water_potential_temperature')

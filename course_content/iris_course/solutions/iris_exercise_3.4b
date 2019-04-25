@@ -1,0 +1,5 @@
+
+# Iris course sample answer 3.3a
+# Extract data with latitudes below the give value.
+
+subset_cube = cube.extract(iris.Constraint(latitude=lambda cell: cell<-3))
