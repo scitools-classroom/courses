@@ -1,6 +1,6 @@
 
 # Iris course sample answer 4.1d
-# make a colour blockplot of "airtemps[0]"
+# make a colour blockplot of airtemps[0]
 
 qplt.pcolormesh(airtemps[0])
 ax = plt.gca()

@@ -1,6 +1,6 @@
 
 # Iris course sample answer 4.1c
-# blockplot a 2d portion of "airtemps"
+# Filled contour plot a 2d portion of "airtemps"
 
 # plot just the first timepoint --> 2d XY plot
 qplt.contourf(airtemps[0])

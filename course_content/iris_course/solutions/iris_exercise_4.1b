@@ -1,9 +1,9 @@
 
 # Iris course sample answer 4.1b
-# make a colour blockplot of "airtemps"
+# Make a contour plot of "airtemps"
 
 try:
-    qplt.pcolormesh(airtemps)
+    qplt.contourf(airtemps)
     plt.show()
 except Exception as err:
     print('Error occurred:\n  "{}"'.format(err))
