@@ -1,5 +1,5 @@
 
-# Iris course sample answer 4.1a
+# Iris course sample answer 5.1a
 # compare iris.plot and iris.quickplot
 
 plt.subplot(1, 2, 1)

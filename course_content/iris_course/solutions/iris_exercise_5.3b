@@ -1,5 +1,5 @@
 
-# Iris course sample answer 4.3b
+# Iris course sample answer 5.3b
 # a block plot (pcolormesh) map in its native projection
 
 qplt.pcolormesh(airtemps[0])

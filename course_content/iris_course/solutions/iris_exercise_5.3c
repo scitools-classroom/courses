@@ -1,5 +1,5 @@
 
-# Iris course sample answer 4.3c
+# Iris course sample answer 5.3c
 # a scatter plot showing air_temperature vs longitude
 
 qplt.scatter(airtemps.coord('longitude'), airtemps[0, 0, :])

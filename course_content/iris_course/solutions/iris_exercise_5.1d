@@ -1,5 +1,5 @@
 
-# Iris course sample answer 4.1d
+# Iris course sample answer 5.1d
 # make a colour blockplot of airtemps[0]
 
 qplt.pcolormesh(airtemps[0])
