@@ -1,0 +1,7 @@
+
+# Iris course sample answer 5.3b
+# a block plot (pcolormesh) map in its native projection
+
+qplt.pcolormesh(airtemps[0])
+plt.gca().coastlines()
+plt.show()

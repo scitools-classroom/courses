@@ -1,0 +1,9 @@
+
+# Iris course sample answer 5.1d
+# make a colour blockplot of airtemps[0]
+
+qplt.pcolormesh(airtemps[0])
+ax = plt.gca()
+ax.coastlines()
+ax.set_extent((-125, -85, 15, 35))
+plt.show()
