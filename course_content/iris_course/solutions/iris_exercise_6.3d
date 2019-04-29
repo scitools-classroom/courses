@@ -1,0 +1,19 @@
+
+# Iris course sample answer 6.3d
+# Make line-plots of the global average temperatures
+
+# Use iplt rather than qplt, to avoid overlapping titles.
+import iris.plot as iplt
+
+plt.figure(figsize=(12,12))
+plt.subplot(211)
+iplt.plot(e1_areamean, '+-', color='blue', label='E1')
+iplt.plot(a1b_areamean, '+-', color='red', label='A1B')
+ax = plt.gca()
+plt.legend()
+# plt.show()
+
+# Show the difference also.
+plt.subplot(212)
+iplt.plot(difference_areamean, '+-')
+plt.title('Difference : scenarios E1 - A1B')

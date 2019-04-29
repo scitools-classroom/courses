@@ -1,0 +1,8 @@
+
+# Iris course sample answer 6.2a
+# calculate all-time minimum temperatures
+
+min_temps = e1.collapsed('time', iris.analysis.MIN)
+print(min_temps)
+print('')
+print('The result is 2D, shape={}'.format(min_temps.shape))

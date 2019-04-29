@@ -1,0 +1,8 @@
+
+# Iris course sample answer 6.3a
+# load 2 datasets
+
+cube_e1 = iris.load_cube(iris.sample_data_path('E1_north_america.nc'))
+cube_a1b = iris.load_cube(iris.sample_data_path('A1B_north_america.nc'))
+print(cube_e1.summary())
+print(cube_a1b.summary())

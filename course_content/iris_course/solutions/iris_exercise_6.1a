@@ -1,0 +1,33 @@
+
+# Iris course sample answer 6.1a
+# show what changes in a cube made by arithmetic
+
+names, cubes = ('A1B', 'E1', 'difference'), (a1b, e1, scenario_difference)
+
+print('Cube names:')
+print('    A1b  = {}'.format(a1b.name()))
+print('    E1   = {}'.format(e1.name()))
+print('    diff = {}'.format(scenario_difference.name()))
+print('result name was cleared')
+
+print('')
+print('Cube attribute names:')
+print('    A1b  = {}'.format(a1b.attributes))
+print('    E1   = {}'.format(e1.attributes))
+print('    diff = {}'.format(scenario_difference.attributes))
+print('result attributes were cleared')
+
+print('')
+print('Cube cell-methods:')
+print('    A1b  = {}'.format(a1b.cell_methods))
+print('    E1   = {}'.format(e1.cell_methods))
+print('    diff = {}'.format(scenario_difference.cell_methods))
+print('result cell methods were removed')
+
+print('')
+print('The name, cell-methods and attributes of the result cube are empty, '
+      'because these generally will not be correct for the result cube. '
+      'In this case, for example, the difference result is not an "air_temperature", '
+      'nor is it a specific STASH code, nor is it a mean of 6-hourly values.')
+print('')
+print('The coordinates of the original data are preserved in the result cube.')

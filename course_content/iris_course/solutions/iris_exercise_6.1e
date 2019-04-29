@@ -1,0 +1,18 @@
+
+# Iris course sample answer 6.1e
+# compare iris and numpy broadcasting
+
+# Remembering this calculation, from above ...
+product = e1 * e1.coord('latitude')
+
+# Equivalent plain array multiply does not work.
+try:
+    array = e1.data * e1.coord('latitude').points
+except Exception as err:
+    print('Simple array multiply gives error : {}'.format(err))
+
+# To get it right in numpy, adjust shapes to align the correct dimensions.
+lats_adjusted = e1.coord('latitude').points.reshape(1, 37, 1)
+print('Corrected latitudes shape : {}'.format(lats_adjusted.shape))
+array = e1.data * lats_adjusted
+print('Same result ? {}'.format(np.all(array == product.data)))

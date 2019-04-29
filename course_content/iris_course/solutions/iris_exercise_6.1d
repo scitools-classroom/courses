@@ -1,0 +1,14 @@
+
+# Iris course sample answer 6.1d
+# changing cube metadata items
+
+e1_copy = e1.copy()
+e1_copy.rename('potential_temperature')
+print(e1_copy.summary(shorten=True))
+print("The cube name is simply changed to the requested name.")
+print("NOTE: however these aren't really potential temperatures at all, the values were absolute temperatures.")
+print('')
+e1_copy.units = 'days'
+print(e1_copy.summary(shorten=True))
+print("NOTE: 'potential_temperature' can't be measured in 'days' at all, but Iris takes no notice of this."
+      "\n  - ** HANDLE WITH CARE !!** ")

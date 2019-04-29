@@ -1,0 +1,8 @@
+
+# Iris course sample answer 6.1b
+# multiply a cube by its latitude coordinate
+
+product = e1 * e1.coord('latitude')
+print(product)
+print('')
+print('New units are : "{}"'.format(product.units))
