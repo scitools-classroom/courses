@@ -1,0 +1,17 @@
+
+# Iris course sample answer 6.3e
+# Make line-plots of regional average temperatures
+
+plt.figure(figsize=(12,12))
+plt.subplot(211)
+qplt.plot(e1_xy_mean, '+-', color='blue', label='E1')
+qplt.plot(a1b_xy_mean, '+-', color='red', label='A1B')
+ax = plt.gca()
+plt.legend()
+
+# Show the difference also.
+plt.subplot(212)
+qplt.plot(difference_xy_mean, '+-')
+plt.title('Difference : scenarios E1 - A1B')
+
+plt.show()

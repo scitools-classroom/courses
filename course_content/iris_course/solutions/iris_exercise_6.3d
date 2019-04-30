@@ -1,0 +1,21 @@
+
+# Iris course sample answer 6.3d
+# produce region-averaged temperature sequences
+
+# Make a function to select latitudes in the range 25 to 30
+def lats_25_to_30(latitude):
+    return 25. <= latitude < 30.
+
+# Make the latitude function into a constraint and extract
+lats_constraint = iris.Constraint(latitude=lats_25_to_30)
+e1_latband = cube_e1.extract(lats_constraint)
+a1b_latband = cube_a1b.extract(lats_constraint)
+
+# Average over the region
+e1_xy_mean = cube_e1.collapsed(['latitude', 'longitude'], iris.analysis.MEAN)
+a1b_xy_mean = cube_a1b.collapsed(['latitude', 'longitude'], iris.analysis.MEAN)
+
+# Calculate a difference
+difference_xy_mean = a1b_xy_mean - e1_xy_mean
+difference_xy_mean.rename('Temperature difference, A1B - E1')
+print(difference_xy_mean)

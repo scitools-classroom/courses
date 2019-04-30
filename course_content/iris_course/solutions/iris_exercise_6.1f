@@ -1,0 +1,9 @@
+
+# Iris course sample answer 6.1f
+# add constant to cube
+
+print('e1 is :\n  {}'.format(e1.summary(shorten=True)))
+result = e1 + 5.2
+print('e1 plus 5.2 is:\n  {}'.format(result.summary(shorten=True)))
+print('These are all the temperature values, offset by another 5.2 (Kelvin).'
+      '\n  (Note : standard name is removed).')

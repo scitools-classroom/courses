@@ -1,0 +1,15 @@
+
+# Iris course sample answer 6.1d
+# changing cube metadata items
+
+six_feet.rename('depth')
+print(six_feet.summary(shorten=True))
+six_feet.rename('potential_temperature')
+print(six_feet.summary(shorten=True))
+print("The cube name is simply changed to the requested name.")
+print("NOTE: but of course, these aren't really potential temperatures at all, the values are depth measurements.")
+print('')
+six_feet.units = 'kg'
+print(six_feet.summary(shorten=True))
+print("NOTE: 'potential_temperature' can't be in 'kg' at all, but Iris takes no notice of this."
+      "\n  - ** HANDLE WITH CARE !!** ")
