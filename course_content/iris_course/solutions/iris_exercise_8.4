@@ -1,0 +1,8 @@
+
+# Iris course sample answer 8.4
+# Add a categorised coord to existing cube.
+
+import iris.coord_categorisation as coord_cat
+coord_cat.add_categorised_coord(cube_since_1980, 'decade', 'time', get_decade)
+
+print(cube_since_1980.coord('decade'))

@@ -1,0 +1,23 @@
+
+# Iris course sample answer 7.3a
+# Check whether data has been loaded after certain operations..
+
+# Load in the cube.
+print('Loading in sea_water_potential_temperature cube...')
+fname = iris.sample_data_path('atlantic_profiles.nc')
+swpt_cube = iris.load_cube(fname, 'sea_water_potential_temperature')
+
+# Check whether the data is lazy.
+print('\tDoes the cube have lazy data?', swpt_cube.has_lazy_data())
+
+# Calculate the vertical mean of the cube.
+print('Calculating the vertical mean...')
+swpt_vert_mean = swpt_cube.collapsed('depth', iris.analysis.MEAN)
+
+print('\tDoes the cube have lazy data?', swpt_vert_mean.has_lazy_data())
+
+# Plot the data.
+print('Plotting the cube\'s data...')
+qplt.contourf(swpt_vert_mean)
+
+print('\tDoes the cube have lazy data?', swpt_vert_mean.has_lazy_data())

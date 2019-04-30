@@ -1,0 +1,10 @@
+
+# Iris course sample answer 8.3
+# Function that returns the decade.
+
+def get_decade(coord, point):
+    year = coord.units.num2date(point).year
+    return int(year / 10) * 10
+    
+time = iris.coords.DimCoord([10], 'time', units='days since 2018-01-01')
+print(get_decade(time, time.points[0]))

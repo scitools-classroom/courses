@@ -1,0 +1,10 @@
+
+# Iris course sample answer 8.2
+# Extract data using time constraint.
+
+since_1980 = iris.Constraint(time=lambda c: c.point.year >= 1980)
+cube_since_1980 = cube.extract(since_1980)
+
+time_coord = cube_since_1980.coord('time')
+print(time_coord.units.num2date(time_coord.points.min()))
+print(time_coord.units.num2date(time_coord.points.max()))
