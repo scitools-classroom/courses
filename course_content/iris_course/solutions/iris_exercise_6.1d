@@ -2,7 +2,9 @@
 # Iris course sample answer 6.1d
 # changing cube metadata items
 
+# Take a copy, to experiment without messing up the original
 e1_copy = e1.copy()
+
 e1_copy.rename('potential_temperature')
 print(e1_copy.summary(shorten=True))
 print("The cube name is simply changed to the requested name.")
