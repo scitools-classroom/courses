@@ -16,35 +16,3 @@ print(a1b_2099.summary(shorten=True))
 
 # Calculate the difference.
 difference = a1b_2099 - e1_2099
-
-# Plot them ...
-import matplotlib.pyplot as plt
-import iris.quickplot as qplt
-
-plt.figure(figsize=(16,6))
-
-originals_min = min(e1_2099.data.min(), a1b_2099.data.min())
-originals_max = max(e1_2099.data.max(), a1b_2099.data.max())
-
-# Display forecast temperatures on an absolute colour scale, with the same value range for both.
-# The difference is rather hard to see, so specify a high-contrast colormap to help with that.
-plt.subplot(1, 3, 1)
-qplt.pcolormesh(e1_2099, vmin=originals_min, vmax=originals_max, cmap='brg')
-plt.title('Scenario E1, year 2099')
-
-plt.subplot(1, 3, 2)
-qplt.pcolormesh(a1b_2099, vmin=originals_min, vmax=originals_max, cmap='brg')
-plt.title('Scenario A1B, year 2099')
-
-plt.subplot(1, 3, 3)
-# Calculate symmetrical limits for a zero-centred value range.
-diff_min, diff_max = np.min(difference.data), np.max(difference.data)
-diff_maxscale = max(diff_max, -diff_min)
-# Plot with a 'diverging' colormap, suitable to the zero-centred value range.
-qplt.pcolormesh(difference, vmin=-diff_maxscale, vmax=diff_maxscale, cmap='bwr')
-plt.title('Temperature difference A1B - E1,\n year 2099')
-plt.show()
-
-print('Note: the last plot is the difference.\n'
-      'This uses a "diverging" colour scale to show values above and below zero.\n',
-      'All the values are positive, so it actually only has shades of red.')

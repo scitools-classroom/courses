@@ -1,19 +1,21 @@
 
 # Iris course sample answer 6.3d
-# Make line-plots of the global average temperatures
+# produce region-averaged temperature sequences
 
-# Use iplt rather than qplt, to avoid overlapping titles.
-import iris.plot as iplt
+# Make a function to select latitudes in the range 25 to 30
+def lats_25_to_30(latitude):
+    return 25. <= latitude < 30.
 
-plt.figure(figsize=(12,12))
-plt.subplot(211)
-iplt.plot(e1_areamean, '+-', color='blue', label='E1')
-iplt.plot(a1b_areamean, '+-', color='red', label='A1B')
-ax = plt.gca()
-plt.legend()
-# plt.show()
+# Make the latitude function into a constraint and extract
+lats_constraint = iris.Constraint(latitude=lats_25_to_30)
+e1_latband = cube_e1.extract(lats_constraint)
+a1b_latband = cube_a1b.extract(lats_constraint)
 
-# Show the difference also.
-plt.subplot(212)
-iplt.plot(difference_areamean, '+-')
-plt.title('Difference : scenarios E1 - A1B')
+# Average over the region
+e1_xy_mean = cube_e1.collapsed(['latitude', 'longitude'], iris.analysis.MEAN)
+a1b_xy_mean = cube_a1b.collapsed(['latitude', 'longitude'], iris.analysis.MEAN)
+
+# Calculate a difference
+difference_xy_mean = a1b_xy_mean - e1_xy_mean
+difference_xy_mean.rename('Temperature difference, A1B - E1')
+print(difference_xy_mean)
