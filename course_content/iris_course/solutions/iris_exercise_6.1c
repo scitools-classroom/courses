@@ -1,6 +1,6 @@
 
 # Iris course sample answer 6.1c
-# add a cubes of 'feet' to one of 'days'
+# add a cube of 'feet' to one of 'days'
 
 try:
     result = six_feet + twelve_days
