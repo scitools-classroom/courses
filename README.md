@@ -2,7 +2,7 @@
 
 This repository contains courses on several Python software packages
 for the benefit of scientific researchers,
-particularly in the fields of oceanography and meteorology.  
+particularly in the fields of oceanography and meteorology.
 All the content is fully open-source and freely downloadable.
 
 The courses are presented as interactive self-learning tutorials,
@@ -17,28 +17,27 @@ suitable learning resources for those.
 ## Download and Run Courses
 
 The most flexible learning method is to download this repository and run it in a
-Python environment with the correct dependencies.  
-
+Python environment with the correct dependencies.
 A suitable environment can be produced with
-[conda](https://docs.conda.io/en/latest/miniconda.html")
-(only 'miniconda' is needed).  
-To create the environment, use the command: 
-`conda create -n testenv iris iris-sample-data jupyter`.  
+[conda](https://docs.conda.io/en/latest/miniconda.html)
+(only 'miniconda' is needed) :
 
-To run the courses, navigate to the repository 'course_content' folder
-and run: `jupyter notebook`.
+  * To create the environment, use the command :  
+    `$ conda create -n testenv iris iris-sample-data jupyter`
+
+  * To run the courses, navigate to the repository 'course_content' folder
+    and run :  
+    `$ jupyter notebook`
 
 ## Run Courses in Binder
 
 It is also possible to run any of these courses in a cloud instance
 with [Binder](https://mybinder.org/),
-simply by following the links provided below.  
-
-This is quick to try, and highly convenient,
-**however** you must be aware that this runs in a transient session,
-so all your edits will be lost when that expires
-(usually some 10s of minutes after the last interaction).  
-
+simply by following the links provided below.
+This is quick to try, and highly convenient.
+**However** _you must be aware that this runs in a transient session,_
+_so all your edits will be lost when that expires_
+_(usually some 10s of minutes after the last interaction)._
 It is possible to download your modified notebook before the session times out,
 but not (easily) to re-upload and run it again in Binder.
 
@@ -69,15 +68,14 @@ _(it requires to be importable as a package)._
 
 There are also two older courses included here,
 covering numpy and matplotlib at an entry level.
-
-However, these sources are no longer actively maintained.  
+However, these sources are no longer actively maintained.
 As a similar fast introduction to numpy and matplotlib,
 we can recommend the sections on those topics
-in [the Scipy lectures](http://scipy-lectures.org/index.html).  
+in [the Scipy lectures](http://scipy-lectures.org/index.html).
 For more detail, in time, you should also refer to the standard tutorials
 for those projects.
 
-The older Scitools course contents are here :
+The older Scitools course contents are these :
 
 #### An Introduction to Numpy
 3.5 hours &mdash; depends on a basic Python background
