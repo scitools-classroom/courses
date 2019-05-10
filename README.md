@@ -5,10 +5,14 @@ for the benefit of scientific researchers,
 particularly in the fields of oceanography and meteorology.  
 All the content is fully open-source and freely downloadable.
 
-These courses are presented as interactive self-learning tutorials,
+The courses are presented as interactive self-learning tutorials,
 contained in ["Jupyter notebooks"](https://jupyter.org/index.html).
 The user will run the notebook interactively, and will also edit it and run
 their own code, particularly to complete the set learning exercises.
+
+These courses assume some prior knowledge of the numpy and matplotlib packages.
+["Additional Learning Resources"](#prior_learning), below, suggests some
+suitable learning resources for those.
 
 ## Download and Run Courses
 
@@ -58,6 +62,8 @@ _but also [iris-sample-data](https://github.com/SciTools/iris-sample-data)_
 _(it requires to be importable as a package)._
 
 ----
+
+<a name="prior_learning"></a>
 
 ## Additional Learning Resources
 
