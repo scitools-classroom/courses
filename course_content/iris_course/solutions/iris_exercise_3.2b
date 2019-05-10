@@ -1,0 +1,11 @@
+
+# Iris course sample answer 3.2b
+# Extract latitude within given range.
+
+def within_30(cell):
+    """Return True for values that in the range [-30, 30]."""
+    return -30 < cell <30
+
+fname = iris.sample_data_path('air_temp.pp')
+cube = iris.load_cube(fname)
+print(cube.extract(iris.Constraint(latitude=within_30)))

@@ -1,0 +1,7 @@
+
+# Iris course sample answer 1.5a 
+# load some data
+
+fname = iris.sample_data_path('atlantic_profiles.nc')
+cubes = iris.load(fname)
+print(cubes)

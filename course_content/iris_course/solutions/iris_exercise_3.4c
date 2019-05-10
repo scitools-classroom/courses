@@ -1,0 +1,6 @@
+
+# Iris course sample answer 3.4c
+# Print the mean value of the first 5 slices along the depth dimension.
+
+for cube_slice in subset_cube[:5].slices_over('depth'):
+    print(cube_slice.data.mean())

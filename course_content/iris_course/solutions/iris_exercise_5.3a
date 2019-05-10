@@ -1,0 +1,8 @@
+
+# Iris course sample answer 5.3a
+# a contourf map on a LambertConformal projection
+
+plt.axes(projection=ccrs.LambertConformal())
+qplt.contourf(airtemps[0])
+plt.gca().coastlines()
+plt.show()

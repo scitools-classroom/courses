@@ -1,0 +1,7 @@
+
+# Iris course sample answer 2.3b 
+# Loading with load_cube
+
+fname = iris.sample_data_path('atlantic_profiles.nc')
+swpt_cube = iris.load_cube(fname, 'sea_water_potential_temperature')
+print(swpt_cube)

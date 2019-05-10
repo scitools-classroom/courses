@@ -1,0 +1,5 @@
+
+# Iris course sample answer 4.3.1b
+# Merging cubes to return a single cube.
+
+print(raw_cubes.merge_cube())

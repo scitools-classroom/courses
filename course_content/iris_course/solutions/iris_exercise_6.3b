@@ -1,0 +1,18 @@
+
+# Iris course sample answer 6.3b
+# plot E1, A1B and difference for year 2099
+
+# First extract only one year from each.
+def date_in_year_2099(time_cell):
+    return time_cell.point.year == 2099
+
+year_2099_constraint = iris.Constraint(time=date_in_year_2099)
+e1_2099 = cube_e1.extract(year_2099_constraint)
+a1b_2099 = cube_a1b.extract(year_2099_constraint)
+
+# Print the results : only one timepoint, so they are 2-D.
+print(e1_2099.summary(shorten=True))
+print(a1b_2099.summary(shorten=True))
+
+# Calculate the difference.
+difference = a1b_2099 - e1_2099

@@ -1,0 +1,6 @@
+
+# Iris course sample answer 3.2b
+# Extract data on the 19th day.
+
+time_constraint = iris.Constraint(time=lambda cell: cell.point.day == 19)
+print(temp_cube.extract(time_constraint).summary(True))

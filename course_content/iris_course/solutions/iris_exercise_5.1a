@@ -1,0 +1,16 @@
+
+# Iris course sample answer 5.1a
+# compare iris.plot and iris.quickplot
+
+plt.subplot(1, 2, 1)
+iplt.plot(timeseries)
+
+plt.subplot(1, 2, 2)
+qplt.plot(timeseries)
+
+plt.subplots_adjust(wspace=0.7)
+plt.show()
+
+print("Compared to 'iris.plot', 'iris.quickplot' adds extra automatic labelling :\n"
+      "    * axes are labelled with a coordinate name and units.\n"
+      "    * the plot title is taken from the cube name.")
