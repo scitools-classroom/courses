@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python
-  - numpy==1.15.4
+  - numpy
   - matplotlib
   - cartopy
   - iris
