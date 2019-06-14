@@ -2,10 +2,7 @@ name: scitools-courses
 channels:
   - conda-forge
 dependencies:
-  - python
-  - numpy
-  - matplotlib
-  - cartopy
+  - python<3.7
   - iris
   - iris-sample-data
   - nc-time-axis
