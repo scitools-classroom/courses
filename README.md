@@ -54,7 +54,7 @@ There are two main courses provided :
 ### An Introduction to Iris
 6 hours &mdash; depends on the "Cartopy in a nutshell" course:  
   * start from `course_content/iris_course/0.Iris_Course_Intro.ipynb`
-  * launch in binder [here](https://mybinder.org/v2/gh/SciTools/courses/master?filepath=course_content%2Firis_course)
+  * launch in binder [here](https://mybinder.org/v2/gh/SciTools/courses/master?filepath=course_content%2Firis_course%2F0.Iris_Course_Intro.ipynb)
 
 _Note: to run this course fully, you need to have installed_
 _not only iris and its dependencies,_
