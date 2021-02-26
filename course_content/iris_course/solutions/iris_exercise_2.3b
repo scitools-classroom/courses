@@ -3,7 +3,7 @@
 # Accepted keywords when saving to pp.
 
 # Reference documentation for iris.save:
-# http://scitools.org.uk/iris/docs/latest/iris/iris.html?highlight=save#iris.save
+# https://scitools-iris.readthedocs.io/en/stable/generated/api/iris.html#iris.save
 
 # Keywords accepted:
 
