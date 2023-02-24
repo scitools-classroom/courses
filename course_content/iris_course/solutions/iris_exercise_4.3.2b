@@ -2,7 +2,7 @@
 # Iris course sample answer 4.3.2b
 # Merging cubes to return a single cube.
 
-# Printing each cube followed by it's time coordinate shows us that the cubes have different time coordinates.
+# Printing each cube followed by its time coordinate shows us that the cubes have different time coordinates.
 print('Raw Cubes:')
 for cube in raw_cubes:
     print(cube)
