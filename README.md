@@ -1,5 +1,5 @@
-Python courses for the scientific researcher
-============================================
+Very good Python courses for the scientific researcher
+======================================================
 
 This repository contains several courses for the benefit of scientific researchers,
 particularly in the fields of oceanography and meteorology.
