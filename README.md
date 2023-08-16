@@ -1,5 +1,5 @@
-Very good Python courses for the scientific researcher
-======================================================
+Extremely good Python courses for the scientific researcher
+===========================================================
 
 This repository contains courses on several Python software packages
 for the benefit of scientific researchers,
