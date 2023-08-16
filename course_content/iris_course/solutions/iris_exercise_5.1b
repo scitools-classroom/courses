@@ -1,0 +1,11 @@
+
+# Iris course sample answer 5.1b
+# Make a contour plot of "airtemps"
+
+try:
+    qplt.contourf(airtemps)
+    plt.show()
+except Exception as err:
+    print('Error occurred:\n  "{}"'.format(err))
+
+print("NOTE: the 'qplt.pcolormesh' method requires a 2d cube.")

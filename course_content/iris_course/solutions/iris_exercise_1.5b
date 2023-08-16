@@ -1,0 +1,6 @@
+
+# Iris course sample answer 1.5b 
+# loop through cubes and print out their names
+
+for cube in cubes:
+    print(cube.standard_name)

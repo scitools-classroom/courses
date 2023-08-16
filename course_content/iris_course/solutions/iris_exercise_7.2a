@@ -1,0 +1,8 @@
+
+# Iris course sample answer 7.2a
+# Calculate the yearly max.
+
+coord_cat.add_year(cube, 'time', name='year')
+print(cube.coord('year'))
+
+yearly_max = cube.aggregated_by('year', iris.analysis.MAX)

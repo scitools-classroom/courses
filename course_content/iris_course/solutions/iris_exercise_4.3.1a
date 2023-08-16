@@ -1,0 +1,6 @@
+
+# Iris course sample answer 4.3.1a
+# Using `load_raw` to load in cubes from a file.
+
+raw_cubes = iris.load_raw('resources/merge_exercise.1.*.nc', 'air_potential_temperature')
+print(raw_cubes)

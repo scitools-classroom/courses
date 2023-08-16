@@ -1,0 +1,7 @@
+
+# Cartopy course, exercise 1
+# Plot on a 'different' projection.
+
+ax = plt.axes(projection=ccrs.Mollweide())
+ax.coastlines()
+plt.show()

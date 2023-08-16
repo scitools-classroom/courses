@@ -1,0 +1,21 @@
+
+# Iris course sample answer 4.3.2b
+# Merging cubes to return a single cube.
+
+# Printing each cube followed by its time coordinate shows us that the cubes have different time coordinates.
+print('Raw Cubes:')
+for cube in raw_cubes:
+    print(cube)
+    print("\nThe time coordinate for this cube is:")
+    print(cube.coord('time'), "\n")
+
+# Both cubes have the dimensions (time, grid_latitude, grid_longitude).
+# However the 'points' of the time coordinates do not match. Therefore, merging will not work.
+
+# The following will raise an error
+#print(raw_cubes.merge_cube())
+
+# Instead we should concatenate the cubes, along the time dimension, to create
+# a single 3D (time, grid_latitude, grid_longitude) cube.
+print('\nConcatenated Cube:')
+print(raw_cubes.concatenate_cube())

@@ -1,0 +1,12 @@
+
+# Iris course sample answer 5.1c
+# Filled contour plot a 2d portion of "airtemps"
+
+# plot just the first timepoint --> 2d XY plot
+qplt.contourf(airtemps[0])
+
+# add some coastlines for context
+plt.gca().coastlines()
+plt.show()
+
+print("NOTE: 'qplt.contourf' also adds a colorbar, as a key to the data values.")

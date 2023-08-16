@@ -1,0 +1,18 @@
+
+# Iris course sample answer 1.2a 
+# Find the dimensions and units of some cubes
+
+# DIMENSIONS : are shown in this part of the cube summary :
+#     "(grid_latitude: 31; grid_longitude: 31)""
+# I.E in this case, 31 x 31 in the Y- and X-type dimensions.
+
+# UNITS : are shown in this part of the cube summary :
+#     "(1E11 e/m^3)"
+# I.E. in this case, 0.1 million electrons per cubic metre.
+
+# You could access this information in code as follows ...
+
+e_total_content = cubes[0]
+e_density = cubes[1]
+print("Total electron content, dimensions = ", e_total_content.shape)
+print("Electron density,units = ", e_density.units)

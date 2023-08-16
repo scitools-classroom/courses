@@ -1,0 +1,15 @@
+
+# Iris course sample answer 1.3b
+# Rename cube to a valid standard name
+
+# Ensure "invalid" name to start with.
+cube.rename("A name that isn't a valid CF standard name")
+
+print('Cube names BEFORE :\n  cube.name() = {!r} \n    standard = {!r} \n    long = {!r} \n    var = {!r}'.format(
+    cube.name(), cube.standard_name, cube.long_name, cube.var_name))
+
+cube.rename('air_temperature')
+
+print('')
+print('Cube names AFTER :\n  cube.name() = {!r} \n    standard = {!r} \n    long = {!r} \n    var = {!r}'.format(
+    cube.name(), cube.standard_name, cube.long_name, cube.var_name))

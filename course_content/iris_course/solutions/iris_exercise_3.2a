@@ -1,0 +1,7 @@
+
+# Iris course sample answer 3.2a
+# Extract a list of model level numbers.
+
+temp_cubes = cubes.extract('air_potential_temperature')
+temp_cube = temp_cubes[0]
+print(temp_cube.extract(iris.Constraint(model_level_number=[4, 10])))

@@ -1,0 +1,16 @@
+
+# Iris course sample answer 4.3.1c
+# Identifying and fixing a merge problem.
+
+# Print the attributes, clearly one is different.
+print('The attributes of each cube:')
+for cube in raw_cubes:
+    print(cube.attributes)
+
+# Remove the history attribute from the first cube.
+print('\nDeleting the history attribute from the first cube...')
+del raw_cubes[0].attributes['History']
+
+# Check that this has meant that a merge now results in a single cube.
+print('\nResult of merging `raw_cubes`:')
+print(raw_cubes.merge_cube())

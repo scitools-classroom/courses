@@ -1,0 +1,7 @@
+
+# Iris course sample answer 8.5
+# Calculate decadal mean.
+
+cube_dec_mean = cube_since_1980.aggregated_by('decade', iris.analysis.MEAN)
+
+print(cube_dec_mean)

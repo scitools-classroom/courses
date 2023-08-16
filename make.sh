@@ -1,24 +1,36 @@
+#!/usr/bin/env bash
+
+# Fail on first exception.
+set -e
+
+# Clean out the build folder then replace the files we need to keep.
 mkdir -p build
+rm -rf build/*
+cp .gitignore LICENSE README.md build
+
+# Set up the folders we will need.
+mkdir -p build/html
+mkdir -p build/notebooks
+mkdir -p build/solutions
+
 cd build
-cp -rf ../course_content/images images
+cp -Rf ../course_content/images images
+cp -Rf ../course_content/resources resources
 
 for name in "numpy_intro" "matplotlib_intro" "cartopy_intro" "iris_intro"
 do
-    #ipython nbconvert --to slides ../course_content/${name}.ipynb
-    ipython nbconvert --to html ../course_content/${name}.ipynb
-    python ../utils/nbutil.py ../course_content/${name}.ipynb ${name}.ipynb --clear-output
+    #ipython nbconvert --to slides ../../course_content/${name}.ipynb
+    jupyter nbconvert --to notebook \
+        ../course_content/notebooks/${name}.ipynb \
+        --ExecutePreprocessor.kernel_name=python3 \
+        --ExecutePreprocessor.timeout=180 \
+        --execute --allow-errors \
+        --output-dir ./notebooks/ \
+        --output ${name}.ipynb
+    
+    # Build static (html) copies of the course content.
+    jupyter nbconvert --to html \
+        ./notebooks/${name}.ipynb \
+        --output-dir ./html/
 done
-
-
-for name in "numpy_exercise_1.ipynb" "numpy_exercise_2.ipynb" "matplotlib_exercise_2.ipynb" "matplotlib_exercise_3.ipynb" "cartopy_exercise_1.ipynb" "iris_exercise_1.ipynb" "iris_exercise_2.ipynb" "iris_exercise_3.ipynb" "iris_exercise_4.ipynb" "iris_exercise_5.ipynb" "iris_exercise_6.ipynb" "iris_exercise_7.ipynb"
-do
-    python ../utils/nbutil.py ../course_content/solutions/${name} ${name} --clear-code --clear-output
-done
-
-
-#.reveal aside.notes {
-#   visibility: inline;
-#}
-
-
 

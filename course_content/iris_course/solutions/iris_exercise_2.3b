@@ -1,0 +1,18 @@
+
+# Iris course sample answer 2.3b 
+# Accepted keywords when saving to pp.
+
+# Reference documentation for iris.save:
+# https://scitools-iris.readthedocs.io/en/stable/generated/api/iris.html#iris.save
+
+# Keywords accepted:
+
+# append
+# Whether to start a new file afresh or add the cube(s) to the end of the file.
+# Only applicable when target is a filename, not a file handle. Default is False.
+
+# field_coords
+# list of 2 coords or coord names which are to be used for reducing the given cube 
+# into 2d slices, which will ultimately determine the x and y coordinates of the 
+# resulting fields. If None, the final two dimensions are chosen for slicing.
+

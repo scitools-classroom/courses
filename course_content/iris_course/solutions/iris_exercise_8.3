@@ -1,0 +1,19 @@
+
+# Iris course sample answer 8.3
+# Function that returns the decade.
+
+# To get the year from the coord we must first use the num2date function on the units of the coordinate 'time'
+# as by default it is stored as an int representing the time. Now that we have the time coord as a date
+# we can extract the year from that.
+
+# To convert this year to the preceding decade we essentially need to change the last digit of the year to a 0.
+# We do this with (year/10) to get a decimal with the last digit on the right hand side of the decimal point,
+# Then converting this float to an int will drop everything on the right hand side of the decimal point and finally
+# multiplying by 10 will give us the decade.
+
+def get_decade(coord, point):
+    year = coord.units.num2date(point).year
+    return int(year / 10) * 10
+    
+time = iris.coords.DimCoord([10], 'time', units='days since 2018-01-01')
+print(get_decade(time, time.points[0]))

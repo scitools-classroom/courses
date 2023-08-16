@@ -1,0 +1,20 @@
+
+# Iris course sample answer 8.6
+# Plot decadal means.
+
+plt.figure(figsize=(12, 6))
+
+# Get the overall min+max for a common fixed colour scale 
+data_min_cube = cube_dec_mean.collapsed(['time', 'latitude', 'longitude'], iris.analysis.MIN)
+data_max_cube = cube_dec_mean.collapsed(['time', 'latitude', 'longitude'], iris.analysis.MAX)
+data_min, data_max = data_min_cube.data, data_max_cube.data
+
+plt.suptitle('Decadal means for the A1B scenario')
+for i, decade_cube in enumerate(cube_dec_mean.slices(['latitude', 'longitude'])):
+    plt.subplot(3, 4, i+1)
+    iplt.contourf(decade_cube, 25, vmin=data_min, vmax=data_max, cmap='hot')
+    plt.title('{}'.format(decade_cube.coord('decade').points[0]))
+    plt.gca().coastlines()
+    plt.clim(260, 310)
+    
+plt.show()
