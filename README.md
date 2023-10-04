@@ -23,7 +23,7 @@ A suitable environment can be produced with
 (only 'miniconda' is needed) :
 
   * To create the environment, use the command :  
-    `$ conda create -n testenv iris iris-sample-data jupyter`
+    `$ conda create -n testenv iris iris-sample-data jupyter nc-time-axis`
 
   * To run the courses, navigate to the repository 'course_content' folder
     and run :  
