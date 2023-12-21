@@ -1,4 +1,4 @@
-# Python Courses for the Scientific Researcher
+# Python Courses for the Scientific Researcher 
 
 This repository contains courses on several Python software packages
 for the benefit of scientific researchers,
